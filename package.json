@@ -4,7 +4,8 @@
   "description": "Agencia de viajes para escapate conmigo",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server"
+    "dev": "nodemon server",
+    "start": "node server"
   },
   "author": "Andrés Hernández García",
   "license": "ISC",
