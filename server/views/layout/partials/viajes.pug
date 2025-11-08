@@ -1,15 +1,28 @@
 .row.proximos-viajes
     each viaje in viajes
         .col-md-6.col-lg-4.mb-4
-            .card
-                img(src=`img/destinos_${viaje.imagen}.jpg`, class="img-fluid")
+            article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`)
+                img(
+                    src=`img/destinos_${viaje.imagen}.jpg`,
+                    class="img-fluid",
+                    alt=`Destino turístico: ${viaje.titulo}`,
+                    loading="lazy",
+                    width="400",
+                    height="300"
+                )
                 .card-body
-                    h2=viaje.titulo
+                    h2.h4=viaje.titulo
                     p
-                        i.fas.fa-calendar-alt
+                        i.fas.fa-calendar-alt(aria-hidden="true")
+                        span.sr-only Fechas:
                         |  #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
                     p
-                        i.fas.fa-dollar-sign
+                        i.fas.fa-dollar-sign(aria-hidden="true")
+                        span.sr-only Precio:
                         |  #{viaje.precio}
-                    p= viaje.descripcion.substr(0,100)
-                    a(href=`viajes/${viaje.id}`, class="btn btn-success btn-block") Mas Información
+                    p= viaje.descripcion.substr(0,100) + '...'
+                    a(
+                        href=`viajes/${viaje.id}`,
+                        class="btn btn-success btn-block",
+                        aria-label=`Ver más información sobre viaje a ${viaje.titulo}`
+                    ) Más Información

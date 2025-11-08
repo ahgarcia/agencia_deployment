@@ -3,11 +3,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const cors = require('cors');
+const compression = require('compression');
 const routes = require('./routes');
 const configs = require('./config');
 const db = require('./config/database');
 const logger = require('./config/logger');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
+const { responseTime, cacheControl, addResponseTimeHeader } = require('./middleware/performance');
 
 require('dotenv').config({ path: 'variables.env' });
 
@@ -52,11 +54,46 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // ===========================================
+// MIDDLEWARES DE PERFORMANCE
+// ===========================================
+
+// Compression - Compresión gzip/deflate
+app.use(compression({
+    // Nivel de compresión (0-9, 6 es el default)
+    level: 6,
+    // Solo comprimir respuestas mayores a 1KB
+    threshold: 1024,
+    // Filtro para decidir qué comprimir
+    filter: (req, res) => {
+        if (req.headers['x-no-compression']) {
+            return false;
+        }
+        return compression.filter(req, res);
+    },
+}));
+
+// Middleware de tiempo de respuesta
+app.use(responseTime);
+app.use(addResponseTimeHeader);
+
+// ===========================================
 // MIDDLEWARES GENERALES
 // ===========================================
 
-// Archivos estáticos
-app.use(express.static('public'));
+// Archivos estáticos con caché optimizado
+app.use(express.static('public', {
+    maxAge: process.env.NODE_ENV === 'production' ? '7d' : '0', // 7 días en producción, sin cache en desarrollo
+    etag: true, // Habilitar ETag para validación de cache
+    lastModified: true, // Incluir header Last-Modified
+    setHeaders: (res, path) => {
+        // Cache más agresivo para assets que no cambian
+        if (path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.png') || path.endsWith('.svg')) {
+            res.setHeader('Cache-Control', 'public, max-age=604800, immutable'); // 7 días
+        } else if (path.endsWith('.css') || path.endsWith('.js')) {
+            res.setHeader('Cache-Control', 'public, max-age=86400'); // 1 día
+        }
+    },
+}));
 
 // Body parser
 app.use(bodyParser.urlencoded({ extended: true }));
