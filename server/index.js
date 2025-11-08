@@ -1,52 +1,149 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
+const cors = require('cors');
+const compression = require('compression');
 const routes = require('./routes');
 const configs = require('./config');
 const db = require('./config/database');
+const logger = require('./config/logger');
+const { notFound, errorHandler } = require('./middleware/errorHandler');
+const { responseTime, cacheControl, addResponseTimeHeader } = require('./middleware/performance');
 
-require('dotenv').config({path: 'variables.env'})
+require('dotenv').config({ path: 'variables.env' });
 
+// Autenticar base de datos
 db.authenticate()
-    .then(() => console.log('DB Conectada'))
-    .catch(error => console.log(err));
+    .then(() => logger.info('Base de datos conectada exitosamente'))
+    .catch(error => {
+        logger.error('Error al conectar a la base de datos:', error);
+        process.exit(1); // Salir si no hay conexión a DB
+    });
 
-// configurar express
+// Configurar Express
 const app = express();
 
-// habilitar pug
+// Configurar motor de plantillas Pug
 app.set('view engine', 'pug');
-
-// añadir las vistas
 app.set('views', path.join(__dirname, './views'));
 
-// cargar una carpeta estatica llamada public
-app.use(express.static('public'));
+// ===========================================
+// MIDDLEWARES DE SEGURIDAD
+// ===========================================
 
-// validar si estamos en desarrollo o en producción
+// Helmet - Protección de headers HTTP
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com", "https://stackpath.bootstrapcdn.com"],
+            scriptSrc: ["'self'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com"],
+            imgSrc: ["'self'", "data:", "https:"],
+        },
+    },
+}));
+
+// CORS - Configuración de orígenes permitidos
+const corsOptions = {
+    origin: process.env.CORS_ORIGIN || '*',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+};
+app.use(cors(corsOptions));
+
+// ===========================================
+// MIDDLEWARES DE PERFORMANCE
+// ===========================================
+
+// Compression - Compresión gzip/deflate
+app.use(compression({
+    // Nivel de compresión (0-9, 6 es el default)
+    level: 6,
+    // Solo comprimir respuestas mayores a 1KB
+    threshold: 1024,
+    // Filtro para decidir qué comprimir
+    filter: (req, res) => {
+        if (req.headers['x-no-compression']) {
+            return false;
+        }
+        return compression.filter(req, res);
+    },
+}));
+
+// Middleware de tiempo de respuesta
+app.use(responseTime);
+app.use(addResponseTimeHeader);
+
+// ===========================================
+// MIDDLEWARES GENERALES
+// ===========================================
+
+// Archivos estáticos con caché optimizado
+app.use(express.static('public', {
+    maxAge: process.env.NODE_ENV === 'production' ? '7d' : '0', // 7 días en producción, sin cache en desarrollo
+    etag: true, // Habilitar ETag para validación de cache
+    lastModified: true, // Incluir header Last-Modified
+    setHeaders: (res, path) => {
+        // Cache más agresivo para assets que no cambian
+        if (path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.png') || path.endsWith('.svg')) {
+            res.setHeader('Cache-Control', 'public, max-age=604800, immutable'); // 7 días
+        } else if (path.endsWith('.css') || path.endsWith('.js')) {
+            res.setHeader('Cache-Control', 'public, max-age=86400'); // 1 día
+        }
+    },
+}));
+
+// Body parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // Agregar soporte para JSON
+
+// Logging de requests HTTP
+app.use((req, res, next) => {
+    logger.http(`${req.method} ${req.url}`, {
+        ip: req.ip,
+        userAgent: req.get('user-agent'),
+    });
+    next();
+});
+
+// Validar ambiente (desarrollo o producción)
 const config = configs[app.get('env')];
-
-// creamos la variable para el sitio web
 app.locals.titulo = config.nombresitio;
 
-// muestra el año actual y genera la ruta
+// Variables locales globales
 app.use((req, res, next) => {
     const fecha = new Date();
     res.locals.fechaActual = fecha.getFullYear();
     res.locals.ruta = req.path;
     return next();
-})
+});
 
-// ejecutamos el body-parser
-app.use(bodyParser.urlencoded({extended: true}))
+// ===========================================
+// RUTAS
+// ===========================================
 
-// cargar rutas
 app.use('/', routes());
 
-// puerto y host para la app
-const host = process.env.HOST || '0.0.0.0'
+// ===========================================
+// MANEJO DE ERRORES
+// ===========================================
+
+// Middleware para rutas no encontradas (404)
+app.use(notFound);
+
+// Middleware centralizado de manejo de errores
+app.use(errorHandler);
+
+// ===========================================
+// INICIAR SERVIDOR
+// ===========================================
+
+const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 3000;
 
 app.listen(port, host, () => {
-    console.log('El servidor esta funcionando');
+    logger.info(`Servidor iniciado en http://${host}:${port}`);
+    logger.info(`Ambiente: ${process.env.NODE_ENV || 'development'}`);
 });
