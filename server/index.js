@@ -1,52 +1,112 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
+const cors = require('cors');
 const routes = require('./routes');
 const configs = require('./config');
 const db = require('./config/database');
+const logger = require('./config/logger');
+const { notFound, errorHandler } = require('./middleware/errorHandler');
 
-require('dotenv').config({path: 'variables.env'})
+require('dotenv').config({ path: 'variables.env' });
 
+// Autenticar base de datos
 db.authenticate()
-    .then(() => console.log('DB Conectada'))
-    .catch(error => console.log(error));
+    .then(() => logger.info('Base de datos conectada exitosamente'))
+    .catch(error => {
+        logger.error('Error al conectar a la base de datos:', error);
+        process.exit(1); // Salir si no hay conexión a DB
+    });
 
-// configurar express
+// Configurar Express
 const app = express();
 
-// habilitar pug
+// Configurar motor de plantillas Pug
 app.set('view engine', 'pug');
-
-// añadir las vistas
 app.set('views', path.join(__dirname, './views'));
 
-// cargar una carpeta estatica llamada public
+// ===========================================
+// MIDDLEWARES DE SEGURIDAD
+// ===========================================
+
+// Helmet - Protección de headers HTTP
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com", "https://stackpath.bootstrapcdn.com"],
+            scriptSrc: ["'self'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com"],
+            imgSrc: ["'self'", "data:", "https:"],
+        },
+    },
+}));
+
+// CORS - Configuración de orígenes permitidos
+const corsOptions = {
+    origin: process.env.CORS_ORIGIN || '*',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+};
+app.use(cors(corsOptions));
+
+// ===========================================
+// MIDDLEWARES GENERALES
+// ===========================================
+
+// Archivos estáticos
 app.use(express.static('public'));
 
-// validar si estamos en desarrollo o en producción
-const config = configs[app.get('env')];
+// Body parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // Agregar soporte para JSON
 
-// creamos la variable para el sitio web
+// Logging de requests HTTP
+app.use((req, res, next) => {
+    logger.http(`${req.method} ${req.url}`, {
+        ip: req.ip,
+        userAgent: req.get('user-agent'),
+    });
+    next();
+});
+
+// Validar ambiente (desarrollo o producción)
+const config = configs[app.get('env')];
 app.locals.titulo = config.nombresitio;
 
-// muestra el año actual y genera la ruta
+// Variables locales globales
 app.use((req, res, next) => {
     const fecha = new Date();
     res.locals.fechaActual = fecha.getFullYear();
     res.locals.ruta = req.path;
     return next();
-})
+});
 
-// ejecutamos el body-parser
-app.use(bodyParser.urlencoded({extended: true}))
+// ===========================================
+// RUTAS
+// ===========================================
 
-// cargar rutas
 app.use('/', routes());
 
-// puerto y host para la app
-const host = process.env.HOST || '0.0.0.0'
+// ===========================================
+// MANEJO DE ERRORES
+// ===========================================
+
+// Middleware para rutas no encontradas (404)
+app.use(notFound);
+
+// Middleware centralizado de manejo de errores
+app.use(errorHandler);
+
+// ===========================================
+// INICIAR SERVIDOR
+// ===========================================
+
+const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 3000;
 
 app.listen(port, host, () => {
-    console.log('El servidor esta funcionando');
+    logger.info(`Servidor iniciado en http://${host}:${port}`);
+    logger.info(`Ambiente: ${process.env.NODE_ENV || 'development'}`);
 });
