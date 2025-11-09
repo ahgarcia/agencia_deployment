@@ -4,8 +4,20 @@ const logger = require('../config/logger');
 
 exports.mostrarViajes = async (req, res, next) => {
     try {
+        // Configuración de paginación
+        const viajesPorPagina = 9; // 3 filas de 3 columnas
+        const paginaActual = parseInt(req.query.page) || 1;
+        const offset = (paginaActual - 1) * viajesPorPagina;
+
+        // Obtener total de viajes para calcular páginas
+        const totalViajes = await Viaje.count();
+        const totalPaginas = Math.ceil(totalViajes / viajesPorPagina);
+
+        // Obtener viajes de la página actual
         const viajes = await Viaje.findAll({
-            order: [['fecha_ida', 'ASC']]
+            order: [['fecha_ida', 'ASC']],
+            limit: viajesPorPagina,
+            offset: offset
         });
 
         // Enriquecer cada viaje con imágenes de Unsplash API
@@ -45,9 +57,14 @@ exports.mostrarViajes = async (req, res, next) => {
             })
         );
 
+        logger.info(`Mostrando página ${paginaActual} de ${totalPaginas} (${viajesConImagenes.length} viajes)`);
+
         res.render('viajes', {
             pagina: 'Próximos Viajes',
-            viajes: viajesConImagenes
+            viajes: viajesConImagenes,
+            paginaActual,
+            totalPaginas,
+            totalViajes
         });
 
     } catch (error) {

@@ -2,4 +2,58 @@ extends ../layout/index
 block contenido
     main.container.mt-5
         h1.text-center.mb-5 #{pagina}
+
+        //- Información de paginación
+        if totalViajes > 0
+            p.text-muted.text-center.mb-4
+                | Mostrando #{viajes.length} de #{totalViajes} destinos
+
         include ../layout/partials/viajes
+
+        //- Controles de paginación
+        if totalPaginas > 1
+            nav.mt-5(aria-label="Navegación de páginas")
+                ul.pagination.justify-content-center
+                    //- Botón Anterior
+                    li.page-item(class=paginaActual === 1 ? 'disabled' : '')
+                        if paginaActual === 1
+                            span.page-link(tabindex="-1", aria-disabled="true") Anterior
+                        else
+                            a.page-link(href=`/viajes?page=${paginaActual - 1}`, aria-label="Página anterior") Anterior
+
+                    //- Números de página
+                    - var inicioRango = Math.max(1, paginaActual - 2)
+                    - var finRango = Math.min(totalPaginas, paginaActual + 2)
+
+                    //- Primera página si no está en el rango
+                    if inicioRango > 1
+                        li.page-item
+                            a.page-link(href="/viajes?page=1") 1
+                        if inicioRango > 2
+                            li.page-item.disabled
+                                span.page-link ...
+
+                    //- Páginas en el rango
+                    - for (var i = inicioRango; i <= finRango; i++)
+                        li.page-item(class=i === paginaActual ? 'active' : '')
+                            if i === paginaActual
+                                span.page-link
+                                    = i
+                                    span.sr-only (actual)
+                            else
+                                a.page-link(href=`/viajes?page=${i}`)= i
+
+                    //- Última página si no está en el rango
+                    if finRango < totalPaginas
+                        if finRango < totalPaginas - 1
+                            li.page-item.disabled
+                                span.page-link ...
+                        li.page-item
+                            a.page-link(href=`/viajes?page=${totalPaginas}`)= totalPaginas
+
+                    //- Botón Siguiente
+                    li.page-item(class=paginaActual === totalPaginas ? 'disabled' : '')
+                        if paginaActual === totalPaginas
+                            span.page-link(tabindex="-1", aria-disabled="true") Siguiente
+                        else
+                            a.page-link(href=`/viajes?page=${paginaActual + 1}`, aria-label="Página siguiente") Siguiente
