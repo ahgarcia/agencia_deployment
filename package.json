@@ -1,6 +1,6 @@
 {
   "name": "agenciadeviajes",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Agencia de viajes para escapate conmigo",
   "main": "index.js",
   "scripts": {
