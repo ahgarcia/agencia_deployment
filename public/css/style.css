@@ -294,3 +294,129 @@ footer .copyright {
         font-size: 1.2rem;
     }
 }
+
+/* ===================================
+   HEADER RESPONSIVO
+   =================================== */
+
+/* Estilos base del header */
+header {
+    width: 100%;
+}
+
+header .navegacion {
+    width: 100%;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+header .nav {
+    flex-wrap: wrap;
+}
+
+header .nav a {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Desktop (≥768px) - Diseño original */
+@media (min-width: 768px) {
+    header .nav {
+        flex-wrap: nowrap;
+    }
+
+    header .nav a {
+        font-size: 2rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    header img {
+        max-width: 200px;
+    }
+}
+
+/* Tablet (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    header .row {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    header .nav {
+        justify-content: center !important;
+    }
+
+    header .nav a {
+        font-size: 1.6rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    header img {
+        max-width: 150px;
+    }
+
+    /* Logo centrado en tablet */
+    header .col-6 {
+        text-align: center;
+    }
+}
+
+/* Mobile (< 576px) */
+@media (max-width: 575px) {
+    header .row {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    header .nav {
+        justify-content: center !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .nav a {
+        font-size: 1.4rem;
+        padding: 0.4rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: none !important;
+    }
+
+    header .nav a.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        border-bottom: none !important;
+    }
+
+    header img {
+        max-width: 120px;
+    }
+
+    /* Logo centrado en mobile */
+    header .col-6 {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Ambas columnas ocupan todo el ancho en mobile */
+    header .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Mobile extra pequeño (<400px) */
+@media (max-width: 399px) {
+    header .nav a {
+        font-size: 1.3rem;
+        padding: 0.3rem 0;
+    }
+
+    header img {
+        max-width: 100px;
+    }
+}
