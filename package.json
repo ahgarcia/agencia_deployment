@@ -1,33 +1,21 @@
 {
   "name": "agenciadeviajes",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Agencia de viajes para escapate conmigo",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server",
-    "start": "node server",
-    "optimize:images": "node scripts/optimize-images.js"
+    "start": "node server"
   },
   "author": "Andrés Hernández García",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "compression": "^1.8.1",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "express-rate-limit": "^8.2.1",
-    "express-validator": "^7.3.0",
-    "helmet": "^8.1.0",
-    "mysql2": "^3.15.3",
-    "pg": "^8.16.3",
-    "pg-hstore": "^2.3.4",
-    "pug": "^3.0.3",
-    "sequelize": "^6.37.7",
-    "winston": "^3.18.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10",
-    "sharp": "^0.34.5"
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0",
+    "sequelize": "^6.3.3",
+    "dotenv": "^8.2.0"
   }
 }
