@@ -216,3 +216,81 @@ i {
     font-size: 1rem;
     color: #6c757d;
 }
+
+/* ===================================
+   FOOTER RESPONSIVO
+   =================================== */
+
+/* Estilos base del footer (todos los dispositivos) */
+footer {
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer .nav {
+    flex-wrap: wrap;
+}
+
+footer .nav a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+footer .copyright {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Tablet y Desktop (768px+) - Diseño original */
+@media (min-width: 768px) {
+    footer .nav {
+        flex-wrap: nowrap;
+    }
+
+    footer .nav a {
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+/* Mobile (< 768px) - Ajustes responsivos */
+@media (max-width: 767px) {
+    footer {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    footer .nav {
+        justify-content: center !important;
+        margin-bottom: 1rem;
+    }
+
+    footer .nav a {
+        font-size: 1.4rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    footer .copyright {
+        font-size: 1.3rem;
+        text-align: center !important;
+        padding: 0 1rem;
+    }
+}
+
+/* Mobile pequeño (< 576px) - Ajustes adicionales */
+@media (max-width: 575px) {
+    footer .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .nav a {
+        font-size: 1.3rem;
+        padding: 0.4rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer .copyright {
+        font-size: 1.2rem;
+    }
+}
