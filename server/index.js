@@ -43,7 +43,8 @@ app.use(helmet({
             styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com"],
             fontSrc: ["'self'", "https://fonts.gstatic.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com"],
             scriptSrc: ["'self'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com"],
-            imgSrc: ["'self'", "data:", "https:"],
+            scriptSrcAttr: ["'unsafe-inline'"], // Permitir event handlers inline (onerror en imgs)
+            imgSrc: ["'self'", "data:", "https:", "https://images.unsplash.com"],
             connectSrc: ["'self'", "https://stackpath.bootstrapcdn.com"],
         },
     },

@@ -13,22 +13,32 @@ exports.mostrarViajes = async (req, res, next) => {
             viajes.map(async (viaje) => {
                 const viajeJSON = viaje.toJSON();
 
-                // Si usa API de imágenes, obtener de Unsplash
-                if (viajeJSON.usa_api_imagen) {
+                // Si usa API de imágenes Y tiene slug configurado, obtener de Unsplash
+                if (viajeJSON.usa_api_imagen && viajeJSON.slug) {
                     const imageData = await imageService.getDestinationImage(
                         viajeJSON.slug,
-                        viajeJSON.tipo_destino
+                        viajeJSON.tipo_destino || 'tourism'
                     );
                     viajeJSON.imagenData = imageData;
                     viajeJSON.imagen = imageData.url;
-                } else {
-                    // Si usa imagen local
+                } else if (viajeJSON.imagen) {
+                    // Si tiene imagen local configurada
                     viajeJSON.imagenData = {
                         url: viajeJSON.imagen,
                         photographer: 'Escápate Conmigo',
                         photographerUrl: '#',
                         altDescription: viajeJSON.titulo
                     };
+                } else {
+                    // Si no tiene ni slug ni imagen local, usar imagen por defecto
+                    logger.warn(`Viaje sin imagen configurada: ${viajeJSON.titulo} (ID: ${viajeJSON.id})`);
+                    viajeJSON.imagenData = {
+                        url: '/img/destinos_grecia.jpg',
+                        photographer: 'Escápate Conmigo',
+                        photographerUrl: '#',
+                        altDescription: viajeJSON.titulo
+                    };
+                    viajeJSON.imagen = '/img/destinos_grecia.jpg';
                 }
 
                 return viajeJSON;
@@ -60,23 +70,35 @@ exports.mostrarViaje = async (req, res, next) => {
         const viajeJSON = viaje.toJSON();
 
         // Obtener imagen principal
-        if (viajeJSON.usa_api_imagen) {
+        if (viajeJSON.usa_api_imagen && viajeJSON.slug) {
             const imageData = await imageService.getDestinationImage(
                 viajeJSON.slug,
-                viajeJSON.tipo_destino
+                viajeJSON.tipo_destino || 'tourism'
             );
             viajeJSON.imagenData = imageData;
             viajeJSON.imagen = imageData.url;
 
             // Obtener galería adicional (4 imágenes más para la vista de detalle)
             viajeJSON.galeria = await imageService.getMultipleImages(viajeJSON.slug, 4);
-        } else {
+        } else if (viajeJSON.imagen) {
+            // Si tiene imagen local configurada
             viajeJSON.imagenData = {
                 url: viajeJSON.imagen,
                 photographer: 'Escápate Conmigo',
                 photographerUrl: '#',
                 altDescription: viajeJSON.titulo
             };
+            viajeJSON.galeria = [];
+        } else {
+            // Si no tiene ni slug ni imagen local, usar imagen por defecto
+            logger.warn(`Viaje sin imagen configurada: ${viajeJSON.titulo} (ID: ${viajeJSON.id})`);
+            viajeJSON.imagenData = {
+                url: '/img/destinos_grecia.jpg',
+                photographer: 'Escápate Conmigo',
+                photographerUrl: '#',
+                altDescription: viajeJSON.titulo
+            };
+            viajeJSON.imagen = '/img/destinos_grecia.jpg';
             viajeJSON.galeria = [];
         }
 

@@ -13,6 +13,13 @@ class ImageService {
             orientation: 'landscape',
             content_filter: 'high'
         };
+
+        // Validar que el access key esté configurado
+        if (!this.unsplashAccessKey) {
+            console.error('⚠️ UNSPLASH_ACCESS_KEY no está configurado en variables.env');
+        } else {
+            console.log('✅ Unsplash API configurada correctamente');
+        }
     }
 
     /**
@@ -22,6 +29,18 @@ class ImageService {
      * @returns {Promise<Object>} Objeto con URL de imagen y datos del fotógrafo
      */
     async getDestinationImage(destination, type = 'tourism') {
+        // Validar parámetros
+        if (!destination) {
+            console.error('❌ Destination is required');
+            return this.getFallbackImage();
+        }
+
+        // Validar credenciales
+        if (!this.unsplashAccessKey) {
+            console.error('❌ Unsplash API key not configured');
+            return this.getFallbackImage();
+        }
+
         const cacheKey = `${destination}_${type}`;
 
         // Verificar cache
@@ -34,6 +53,7 @@ class ImageService {
         try {
             // Construir query optimizado
             const query = this.buildSearchQuery(destination, type);
+            console.log(`🔍 Searching Unsplash for: "${query}"`);
 
             const response = await axios.get(`${this.baseURL}/search/photos`, {
                 params: {
@@ -67,11 +87,15 @@ class ImageService {
             // Trigger download endpoint (requerido por Unsplash)
             this.triggerDownload(photo.links.download_location);
 
-            console.log(`✅ Image fetched successfully: ${query}`);
+            console.log(`✅ Image fetched successfully: ${query} - Photographer: ${imageData.photographer}`);
             return imageData;
 
         } catch (error) {
             console.error(`❌ Error fetching image for ${destination}:`, error.message);
+            if (error.response) {
+                console.error(`   Status: ${error.response.status}`);
+                console.error(`   Data:`, error.response.data);
+            }
             return this.getFallbackImage();
         }
     }
@@ -109,10 +133,11 @@ class ImageService {
      * Imagen por defecto si falla la búsqueda
      */
     getFallbackImage() {
+        console.log('⚠️ Using fallback image');
         return {
-            url: '/img/default-destination.jpg',
-            urlSmall: '/img/default-destination-small.jpg',
-            urlThumb: '/img/default-destination-thumb.jpg',
+            url: '/img/destinos_grecia.jpg',
+            urlSmall: '/img/destinos_grecia.jpg',
+            urlThumb: '/img/destinos_grecia.jpg',
             photographer: 'Escápate Conmigo',
             photographerUrl: '#',
             altDescription: 'Destino turístico en México',
