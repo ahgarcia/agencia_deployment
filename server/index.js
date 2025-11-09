@@ -24,6 +24,9 @@ db.authenticate()
 // Configurar Express
 const app = express();
 
+// Trust proxy - IMPORTANTE para Render, Heroku, Railway, etc
+app.set('trust proxy', 1);
+
 // Configurar motor de plantillas Pug
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, './views'));
