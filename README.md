@@ -89,50 +89,6 @@ npm start
 
 La aplicación estará disponible en `http://localhost:3000`
 
----
-
-## 🚀 Deployment
-
-Para desplegar esta aplicación a producción, consulta la **[Guía Completa de Deployment](./DEPLOYMENT_GUIDE.md)**.
-
-### Opciones Recomendadas:
-
-**🏆 Más Fácil - Railway** (5 minutos)
-```bash
-# Setup automático con MySQL incluido
-# 1. Conecta tu repo en https://railway.app
-# 2. Agrega MySQL desde el dashboard
-# 3. Deploy automático al hacer push
-```
-
-**💰 Gratis - Render**
-```bash
-# Plan gratuito con PostgreSQL
-# Requiere migración de MySQL a PostgreSQL
-# Ver guía detallada en DEPLOYMENT_GUIDE.md
-```
-
-**🐳 Docker - Para cualquier servidor**
-```bash
-# Usando Docker Compose (recomendado)
-docker-compose up -d
-
-# O solo Docker
-docker build -t agencia-viajes .
-docker run -p 3000:3000 agencia-viajes
-```
-
-**🖥️ VPS Manual - Control total**
-```bash
-# Script de deployment incluido
-chmod +x scripts/deploy.sh
-./scripts/deploy.sh production
-```
-
-📖 **Ver [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) para instrucciones detalladas de cada opción.**
-
----
-
 ## Estructura del Proyecto
 
 ```
