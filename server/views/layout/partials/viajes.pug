@@ -1,48 +1,28 @@
 .row.proximos-viajes
     each viaje in viajes
         .col-md-6.col-lg-4.mb-4
-            article.card.h-100.shadow-sm(role="article", aria-label=`Viaje a ${viaje.titulo}`)
+            article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`)
                 img(
                     src=`img/destinos_${viaje.imagen}.jpg`,
-                    class="card-img-top",
+                    class="img-fluid",
                     alt=`Destino turístico: ${viaje.titulo}`,
                     loading="lazy",
                     width="400",
                     height="300"
                 )
-                .card-body.d-flex.flex-column
-                    h3.card-title.h5.font-weight-bold.mb-3=viaje.titulo
-
-                    //- Descripción prominente (Opción 3)
-                    p.card-text.text-muted.mb-3.flex-grow-1= viaje.descripcion.substr(0,160) + '...'
-
-                    //- Precio destacado (Opción 1)
-                    .text-center.mb-3.py-3.bg-light.rounded
-                        .h3.text-success.mb-0
-                            strong $#{viaje.precio}
-                            small.text-muted  USD
-                        small.text-muted por persona
-
-                    //- Información con íconos en cajas (Opción 3) + Badge (Opción 1)
-                    .mb-3
-                        .d-flex.align-items-center.mb-2
-                            .icon-box.bg-primary.text-white.rounded.p-2.mr-3(style="min-width: 40px; text-align: center;")
-                                i.fas.fa-calendar-alt
-                            div
-                                small.text-muted.d-block Fechas del viaje
-                                strong.small #{viaje.fecha_ida} al #{viaje.fecha_vuelta}
-
-                    //- Badge de disponibilidad (Opción 1)
-                    p.mb-3
-                        span.badge.badge-info.badge-pill.px-3.py-2
-                            i.fas.fa-users.mr-2
-                            strong #{viaje.disponibles} lugares disponibles
-
-                    //- CTA fuerte (Opción 3)
+                .card-body
+                    h2.h4=viaje.titulo
+                    p
+                        i.fas.fa-calendar-alt(aria-hidden="true")
+                        span.sr-only Fechas:
+                        |  #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                    p
+                        i.fas.fa-dollar-sign(aria-hidden="true")
+                        span.sr-only Precio:
+                        |  #{viaje.precio}
+                    p= viaje.descripcion.substr(0,100) + '...'
                     a(
                         href=`viajes/${viaje.id}`,
                         class="btn btn-success btn-block",
                         aria-label=`Ver más información sobre viaje a ${viaje.titulo}`
-                    )
-                        i.fas.fa-plane.mr-2
-                        | Reservar Ahora
+                    ) Más Información
