@@ -166,3 +166,53 @@ i {
     font-weight: bold;
     margin-top: 1rem;
 }
+
+/* ===================================
+   PAGINACIÓN
+   =================================== */
+.pagination {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pagination .page-link {
+    color: #15B9D5;
+    border: 2px solid #15B9D5;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.4rem;
+    padding: .6rem 1.2rem;
+    margin: 0 .3rem;
+    border-radius: .5rem;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #15B9D5;
+    color: white;
+    border-color: #15B9D5;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #DC135F;
+    border-color: #DC135F;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #999;
+    border-color: #ddd;
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.pagination .page-item.disabled .page-link:hover {
+    background-color: #f8f9fa;
+    color: #999;
+}
+
+/* Información de paginación */
+.text-muted {
+    font-size: 1rem;
+    color: #6c757d;
+}
