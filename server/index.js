@@ -24,9 +24,6 @@ db.authenticate()
 // Configurar Express
 const app = express();
 
-// Trust proxy - IMPORTANTE para Render, Heroku, Railway, etc
-app.set('trust proxy', 1);
-
 // Configurar motor de plantillas Pug
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, './views'));
@@ -40,11 +37,10 @@ app.use(helmet({
     contentSecurityPolicy: {
         directives: {
             defaultSrc: ["'self'"],
-            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com"],
-            fontSrc: ["'self'", "https://fonts.gstatic.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com", "https://stackpath.bootstrapcdn.com"],
             scriptSrc: ["'self'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com"],
             imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'", "https://stackpath.bootstrapcdn.com"],
         },
     },
 }));
@@ -85,7 +81,7 @@ app.use(addResponseTimeHeader);
 // ===========================================
 
 // Archivos estáticos con caché optimizado
-app.use(express.static(path.join(__dirname, '../public'), {
+app.use(express.static('public', {
     maxAge: process.env.NODE_ENV === 'production' ? '7d' : '0', // 7 días en producción, sin cache en desarrollo
     etag: true, // Habilitar ETag para validación de cache
     lastModified: true, // Incluir header Last-Modified

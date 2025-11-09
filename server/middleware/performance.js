@@ -73,19 +73,11 @@ const cacheControl = (req, res, next) => {
 const addResponseTimeHeader = (req, res, next) => {
     const start = process.hrtime();
 
-    // Sobrescribir el método res.send para capturar el tiempo antes de enviar
-    const originalSend = res.send;
-    res.send = function(data) {
+    res.on('finish', () => {
         const diff = process.hrtime(start);
         const time = (diff[0] * 1e3 + diff[1] * 1e-6).toFixed(2);
-
-        // Setear header solo si aún no se han enviado
-        if (!res.headersSent) {
-            res.setHeader('X-Response-Time', `${time}ms`);
-        }
-
-        return originalSend.call(this, data);
-    };
+        res.setHeader('X-Response-Time', `${time}ms`);
+    });
 
     next();
 };
