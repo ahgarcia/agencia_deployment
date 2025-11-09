@@ -1,15 +1,30 @@
 .row.proximos-viajes
     each viaje in viajes
         .col-md-6.col-lg-4.mb-4
-            article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`)
-                img(
-                    src=`img/destinos_${viaje.imagen}.jpg`,
-                    class="img-fluid",
-                    alt=`Destino turístico: ${viaje.titulo}`,
-                    loading="lazy",
-                    width="400",
-                    height="300"
-                )
+            article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`, style="position: relative;")
+                //- Imagen con atribución
+                .imagen-viaje(style="position: relative;")
+                    img(
+                        src=viaje.imagen || `/img/destinos_${viaje.imagen}.jpg`,
+                        class="img-fluid",
+                        alt=viaje.imagenData ? viaje.imagenData.altDescription : `Destino turístico: ${viaje.titulo}`,
+                        loading="lazy",
+                        width="400",
+                        height="300",
+                        style=viaje.imagenData && viaje.imagenData.color ? `background-color: ${viaje.imagenData.color}` : '',
+                        onerror="this.src='/img/default-destination.jpg'"
+                    )
+
+                    //- Atribución del fotógrafo (requerido por Unsplash)
+                    if viaje.imagenData && viaje.imagenData.photographer !== 'Escápate Conmigo'
+                        .image-credit(style="position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 4px; font-size: 11px;")
+                            small
+                                | Foto por
+                                a(href=viaje.imagenData.photographerUrl, target="_blank", rel="noopener noreferrer", style="color: #333; text-decoration: none;")
+                                    = viaje.imagenData.photographer
+                                |  en
+                                a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer", style="color: #333; text-decoration: none;") Unsplash
+
                 .card-body
                     h2.h4=viaje.titulo
                     p
