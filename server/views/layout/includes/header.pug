@@ -1,41 +1,12 @@
-//- Barra superior de contacto (usando color turquesa del sitio)
-.top-bar(style="background-color: #15B9D5;").text-white.py-2.d-none.d-md-block
-    .container
-        .row.align-items-center
-            .col-md-6
-                small
-                    i.fas.fa-phone(style="font-size: 1rem; color: white;").mr-2
-                    a.text-white(href="tel:+525512345678", style="text-decoration: none;") +52 (55) 1234-5678
-                    span.mx-3 |
-                    i.fas.fa-envelope(style="font-size: 1rem; color: white;").mr-2
-                    a.text-white(href="mailto:contacto@agenciaviajes.com", style="text-decoration: none;") contacto@agenciaviajes.com
-            .col-md-6.text-right
-                small.mr-3 Síguenos:
-                a.text-white.ml-2(href="https://facebook.com", target="_blank", rel="noopener", aria-label="Facebook", style="text-decoration: none;")
-                    i.fab.fa-facebook-f(style="font-size: 1rem;")
-                a.text-white.ml-3(href="https://instagram.com", target="_blank", rel="noopener", aria-label="Instagram", style="text-decoration: none;")
-                    i.fab.fa-instagram(style="font-size: 1rem;")
-                a.text-white.ml-3(href="https://twitter.com", target="_blank", rel="noopener", aria-label="Twitter", style="text-decoration: none;")
-                    i.fab.fa-twitter(style="font-size: 1rem;")
-                a.text-white.ml-3(href="https://wa.me/525512345678", target="_blank", rel="noopener", aria-label="WhatsApp", style="text-decoration: none;")
-                    i.fab.fa-whatsapp(style="font-size: 1rem;")
-
-//- Separador entre barra y navbar
-.d-none.d-md-block(style="height: 1px; background-color: rgba(0,0,0,0.1);")
-
-//- Navbar principal (manteniendo estructura original)
 header
     .navegacion
         .container
-            .row.justify-content-center.justify-content-md-between.align-items-center.py-4
+            .row.justify-content-center.justifity.content-md-between.align-items-center.py-4
                 .col-6.col-md-4
                     a(href="/")
-                        img(src="/img/logo.svg", alt="Logo Agencia de Viajes", class="img-fluid", style="max-height: 60px;")
-                .col-6.col-md-8
-                    nav.nav.justify-content-center.justify-content-md-end.align-items-center
-                        a.nav-link(href="/nosotros", class=(ruta==='/nosotros' ? 'active' :'')) Nosotros
-                        a.nav-link(href="/viajes", class=(ruta==='/viajes' ? 'active' :'')) Viajes
-                        a.nav-link(href="/testimoniales", class=(ruta==='/testimoniales' ? 'active' :'')) Testimoniales
-                        a.btn.btn-success.ml-3.d-none.d-lg-inline-block(href="/viajes", style="padding: .6rem 1.5rem; font-size: 1rem;")
-                            i.fas.fa-plane.mr-2(style="font-size: 1rem;")
-                            | Reservar                        
+                        img(src="/img/logo.svg", alt="Logo Agencia de Viajes", class="img-fluid")
+                .col-6-col-md-8
+                    nav.nav.justify-content-center.justify-content-md-end
+                        a.nav-link(href="/nosotros" class=(ruta==='/nosotros' ? 'active' :'')) Nosotros
+                        a.nav-link(href="/viajes" class=(ruta==='/viajes' ? 'active' :'')) Viajes
+                        a.nav-link(href="/testimoniales" class=(ruta==='/testimoniales' ? 'active' :'')) Testimoniales                        

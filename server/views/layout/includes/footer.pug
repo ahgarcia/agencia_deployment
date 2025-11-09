@@ -1,80 +1,11 @@
-//- Footer profesional con 4 columnas (usando colores del sitio)
-footer(style="background-color: white; border-top: 3px solid #15B9D5;").pt-5.pb-3
-    .container
-        .row
-            //- Columna 1: Sobre Nosotros
-            .col-md-3.mb-4
-                img(src="/img/logo.svg", alt="Logo", class="img-fluid mb-3", style="max-width: 150px;")
-                p(style="font-size: 0.9rem; line-height: 1.6;") Más de 10 años creando experiencias de viaje inolvidables. Tu próxima aventura comienza aquí.
-
-                //- Redes sociales
-                .social-links.mt-3
-                    a.mr-3(href="https://facebook.com", target="_blank", rel="noopener", aria-label="Facebook", style="text-decoration: none;")
-                        i.fab.fa-facebook-f(style="color: #DC135F; font-size: 1.5rem;")
-                    a.mr-3(href="https://instagram.com", target="_blank", rel="noopener", aria-label="Instagram", style="text-decoration: none;")
-                        i.fab.fa-instagram(style="color: #DC135F; font-size: 1.5rem;")
-                    a.mr-3(href="https://twitter.com", target="_blank", rel="noopener", aria-label="Twitter", style="text-decoration: none;")
-                        i.fab.fa-twitter(style="color: #DC135F; font-size: 1.5rem;")
-                    a(href="https://wa.me/525512345678", target="_blank", rel="noopener", aria-label="WhatsApp", style="text-decoration: none;")
-                        i.fab.fa-whatsapp(style="color: #DC135F; font-size: 1.5rem;")
-
-            //- Columna 2: Enlaces Rápidos
-            .col-md-3.mb-4
-                h5.mb-3(style="font-family: 'Staatliches', cursive; color: #15B9D5; font-size: 1.8rem;") Enlaces Rápidos
-                nav.nav.flex-column
-                    a.nav-link.px-0.py-1(href="/", style="color: black; font-size: 1rem; text-decoration: none;")
-                        i.fas.fa-chevron-right.mr-2(style="color: #DC135F; font-size: 0.8rem;")
-                        | Inicio
-                    a.nav-link.px-0.py-1(href="/nosotros", style="color: black; font-size: 1rem; text-decoration: none;")
-                        i.fas.fa-chevron-right.mr-2(style="color: #DC135F; font-size: 0.8rem;")
-                        | Nosotros
-                    a.nav-link.px-0.py-1(href="/viajes", style="color: black; font-size: 1rem; text-decoration: none;")
-                        i.fas.fa-chevron-right.mr-2(style="color: #DC135F; font-size: 0.8rem;")
-                        | Viajes
-                    a.nav-link.px-0.py-1(href="/testimoniales", style="color: black; font-size: 1rem; text-decoration: none;")
-                        i.fas.fa-chevron-right.mr-2(style="color: #DC135F; font-size: 0.8rem;")
-                        | Testimoniales
-
-            //- Columna 3: Contacto
-            .col-md-3.mb-4
-                h5.mb-3(style="font-family: 'Staatliches', cursive; color: #15B9D5; font-size: 1.8rem;") Contáctanos
-                ul.list-unstyled(style="font-size: 0.9rem;")
-                    li.mb-2
-                        i.fas.fa-map-marker-alt.mr-2(style="color: #DC135F; font-size: 1.2rem;")
-                        span(style="color: black;") Av. Reforma 123, CDMX, México
-                    li.mb-2
-                        i.fas.fa-phone.mr-2(style="color: #DC135F; font-size: 1.2rem;")
-                        a(href="tel:+525512345678", style="color: black; text-decoration: none;") +52 (55) 1234-5678
-                    li.mb-2
-                        i.fas.fa-envelope.mr-2(style="color: #DC135F; font-size: 1.2rem;")
-                        a(href="mailto:info@agenciaviajes.com", style="color: black; text-decoration: none;") info@agenciaviajes.com
-                    li.mb-2
-                        i.fas.fa-clock.mr-2(style="color: #DC135F; font-size: 1.2rem;")
-                        span(style="color: black;") Lun - Vie: 9:00 - 18:00
-
-            //- Columna 4: Newsletter
-            .col-md-3.mb-4
-                h5.mb-3(style="font-family: 'Staatliches', cursive; color: #15B9D5; font-size: 1.8rem;") Newsletter
-                p(style="font-size: 0.9rem; color: black;") Recibe ofertas exclusivas y tips de viaje
-                form.mt-3(action="#", method="post")
-                    .input-group.mb-2
-                        input.form-control(type="email", placeholder="Tu email", required, name="email", style="border-color: #15B9D5;")
-                        .input-group-append
-                            button.btn.btn-success(type="submit", style="padding: .5rem 1rem;")
-                                i.fas.fa-paper-plane(style="font-size: 1rem;")
-                    small(style="color: #666; font-size: 0.75rem;") No compartimos tu información
-
-        hr.my-4(style="border-color: #ddd;")
-
-        //- Copyright
-        .row
-            .col-md-6.text-center.text-md-left
-                p.copyright.mb-0(style="font-size: 0.9rem;")
-                    | © #{fechaActual} Agencia de Viajes. Todos los derechos reservados.
-            .col-md-6.text-center.text-md-right
-                small(style="color: black; font-size: 0.9rem;")
-                    a.mx-2(href="#", style="color: black; text-decoration: none;") Privacidad
-                    | |
-                    a.mx-2(href="#", style="color: black; text-decoration: none;") Términos
-                    | |
-                    a.mx-2(href="#", style="color: black; text-decoration: none;") Cookies
+footer.container.py-5
+    .row
+        .col-md-6
+            nav.nav.justify-content-center.justify-content-md-start
+                a(href="/nosotros" class="nav-link") Nosotros
+                a(href="/viajes" class="nav-link") Viajes
+                a(href="/testimoniales" class="nav-link") Testimoniales
+        .col-md-6
+            p.copyright.text-center.text-md-right
+                | Todos los Derechos Reservados
+                span= fechaActual
