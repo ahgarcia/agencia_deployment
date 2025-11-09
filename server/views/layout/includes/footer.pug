@@ -1,79 +1,11 @@
-footer.bg-dark.text-white.pt-5.pb-3
-    .container
-        .row
-            //- Columna 1: Sobre Nosotros
-            .col-md-3.mb-4
-                img(src="/img/logo.svg", alt="Logo", class="img-fluid mb-3", style="max-width: 150px; filter: brightness(0) invert(1);")
-                p.small Más de 10 años creando experiencias de viaje inolvidables. Tu próxima aventura comienza aquí.
-
-                //- Redes sociales
-                .social-links.mt-3
-                    a.text-white.mr-3(href="https://facebook.com", target="_blank", rel="noopener", aria-label="Facebook")
-                        i.fab.fa-facebook-f.fa-lg
-                    a.text-white.mr-3(href="https://instagram.com", target="_blank", rel="noopener", aria-label="Instagram")
-                        i.fab.fa-instagram.fa-lg
-                    a.text-white.mr-3(href="https://twitter.com", target="_blank", rel="noopener", aria-label="Twitter")
-                        i.fab.fa-twitter.fa-lg
-                    a.text-white(href="https://wa.me/525512345678", target="_blank", rel="noopener", aria-label="WhatsApp")
-                        i.fab.fa-whatsapp.fa-lg
-
-            //- Columna 2: Enlaces Rápidos
-            .col-md-3.mb-4
-                h5.mb-3 Enlaces Rápidos
-                nav.nav.flex-column
-                    a.nav-link.text-white-50.px-0.py-1(href="/nosotros")
-                        i.fas.fa-chevron-right.mr-2
-                        | Nosotros
-                    a.nav-link.text-white-50.px-0.py-1(href="/viajes")
-                        i.fas.fa-chevron-right.mr-2
-                        | Viajes
-                    a.nav-link.text-white-50.px-0.py-1(href="/testimoniales")
-                        i.fas.fa-chevron-right.mr-2
-                        | Testimoniales
-                    a.nav-link.text-white-50.px-0.py-1(href="/")
-                        i.fas.fa-chevron-right.mr-2
-                        | Inicio
-
-            //- Columna 3: Contacto
-            .col-md-3.mb-4
-                h5.mb-3 Contáctanos
-                ul.list-unstyled.small
-                    li.mb-2
-                        i.fas.fa-map-marker-alt.mr-2.text-success
-                        | Av. Reforma 123, CDMX, México
-                    li.mb-2
-                        i.fas.fa-phone.mr-2.text-success
-                        a.text-white-50(href="tel:+525512345678") +52 (55) 1234-5678
-                    li.mb-2
-                        i.fas.fa-envelope.mr-2.text-success
-                        a.text-white-50(href="mailto:info@agenciaviajes.com") info@agenciaviajes.com
-                    li.mb-2
-                        i.fas.fa-clock.mr-2.text-success
-                        | Lun - Vie: 9:00 - 18:00
-
-            //- Columna 4: Newsletter
-            .col-md-3.mb-4
-                h5.mb-3 Newsletter
-                p.small Recibe ofertas exclusivas y tips de viaje
-                form.mt-3(action="#", method="post")
-                    .input-group.mb-2
-                        input.form-control.form-control-sm(type="email", placeholder="Tu email", required, name="email")
-                        .input-group-append
-                            button.btn.btn-success.btn-sm(type="submit")
-                                i.fas.fa-paper-plane
-                    small.text-white-50 No compartimos tu información
-
-        hr.bg-secondary.my-4
-
-        //- Copyright
-        .row
-            .col-md-6.text-center.text-md-left
-                p.small.mb-0
-                    | © #{fechaActual} Agencia de Viajes. Todos los derechos reservados.
-            .col-md-6.text-center.text-md-right
-                small.text-white-50
-                    a.text-white-50.mx-2(href="#") Privacidad
-                    | |
-                    a.text-white-50.mx-2(href="#") Términos
-                    | |
-                    a.text-white-50.mx-2(href="#") Cookies
+footer.container.py-5
+    .row
+        .col-md-6
+            nav.nav.justify-content-center.justify-content-md-start
+                a(href="/nosotros" class="nav-link") Nosotros
+                a(href="/viajes" class="nav-link") Viajes
+                a(href="/testimoniales" class="nav-link") Testimoniales
+        .col-md-6
+            p.copyright.text-center.text-md-right
+                | Todos los Derechos Reservados
+                span= fechaActual

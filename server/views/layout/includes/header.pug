@@ -1,38 +1,12 @@
-//- Barra superior de contacto
-.top-bar.bg-dark.text-white.py-2.d-none.d-md-block
-    .container
-        .row.align-items-center
-            .col-md-6
-                small
-                    i.fas.fa-phone.mr-2
-                    a.text-white(href="tel:+525512345678") +52 (55) 1234-5678
-                    span.mx-3 |
-                    i.fas.fa-envelope.mr-2
-                    a.text-white(href="mailto:contacto@agenciaviajes.com") contacto@agenciaviajes.com
-            .col-md-6.text-right
-                small.mr-3 Síguenos:
-                a.text-white.ml-2(href="https://facebook.com", target="_blank", rel="noopener", aria-label="Facebook")
-                    i.fab.fa-facebook-f
-                a.text-white.ml-3(href="https://instagram.com", target="_blank", rel="noopener", aria-label="Instagram")
-                    i.fab.fa-instagram
-                a.text-white.ml-3(href="https://twitter.com", target="_blank", rel="noopener", aria-label="Twitter")
-                    i.fab.fa-twitter
-                a.text-white.ml-3(href="https://wa.me/525512345678", target="_blank", rel="noopener", aria-label="WhatsApp")
-                    i.fab.fa-whatsapp
-
-//- Navbar principal
-header.sticky-top.bg-white.shadow-sm
+header
     .navegacion
         .container
-            .row.justify-content-between.align-items-center.py-3
-                .col-6.col-md-3
+            .row.justify-content-center.justifity.content-md-between.align-items-center.py-4
+                .col-6.col-md-4
                     a(href="/")
-                        img(src="/img/logo.svg", alt="Logo Agencia de Viajes", class="img-fluid", style="max-height: 50px;")
-                .col-6.col-md-9
-                    nav.nav.justify-content-end.align-items-center
-                        a.nav-link.px-3(href="/nosotros", class=(ruta==='/nosotros' ? 'active font-weight-bold text-success' :'')) Nosotros
-                        a.nav-link.px-3(href="/viajes", class=(ruta==='/viajes' ? 'active font-weight-bold text-success' :'')) Viajes
-                        a.nav-link.px-3(href="/testimoniales", class=(ruta==='/testimoniales' ? 'active font-weight-bold text-success' :'')) Testimoniales
-                        a.btn.btn-success.ml-3.d-none.d-lg-inline-block(href="/viajes")
-                            i.fas.fa-plane.mr-2
-                            | Reservar                        
+                        img(src="/img/logo.svg", alt="Logo Agencia de Viajes", class="img-fluid")
+                .col-6-col-md-8
+                    nav.nav.justify-content-center.justify-content-md-end
+                        a.nav-link(href="/nosotros" class=(ruta==='/nosotros' ? 'active' :'')) Nosotros
+                        a.nav-link(href="/viajes" class=(ruta==='/viajes' ? 'active' :'')) Viajes
+                        a.nav-link(href="/testimoniales" class=(ruta==='/testimoniales' ? 'active' :'')) Testimoniales                        
