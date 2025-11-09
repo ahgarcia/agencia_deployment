@@ -5,14 +5,14 @@
                 //- Imagen con atribución
                 .imagen-viaje(style="position: relative;")
                     img(
-                        src=viaje.imagen || `/img/destinos_${viaje.imagen}.jpg`,
+                        src=viaje.imagen,
                         class="img-fluid",
                         alt=viaje.imagenData ? viaje.imagenData.altDescription : `Destino turístico: ${viaje.titulo}`,
                         loading="lazy",
                         width="400",
                         height="300",
                         style=viaje.imagenData && viaje.imagenData.color ? `background-color: ${viaje.imagenData.color}` : '',
-                        onerror="this.src='/img/default-destination.jpg'"
+                        onerror="if(this.src!='/img/destinos_grecia.jpg'){this.src='/img/destinos_grecia.jpg'}"
                     )
 
                     //- Atribución del fotógrafo (requerido por Unsplash)
