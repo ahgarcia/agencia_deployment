@@ -84,7 +84,7 @@ app.use(addResponseTimeHeader);
 // ===========================================
 
 // Archivos estáticos con caché optimizado
-app.use(express.static('public', {
+app.use(express.static(path.join(__dirname, '../public'), {
     maxAge: process.env.NODE_ENV === 'production' ? '7d' : '0', // 7 días en producción, sin cache en desarrollo
     etag: true, // Habilitar ETag para validación de cache
     lastModified: true, // Incluir header Last-Modified
