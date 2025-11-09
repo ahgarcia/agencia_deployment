@@ -1,54 +1,15 @@
 <!DOCTYPE html>
-html(lang="es")
+html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-
-        //- SEO Meta Tags
-        meta(name="description", content=pagina === 'Próximos Viajes' ? 'Descubre destinos increíbles con Escápate Conmigo. Agencia de viajes especializada en experiencias únicas y memorables.' : `${pagina} - Agencia de viajes Escápate Conmigo`)
-        meta(name="keywords", content="viajes, agencia de viajes, destinos, turismo, vacaciones, escapadas")
-        meta(name="author", content="Andrés Hernández García")
-        meta(name="robots", content="index, follow")
-
-        //- Open Graph / Facebook
-        meta(property="og:type", content="website")
-        meta(property="og:title", content=`${titulo} | ${pagina}`)
-        meta(property="og:description", content="Descubre destinos increíbles con Escápate Conmigo")
-        meta(property="og:site_name", content=titulo)
-
-        //- Twitter Card
-        meta(name="twitter:card", content="summary_large_image")
-        meta(name="twitter:title", content=`${titulo} | ${pagina}`)
-        meta(name="twitter:description", content="Descubre destinos increíbles con Escápate Conmigo")
-
-        //- Favicon
-        link(rel="icon", type="image/x-icon", href="/img/logo.jpg")
-        link(rel="apple-touch-icon", href="/img/logo.jpg")
-
-        //- Preconnect to external resources for performance
-        link(rel="preconnect", href="https://fonts.googleapis.com")
-        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-        link(rel="preconnect", href="https://stackpath.bootstrapcdn.com")
-        link(rel="preconnect", href="https://cdnjs.cloudflare.com")
-
-        //- Stylesheets
-        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
         link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;1,700&family=Staatliches&display=swap', rel='stylesheet')
-        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css', integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q", crossorigin="anonymous")
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css')
         link(rel="stylesheet", href="/css/style.css")
-
-        //- Title
         title #{titulo} | #{pagina}
-
     body(class=clase)
-        //- Skip to main content for accessibility
-        a.sr-only.sr-only-focusable(href="#main-content") Saltar al contenido principal
-
         include includes/header
-
-        main#main-content(role="main")
-            block slider
-            block contenido
-
+        block slider
+        block contenido
         include includes/footer

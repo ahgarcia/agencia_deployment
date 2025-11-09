@@ -1,12 +1,11 @@
-p.text-center.lead Lee sobre nuestros clientes y sus experiencias
-.row.testimoniales(role="region", aria-label="Testimoniales de clientes")
+blockquote.text-center Lee sobre nuestros clientes y sus experiencias
+.row.testimoniales
     each testimonial in testimoniales
-        .col-md-6.col-lg-4.mb-4
-            article.card(role="article")
+        .col-mb-6.col-lg-4.mb-4
+            .card
                 .card-body
-                    blockquote.blockquote(cite=testimonial.nombre)
+                    blockquote.blockquote
                         p.mb-0
-                            | "#{testimonial.mensaje}"
+                            | #{testimonial.mensaje}
                         footer.blockquote-footer
-                            cite(title=`Testimonial de ${testimonial.nombre}`)
-                                | #{testimonial.nombre}
+                            | #{testimonial.nombre}
