@@ -76,7 +76,6 @@ h3 {
 }
 
 .hero__title {
-    font-family: 'Staatliches', cursive;
     color: #fff;
     font-size: 3rem;
     line-height: 1.1;
@@ -167,18 +166,57 @@ em.aventura {
     }
 }
 
-/* =============== RESTO DE TU CSS ORIGINAL =============== */
+/* Pulidos hero */
+.slider__content {
+    max-width: 720px;
+}
 
+.slider .btn+.btn {
+    margin-left: .75rem;
+}
+
+.hero__subtitle {
+    margin-top: .25rem;
+    margin-bottom: .85rem;
+}
+
+.slider__scroll i {
+    opacity: .9;
+}
+
+.slider__scroll:hover i {
+    transform: translate(-50%, -8px);
+}
+
+@media (max-width:575px) {
+    .slider__content {
+        max-width: 92vw;
+    }
+
+    .slider .btn {
+        width: 100%;
+        margin-bottom: .6rem;
+    }
+
+    .slider .btn+.btn {
+        margin-left: 0;
+    }
+}
+
+/* =============== HEADER SOBRE HERO =============== */
 .home {
     position: relative;
 }
 
+/* Header visible sobre el hero con gradiente para legibilidad */
 .home .navegacion {
-    background: transparent;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 5;
+    /* por encima del overlay del hero */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
 }
 
 .nav-link.active {
@@ -195,6 +233,7 @@ p {
     line-height: 2;
 }
 
+/* Color sólido de navegación para otras secciones */
 .navegacion {
     background-color: #15B9D5;
 }
@@ -220,6 +259,7 @@ footer .nav a,
     height: 100px;
 }
 
+/* =============== DESCUENTO =============== */
 .descuento {
     height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
@@ -293,8 +333,7 @@ i {
     margin-top: 1rem;
 }
 
-/* ========= PAGINACIÓN ========= */
-
+/* =============== PAGINACIÓN =============== */
 .pagination {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -336,7 +375,7 @@ i {
     color: #999;
 }
 
-/* ========= FOOTER RESPONSIVE ========= */
+/* =============== FOOTER RESPONSIVO =============== */
 footer {
     margin-top: auto;
     border-top: 1px solid #e0e0e0;
@@ -407,7 +446,7 @@ footer .copyright {
     }
 }
 
-/* ========= HEADER RESPONSIVE ========= */
+/* =============== HEADER RESPONSIVO BASE =============== */
 header {
     width: 100%;
 }
@@ -473,7 +512,7 @@ header .nav a {
 @media (max-width: 575px) {
     header .row {
         padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
+        padding-bottom: 1rem !Important;
     }
 
     header .nav {

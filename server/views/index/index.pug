@@ -12,14 +12,28 @@ block slider
                 i.fas.fa-chevron-down(aria-hidden="true")
 
 block contenido
-    main.container.mt-5
+        main.container.mt-5
         h2#sobre-nosotros.text-center.mb-5 Sobre Nosotros
-        .row.md-5
+        .row.align-items-center
             .col-md-6
-                p Suspendisse tempor consectetur dui eget posuere. Nam convallis dolor ligula, et tincidunt lectus dictum ut. Cras pulvinar est in nibh tincidunt varius. In id eros et neque commodo sollicitudin nec eu nisi.
-                p Morbi rutrum scelerisque est eu lobortis. Sed vehicula vehicula nulla dictum venenatis. Sed hendrerit turpis eros, vitae egestas dolor vulputate id. Mauris ac consequat metus. Donec faucibus odio dolor, vel sodales enim posuere sed. Nam varius ex ex, nec cursus ligula varius vitae.
+                p Más que una agencia, somos creadores de experiencias memorables. Diseñamos viajes a la medida para que disfrutes sin preocuparte por nada.
+                p Te acompañamos de principio a fin: asesoría experta, itinerarios inteligentes y soporte continuo. Viajar no es solo visitar lugares, es crear recuerdos que duran para siempre.
+                ul.beneficios.list-unstyled.mt-3
+                    li
+                        i.fas.fa-compass(aria-hidden="true")
+                        |  Asesoría personalizada
+                    li
+                        i.fas.fa-plane-departure(aria-hidden="true")
+                        |  Mejores rutas y horarios
+                    li
+                        i.fas.fa-concierge-bell(aria-hidden="true")
+                        |  Soporte 24/7
+                    li
+                        i.fas.fa-shield-alt(aria-hidden="true")
+                        |  Reservas seguras
+                a.btn.btn-success.mt-3(href="/nosotros" aria-label="Conócenos") Conócenos
             .col-md-6
-                img(src="/img/inicio_nosotros.jpg", class="img-fluid", alt="Terraza frente al mar")
+                img(src="/img/inicio_nosotros.jpg", class="img-fluid rounded-lg", alt="Terraza frente al mar con vista al océano")
 
         h2#viajes.text-center.my-5 Próximos Viajes
         include ../layout/partials/viajes
