@@ -1,4 +1,5 @@
 extends ../layout/index
+
 block slider
     .slider(role="banner" aria-label="Portada")
         .slider__content.container
@@ -12,7 +13,7 @@ block slider
                 i.fas.fa-chevron-down(aria-hidden="true")
 
 block contenido
-        main.container.mt-5
+    main.container.mt-5
         h2#sobre-nosotros.text-center.mb-5 Sobre Nosotros
         .row.align-items-center
             .col-md-6
@@ -48,6 +49,7 @@ block contenido
                         p.fecha 20 de Julio 2020 - 28 de Julio 2020
                         p.precio $2,500 USD
                 .col-md-6
+
     .container
         h2.text-center.my-5 Testimoniales
         include ../layout/partials/testimoniales
