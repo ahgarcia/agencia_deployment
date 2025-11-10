@@ -1,6 +1,7 @@
+/* =======================
+   TIPOGRAFÍA BASE
+   ======================= */
 :root {
-    font-family: 'Staatliches', cursive;
-    font-family: 'Covered By Your Grace', cursive;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -8,9 +9,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* --------------------------------
-   Headings
---------------------------------- */
+/* Titulares en Staatliches, color branding */
 h1,
 h2,
 h3 {
@@ -30,9 +29,9 @@ h3 {
     font-size: 3rem;
 }
 
-/* --------------------------------
-   Buttons
---------------------------------- */
+/* =======================
+   BOTONES BRANDING
+   ======================= */
 .btn-success {
     background-color: #DC135F;
     border-color: #DC135F;
@@ -57,15 +56,15 @@ h3 {
     color: #111;
 }
 
-/* =================================
-   HERO (Home)
-================================= */
+/* =======================
+   HERO (HEADER VISUAL)
+   ======================= */
 .slider {
     position: relative;
     background: url(../img/superior.jpg) center/cover no-repeat;
     color: #fff;
     min-height: 70vh;
-    height: auto;
+    /* móvil */
     display: flex;
     align-items: center;
 }
@@ -82,32 +81,44 @@ h3 {
     }
 }
 
-/* Overlay para contraste; más fuerte en pantallas pequeñas */
+/* Oscurecedor para legibilidad */
 .slider::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .35), rgba(0, 0, 0, .65));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .28), rgba(0, 0, 0, .58));
+    z-index: 0;
 }
 
-@media (min-width:768px) {
-    .slider::before {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
-    }
-}
-
-/* Contenido hero */
 .slider__content {
     position: relative;
     z-index: 1;
     max-width: 720px;
 }
 
+em.aventura,
+.slider em {
+    font-family: 'Covered By Your Grace', cursive;
+    display: block;
+    line-height: .9;
+    color: rgba(255, 255, 255, .75);
+    font-size: 3rem;
+    margin-bottom: .2rem;
+}
+
+@media (min-width:768px) {
+
+    em.aventura,
+    .slider em {
+        font-size: 6rem;
+    }
+}
+
 .hero__title {
     color: #fff;
-    font-size: 3rem;
     line-height: 1.1;
     text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+    font-size: 3rem;
 }
 
 @media (min-width:768px) {
@@ -118,31 +129,31 @@ h3 {
 
 .hero__subtitle {
     max-width: 46ch;
-    margin-top: .25rem;
-    margin-bottom: .85rem;
+    margin: .25rem 0 .85rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+}
+
+/* CTA stack en mobile */
+.slider .btn {
+    border-radius: 12px;
 }
 
 .slider .btn+.btn {
     margin-left: .75rem;
 }
 
-/* “aventura” */
-.slider em,
-em.aventura {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 3rem;
-    line-height: .9;
-    color: rgba(255, 255, 255, .75);
-    display: block;
-    margin-bottom: .2rem;
-}
+@media (max-width:575px) {
+    .slider__content {
+        max-width: 92vw;
+    }
 
-@media (min-width:768px) {
+    .slider .btn {
+        width: 100%;
+        margin-bottom: .6rem;
+    }
 
-    .slider em,
-    em.aventura {
-        font-size: 6rem;
+    .slider .btn+.btn {
+        margin-left: 0;
     }
 }
 
@@ -154,11 +165,6 @@ em.aventura {
     transform: translateX(-50%);
     display: inline-block;
     padding: .5rem;
-    outline: 0;
-}
-
-.slider__scroll:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, .6);
 }
 
 .slider__scroll i {
@@ -190,25 +196,10 @@ em.aventura {
     }
 }
 
-/* Mobile hero */
-@media (max-width:575px) {
-    .slider__content {
-        max-width: 92vw;
-    }
-
-    .slider .btn {
-        width: 100%;
-        margin-bottom: .6rem;
-    }
-
-    .slider .btn+.btn {
-        margin-left: 0;
-    }
-}
-
-/* =================================
-   HEADER (sobre el hero SOLO en home)
-================================= */
+/* =======================
+   HEADER SOBRE EL HERO
+   ======================= */
+/* En la home, el header se superpone con gradiente y texto blanco */
 .home {
     position: relative;
 }
@@ -218,20 +209,249 @@ em.aventura {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 5;
+    /* por encima del overlay del hero */
     background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
 }
 
-/* Color sólido para el resto de páginas */
+.home header .nav a {
+    color: #fff !important;
+}
+
+.nav-link.active {
+    border-bottom: 5px solid white;
+}
+
+/* En páginas internas header sólido de marca */
 .navegacion {
     background-color: #15B9D5;
 }
 
-.nav-link.active {
-    border-bottom: 5px solid #fff;
+/* =======================
+   TEXTO / LISTAS / ICONOS
+   ======================= */
+blockquote {
+    font-weight: bold;
+    line-height: 2;
 }
 
-/* Base header responsiveness */
+p {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+.listado-iconos {
+    background-color: rgb(245, 245, 245);
+}
+
+.listado-iconos img {
+    height: 100px;
+}
+
+i {
+    color: #DC135F;
+    font-size: 2rem;
+}
+
+/* =======================
+   SECCIÓN DESCUENTO
+   ======================= */
+.descuento {
+    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width:768px) {
+    .descuento {
+        background-image:
+            linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 50%, transparent 50%, transparent 100%),
+            url(../img/cupon.jpg);
+    }
+}
+
+.descuento .contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    color: #fff;
+}
+
+.descuento p {
+    font-family: 'Staatliches', cursive;
+    line-height: .8;
+}
+
+.descuento .titulo {
+    font-size: 2.4rem;
+}
+
+.descuento .precio {
+    color: #15B9D5;
+    font-size: 3rem;
+}
+
+/* =======================
+   CARDS / PROXIMOS VIAJES
+   ======================= */
+.proximos-viajes p {
+    font-size: .9rem;
+}
+
+/* =======================
+   TESTIMONIALES
+   ======================= */
+.testimoniales p {
+    font-size: .8rem;
+    font-weight: normal;
+}
+
+.testimoniales p::before {
+    background-image: url(../img/quote.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px;
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.blockquote-footer {
+    text-align: right;
+    color: #DC135F;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* =======================
+   PAGINACIÓN
+   ======================= */
+.pagination {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pagination .page-link {
+    color: #15B9D5;
+    border: 2px solid #15B9D5;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.4rem;
+    padding: .6rem 1.2rem;
+    margin: 0 .3rem;
+    border-radius: .5rem;
+    transition: all .3s ease;
+}
+
+.pagination .page-link:hover {
+    background: #15B9D5;
+    color: #fff;
+    border-color: #15B9D5;
+}
+
+.pagination .page-item.active .page-link {
+    background: #DC135F;
+    border-color: #DC135F;
+    color: #fff;
+    font-weight: bold;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #999;
+    border-color: #ddd;
+    background: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.pagination .page-item.disabled .page-link:hover {
+    background: #f8f9fa;
+    color: #999;
+}
+
+.text-muted {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* =======================
+   FOOTER RESPONSIVO
+   ======================= */
+footer {
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer .nav {
+    flex-wrap: wrap;
+}
+
+footer .nav a {
+    padding: .5rem 1rem;
+    white-space: nowrap;
+}
+
+footer .copyright {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+@media (min-width:768px) {
+    footer .nav {
+        flex-wrap: nowrap;
+    }
+
+    footer .nav a {
+        padding: .5rem 1.5rem;
+    }
+}
+
+@media (max-width:767px) {
+    footer {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    footer .nav {
+        justify-content: center !important;
+        margin-bottom: 1rem;
+    }
+
+    footer .nav a {
+        font-size: 1.4rem;
+        padding: .5rem .8rem;
+    }
+
+    footer .copyright {
+        font-size: 1.3rem;
+        text-align: center !important;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width:575px) {
+    footer .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .nav a {
+        font-size: 1.3rem;
+        padding: .4rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer .copyright {
+        font-size: 1.2rem;
+    }
+}
+
+/* =======================
+   HEADER RESPONSIVO BASE
+   ======================= */
 header {
     width: 100%;
 }
@@ -250,9 +470,6 @@ header .nav {
 }
 
 header .nav a {
-    font-family: 'Staatliches', cursive;
-    font-size: 2rem;
-    color: white;
     white-space: nowrap;
     padding: .5rem 1rem;
     transition: all .3s ease;
@@ -320,6 +537,7 @@ header .nav a {
     header .nav a.active {
         background-color: rgba(255, 255, 255, .2);
         border-radius: 4px;
+        border-bottom: none !important;
     }
 
     header img {
@@ -329,6 +547,9 @@ header .nav a {
     header .col-6 {
         text-align: center;
         margin-bottom: .5rem;
+    }
+
+    header .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
@@ -342,244 +563,5 @@ header .nav a {
 
     header img {
         max-width: 100px;
-    }
-}
-
-/* --------------------------------
-   Texto, párrafos y blockquotes
---------------------------------- */
-blockquote {
-    font-weight: bold;
-    line-height: 2;
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-/* =================================
-   SOBRE NOSOTROS (pulidos)
-================================= */
-.beneficios .beneficio {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    margin: .35rem 0;
-    font-size: 1.05rem;
-}
-
-.beneficios .beneficio i {
-    color: #DC135F;
-    font-size: 1.4rem;
-    width: 1.4rem;
-    text-align: center;
-}
-
-.about-copy {
-    margin-bottom: .6rem;
-}
-
-.about-cta {
-    margin-top: 1rem;
-}
-
-/* =================================
-   DESCUENTO
-================================= */
-.descuento {
-    height: 400px;
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@media (min-width:768px) {
-    .descuento {
-        height: 400px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 50%, transparent 50%, transparent 100%), url(../img/cupon.jpg);
-    }
-}
-
-.descuento .contenido {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    color: white;
-}
-
-.descuento p {
-    font-family: 'Staatliches', cursive;
-    line-height: .8;
-}
-
-.descuento .titulo {
-    font-size: 2.4rem;
-}
-
-.descuento .precio {
-    color: #15B9D5;
-    font-size: 3rem;
-}
-
-/* =================================
-   VIAJES (cards) / Testimoniales
-================================= */
-.proximos-viajes p {
-    font-size: .9rem;
-}
-
-i {
-    color: #DC135F;
-    font-size: 2rem;
-}
-
-.testimoniales p {
-    font-size: .8rem;
-    font-weight: normal;
-}
-
-.testimoniales p::before {
-    background-image: url(../img/quote.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 40px;
-    content: '';
-    width: 40px;
-    height: 40px;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.blockquote-footer {
-    text-align: right;
-    color: #DC135F;
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-/* =================================
-   PAGINACIÓN
-================================= */
-.pagination {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-.pagination .page-link {
-    color: #15B9D5;
-    border: 2px solid #15B9D5;
-    font-family: 'Staatliches', cursive;
-    font-size: 1.4rem;
-    padding: .6rem 1.2rem;
-    margin: 0 .3rem;
-    border-radius: .5rem;
-    transition: all .3s ease;
-}
-
-.pagination .page-link:hover {
-    background-color: #15B9D5;
-    color: #fff;
-    border-color: #15B9D5;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #DC135F;
-    border-color: #DC135F;
-    color: #fff;
-    font-weight: bold;
-}
-
-.pagination .page-item.disabled .page-link {
-    color: #999;
-    border-color: #ddd;
-    background-color: #f8f9fa;
-    cursor: not-allowed;
-}
-
-.pagination .page-item.disabled .page-link:hover {
-    background-color: #f8f9fa;
-    color: #999;
-}
-
-.text-muted {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-/* =================================
-   FOOTER
-================================= */
-footer {
-    margin-top: auto;
-    border-top: 1px solid #e0e0e0;
-}
-
-footer .nav {
-    flex-wrap: wrap;
-}
-
-footer .nav a {
-    padding: .5rem 1rem;
-    white-space: nowrap;
-}
-
-footer .copyright {
-    margin-bottom: 0;
-    line-height: 1.5;
-    font-family: 'Staatliches', cursive;
-    font-size: 1.6rem;
-    color: black;
-}
-
-@media (min-width:768px) {
-    footer .nav {
-        flex-wrap: nowrap;
-    }
-
-    footer .nav a {
-        padding: .5rem 1.5rem;
-    }
-}
-
-@media (max-width:767px) {
-    footer {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-
-    footer .nav {
-        justify-content: center !important;
-        margin-bottom: 1rem;
-    }
-
-    footer .nav a {
-        font-size: 1.4rem;
-        padding: .5rem .8rem;
-    }
-
-    footer .copyright {
-        font-size: 1.3rem;
-        text-align: center !important;
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width:575px) {
-    footer .nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer .nav a {
-        font-size: 1.3rem;
-        padding: .4rem 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    footer .copyright {
-        font-size: 1.2rem;
     }
 }

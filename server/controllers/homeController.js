@@ -52,9 +52,11 @@ exports.mostrarInicio = async (req, res, next) => {
             order: [['id', 'DESC']]
         });
 
-        res.render('index', {
-            pagina: 'Próximos Viajes',
-            clase: 'home',
+        res.render('index/index', {
+            titulo: 'Agencia de Viajes',  // usado en <title>
+            pagina: 'Inicio',             // H1/secciones
+            clase: 'home',                // para que el header flote sobre el hero
+            ruta: '/',                    // para marcar activo en el header
             viajes: viajesConImagenes,
             testimoniales
         });
