@@ -1,12 +1,19 @@
-header
-    .navegacion
-        .container
-            .row.justify-content-between.align-items-center.py-3
-                .col-6.col-md-4
-                    a(href="/", aria-label="Inicio")
-                        img(src="/img/logo.svg", alt="Logo Agencia de Viajes", class="img-fluid logo")
-                .col-6.col-md-8
-                    nav.nav.justify-content-end(role="navigation" aria-label="Menú principal")
-                        a.nav-link(href="/nosotros" class=(ruta==='/nosotros' ? 'active' : '')) Nosotros
-                        a.nav-link(href="/viajes" class=(ruta==='/viajes' ? 'active' : '')) Viajes
-                        a.nav-link(href="/testimoniales" class=(ruta==='/testimoniales' ? 'active' : '')) Testimoniales
+header.site-header(role="banner")
+  .container
+    .d-flex.align-items-center.justify-content-between.py-3
+      a.header__brand.d-inline-flex.align-items-center(href="/", aria-label="Inicio")
+        img(src="/img/logo.svg", alt="Agencia de Viajes", class="img-fluid header__logo")
+
+      // Botón mobile
+      button.nav-toggle.d-md-none(type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú")
+        i.fas.fa-bars(aria-hidden="true")
+
+      // Nav
+      nav#primary-nav.primary-nav
+        ul.nav.mb-0
+          li.nav-item
+            a.nav-link(href="/nosotros" class=(ruta === '/nosotros' ? 'active' : '')) Nosotros
+          li.nav-item
+            a.nav-link(href="/viajes" class=(ruta === '/viajes' ? 'active' : '')) Viajes
+          li.nav-item
+            a.nav-link(href="/testimoniales" class=(ruta === '/testimoniales' ? 'active' : '')) Testimoniales

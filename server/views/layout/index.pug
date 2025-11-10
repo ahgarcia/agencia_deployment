@@ -52,3 +52,36 @@ html(lang="es")
             block contenido
 
         include includes/footer
+
+        //- Header: solid al hacer scroll + menú mobile
+        script.
+          (function () {
+            var header = document.querySelector('.site-header');
+            var navBtn  = document.querySelector('.nav-toggle');
+            var nav     = document.getElementById('primary-nav');
+
+            // solid/transparent según scroll
+            function onScroll() {
+              if (!header) return;
+              if (window.scrollY > 10) header.classList.add('is-solid');
+              else header.classList.remove('is-solid');
+            }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // toggle menú mobile
+            if (navBtn && nav) {
+              navBtn.addEventListener('click', function () {
+                var opened = nav.classList.toggle('open');
+                navBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+              });
+
+              // cierra al hacer click en un enlace
+              nav.addEventListener('click', function (e) {
+                if (e.target && e.target.classList.contains('nav-link')) {
+                  nav.classList.remove('open');
+                  navBtn.setAttribute('aria-expanded', 'false');
+                }
+              });
+            }
+          })();
