@@ -1,7 +1,6 @@
-/* =======================
-   TIPOGRAFÍA BASE
-   ======================= */
 :root {
+    font-family: 'Staatliches', cursive;
+    font-family: 'Covered By Your Grace', cursive;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Titulares en Staatliches, color branding */
+/* TITULARES */
 h1,
 h2,
 h3 {
@@ -29,13 +28,11 @@ h3 {
     font-size: 3rem;
 }
 
-/* =======================
-   BOTONES BRANDING
-   ======================= */
+/* BOTONES */
 .btn-success {
     background-color: #DC135F;
     border-color: #DC135F;
-    padding: .8rem 1.25rem;
+    padding: .8rem 0;
     text-transform: uppercase;
     border-radius: .8rem;
 }
@@ -45,26 +42,13 @@ h3 {
     border-color: rgb(192, 7, 78);
 }
 
-.btn-outline-light {
-    border-color: #fff;
-    color: #fff;
-}
-
-.btn-outline-light:hover,
-.btn-outline-light:focus {
-    background: #fff;
-    color: #111;
-}
-
-/* =======================
-   HERO (HEADER VISUAL)
-   ======================= */
+/* ================= HERO ================= */
 .slider {
     position: relative;
     background: url(../img/superior.jpg) center/cover no-repeat;
     color: #fff;
     min-height: 70vh;
-    /* móvil */
+    height: auto;
     display: flex;
     align-items: center;
 }
@@ -81,44 +65,25 @@ h3 {
     }
 }
 
-/* Oscurecedor para legibilidad */
+/* overlay */
 .slider::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .28), rgba(0, 0, 0, .58));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
     z-index: 0;
 }
 
 .slider__content {
     position: relative;
     z-index: 1;
-    max-width: 720px;
-}
-
-em.aventura,
-.slider em {
-    font-family: 'Covered By Your Grace', cursive;
-    display: block;
-    line-height: .9;
-    color: rgba(255, 255, 255, .75);
-    font-size: 3rem;
-    margin-bottom: .2rem;
-}
-
-@media (min-width:768px) {
-
-    em.aventura,
-    .slider em {
-        font-size: 6rem;
-    }
 }
 
 .hero__title {
     color: #fff;
+    font-size: 3rem;
     line-height: 1.1;
     text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
-    font-size: 3rem;
 }
 
 @media (min-width:768px) {
@@ -129,35 +94,47 @@ em.aventura,
 
 .hero__subtitle {
     max-width: 46ch;
-    margin: .25rem 0 .85rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    margin-bottom: .5rem;
 }
 
-/* CTA stack en mobile */
+/* texto “aventura” */
+.slider em,
+em.aventura {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 3rem;
+    line-height: .9;
+    color: rgba(255, 255, 255, .7);
+    display: block;
+    margin-bottom: .2rem;
+}
+
+@media (min-width:768px) {
+
+    .slider em,
+    em.aventura {
+        font-size: 6rem;
+    }
+}
+
+/* botones hero */
 .slider .btn {
     border-radius: 12px;
+    padding: .8rem 1.25rem;
 }
 
-.slider .btn+.btn {
-    margin-left: .75rem;
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
 }
 
-@media (max-width:575px) {
-    .slider__content {
-        max-width: 92vw;
-    }
-
-    .slider .btn {
-        width: 100%;
-        margin-bottom: .6rem;
-    }
-
-    .slider .btn+.btn {
-        margin-left: 0;
-    }
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background: #fff;
+    color: #111;
 }
 
-/* Indicador scroll */
+/* scroll hint */
 .slider__scroll {
     position: absolute;
     left: 50%;
@@ -165,71 +142,77 @@ em.aventura,
     transform: translateX(-50%);
     display: inline-block;
     padding: .5rem;
+    outline: 0;
+    z-index: 1;
+}
+
+.slider__scroll:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .6);
 }
 
 .slider__scroll i {
     font-size: 1.25rem;
     color: #fff;
     opacity: .9;
-    animation: hero-bounce 1.6s infinite;
 }
 
 .slider__scroll:hover i {
-    transform: translate(-50%, -8px);
+    transform: translateY(-2px);
 }
 
-@keyframes hero-bounce {
-
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-    }
-
-    50% {
-        transform: translate(-50%, -6px);
-    }
+/* ================= HEADER ================= */
+/* header base */
+header {
+    width: 100%;
 }
 
-@media (prefers-reduced-motion:reduce) {
-    .slider__scroll i {
-        animation: none;
-    }
+header .navegacion {
+    width: 100%;
 }
 
-/* =======================
-   HEADER SOBRE EL HERO
-   ======================= */
-/* En la home, el header se superpone con gradiente y texto blanco */
-.home {
-    position: relative;
+header img {
+    max-width: 100%;
+    height: auto;
 }
 
+header .nav {
+    flex-wrap: wrap;
+}
+
+header .nav a {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+/* header fijo sobre el hero SOLO en home */
 .home .navegacion {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 20;
     /* por encima del overlay del hero */
     background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
 }
 
-.home header .nav a {
-    color: #fff !important;
+/* header color sólido en otras páginas */
+.navegacion {
+    background-color: #15B9D5;
+}
+
+/* links */
+header .nav a {
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+    color: white;
 }
 
 .nav-link.active {
     border-bottom: 5px solid white;
 }
 
-/* En páginas internas header sólido de marca */
-.navegacion {
-    background-color: #15B9D5;
-}
-
-/* =======================
-   TEXTO / LISTAS / ICONOS
-   ======================= */
+/* TIPOGRAFÍA & TEXTO */
 blockquote {
     font-weight: bold;
     line-height: 2;
@@ -240,6 +223,14 @@ p {
     line-height: 2;
 }
 
+/* FOOTER / ICONOS / LISTADO */
+footer .nav a,
+.copyright {
+    font-family: 'Staatliches', cursive;
+    font-size: 1.6rem;
+    color: black;
+}
+
 .listado-iconos {
     background-color: rgb(245, 245, 245);
 }
@@ -248,14 +239,7 @@ p {
     height: 100px;
 }
 
-i {
-    color: #DC135F;
-    font-size: 2rem;
-}
-
-/* =======================
-   SECCIÓN DESCUENTO
-   ======================= */
+/* ================= DESCUENTO ================= */
 .descuento {
     height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
@@ -265,9 +249,12 @@ i {
 
 @media (min-width:768px) {
     .descuento {
-        background-image:
-            linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 50%, transparent 50%, transparent 100%),
-            url(../img/cupon.jpg);
+        height: 400px;
+        background-image: linear-gradient(to right,
+                rgba(0, 0, 0, .5) 0%,
+                rgba(0, 0, 0, .5) 50%,
+                transparent 50%,
+                transparent 100%), url(../img/cupon.jpg);
     }
 }
 
@@ -293,16 +280,16 @@ i {
     font-size: 3rem;
 }
 
-/* =======================
-   CARDS / PROXIMOS VIAJES
-   ======================= */
+/* TARJETAS VIAJES & VARIOS */
 .proximos-viajes p {
     font-size: .9rem;
 }
 
-/* =======================
-   TESTIMONIALES
-   ======================= */
+i {
+    color: #DC135F;
+    font-size: 2rem;
+}
+
 .testimoniales p {
     font-size: .8rem;
     font-weight: normal;
@@ -327,9 +314,7 @@ i {
     margin-top: 1rem;
 }
 
-/* =======================
-   PAGINACIÓN
-   ======================= */
+/* ================= PAGINACIÓN ================= */
 .pagination {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -366,19 +351,7 @@ i {
     cursor: not-allowed;
 }
 
-.pagination .page-item.disabled .page-link:hover {
-    background: #f8f9fa;
-    color: #999;
-}
-
-.text-muted {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-/* =======================
-   FOOTER RESPONSIVO
-   ======================= */
+/* ================= FOOTER RESPONSIVO ================= */
 footer {
     margin-top: auto;
     border-top: 1px solid #e0e0e0;
@@ -449,32 +422,7 @@ footer .copyright {
     }
 }
 
-/* =======================
-   HEADER RESPONSIVO BASE
-   ======================= */
-header {
-    width: 100%;
-}
-
-header .navegacion {
-    width: 100%;
-}
-
-header img {
-    max-width: 100%;
-    height: auto;
-}
-
-header .nav {
-    flex-wrap: wrap;
-}
-
-header .nav a {
-    white-space: nowrap;
-    padding: .5rem 1rem;
-    transition: all .3s ease;
-}
-
+/* ================= HEADER RESPONSIVO ================= */
 @media (min-width:768px) {
     header .nav {
         flex-wrap: nowrap;
@@ -537,7 +485,6 @@ header .nav a {
     header .nav a.active {
         background-color: rgba(255, 255, 255, .2);
         border-radius: 4px;
-        border-bottom: none !important;
     }
 
     header img {
@@ -547,9 +494,6 @@ header .nav a {
     header .col-6 {
         text-align: center;
         margin-bottom: .5rem;
-    }
-
-    header .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
