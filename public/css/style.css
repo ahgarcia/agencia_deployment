@@ -1,33 +1,21 @@
-/* ---------------------------------------
-   style.css - versión revisada y validada
-   --------------------------------------- */
-
-/* Tipografías */
 :root {
-    --accent: #15B9D5;
-    --accent-2: #DC135F;
-    --hero-gradient: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
-    --white: #ffffff;
-    --dark: #111;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;1,700&family=Staatliches&display=swap');
-
-html,
-body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Staatliches', cursive;
+    font-family: 'Covered By Your Grace', cursive;
     font-family: 'Open Sans', sans-serif;
-    color: #222;
 }
 
-/* Headers */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ======================
+   TITULARES / TIPOGRAFÍA
+   ====================== */
 h1,
 h2,
 h3 {
     font-family: 'Staatliches', cursive;
-    color: var(--accent);
-    margin: 0 0 1rem 0;
+    color: #15B9D5;
 }
 
 h1 {
@@ -36,123 +24,162 @@ h1 {
 
 h2 {
     font-size: 2.4rem;
-    text-align: center;
 }
 
 h3 {
-    font-size: 1.6rem;
+    font-size: 3rem;
 }
 
-/* Buttons */
+p {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+blockquote {
+    font-weight: bold;
+    line-height: 2;
+}
+
+/* ======================
+   BOTONES
+   ====================== */
 .btn-success {
-    background-color: var(--accent-2);
-    border-color: var(--accent-2);
-    padding: .6rem 1rem;
+    background-color: #DC135F;
+    border-color: #DC135F;
+    padding: .8rem 0;
     text-transform: uppercase;
-    border-radius: .6rem;
-    color: #fff;
+    border-radius: .8rem;
 }
 
 .btn-success:hover {
-    background-color: #b70a4e;
-    border-color: #b70a4e;
+    background-color: rgb(184, 5, 73);
+    border-color: rgb(192, 7, 78);
 }
 
-.btn-outline-light {
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    color: #fff;
-    background: transparent;
-}
-
-.btn-outline-light:hover {
-    background: #fff;
-    color: #111;
-}
-
-/* ================= HERO ================= */
+/* ======================
+   HERO / SLIDER
+   ====================== */
 .slider {
     position: relative;
-    background: url('/img/superior.jpg') center/cover no-repeat;
+    background: url(../img/superior.jpg) center/cover no-repeat;
+    color: #fff;
     min-height: 70vh;
+    /* móvil */
+    height: auto;
+    /* evita 100vh buggy en iOS */
     display: flex;
     align-items: center;
-    color: #fff;
 }
 
-@media (min-width: 576px) {
+@media (min-width:576px) {
     .slider {
         min-height: 80vh;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width:992px) {
     .slider {
         min-height: 90vh;
     }
 }
 
+/* Overlay de contraste accesible */
 .slider::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
-    z-index: 1;
+    z-index: 0;
+    /* asegura estar debajo del header (1001) y del contenido (1) */
 }
 
 .slider__content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 720px;
-    color: #fff;
 }
 
-.slider em.aventura {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 3rem;
-    line-height: .9;
-    color: rgba(255, 255, 255, .85);
-    display: block;
-    margin-bottom: .2rem;
-}
-
-@media(min-width:768px) {
-    .slider em.aventura {
-        font-size: 6rem;
-    }
-}
-
+/* Título/subtítulo */
 .hero__title {
+    color: #fff;
     font-size: 3rem;
-    line-height: 1.05;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, .4);
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
 }
 
-@media(min-width:768px) {
+@media (min-width:768px) {
     .hero__title {
         font-size: 3.6rem;
     }
 }
 
-.lead.hero__subtitle {
+.hero__subtitle {
     max-width: 46ch;
-    margin-bottom: .6rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    margin-top: .25rem;
+    margin-bottom: .85rem;
 }
 
-/* scroll icon */
+/* “aventura” */
+.slider em,
+em.aventura {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 3rem;
+    line-height: .9;
+    color: rgba(255, 255, 255, .7);
+    display: block;
+    margin-bottom: .2rem;
+}
+
+@media (min-width:768px) {
+
+    .slider em,
+    em.aventura {
+        font-size: 6rem;
+    }
+}
+
+/* Botones del hero */
+.slider .btn {
+    border-radius: 12px;
+    padding: .8rem 1.25rem;
+}
+
+.slider .btn+.btn {
+    margin-left: .75rem;
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background: #fff;
+    color: #111;
+}
+
+/* Indicador scroll */
 .slider__scroll {
     position: absolute;
     left: 50%;
     bottom: 16px;
     transform: translateX(-50%);
-    z-index: 3;
+    display: inline-block;
+    padding: .5rem;
+    outline: 0;
+}
+
+.slider__scroll:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .6);
 }
 
 .slider__scroll i {
     font-size: 1.25rem;
     color: #fff;
-    animation: hero-bounce 1.6s infinite;
     opacity: .9;
+    animation: hero-bounce 1.6s infinite;
 }
 
 @keyframes hero-bounce {
@@ -173,225 +200,358 @@ h3 {
     }
 }
 
-/* ================= HEADER (sobre hero) ================= */
-/* por defecto header visible en todas las páginas, pero cuando body.home lo muestra encima del hero */
-.navegacion {
-    width: 100%;
-    transition: background .25s ease, padding .2s ease;
-    z-index: 1000;
-}
-
-/* Cuando estamos en la home - header encima del hero (transparente -> gradient para legibilidad) */
-body.home .navegacion {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
-    z-index: 1005;
-    /* por encima del overlay */
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-}
-
-/* Si navegas otra sección, aplica barra sólida */
-body:not(.home) .navegacion {
-    position: relative;
-    background-color: var(--accent);
-    color: #fff;
-    padding-top: .6rem;
-    padding-bottom: .6rem;
-}
-
-/* logo */
-header img.logo {
-    max-width: 200px;
-    height: auto;
-    display: block;
-}
-
-/* nav links */
-.nav a.nav-link,
-nav.nav a.nav-link {
-    color: #fff;
-    font-family: 'Staatliches', cursive;
-    font-size: 1.2rem;
-    padding: .5rem .8rem;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.nav a.nav-link:hover {
-    opacity: 0.9;
-    text-decoration: none;
-}
-
-.nav-link.active {
-    border-bottom: 4px solid rgba(255, 255, 255, .95);
-    padding-bottom: .4rem;
-}
-
-/* ================= SECCION SOBRE NOSOTROS ================= */
-main.container {
-    padding-bottom: 3rem;
-}
-
-.beneficios li {
-    margin-bottom: .8rem;
-    color: #222;
-}
-
-.beneficios i {
-    color: var(--accent-2);
-    margin-right: .6rem;
-    font-size: 1.25rem;
-}
-
-/* ================= DESCUENTO ================= */
-.descuento {
-    height: 400px;
-    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('/img/cupon.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    color: #fff;
-}
-
-.descuento .contenido {
-    padding: 2rem 0;
-}
-
-.descuento .titulo {
-    font-family: 'Staatliches', cursive;
-    font-size: 2.4rem;
-}
-
-.descuento .precio {
-    color: var(--accent);
-    font-size: 2.6rem;
-}
-
-/* tarjetas próximos viajes y testimoniales (ajustes visuales) */
-.proximos-viajes .card {
-    border: 1px solid #eee;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.proximos-viajes .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-body h2.h4 {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-/* paginación */
-.pagination .page-link {
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    padding: .5rem .9rem;
-    border-radius: .4rem;
-    font-family: 'Staatliches', cursive;
-}
-
-.pagination .page-item.active .page-link {
-    background: var(--accent-2);
-    border-color: var(--accent-2);
-    color: #fff;
-}
-
-/* testimoniales */
-.testimoniales .card {
-    border: 1px solid #eee;
-}
-
-/* footer */
-footer {
-    margin-top: 3rem;
-    padding: 2rem 0;
-    border-top: 1px solid #eee;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (min-width: 768px) {
-    header .nav a {
-        font-size: 1.4rem;
-        padding: .6rem 1rem;
-    }
-
+@media (max-width:575px) {
     .slider__content {
-        max-width: 720px;
-        padding-left: 2rem;
-    }
-}
-
-/* Mobile: centrar logo y mostrar nav en columna */
-@media (max-width: 767px) {
-    body.home .navegacion {
-        position: absolute;
-        padding-top: .6rem;
-        padding-bottom: .6rem;
-    }
-
-    header .row {
-        align-items: center;
-    }
-
-    header .logo {
-        max-width: 160px;
-        margin: 0 auto;
-        display: block;
-    }
-
-    nav.nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .25rem;
-        margin-top: .5rem;
-    }
-
-    nav.nav a.nav-link {
-        font-size: 1.2rem;
-        padding: .35rem .5rem;
-    }
-
-    .slider__content {
-        padding-left: 1rem;
-        padding-right: 1rem;
         max-width: 92vw;
     }
 
-    .slider em.aventura {
-        font-size: 4rem;
-        margin-top: 1.5rem;
+    .slider .btn {
+        width: 100%;
+        margin-bottom: .6rem;
+    }
+
+    .slider .btn+.btn {
+        margin-left: 0;
     }
 }
 
-/* pequeña corrección de importancia correct syntax */
-@media (max-width: 575px) {
+/* ======================
+   HEADER SOBRE EL HERO
+   ====================== */
+/* Home: header flotando sobre la imagen, SIEMPRE por encima del overlay */
+.home header .navegacion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    /* > 1 del contenido y > 0 del overlay */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
+}
+
+/* Resto de páginas: header pegado arriba con fondo sólido */
+body:not(.home) header .navegacion {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    background: #15B9D5;
+}
+
+/* Enlaces del menú */
+header .nav {
+    flex-wrap: wrap;
+}
+
+header .nav a {
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+    color: #fff;
+    white-space: nowrap;
+    padding: .5rem 1rem;
+    transition: all .3s ease;
+}
+
+.nav-link.active {
+    border-bottom: 5px solid #fff;
+}
+
+/* Logo */
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width:768px) {
+    header .nav {
+        flex-wrap: nowrap;
+    }
+
+    header .nav a {
+        font-size: 2rem;
+        padding: .5rem 1.5rem;
+    }
+
+    header img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width:767px) and (min-width:576px) {
+    header .row {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    header .nav {
+        justify-content: center !important;
+    }
+
+    header .nav a {
+        font-size: 1.6rem;
+        padding: .5rem .8rem;
+    }
+
+    header img {
+        max-width: 150px;
+    }
+
+    header .col-6 {
+        text-align: center;
+    }
+}
+
+@media (max-width:575px) {
     header .row {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
     }
+
+    header .nav {
+        justify-content: center !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .nav a {
+        font-size: 1.4rem;
+        padding: .4rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: none !important;
+    }
+
+    header .nav a.active {
+        background-color: rgba(255, 255, 255, .2);
+        border-radius: 4px;
+        border-bottom: none !important;
+    }
+
+    header img {
+        max-width: 120px;
+    }
+
+    header .col-6 {
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+
+    header .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
-/* utilidades */
-.text-center {
-    text-align: center;
+@media (max-width:399px) {
+    header .nav a {
+        font-size: 1.3rem;
+        padding: .3rem 0;
+    }
+
+    header img {
+        max-width: 100px;
+    }
 }
 
-.mt-3 {
+/* ======================
+   SECCIÓN DESCUENTO
+   ====================== */
+.descuento {
+    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width:768px) {
+    .descuento {
+        height: 400px;
+        background-image: linear-gradient(to right,
+                rgba(0, 0, 0, .5) 0%,
+                rgba(0, 0, 0, .5) 50%,
+                transparent 50%,
+                transparent 100%), url(../img/cupon.jpg);
+    }
+}
+
+.descuento .contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    color: white;
+}
+
+.descuento p {
+    font-family: 'Staatliches', cursive;
+    line-height: .8;
+}
+
+.descuento .titulo {
+    font-size: 2.4rem;
+}
+
+.descuento .precio {
+    color: #15B9D5;
+    font-size: 3rem;
+}
+
+/* ======================
+   TARJETAS / VARIOS
+   ====================== */
+.listado-iconos {
+    background-color: rgb(245, 245, 245);
+}
+
+.listado-iconos img {
+    height: 100px;
+}
+
+.proximos-viajes p {
+    font-size: .9rem;
+}
+
+i {
+    color: #DC135F;
+    font-size: 2rem;
+}
+
+.testimoniales p {
+    font-size: .8rem;
+    font-weight: normal;
+}
+
+.testimoniales p::before {
+    background-image: url(../img/quote.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px;
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.blockquote-footer {
+    text-align: right;
+    color: #DC135F;
+    font-weight: bold;
     margin-top: 1rem;
 }
 
-.mb-5 {
+/* ======================
+   PAGINACIÓN
+   ====================== */
+.pagination {
+    margin-top: 2rem;
     margin-bottom: 3rem;
+}
+
+.pagination .page-link {
+    color: #15B9D5;
+    border: 2px solid #15B9D5;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.4rem;
+    padding: .6rem 1.2rem;
+    margin: 0 .3rem;
+    border-radius: .5rem;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #15B9D5;
+    color: white;
+    border-color: #15B9D5;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #DC135F;
+    border-color: #DC135F;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #999;
+    border-color: #ddd;
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.pagination .page-item.disabled .page-link:hover {
+    background-color: #f8f9fa;
+    color: #999;
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+footer {
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer .nav {
+    flex-wrap: wrap;
+}
+
+footer .nav a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+footer .copyright {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    footer .nav {
+        flex-wrap: nowrap;
+    }
+
+    footer .nav a {
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    footer {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    footer .nav {
+        justify-content: center !important;
+        margin-bottom: 1rem;
+    }
+
+    footer .nav a {
+        font-size: 1.4rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    footer .copyright {
+        font-size: 1.3rem;
+        text-align: center !important;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    footer .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .nav a {
+        font-size: 1.3rem;
+        padding: 0.4rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer .copyright {
+        font-size: 1.2rem;
+    }
 }
