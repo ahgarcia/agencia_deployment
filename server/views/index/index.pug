@@ -1,8 +1,16 @@
 extends ../layout/index
 block slider
-    .slider
-        h1 Rio de Janeiro
-        em aventura
+    .slider(role="banner" aria-label="Portada")
+        .slider__content.container
+            em.aventura aventura
+            h1.hero__title Escápate con nosotros
+            p.lead.hero__subtitle Experiencias auténticas, planificación profesional y atención 24/7.
+            .d-flex.flex-wrap.mt-3
+                a.btn.btn-success.btn-lg(href="#viajes" aria-label="Ver próximos viajes") Ver próximos viajes
+                // Cambia a "#newsletter" cuando implementes la newsletter
+                a.btn.btn-outline-light.btn-lg.ml-3(href="/nosotros" aria-label="Cotiza tu viaje") Cotiza tu viaje
+            a.slider__scroll(href="#sobre-nosotros" aria-label="Sigue bajando")
+                i.fas.fa-chevron-down(aria-hidden="true")
 
 block contenido
     main.container.mt-5

@@ -420,3 +420,81 @@ header .nav a {
         max-width: 100px;
     }
 }
+
+/* ===== HERO mejorado (reusa /img/superior.jpg) ===== */
+.slider{
+  position: relative;                   /* necesario para overlay */
+  background: url(../img/superior.jpg) center/cover no-repeat;
+  color: #fff;
+  min-height: 70vh;                     /* mobile */
+  height: auto;                         /* evita 100vh en iOS */
+  display: flex;
+  align-items: center;
+}
+@media (min-width:576px){ .slider{ min-height: 80vh; } }
+@media (min-width:992px){ .slider{ min-height: 90vh; } }
+
+/* Overlay para contraste AA */
+.slider::before{
+  content:"";
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.55));
+}
+.slider__content{ position: relative; z-index: 1; }
+
+/* Tipos y jerarquía */
+.hero__title{
+  font-family: 'Staatliches', cursive;
+  color:#fff;
+  font-size: 3rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+@media (min-width:768px){ .hero__title{ font-size: 3.6rem; } }
+.hero__subtitle{
+  max-width: 46ch;
+  text-shadow: 0 1px 6px rgba(0,0,0,.25);
+  margin-bottom: .5rem;
+}
+
+/* Mantén tu em "aventura" pero dale mejor escala/responsive */
+.slider em,
+em.aventura{
+  font-family:'Covered By Your Grace',cursive;
+  font-size: 3rem;
+  line-height: .9;
+  color: rgba(255,255,255,.7);
+  display:block;
+  margin-bottom:.2rem;
+}
+@media (min-width:768px){
+  .slider em, em.aventura{ font-size: 6rem; }
+}
+
+/* Botones hero */
+.slider .btn{ border-radius:12px; padding:.8rem 1.25rem; }
+.btn-outline-light{
+  border-color:#fff; color:#fff;
+}
+.btn-outline-light:hover, .btn-outline-light:focus{
+  background:#fff; color:#111;
+}
+
+/* Indicador scroll */
+.slider__scroll{
+  position:absolute; left:50%; bottom:16px; transform:translateX(-50%);
+  display:inline-block; padding:.5rem;
+  outline:0;
+}
+.slider__scroll:focus{ box-shadow:0 0 0 3px rgba(255,255,255,.6); }
+.slider__scroll i{
+  font-size:1.25rem; color:#fff;
+  animation:hero-bounce 1.6s infinite;
+}
+@keyframes hero-bounce{
+  0%,100%{ transform: translate(-50%,0); }
+  50%{    transform: translate(-50%,-6px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .slider__scroll i{ animation:none; }
+}
