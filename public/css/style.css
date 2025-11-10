@@ -1,706 +1,408 @@
+/* ---------------------------------------
+   style.css - versión final estable
+   --------------------------------------- */
+
+/* Tokens */
 :root {
-    font-family: 'Staatliches', cursive;
-    font-family: 'Covered By Your Grace', cursive;
-    font-family: 'Open Sans', sans-serif;
+    --accent: #15B9D5;
+    /* turquesa */
+    --accent-2: #DC135F;
+    /* fucsia botones */
+    --white: #fff;
+    --dark: #111;
 }
 
+/* Tipografías base */
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;1,700&family=Staatliches&display=swap');
+
+html,
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Open Sans', sans-serif;
+    color: #222;
 }
 
-/* ======================
-   TITULARES / TIPOGRAFÍA
-   ====================== */
+/* Titulares */
 h1,
 h2,
 h3 {
     font-family: 'Staatliches', cursive;
-    color: #15B9D5;
+    color: var(--accent);
+    margin: 0 0 1rem;
 }
 
 h1 {
-    font-size: 3.4rem;
+    font-size: 3.4rem
 }
 
 h2 {
     font-size: 2.4rem;
+    text-align: center
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 1.6rem
 }
 
-p {
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-blockquote {
-    font-weight: bold;
-    line-height: 2;
-}
-
-/* ======================
-   BOTONES
-   ====================== */
+/* Botones */
 .btn-success {
-    background-color: #DC135F;
-    border-color: #DC135F;
-    padding: .8rem 0;
+    background: var(--accent-2);
+    border-color: var(--accent-2);
+    padding: .6rem 1rem;
     text-transform: uppercase;
-    border-radius: .8rem;
+    border-radius: .6rem;
+    color: #fff;
 }
 
 .btn-success:hover {
-    background-color: rgb(184, 5, 73);
-    border-color: rgb(192, 7, 78);
+    background: #b70a4e;
+    border-color: #b70a4e
 }
 
-/* ======================
-   HERO / SLIDER
-   ====================== */
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, .9);
+    color: #fff;
+    background: transparent
+}
+
+.btn-outline-light:hover {
+    background: #fff;
+    color: #111
+}
+
+/* ================= HERO ================= */
 .slider {
     position: relative;
-    background: url(../img/superior.jpg) center/cover no-repeat;
-    color: #fff;
+    background: url('/img/superior.jpg') center/cover no-repeat;
     min-height: 70vh;
-    /* móvil */
-    height: auto;
-    /* evita 100vh buggy en iOS */
     display: flex;
     align-items: center;
+    color: #fff;
 }
 
-@media (min-width:576px) {
+@media(min-width:576px) {
     .slider {
-        min-height: 80vh;
+        min-height: 80vh
     }
 }
 
-@media (min-width:992px) {
+@media(min-width:992px) {
     .slider {
-        min-height: 90vh;
+        min-height: 90vh
     }
 }
 
-/* Overlay de contraste accesible */
 .slider::before {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 1;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
-    z-index: 0;
-    /* asegura estar debajo del header (1001) y del contenido (1) */
 }
 
 .slider__content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 720px;
+    color: #fff
 }
 
-/* Título/subtítulo */
-.hero__title {
-    color: #fff;
-    font-size: 3rem;
-    line-height: 1.1;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
-}
-
-@media (min-width:768px) {
-    .hero__title {
-        font-size: 3.6rem;
-    }
-}
-
-.hero__subtitle {
-    max-width: 46ch;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
-    margin-top: .25rem;
-    margin-bottom: .85rem;
-}
-
-/* “aventura” */
-.slider em,
-em.aventura {
+.slider em.aventura {
     font-family: 'Covered By Your Grace', cursive;
     font-size: 3rem;
     line-height: .9;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .85);
     display: block;
     margin-bottom: .2rem;
 }
 
-@media (min-width:768px) {
-
-    .slider em,
-    em.aventura {
-        font-size: 6rem;
+@media(min-width:768px) {
+    .slider em.aventura {
+        font-size: 6rem
     }
 }
 
-/* Botones del hero */
-.slider .btn {
-    border-radius: 12px;
-    padding: .8rem 1.25rem;
+.hero__title {
+    font-size: 3rem;
+    line-height: 1.05;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .4);
 }
 
-.slider .btn+.btn {
-    margin-left: .75rem;
+@media(min-width:768px) {
+    .hero__title {
+        font-size: 3.6rem
+    }
 }
 
-.btn-outline-light {
-    border-color: #fff;
-    color: #fff;
+.lead.hero__subtitle {
+    max-width: 46ch;
+    margin-bottom: .6rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
 }
 
-.btn-outline-light:hover,
-.btn-outline-light:focus {
-    background: #fff;
-    color: #111;
-}
-
-/* Indicador scroll */
+/* scroll icon */
 .slider__scroll {
     position: absolute;
     left: 50%;
     bottom: 16px;
     transform: translateX(-50%);
-    display: inline-block;
-    padding: .5rem;
-    outline: 0;
-}
-
-.slider__scroll:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, .6);
+    z-index: 3
 }
 
 .slider__scroll i {
     font-size: 1.25rem;
     color: #fff;
     opacity: .9;
-    animation: hero-bounce 1.6s infinite;
+    animation: hero-bounce 1.6s infinite
 }
 
 @keyframes hero-bounce {
 
     0%,
     100% {
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 0)
     }
 
     50% {
-        transform: translate(-50%, -6px);
+        transform: translate(-50%, -6px)
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce) {
     .slider__scroll i {
-        animation: none;
+        animation: none
     }
 }
 
-@media (max-width:575px) {
-    .slider__content {
-        max-width: 92vw;
-    }
-
-    .slider .btn {
-        width: 100%;
-        margin-bottom: .6rem;
-    }
-
-    .slider .btn+.btn {
-        margin-left: 0;
-    }
+/* ================= HEADER ================= */
+/* Barra general */
+.navegacion {
+    width: 100%;
+    transition: background .25s ease, padding .2s ease, box-shadow .2s ease;
+    z-index: 1000;
 }
 
-/* ======================
-   HEADER SOBRE EL HERO
-   ====================== */
-/* Home: header flotando sobre la imagen, SIEMPRE por encima del overlay */
-.home header .navegacion {
+/* Home: header sobre el hero (transparente con gradiente) */
+body.home .navegacion {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1001;
-    /* > 1 del contenido y > 0 del overlay */
     background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
+    z-index: 1005;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
 
-/* Resto de páginas: header pegado arriba con fondo sólido */
-body:not(.home) header .navegacion {
-    position: sticky;
+/* Estado SOLID al hacer scroll en home */
+body.home .navegacion.is-solid {
+    position: fixed;
     top: 0;
-    z-index: 1001;
-    background: #15B9D5;
+    left: 0;
+    right: 0;
+    background: var(--accent);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    padding-top: .6rem;
+    padding-bottom: .6rem;
 }
 
-/* Enlaces del menú */
-header .nav {
-    flex-wrap: wrap;
-}
-
-header .nav a {
-    font-family: 'Staatliches', cursive;
-    font-size: 2rem;
+/* Otras páginas: barra sólida por defecto */
+body:not(.home) .navegacion {
+    position: relative;
+    background: var(--accent);
     color: #fff;
-    white-space: nowrap;
-    padding: .5rem 1rem;
-    transition: all .3s ease;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+
+/* Logo en header */
+.navegacion img {
+    max-width: 200px;
+    height: auto;
+    display: block
+}
+
+/* Links navegación */
+.nav a.nav-link,
+nav.nav a.nav-link {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.2rem;
+    padding: .5rem .8rem;
+}
+
+.nav a.nav-link:hover {
+    text-decoration: none;
+    opacity: .9
 }
 
 .nav-link.active {
-    border-bottom: 5px solid #fff;
+    border-bottom: 4px solid rgba(255, 255, 255, .95);
+    padding-bottom: .4rem
 }
 
-/* Logo */
-header img {
-    max-width: 100%;
-    height: auto;
+/* ================= CONTENIDOS ================= */
+main.container {
+    padding-bottom: 3rem
 }
 
-@media (min-width:768px) {
-    header .nav {
-        flex-wrap: nowrap;
-    }
-
-    header .nav a {
-        font-size: 2rem;
-        padding: .5rem 1.5rem;
-    }
-
-    header img {
-        max-width: 200px;
-    }
+.beneficios li {
+    margin-bottom: .8rem;
+    color: #222
 }
 
-@media (max-width:767px) and (min-width:576px) {
-    header .row {
-        padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
-    }
-
-    header .nav {
-        justify-content: center !important;
-    }
-
-    header .nav a {
-        font-size: 1.6rem;
-        padding: .5rem .8rem;
-    }
-
-    header img {
-        max-width: 150px;
-    }
-
-    header .col-6 {
-        text-align: center;
-    }
+.beneficios i {
+    color: var(--accent-2);
+    margin-right: .6rem;
+    font-size: 1.25rem
 }
 
-@media (max-width:575px) {
-    header .row {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-
-    header .nav {
-        justify-content: center !important;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header .nav a {
-        font-size: 1.4rem;
-        padding: .4rem 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: none !important;
-    }
-
-    header .nav a.active {
-        background-color: rgba(255, 255, 255, .2);
-        border-radius: 4px;
-        border-bottom: none !important;
-    }
-
-    header img {
-        max-width: 120px;
-    }
-
-    header .col-6 {
-        text-align: center;
-        margin-bottom: .5rem;
-    }
-
-    header .col-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width:399px) {
-    header .nav a {
-        font-size: 1.3rem;
-        padding: .3rem 0;
-    }
-
-    header img {
-        max-width: 100px;
-    }
-}
-
-/* ======================
-   SECCIÓN DESCUENTO
-   ====================== */
+/* ================= BLOQUE DESCUENTO ================= */
 .descuento {
     height: 400px;
-    background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
-    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('/img/cupon.jpg');
     background-size: cover;
-}
-
-@media (min-width:768px) {
-    .descuento {
-        height: 400px;
-        background-image: linear-gradient(to right,
-                rgba(0, 0, 0, .5) 0%,
-                rgba(0, 0, 0, .5) 50%,
-                transparent 50%,
-                transparent 100%), url(../img/cupon.jpg);
-    }
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
 }
 
 .descuento .contenido {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    color: white;
-}
-
-.descuento p {
-    font-family: 'Staatliches', cursive;
-    line-height: .8;
+    padding: 2rem 0
 }
 
 .descuento .titulo {
-    font-size: 2.4rem;
+    font-family: 'Staatliches', cursive;
+    font-size: 2.4rem
 }
 
 .descuento .precio {
-    color: #15B9D5;
-    font-size: 3rem;
+    color: var(--accent);
+    font-size: 2.6rem
 }
 
-/* ======================
-   TARJETAS / VARIOS
-   ====================== */
-.listado-iconos {
-    background-color: rgb(245, 245, 245);
+/* Tarjetas de viajes */
+.proximos-viajes .card {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden
 }
 
-.listado-iconos img {
-    height: 100px;
+.proximos-viajes .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block
 }
 
-.proximos-viajes p {
-    font-size: .9rem;
+.card-body h2.h4 {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase
 }
 
-i {
-    color: #DC135F;
-    font-size: 2rem;
-}
-
-.testimoniales p {
-    font-size: .8rem;
-    font-weight: normal;
-}
-
-.testimoniales p::before {
-    background-image: url(../img/quote.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 40px;
-    content: '';
-    width: 40px;
-    height: 40px;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.blockquote-footer {
-    text-align: right;
-    color: #DC135F;
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-/* ======================
-   PAGINACIÓN
-   ====================== */
-.pagination {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
+/* Paginación */
 .pagination .page-link {
-    color: #15B9D5;
-    border: 2px solid #15B9D5;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: .5rem .9rem;
+    border-radius: .4rem;
     font-family: 'Staatliches', cursive;
-    font-size: 1.4rem;
-    padding: .6rem 1.2rem;
-    margin: 0 .3rem;
-    border-radius: .5rem;
-    transition: all 0.3s ease;
-}
-
-.pagination .page-link:hover {
-    background-color: #15B9D5;
-    color: white;
-    border-color: #15B9D5;
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #DC135F;
-    border-color: #DC135F;
-    color: white;
-    font-weight: bold;
+    background: var(--accent-2);
+    border-color: var(--accent-2);
+    color: #fff;
 }
 
-.pagination .page-item.disabled .page-link {
-    color: #999;
-    border-color: #ddd;
-    background-color: #f8f9fa;
-    cursor: not-allowed;
+/* Testimoniales */
+.testimoniales .card {
+    border: 1px solid #eee
 }
 
-.pagination .page-item.disabled .page-link:hover {
-    background-color: #f8f9fa;
-    color: #999;
-}
-
-/* ======================
-   FOOTER
-   ====================== */
+/* Footer */
 footer {
-    margin-top: auto;
-    border-top: 1px solid #e0e0e0;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid #eee
 }
 
-footer .nav {
-    flex-wrap: wrap;
-}
-
-footer .nav a {
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-}
-
-footer .copyright {
-    margin-bottom: 0;
-    line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-    footer .nav {
-        flex-wrap: nowrap;
-    }
-
-    footer .nav a {
-        padding: 0.5rem 1.5rem;
-    }
-}
-
-@media (max-width: 767px) {
-    footer {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-
-    footer .nav {
-        justify-content: center !important;
-        margin-bottom: 1rem;
-    }
-
-    footer .nav a {
+/* ================= RESPONSIVE ================= */
+@media(min-width:768px) {
+    header .nav a {
         font-size: 1.4rem;
-        padding: 0.5rem 0.8rem;
+        padding: .6rem 1rem
     }
 
-    footer .copyright {
-        font-size: 1.3rem;
-        text-align: center !important;
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width: 575px) {
-    footer .nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer .nav a {
-        font-size: 1.3rem;
-        padding: 0.4rem 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    footer .copyright {
-        font-size: 1.2rem;
+    .slider__content {
+        max-width: 720px;
+        padding-left: 2rem
     }
 }
 
-/* =========================
-   HEADER FIJO + NAV LIMPIA
-   ========================= */
-:root {
-    --header-h: 72px;
-    --brand-max-w: 210px;
-    --brand-max-w-md: 260px;
-    --nav-link-color: #ffffff;
-    --nav-link-active: #20c5cf;
-    /* tu turquesa */
-}
-
-/* Contenedor base */
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-    /* por encima del hero */
-    background: rgba(0, 0, 0, 0);
-    /* transparente sobre el slider */
-    backdrop-filter: none;
-    transition: background .25s ease, box-shadow .25s ease;
-}
-
-/* Sólido cuando hay scroll */
-.site-header.is-solid {
-    background: rgba(0, 0, 0, .75);
-    backdrop-filter: saturate(140%) blur(6px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
-}
-
-/* Marca */
-.header__logo {
-    max-width: var(--brand-max-w);
-    height: auto;
-}
-
-@media (min-width: 768px) {
-    .header__logo {
-        max-width: var(--brand-max-w-md);
-    }
-}
-
-/* NAV (desktop) */
-.primary-nav {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .primary-nav {
-        display: block;
-    }
-}
-
-.primary-nav .nav-link {
-    color: var(--nav-link-color);
-    font-family: 'Staatliches', cursive;
-    letter-spacing: .5px;
-    font-size: 1.05rem;
-    padding: .25rem .75rem;
-    position: relative;
-    transition: color .15s ease;
-}
-
-.primary-nav .nav-link:hover {
-    color: #fff;
-}
-
-/* subrayado activo/hover */
-.primary-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: .5rem;
-    right: .5rem;
-    bottom: -6px;
-    height: 3px;
-    background: transparent;
-    border-radius: 2px;
-    transition: background .15s ease, transform .2s ease;
-    transform: scaleX(0);
-    transform-origin: left;
-}
-
-.primary-nav .nav-link:hover::after {
-    background: rgba(255, 255, 255, .55);
-    transform: scaleX(1);
-}
-
-.primary-nav .nav-link.active,
-.primary-nav .nav-link[aria-current="page"] {
-    color: var(--nav-link-active);
-}
-
-.primary-nav .nav-link.active::after,
-.primary-nav .nav-link[aria-current="page"]::after {
-    background: var(--nav-link-active);
-    transform: scaleX(1);
-}
-
-/* BOTÓN MOBILE */
-.nav-toggle {
-    border: 0;
-    background: transparent;
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: .25rem .5rem;
-}
-
-.nav-toggle:focus {
-    outline: none;
-}
-
-/* Menú mobile desplegable */
-@media (max-width: 767.98px) {
-    #primary-nav {
-        display: none;
+/* Mobile */
+@media(max-width:767px) {
+    body.home .navegacion {
         position: absolute;
-        top: calc(var(--header-h) - 6px);
-        right: 0;
-        left: 0;
-        background: rgba(0, 0, 0, .9);
-        padding: .75rem .75rem 1rem;
-        border-bottom-left-radius: .5rem;
-        border-bottom-right-radius: .5rem;
+        padding-top: .6rem;
+        padding-bottom: .6rem
     }
 
-    #primary-nav.open {
-        display: block;
+    header .row {
+        align-items: center
     }
 
-    #primary-nav .nav {
+    .navegacion img {
+        max-width: 160px;
+        margin: 0 auto;
+        display: block
+    }
+
+    nav.nav {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: .25rem;
+        margin-top: .5rem
     }
 
-    #primary-nav .nav-link {
-        padding: .5rem .75rem;
-        font-size: 1.1rem;
+    nav.nav a.nav-link {
+        font-size: 1.2rem;
+        padding: .35rem .5rem
+    }
+
+    .slider__content {
+        padding: 0 1rem;
+        max-width: 92vw
+    }
+
+    .slider em.aventura {
+        font-size: 4rem;
+        margin-top: 1.5rem
     }
 }
 
-/* Ajustes del HERO para no quedar debajo del header cuando es sticky
-   (si tu slider ya tiene suficiente padding-top, puedes omitir esto) */
-.slider {
-    scroll-margin-top: var(--header-h);
+@media(max-width:575px) {
+    header .row {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important
+    }
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center
+}
+
+.mt-3 {
+    margin-top: 1rem
+}
+
+.mb-5 {
+    margin-bottom: 3rem
 }

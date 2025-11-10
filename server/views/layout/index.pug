@@ -1,87 +1,76 @@
-<!DOCTYPE html>
+doctype html
 html(lang="es")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
 
-        //- SEO Meta Tags
-        meta(name="description", content=pagina === 'Próximos Viajes' ? 'Descubre destinos increíbles con Escápate Conmigo. Agencia de viajes especializada en experiencias únicas y memorables.' : `${pagina} - Agencia de viajes Escápate Conmigo`)
-        meta(name="keywords", content="viajes, agencia de viajes, destinos, turismo, vacaciones, escapadas")
-        meta(name="author", content="Andrés Hernández García")
-        meta(name="robots", content="index, follow")
+    // SEO
+    meta(name="description", content=pagina === 'Próximos Viajes' ? 'Descubre destinos increíbles con Escápate Conmigo. Agencia de viajes especializada en experiencias únicas y memorables.' : `${pagina} - Agencia de viajes Escápate Conmigo`)
+    meta(name="keywords", content="viajes, agencia de viajes, destinos, turismo, vacaciones, escapadas")
+    meta(name="author", content="Andrés Hernández García")
+    meta(name="robots", content="index, follow")
 
-        //- Open Graph / Facebook
-        meta(property="og:type", content="website")
-        meta(property="og:title", content=`${titulo} | ${pagina}`)
-        meta(property="og:description", content="Descubre destinos increíbles con Escápate Conmigo")
-        meta(property="og:site_name", content=titulo)
+    // Open Graph
+    meta(property="og:type", content="website")
+    meta(property="og:title", content=`${titulo} | ${pagina}`)
+    meta(property="og:description", content="Descubre destinos increíbles con Escápate Conmigo")
+    meta(property="og:site_name", content=titulo)
 
-        //- Twitter Card
-        meta(name="twitter:card", content="summary_large_image")
-        meta(name="twitter:title", content=`${titulo} | ${pagina}`)
-        meta(name="twitter:description", content="Descubre destinos increíbles con Escápate Conmigo")
+    // Twitter
+    meta(name="twitter:card", content="summary_large_image")
+    meta(name="twitter:title", content=`${titulo} | ${pagina}`)
+    meta(name="twitter:description", content="Descubre destinos increíbles con Escápate Conmigo")
 
-        //- Favicon
-        link(rel="icon", type="image/svg+xml", href="/img/logo.svg")
-        link(rel="apple-touch-icon", href="/img/logo.svg")
+    // Icons
+    link(rel="icon", type="image/svg+xml", href="/img/logo.svg")
+    link(rel="apple-touch-icon", href="/img/logo.svg")
 
-        //- Preconnect to external resources for performance
-        link(rel="preconnect", href="https://fonts.googleapis.com")
-        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-        link(rel="preconnect", href="https://stackpath.bootstrapcdn.com")
-        link(rel="preconnect", href="https://cdnjs.cloudflare.com")
+    // Preconnect
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(rel="preconnect", href="https://stackpath.bootstrapcdn.com")
+    link(rel="preconnect", href="https://cdnjs.cloudflare.com")
 
-        //- Stylesheets
-        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
-        link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;1,700&family=Staatliches&display=swap', rel='stylesheet')
-        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css', integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q", crossorigin="anonymous")
-        link(rel="stylesheet", href="/css/style.css")
+    // CSS
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;1,700&family=Staatliches&display=swap', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css')
+    link(rel="stylesheet", href="/css/style.css")
 
-        //- Title
-        title #{titulo} | #{pagina}
+    title #{titulo} | #{pagina}
 
-    body(class=clase)
-        //- Skip to main content for accessibility
-        a.sr-only.sr-only-focusable(href="#main-content") Saltar al contenido principal
+  body(class=clase)
+    a.sr-only.sr-only-focusable(href="#main-content") Saltar al contenido principal
 
-        include includes/header
+    include includes/header
 
-        main#main-content(role="main")
-            block slider
-            block contenido
+    main#main-content(role="main")
+      block slider
+      block contenido
 
-        include includes/footer
+    include includes/footer
 
-        //- Header: solid al hacer scroll + menú mobile
-        script.
-          (function () {
-            var header = document.querySelector('.site-header');
-            var navBtn  = document.querySelector('.nav-toggle');
-            var nav     = document.getElementById('primary-nav');
+    // ================= SCRIPTS =================
+    script.
+      // Scroll header efecto
+      document.addEventListener('scroll', function () {
+        var header = document.querySelector('.navegacion');
+        if (!header) return;
+        if (window.scrollY > 50) {
+          header.classList.add('is-solid');
+        } else {
+          header.classList.remove('is-solid');
+        }
+      });
 
-            // solid/transparent según scroll
-            function onScroll() {
-              if (!header) return;
-              if (window.scrollY > 10) header.classList.add('is-solid');
-              else header.classList.remove('is-solid');
-            }
-            onScroll();
-            window.addEventListener('scroll', onScroll, { passive: true });
+      // Menú móvil toggle
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-menu-toggle]');
+        if (!btn) return;
 
-            // toggle menú mobile
-            if (navBtn && nav) {
-              navBtn.addEventListener('click', function () {
-                var opened = nav.classList.toggle('open');
-                navBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
-              });
+        var menu = document.querySelector('[data-menu]');
+        if (!menu) return;
 
-              // cierra al hacer click en un enlace
-              nav.addEventListener('click', function (e) {
-                if (e.target && e.target.classList.contains('nav-link')) {
-                  nav.classList.remove('open');
-                  navBtn.setAttribute('aria-expanded', 'false');
-                }
-              });
-            }
-          })();
+        menu.classList.toggle('d-none');
+      });
