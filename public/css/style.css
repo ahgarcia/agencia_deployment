@@ -8,6 +8,9 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* ======================
+   TITULARES / TIPOGRAFÍA
+   ====================== */
 h1,
 h2,
 h3 {
@@ -27,6 +30,19 @@ h3 {
     font-size: 3rem;
 }
 
+p {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+blockquote {
+    font-weight: bold;
+    line-height: 2;
+}
+
+/* ======================
+   BOTONES
+   ====================== */
 .btn-success {
     background-color: #DC135F;
     border-color: #DC135F;
@@ -40,13 +56,17 @@ h3 {
     border-color: rgb(192, 7, 78);
 }
 
-/* =============== HERO NUEVO =============== */
+/* ======================
+   HERO / SLIDER
+   ====================== */
 .slider {
     position: relative;
     background: url(../img/superior.jpg) center/cover no-repeat;
     color: #fff;
     min-height: 70vh;
+    /* móvil */
     height: auto;
+    /* evita 100vh buggy en iOS */
     display: flex;
     align-items: center;
 }
@@ -63,18 +83,23 @@ h3 {
     }
 }
 
+/* Overlay de contraste accesible */
 .slider::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
+    z-index: 0;
+    /* asegura estar debajo del header (1001) y del contenido (1) */
 }
 
 .slider__content {
     position: relative;
     z-index: 1;
+    max-width: 720px;
 }
 
+/* Título/subtítulo */
 .hero__title {
     color: #fff;
     font-size: 3rem;
@@ -91,9 +116,11 @@ h3 {
 .hero__subtitle {
     max-width: 46ch;
     text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
-    margin-bottom: .5rem;
+    margin-top: .25rem;
+    margin-bottom: .85rem;
 }
 
+/* “aventura” */
 .slider em,
 em.aventura {
     font-family: 'Covered By Your Grace', cursive;
@@ -112,9 +139,14 @@ em.aventura {
     }
 }
 
+/* Botones del hero */
 .slider .btn {
     border-radius: 12px;
     padding: .8rem 1.25rem;
+}
+
+.slider .btn+.btn {
+    margin-left: .75rem;
 }
 
 .btn-outline-light {
@@ -128,6 +160,7 @@ em.aventura {
     color: #111;
 }
 
+/* Indicador scroll */
 .slider__scroll {
     position: absolute;
     left: 50%;
@@ -145,6 +178,7 @@ em.aventura {
 .slider__scroll i {
     font-size: 1.25rem;
     color: #fff;
+    opacity: .9;
     animation: hero-bounce 1.6s infinite;
 }
 
@@ -166,28 +200,6 @@ em.aventura {
     }
 }
 
-/* Pulidos hero */
-.slider__content {
-    max-width: 720px;
-}
-
-.slider .btn+.btn {
-    margin-left: .75rem;
-}
-
-.hero__subtitle {
-    margin-top: .25rem;
-    margin-bottom: .85rem;
-}
-
-.slider__scroll i {
-    opacity: .9;
-}
-
-.slider__scroll:hover i {
-    transform: translate(-50%, -8px);
-}
-
 @media (max-width:575px) {
     .slider__content {
         max-width: 92vw;
@@ -203,63 +215,146 @@ em.aventura {
     }
 }
 
-/* =============== HEADER SOBRE HERO =============== */
-.home {
-    position: relative;
-}
-
-/* Header visible sobre el hero con gradiente para legibilidad */
-.home .navegacion {
+/* ======================
+   HEADER SOBRE EL HERO
+   ====================== */
+/* Home: header flotando sobre la imagen, SIEMPRE por encima del overlay */
+.home header .navegacion {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 5;
-    /* por encima del overlay del hero */
+    right: 0;
+    z-index: 1001;
+    /* > 1 del contenido y > 0 del overlay */
     background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
 }
 
-.nav-link.active {
-    border-bottom: 5px solid white;
+/* Resto de páginas: header pegado arriba con fondo sólido */
+body:not(.home) header .navegacion {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    background: #15B9D5;
 }
 
-blockquote {
-    font-weight: bold;
-    line-height: 2;
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-/* Color sólido de navegación para otras secciones */
-.navegacion {
-    background-color: #15B9D5;
+/* Enlaces del menú */
+header .nav {
+    flex-wrap: wrap;
 }
 
 header .nav a {
     font-family: 'Staatliches', cursive;
     font-size: 2rem;
-    color: white;
+    color: #fff;
+    white-space: nowrap;
+    padding: .5rem 1rem;
+    transition: all .3s ease;
 }
 
-footer .nav a,
-.copyright {
-    font-family: 'Staatliches', cursive;
-    font-size: 1.6rem;
-    color: black;
+.nav-link.active {
+    border-bottom: 5px solid #fff;
 }
 
-.listado-iconos {
-    background-color: rgb(245, 245, 245);
+/* Logo */
+header img {
+    max-width: 100%;
+    height: auto;
 }
 
-.listado-iconos img {
-    height: 100px;
+@media (min-width:768px) {
+    header .nav {
+        flex-wrap: nowrap;
+    }
+
+    header .nav a {
+        font-size: 2rem;
+        padding: .5rem 1.5rem;
+    }
+
+    header img {
+        max-width: 200px;
+    }
 }
 
-/* =============== DESCUENTO =============== */
+@media (max-width:767px) and (min-width:576px) {
+    header .row {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    header .nav {
+        justify-content: center !important;
+    }
+
+    header .nav a {
+        font-size: 1.6rem;
+        padding: .5rem .8rem;
+    }
+
+    header img {
+        max-width: 150px;
+    }
+
+    header .col-6 {
+        text-align: center;
+    }
+}
+
+@media (max-width:575px) {
+    header .row {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    header .nav {
+        justify-content: center !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .nav a {
+        font-size: 1.4rem;
+        padding: .4rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: none !important;
+    }
+
+    header .nav a.active {
+        background-color: rgba(255, 255, 255, .2);
+        border-radius: 4px;
+        border-bottom: none !important;
+    }
+
+    header img {
+        max-width: 120px;
+    }
+
+    header .col-6 {
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+
+    header .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width:399px) {
+    header .nav a {
+        font-size: 1.3rem;
+        padding: .3rem 0;
+    }
+
+    header img {
+        max-width: 100px;
+    }
+}
+
+/* ======================
+   SECCIÓN DESCUENTO
+   ====================== */
 .descuento {
     height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
@@ -300,6 +395,17 @@ footer .nav a,
     font-size: 3rem;
 }
 
+/* ======================
+   TARJETAS / VARIOS
+   ====================== */
+.listado-iconos {
+    background-color: rgb(245, 245, 245);
+}
+
+.listado-iconos img {
+    height: 100px;
+}
+
 .proximos-viajes p {
     font-size: .9rem;
 }
@@ -333,7 +439,9 @@ i {
     margin-top: 1rem;
 }
 
-/* =============== PAGINACIÓN =============== */
+/* ======================
+   PAGINACIÓN
+   ====================== */
 .pagination {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -375,7 +483,9 @@ i {
     color: #999;
 }
 
-/* =============== FOOTER RESPONSIVO =============== */
+/* ======================
+   FOOTER
+   ====================== */
 footer {
     margin-top: auto;
     border-top: 1px solid #e0e0e0;
@@ -446,117 +556,55 @@ footer .copyright {
     }
 }
 
-/* =============== HEADER RESPONSIVO BASE =============== */
-header {
-    width: 100%;
+/* ===== Sobre Nosotros ===== */
+.about-copy {
+    max-width: 62ch;
+    /* mejor ancho de lectura */
 }
 
-header .navegacion {
-    width: 100%;
+.beneficios {
+    margin-top: 1rem;
 }
 
-header img {
-    max-width: 100%;
-    height: auto;
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin: .45rem 0;
+    /* ritmo vertical constante */
+    font-size: 1.05rem;
 }
 
-header .nav {
-    flex-wrap: wrap;
+.beneficio i {
+    font-size: 1.4rem;
+    /* unifica tamaño de ícono */
+    color: #DC135F;
+    /* color de marca */
+    flex: 0 0 auto;
+    line-height: 1;
 }
 
-header .nav a {
-    white-space: nowrap;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+.about-cta {
+    min-width: 180px;
+    /* evita “saltos” de botón */
 }
 
-@media (min-width: 768px) {
-    header .nav {
-        flex-wrap: nowrap;
-    }
-
-    header .nav a {
-        font-size: 2rem;
-        padding: 0.5rem 1.5rem;
-    }
-
-    header img {
-        max-width: 200px;
-    }
+/* Imagen con sutil elevación */
+.rounded-lg {
+    border-radius: .6rem;
 }
 
-@media (max-width: 767px) and (min-width: 576px) {
-    header .row {
-        padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
-    }
-
-    header .nav {
-        justify-content: center !important;
-    }
-
-    header .nav a {
-        font-size: 1.6rem;
-        padding: 0.5rem 0.8rem;
-    }
-
-    header img {
-        max-width: 150px;
-    }
-
-    header .col-6 {
-        text-align: center;
-    }
+.shadow-sm {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
 
+/* Ajustes responsivos finos */
 @media (max-width: 575px) {
-    header .row {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !Important;
+    .beneficio {
+        font-size: 1rem;
     }
 
-    header .nav {
-        justify-content: center !important;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header .nav a {
-        font-size: 1.4rem;
-        padding: 0.4rem 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: none !important;
-    }
-
-    header .nav a.active {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
-        border-bottom: none !important;
-    }
-
-    header img {
-        max-width: 120px;
-    }
-
-    header .col-6 {
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
-    header .col-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 399px) {
-    header .nav a {
-        font-size: 1.3rem;
-        padding: 0.3rem 0;
-    }
-
-    header img {
-        max-width: 100px;
+    .beneficio i {
+        font-size: 1.25rem;
     }
 }

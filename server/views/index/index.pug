@@ -16,25 +16,26 @@ block contenido
     main.container.mt-5
         h2#sobre-nosotros.text-center.mb-5 Sobre Nosotros
         .row.align-items-center
-            .col-md-6
-                p Más que una agencia, somos creadores de experiencias memorables. Diseñamos viajes a la medida para que disfrutes sin preocuparte por nada.
-                p Te acompañamos de principio a fin: asesoría experta, itinerarios inteligentes y soporte continuo. Viajar no es solo visitar lugares, es crear recuerdos que duran para siempre.
-                ul.beneficios.list-unstyled.mt-3
-                    li
+            .col-md-6.order-md-1
+                p.lead.about-copy Más que una agencia, somos creadores de experiencias memorables. Diseñamos viajes a la medida para que disfrutes sin preocuparte por nada.
+                p.about-copy Te acompañamos de principio a fin: asesoría experta, itinerarios inteligentes y soporte continuo. Viajar no es solo visitar lugares, es crear recuerdos que duran para siempre.
+                ul.beneficios.list-unstyled.mt-3(aria-label="Beneficios de viajar con nosotros")
+                    li.beneficio
                         i.fas.fa-compass(aria-hidden="true")
-                        |  Asesoría personalizada
-                    li
+                        span Asesoría personalizada
+                    li.beneficio
                         i.fas.fa-plane-departure(aria-hidden="true")
-                        |  Mejores rutas y horarios
-                    li
+                        span Mejores rutas y horarios
+                    li.beneficio
                         i.fas.fa-concierge-bell(aria-hidden="true")
-                        |  Soporte 24/7
-                    li
+                        span Soporte 24/7
+                    li.beneficio
                         i.fas.fa-shield-alt(aria-hidden="true")
-                        |  Reservas seguras
-                a.btn.btn-success.mt-3(href="/nosotros" aria-label="Conócenos") Conócenos
-            .col-md-6
-                img(src="/img/inicio_nosotros.jpg", class="img-fluid rounded-lg", alt="Terraza frente al mar con vista al océano")
+                        span Reservas seguras
+                a.btn.btn-success.mt-4.about-cta(href="/nosotros" aria-label="Conócenos") Conócenos
+            .col-md-6.order-md-2
+                figure.mb-0
+                    img(src="/img/inicio_nosotros.jpg", class="img-fluid rounded-lg shadow-sm", alt="Terraza frente al mar con vista al océano", loading="lazy", width="800", height="533")
 
         h2#viajes.text-center.my-5 Próximos Viajes
         include ../layout/partials/viajes
