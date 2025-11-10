@@ -8,9 +8,9 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* ======================
-   TITULARES / TIPOGRAFÍA
-   ====================== */
+/* --------------------------------
+   Headings
+--------------------------------- */
 h1,
 h2,
 h3 {
@@ -30,23 +30,13 @@ h3 {
     font-size: 3rem;
 }
 
-p {
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-blockquote {
-    font-weight: bold;
-    line-height: 2;
-}
-
-/* ======================
-   BOTONES
-   ====================== */
+/* --------------------------------
+   Buttons
+--------------------------------- */
 .btn-success {
     background-color: #DC135F;
     border-color: #DC135F;
-    padding: .8rem 0;
+    padding: .8rem 1.25rem;
     text-transform: uppercase;
     border-radius: .8rem;
 }
@@ -56,17 +46,26 @@ blockquote {
     border-color: rgb(192, 7, 78);
 }
 
-/* ======================
-   HERO / SLIDER
-   ====================== */
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background: #fff;
+    color: #111;
+}
+
+/* =================================
+   HERO (Home)
+================================= */
 .slider {
     position: relative;
     background: url(../img/superior.jpg) center/cover no-repeat;
     color: #fff;
     min-height: 70vh;
-    /* móvil */
     height: auto;
-    /* evita 100vh buggy en iOS */
     display: flex;
     align-items: center;
 }
@@ -83,23 +82,27 @@ blockquote {
     }
 }
 
-/* Overlay de contraste accesible */
+/* Overlay para contraste; más fuerte en pantallas pequeñas */
 .slider::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
-    z-index: 0;
-    /* asegura estar debajo del header (1001) y del contenido (1) */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .35), rgba(0, 0, 0, .65));
 }
 
+@media (min-width:768px) {
+    .slider::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
+    }
+}
+
+/* Contenido hero */
 .slider__content {
     position: relative;
     z-index: 1;
     max-width: 720px;
 }
 
-/* Título/subtítulo */
 .hero__title {
     color: #fff;
     font-size: 3rem;
@@ -115,9 +118,13 @@ blockquote {
 
 .hero__subtitle {
     max-width: 46ch;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
     margin-top: .25rem;
     margin-bottom: .85rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+}
+
+.slider .btn+.btn {
+    margin-left: .75rem;
 }
 
 /* “aventura” */
@@ -126,7 +133,7 @@ em.aventura {
     font-family: 'Covered By Your Grace', cursive;
     font-size: 3rem;
     line-height: .9;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .75);
     display: block;
     margin-bottom: .2rem;
 }
@@ -137,27 +144,6 @@ em.aventura {
     em.aventura {
         font-size: 6rem;
     }
-}
-
-/* Botones del hero */
-.slider .btn {
-    border-radius: 12px;
-    padding: .8rem 1.25rem;
-}
-
-.slider .btn+.btn {
-    margin-left: .75rem;
-}
-
-.btn-outline-light {
-    border-color: #fff;
-    color: #fff;
-}
-
-.btn-outline-light:hover,
-.btn-outline-light:focus {
-    background: #fff;
-    color: #111;
 }
 
 /* Indicador scroll */
@@ -182,6 +168,10 @@ em.aventura {
     animation: hero-bounce 1.6s infinite;
 }
 
+.slider__scroll:hover i {
+    transform: translate(-50%, -8px);
+}
+
 @keyframes hero-bounce {
 
     0%,
@@ -194,12 +184,13 @@ em.aventura {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
     .slider__scroll i {
         animation: none;
     }
 }
 
+/* Mobile hero */
 @media (max-width:575px) {
     .slider__content {
         max-width: 92vw;
@@ -215,29 +206,45 @@ em.aventura {
     }
 }
 
-/* ======================
-   HEADER SOBRE EL HERO
-   ====================== */
-/* Home: header flotando sobre la imagen, SIEMPRE por encima del overlay */
-.home header .navegacion {
+/* =================================
+   HEADER (sobre el hero SOLO en home)
+================================= */
+.home {
+    position: relative;
+}
+
+.home .navegacion {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1001;
-    /* > 1 del contenido y > 0 del overlay */
+    width: 100%;
+    z-index: 10;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0));
 }
 
-/* Resto de páginas: header pegado arriba con fondo sólido */
-body:not(.home) header .navegacion {
-    position: sticky;
-    top: 0;
-    z-index: 1001;
-    background: #15B9D5;
+/* Color sólido para el resto de páginas */
+.navegacion {
+    background-color: #15B9D5;
 }
 
-/* Enlaces del menú */
+.nav-link.active {
+    border-bottom: 5px solid #fff;
+}
+
+/* Base header responsiveness */
+header {
+    width: 100%;
+}
+
+header .navegacion {
+    width: 100%;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
 header .nav {
     flex-wrap: wrap;
 }
@@ -245,20 +252,10 @@ header .nav {
 header .nav a {
     font-family: 'Staatliches', cursive;
     font-size: 2rem;
-    color: #fff;
+    color: white;
     white-space: nowrap;
     padding: .5rem 1rem;
     transition: all .3s ease;
-}
-
-.nav-link.active {
-    border-bottom: 5px solid #fff;
-}
-
-/* Logo */
-header img {
-    max-width: 100%;
-    height: auto;
 }
 
 @media (min-width:768px) {
@@ -323,7 +320,6 @@ header img {
     header .nav a.active {
         background-color: rgba(255, 255, 255, .2);
         border-radius: 4px;
-        border-bottom: none !important;
     }
 
     header img {
@@ -333,9 +329,6 @@ header img {
     header .col-6 {
         text-align: center;
         margin-bottom: .5rem;
-    }
-
-    header .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
@@ -352,9 +345,48 @@ header img {
     }
 }
 
-/* ======================
-   SECCIÓN DESCUENTO
-   ====================== */
+/* --------------------------------
+   Texto, párrafos y blockquotes
+--------------------------------- */
+blockquote {
+    font-weight: bold;
+    line-height: 2;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+/* =================================
+   SOBRE NOSOTROS (pulidos)
+================================= */
+.beneficios .beneficio {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin: .35rem 0;
+    font-size: 1.05rem;
+}
+
+.beneficios .beneficio i {
+    color: #DC135F;
+    font-size: 1.4rem;
+    width: 1.4rem;
+    text-align: center;
+}
+
+.about-copy {
+    margin-bottom: .6rem;
+}
+
+.about-cta {
+    margin-top: 1rem;
+}
+
+/* =================================
+   DESCUENTO
+================================= */
 .descuento {
     height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
@@ -365,11 +397,7 @@ header img {
 @media (min-width:768px) {
     .descuento {
         height: 400px;
-        background-image: linear-gradient(to right,
-                rgba(0, 0, 0, .5) 0%,
-                rgba(0, 0, 0, .5) 50%,
-                transparent 50%,
-                transparent 100%), url(../img/cupon.jpg);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 50%, transparent 50%, transparent 100%), url(../img/cupon.jpg);
     }
 }
 
@@ -395,17 +423,9 @@ header img {
     font-size: 3rem;
 }
 
-/* ======================
-   TARJETAS / VARIOS
-   ====================== */
-.listado-iconos {
-    background-color: rgb(245, 245, 245);
-}
-
-.listado-iconos img {
-    height: 100px;
-}
-
+/* =================================
+   VIAJES (cards) / Testimoniales
+================================= */
 .proximos-viajes p {
     font-size: .9rem;
 }
@@ -439,9 +459,9 @@ i {
     margin-top: 1rem;
 }
 
-/* ======================
+/* =================================
    PAGINACIÓN
-   ====================== */
+================================= */
 .pagination {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -455,19 +475,19 @@ i {
     padding: .6rem 1.2rem;
     margin: 0 .3rem;
     border-radius: .5rem;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
 .pagination .page-link:hover {
     background-color: #15B9D5;
-    color: white;
+    color: #fff;
     border-color: #15B9D5;
 }
 
 .pagination .page-item.active .page-link {
     background-color: #DC135F;
     border-color: #DC135F;
-    color: white;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -483,9 +503,14 @@ i {
     color: #999;
 }
 
-/* ======================
+.text-muted {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* =================================
    FOOTER
-   ====================== */
+================================= */
 footer {
     margin-top: auto;
     border-top: 1px solid #e0e0e0;
@@ -496,26 +521,29 @@ footer .nav {
 }
 
 footer .nav a {
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     white-space: nowrap;
 }
 
 footer .copyright {
     margin-bottom: 0;
     line-height: 1.5;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.6rem;
+    color: black;
 }
 
-@media (min-width: 768px) {
+@media (min-width:768px) {
     footer .nav {
         flex-wrap: nowrap;
     }
 
     footer .nav a {
-        padding: 0.5rem 1.5rem;
+        padding: .5rem 1.5rem;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width:767px) {
     footer {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
@@ -528,7 +556,7 @@ footer .copyright {
 
     footer .nav a {
         font-size: 1.4rem;
-        padding: 0.5rem 0.8rem;
+        padding: .5rem .8rem;
     }
 
     footer .copyright {
@@ -538,7 +566,7 @@ footer .copyright {
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width:575px) {
     footer .nav {
         flex-direction: column;
         align-items: center;
@@ -546,65 +574,12 @@ footer .copyright {
 
     footer .nav a {
         font-size: 1.3rem;
-        padding: 0.4rem 0;
+        padding: .4rem 0;
         width: 100%;
         text-align: center;
     }
 
     footer .copyright {
         font-size: 1.2rem;
-    }
-}
-
-/* ===== Sobre Nosotros ===== */
-.about-copy {
-    max-width: 62ch;
-    /* mejor ancho de lectura */
-}
-
-.beneficios {
-    margin-top: 1rem;
-}
-
-.beneficio {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    margin: .45rem 0;
-    /* ritmo vertical constante */
-    font-size: 1.05rem;
-}
-
-.beneficio i {
-    font-size: 1.4rem;
-    /* unifica tamaño de ícono */
-    color: #DC135F;
-    /* color de marca */
-    flex: 0 0 auto;
-    line-height: 1;
-}
-
-.about-cta {
-    min-width: 180px;
-    /* evita “saltos” de botón */
-}
-
-/* Imagen con sutil elevación */
-.rounded-lg {
-    border-radius: .6rem;
-}
-
-.shadow-sm {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
-}
-
-/* Ajustes responsivos finos */
-@media (max-width: 575px) {
-    .beneficio {
-        font-size: 1rem;
-    }
-
-    .beneficio i {
-        font-size: 1.25rem;
     }
 }
