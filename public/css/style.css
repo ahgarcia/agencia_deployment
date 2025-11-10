@@ -3,19 +3,26 @@
     font-family: 'Covered By Your Grace', cursive;
     font-family: 'Open Sans', sans-serif;
 }
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     font-family: 'Staatliches', cursive;
     color: #15B9D5;
 }
+
 h1 {
     font-size: 3.4rem;
 }
+
 h2 {
     font-size: 2.4rem;
 }
+
 h3 {
     font-size: 3rem;
 }
@@ -27,39 +34,145 @@ h3 {
     text-transform: uppercase;
     border-radius: .8rem;
 }
+
 .btn-success:hover {
     background-color: rgb(184, 5, 73);
     border-color: rgb(192, 7, 78);
 }
+
+/* =============== HERO NUEVO =============== */
 .slider {
-    background: url(../img//superior.jpg);
-    min-height: 600px;
-    height: 100vh;
-    background-size: cover;
+    position: relative;
+    background: url(../img/superior.jpg) center/cover no-repeat;
+    color: #fff;
+    min-height: 70vh;
+    height: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: white;
 }
-.slider h1 {
-    color: white;
-}
-.slider em {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 4rem;
-    order: -1;
-    line-height: .8;
-    color: rgba(255, 255, 255, .5);
-}
-@media (min-width:768px) {
-    .slider em {
-        font-size: 8rem;
+
+@media (min-width:576px) {
+    .slider {
+        min-height: 80vh;
     }
 }
+
+@media (min-width:992px) {
+    .slider {
+        min-height: 90vh;
+    }
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
+}
+
+.slider__content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__title {
+    font-family: 'Staatliches', cursive;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+}
+
+@media (min-width:768px) {
+    .hero__title {
+        font-size: 3.6rem;
+    }
+}
+
+.hero__subtitle {
+    max-width: 46ch;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    margin-bottom: .5rem;
+}
+
+.slider em,
+em.aventura {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 3rem;
+    line-height: .9;
+    color: rgba(255, 255, 255, .7);
+    display: block;
+    margin-bottom: .2rem;
+}
+
+@media (min-width:768px) {
+
+    .slider em,
+    em.aventura {
+        font-size: 6rem;
+    }
+}
+
+.slider .btn {
+    border-radius: 12px;
+    padding: .8rem 1.25rem;
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background: #fff;
+    color: #111;
+}
+
+.slider__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: .5rem;
+    outline: 0;
+}
+
+.slider__scroll:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .6);
+}
+
+.slider__scroll i {
+    font-size: 1.25rem;
+    color: #fff;
+    animation: hero-bounce 1.6s infinite;
+}
+
+@keyframes hero-bounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider__scroll i {
+        animation: none;
+    }
+}
+
+/* =============== RESTO DE TU CSS ORIGINAL =============== */
+
 .home {
     position: relative;
 }
+
 .home .navegacion {
     background: transparent;
     position: absolute;
@@ -67,57 +180,64 @@ h3 {
     left: 0;
     width: 100%;
 }
+
 .nav-link.active {
     border-bottom: 5px solid white;
 }
+
 blockquote {
     font-weight: bold;
     line-height: 2;
 }
+
 p {
     font-size: 1.2rem;
     line-height: 2;
 }
+
 .navegacion {
     background-color: #15B9D5;
 }
+
 header .nav a {
     font-family: 'Staatliches', cursive;
     font-size: 2rem;
     color: white;
 }
+
 footer .nav a,
 .copyright {
     font-family: 'Staatliches', cursive;
     font-size: 1.6rem;
     color: black;
 }
+
 .listado-iconos {
     background-color: rgb(245, 245, 245);
 }
+
 .listado-iconos img {
     height: 100px;
 }
 
-
 .descuento {
     height: 400px;
-    background-image: linear-gradient( rgba(0, 0, 0, .5) 0%,  rgba(0, 0, 0, .5) 100%),  url(../img/cupon.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(../img/cupon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 @media (min-width:768px) {
     .descuento {
         height: 400px;
-        background-image:  linear-gradient(
-            to right, 
-            rgba(0, 0, 0, .5) 0%, 
-            rgba(0, 0, 0, .5) 50%, 
-            transparent 50%, 
-            transparent 100%
-        ), url(../img/cupon.jpg);
+        background-image: linear-gradient(to right,
+                rgba(0, 0, 0, .5) 0%,
+                rgba(0, 0, 0, .5) 50%,
+                transparent 50%,
+                transparent 100%), url(../img/cupon.jpg);
     }
 }
+
 .descuento .contenido {
     display: flex;
     flex-direction: column;
@@ -125,13 +245,16 @@ footer .nav a,
     height: 400px;
     color: white;
 }
+
 .descuento p {
     font-family: 'Staatliches', cursive;
     line-height: .8;
 }
+
 .descuento .titulo {
     font-size: 2.4rem;
 }
+
 .descuento .precio {
     color: #15B9D5;
     font-size: 3rem;
@@ -140,15 +263,17 @@ footer .nav a,
 .proximos-viajes p {
     font-size: .9rem;
 }
+
 i {
     color: #DC135F;
     font-size: 2rem;
 }
 
-.testimoniales p{
+.testimoniales p {
     font-size: .8rem;
     font-weight: normal;
 }
+
 .testimoniales p::before {
     background-image: url(../img/quote.jpg);
     background-repeat: no-repeat;
@@ -160,6 +285,7 @@ i {
     display: block;
     margin-bottom: 1rem;
 }
+
 .blockquote-footer {
     text-align: right;
     color: #DC135F;
@@ -167,9 +293,8 @@ i {
     margin-top: 1rem;
 }
 
-/* ===================================
-   PAGINACIÓN
-   =================================== */
+/* ========= PAGINACIÓN ========= */
+
 .pagination {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -211,17 +336,7 @@ i {
     color: #999;
 }
 
-/* Información de paginación */
-.text-muted {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-/* ===================================
-   FOOTER RESPONSIVO
-   =================================== */
-
-/* Estilos base del footer (todos los dispositivos) */
+/* ========= FOOTER RESPONSIVE ========= */
 footer {
     margin-top: auto;
     border-top: 1px solid #e0e0e0;
@@ -241,7 +356,6 @@ footer .copyright {
     line-height: 1.5;
 }
 
-/* Tablet y Desktop (768px+) - Diseño original */
 @media (min-width: 768px) {
     footer .nav {
         flex-wrap: nowrap;
@@ -252,7 +366,6 @@ footer .copyright {
     }
 }
 
-/* Mobile (< 768px) - Ajustes responsivos */
 @media (max-width: 767px) {
     footer {
         padding-top: 2rem !important;
@@ -276,7 +389,6 @@ footer .copyright {
     }
 }
 
-/* Mobile pequeño (< 576px) - Ajustes adicionales */
 @media (max-width: 575px) {
     footer .nav {
         flex-direction: column;
@@ -295,11 +407,7 @@ footer .copyright {
     }
 }
 
-/* ===================================
-   HEADER RESPONSIVO
-   =================================== */
-
-/* Estilos base del header */
+/* ========= HEADER RESPONSIVE ========= */
 header {
     width: 100%;
 }
@@ -323,7 +431,6 @@ header .nav a {
     transition: all 0.3s ease;
 }
 
-/* Desktop (≥768px) - Diseño original */
 @media (min-width: 768px) {
     header .nav {
         flex-wrap: nowrap;
@@ -339,7 +446,6 @@ header .nav a {
     }
 }
 
-/* Tablet (576px - 767px) */
 @media (max-width: 767px) and (min-width: 576px) {
     header .row {
         padding-top: 1.5rem !important;
@@ -359,13 +465,11 @@ header .nav a {
         max-width: 150px;
     }
 
-    /* Logo centrado en tablet */
     header .col-6 {
         text-align: center;
     }
 }
 
-/* Mobile (< 576px) */
 @media (max-width: 575px) {
     header .row {
         padding-top: 1rem !important;
@@ -396,20 +500,17 @@ header .nav a {
         max-width: 120px;
     }
 
-    /* Logo centrado en mobile */
     header .col-6 {
         text-align: center;
         margin-bottom: 0.5rem;
     }
 
-    /* Ambas columnas ocupan todo el ancho en mobile */
     header .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
 
-/* Mobile extra pequeño (<400px) */
 @media (max-width: 399px) {
     header .nav a {
         font-size: 1.3rem;
@@ -419,82 +520,4 @@ header .nav a {
     header img {
         max-width: 100px;
     }
-}
-
-/* ===== HERO mejorado (reusa /img/superior.jpg) ===== */
-.slider{
-  position: relative;                   /* necesario para overlay */
-  background: url(../img/superior.jpg) center/cover no-repeat;
-  color: #fff;
-  min-height: 70vh;                     /* mobile */
-  height: auto;                         /* evita 100vh en iOS */
-  display: flex;
-  align-items: center;
-}
-@media (min-width:576px){ .slider{ min-height: 80vh; } }
-@media (min-width:992px){ .slider{ min-height: 90vh; } }
-
-/* Overlay para contraste AA */
-.slider::before{
-  content:"";
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.55));
-}
-.slider__content{ position: relative; z-index: 1; }
-
-/* Tipos y jerarquía */
-.hero__title{
-  font-family: 'Staatliches', cursive;
-  color:#fff;
-  font-size: 3rem;
-  line-height: 1.1;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
-}
-@media (min-width:768px){ .hero__title{ font-size: 3.6rem; } }
-.hero__subtitle{
-  max-width: 46ch;
-  text-shadow: 0 1px 6px rgba(0,0,0,.25);
-  margin-bottom: .5rem;
-}
-
-/* Mantén tu em "aventura" pero dale mejor escala/responsive */
-.slider em,
-em.aventura{
-  font-family:'Covered By Your Grace',cursive;
-  font-size: 3rem;
-  line-height: .9;
-  color: rgba(255,255,255,.7);
-  display:block;
-  margin-bottom:.2rem;
-}
-@media (min-width:768px){
-  .slider em, em.aventura{ font-size: 6rem; }
-}
-
-/* Botones hero */
-.slider .btn{ border-radius:12px; padding:.8rem 1.25rem; }
-.btn-outline-light{
-  border-color:#fff; color:#fff;
-}
-.btn-outline-light:hover, .btn-outline-light:focus{
-  background:#fff; color:#111;
-}
-
-/* Indicador scroll */
-.slider__scroll{
-  position:absolute; left:50%; bottom:16px; transform:translateX(-50%);
-  display:inline-block; padding:.5rem;
-  outline:0;
-}
-.slider__scroll:focus{ box-shadow:0 0 0 3px rgba(255,255,255,.6); }
-.slider__scroll i{
-  font-size:1.25rem; color:#fff;
-  animation:hero-bounce 1.6s infinite;
-}
-@keyframes hero-bounce{
-  0%,100%{ transform: translate(-50%,0); }
-  50%{    transform: translate(-50%,-6px); }
-}
-@media (prefers-reduced-motion: reduce){
-  .slider__scroll i{ animation:none; }
 }
