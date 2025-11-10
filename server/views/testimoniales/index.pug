@@ -1,25 +1,80 @@
 extends ../layout/index
 block contenido
-    main.container.mt-5
-        h1.text-center.mb-5 #{pagina}        
+    .container.mt-5
+        h1.text-center.mb-5 #{pagina}
         .row
             .col-md-12
-                include ../layout/partials/testimoniales                                
-            .col-md-12
-                h2.text-center Agrega un Testimonial
+                include ../layout/partials/testimoniales
+            .col-md-12.mt-5
+                h2#form-heading.text-center Agrega un Testimonial
                 if(errores)
-                    each error in errores
-                        .alert.alert-danger.text-center=error.mensaje
+                    .alert-container(role="alert", aria-live="polite")
+                        each error in errores
+                            .alert.alert-danger.text-center(role="alert")
+                                i.fas.fa-exclamation-circle.mr-2(aria-hidden="true")
+                                span= error.mensaje
                 .row.justify-content-center
                     .col-md-8
-                        form(action="/testimoniales", method="POST")
+                        form(
+                            action="/testimoniales",
+                            method="POST",
+                            aria-labelledby="form-heading",
+                            novalidate
+                        )
                             .form-group
-                                label(for="nombre") Nombre
-                                input(id="nombre", class="form-control" type="text", placeholder="Tu Nombre", name="nombre", value=nombre)
+                                label(for="nombre")
+                                    | Nombre
+                                    span.text-danger(aria-label="campo requerido") *
+                                input(
+                                    id="nombre",
+                                    class="form-control",
+                                    type="text",
+                                    placeholder="Tu Nombre",
+                                    name="nombre",
+                                    value=nombre,
+                                    required,
+                                    minlength="2",
+                                    maxlength="100",
+                                    aria-required="true",
+                                    aria-describedby="nombre-help"
+                                )
+                                small#nombre-help.form-text.text-muted Entre 2 y 100 caracteres
                             .form-group
-                                label(for="correo") Correo Electrónico
-                                input(id="correo", class="form-control" type="email", placeholder="Tu correo electrónico", name="correo", value=correo)
+                                label(for="correo")
+                                    | Correo Electrónico
+                                    span.text-danger(aria-label="campo requerido") *
+                                input(
+                                    id="correo",
+                                    class="form-control",
+                                    type="email",
+                                    placeholder="correo@ejemplo.com",
+                                    name="correo",
+                                    value=correo,
+                                    required,
+                                    aria-required="true",
+                                    aria-describedby="correo-help"
+                                )
+                                small#correo-help.form-text.text-muted Tu correo no será compartido
                             .form-group
-                                label(for="mensaje") Mensaje
-                                textarea#mensaje(class="form-control", name="mensaje", rows="3", placeholder="Tu mensaje")=mensaje
-                            input.btn.btn-success.btn-block(type="submit", value="Agregar")
+                                label(for="mensaje")
+                                    | Mensaje
+                                    span.text-danger(aria-label="campo requerido") *
+                                textarea(
+                                    id="mensaje",
+                                    class="form-control",
+                                    name="mensaje",
+                                    rows="5",
+                                    placeholder="Cuéntanos sobre tu experiencia...",
+                                    required,
+                                    minlength="10",
+                                    maxlength="500",
+                                    aria-required="true",
+                                    aria-describedby="mensaje-help"
+                                )= mensaje
+                                small#mensaje-help.form-text.text-muted Entre 10 y 500 caracteres
+                            button.btn.btn-success.btn-block.btn-lg(
+                                type="submit",
+                                aria-label="Enviar testimonial"
+                            )
+                                i.fas.fa-paper-plane.mr-2(aria-hidden="true")
+                                | Enviar Testimonial
