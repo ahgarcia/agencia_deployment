@@ -9,7 +9,8 @@ exports.mostrarTestimoniales = async (req, res, next) => {
 
         res.render('testimoniales', {
             pagina: 'Testimoniales',
-            testimoniales
+            testimoniales,
+            exito: req.query.exito === 'true'
         });
     } catch (error) {
         logger.error('Error al obtener testimoniales:', error);
@@ -29,7 +30,7 @@ exports.agregarTestimonial = async (req, res, next) => {
         });
 
         logger.info('Nuevo testimonial creado', { nombre, correo });
-        res.redirect('/testimoniales');
+        res.redirect('/testimoniales?exito=true');
     } catch (error) {
         logger.error('Error al crear testimonial:', error);
         next(error);

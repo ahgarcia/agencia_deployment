@@ -1,12 +1,20 @@
-p.text-center.lead Lee sobre nuestros clientes y sus experiencias
-.row.testimoniales(role="region", aria-label="Testimoniales de clientes")
-    each testimonial in testimoniales
-        .col-md-6.col-lg-4.mb-4
-            article.card(role="article")
-                .card-body
-                    blockquote.blockquote(cite=testimonial.nombre)
-                        p.mb-0
-                            | "#{testimonial.mensaje}"
-                        footer.blockquote-footer
-                            cite(title=`Testimonial de ${testimonial.nombre}`)
-                                | #{testimonial.nombre}
+if testimoniales && testimoniales.length > 0
+    p.text-center.lead Lee sobre nuestros clientes y sus experiencias
+    .row.testimoniales(role="region", aria-label="Testimoniales de clientes")
+        each testimonial in testimoniales
+            .col-md-6.col-lg-4.mb-4
+                article.card.testimonial-card.h-100(role="article")
+                    .card-body.d-flex.flex-column
+                        .testimonial-quote-icon
+                            i.fas.fa-quote-left(aria-hidden="true")
+                        blockquote.blockquote.flex-grow-1(cite=testimonial.nombre)
+                            p.testimonial-message.mb-3
+                                | "#{testimonial.mensaje}"
+                            footer.blockquote-footer.mt-auto
+                                i.fas.fa-user-circle.mr-2(aria-hidden="true")
+                                cite(title=`Testimonial de ${testimonial.nombre}`)
+                                    | #{testimonial.nombre}
+else
+    .alert.alert-info.text-center.empty-testimonials(role="status")
+        i.fas.fa-info-circle.mr-2(aria-hidden="true")
+        span Aún no hay testimoniales. ¡Sé el primero en compartir tu experiencia!

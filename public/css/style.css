@@ -598,28 +598,160 @@ i {
     font-size: 2rem;
 }
 
-.testimoniales p {
-    font-size: .8rem;
-    font-weight: normal;
+/* ======================
+   TESTIMONIALES MEJORADOS
+   ====================== */
+
+/* Tarjeta de testimonial con diseño moderno */
+.testimonial-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
 }
 
-.testimoniales p::before {
-    background-image: url(../img/quote.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 40px;
+/* Borde degradado sutil */
+.testimonial-card::before {
     content: '';
-    width: 40px;
-    height: 40px;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #15B9D5 0%, #DC135F 100%);
+    opacity: 0.8;
+}
+
+/* Efecto hover con elevación */
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(21, 185, 213, 0.2),
+                0 4px 16px rgba(220, 19, 95, 0.1);
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+/* Ícono de comilla decorativo */
+.testimonial-quote-icon {
+    text-align: center;
     margin-bottom: 1rem;
 }
 
-.blockquote-footer {
-    text-align: right;
+.testimonial-quote-icon i {
+    font-size: 2.5rem;
+    color: #15B9D5;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-quote-icon i {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+/* Mensaje del testimonial */
+.testimonial-message {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Footer del testimonial */
+.testimonial-card .blockquote-footer {
+    text-align: left;
     color: #DC135F;
-    font-weight: bold;
-    margin-top: 1rem;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.95rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(21, 185, 213, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-card .blockquote-footer i {
+    color: #15B9D5;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.testimonial-card .blockquote-footer cite {
+    font-style: normal;
+}
+
+/* Estado vacío */
+.empty-testimonials {
+    background: linear-gradient(135deg, rgba(21, 185, 213, 0.1) 0%, rgba(220, 19, 95, 0.1) 100%);
+    border: 2px dashed #15B9D5;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+}
+
+.empty-testimonials i {
+    font-size: 2.5rem;
+    color: #15B9D5;
+}
+
+/* Animación sutil para las cards al cargar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Retardo escalonado para múltiples cards */
+.testimoniales .col-md-6:nth-child(1) .testimonial-card { animation-delay: 0.1s; }
+.testimoniales .col-md-6:nth-child(2) .testimonial-card { animation-delay: 0.2s; }
+.testimoniales .col-md-6:nth-child(3) .testimonial-card { animation-delay: 0.3s; }
+.testimoniales .col-md-6:nth-child(4) .testimonial-card { animation-delay: 0.4s; }
+.testimoniales .col-md-6:nth-child(5) .testimonial-card { animation-delay: 0.5s; }
+.testimoniales .col-md-6:nth-child(6) .testimonial-card { animation-delay: 0.6s; }
+
+/* Desactivar animaciones para usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-card {
+        animation: none;
+        transition: none;
+    }
+
+    .testimonial-card:hover {
+        transform: none;
+    }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .testimonial-quote-icon i {
+        font-size: 2rem;
+    }
+
+    .testimonial-message {
+        font-size: 0.95rem;
+    }
+
+    .empty-testimonials {
+        padding: 2rem 1rem;
+    }
 }
 
 /* ======================
