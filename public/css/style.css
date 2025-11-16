@@ -97,6 +97,7 @@ blockquote {
     position: relative;
     z-index: 1;
     max-width: 720px;
+    padding-top: 90px;  /* Espacio para el header flotante en móvil */
 }
 
 /* Título/subtítulo */
@@ -111,6 +112,16 @@ blockquote {
     .hero__title {
         font-size: 3.6rem;
     }
+
+    .slider__content {
+        padding-top: 110px;  /* Más espacio en tablets/laptops */
+    }
+}
+
+@media (min-width:992px) {
+    .slider__content {
+        padding-top: 130px;  /* Espacio generoso en desktop */
+    }
 }
 
 .hero__subtitle {
@@ -120,7 +131,7 @@ blockquote {
     margin-bottom: .85rem;
 }
 
-/* “aventura” */
+/* "aventura" */
 .slider em,
 em.aventura {
     font-family: 'Covered By Your Grace', cursive;
@@ -128,6 +139,7 @@ em.aventura {
     line-height: .9;
     color: rgba(255, 255, 255, .7);
     display: block;
+    margin-top: 1rem;      /* Separación extra del header */
     margin-bottom: .2rem;
 }
 
@@ -136,6 +148,7 @@ em.aventura {
     .slider em,
     em.aventura {
         font-size: 6rem;
+        margin-top: 1.5rem;  /* Más espacio en tablets/laptops */
     }
 }
 
