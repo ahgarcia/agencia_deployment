@@ -500,7 +500,7 @@ i {
    FOOTER MODERN
    ====================== */
 .footer-modern {
-    margin-top: auto;
+    margin-top: 5rem;
     background: linear-gradient(135deg, #15B9D5 0%, #DC135F 100%);
     color: #ffffff;
     position: relative;
@@ -647,6 +647,10 @@ i {
 
 /* Responsive */
 @media (max-width: 991px) {
+    .footer-modern {
+        margin-top: 4rem;
+    }
+
     .footer-title {
         font-size: 1.6rem;
         margin-bottom: 1rem;
@@ -674,6 +678,10 @@ i {
 }
 
 @media (max-width: 767px) {
+    .footer-modern {
+        margin-top: 3rem;
+    }
+
     .footer-modern .container {
         padding-top: 3rem !important;
         padding-bottom: 2rem !important;
