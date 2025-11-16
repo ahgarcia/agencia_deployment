@@ -42,27 +42,13 @@ block contenido
     if viajeDescuento
         .descuento
             .container
-                .row.align-items-center
+                .row
                     .col-md-6
                         .contenido
                             h3 #{viajeDescuento.descuento_porcentaje}% de Descuento
                             p.titulo= viajeDescuento.titulo
                             p.fecha #{new Date(viajeDescuento.fecha_ida).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })} - #{new Date(viajeDescuento.fecha_vuelta).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}
-                            p.precio.text-decoration-line-through.text-muted= viajeDescuento.precio
-                            p.precio-descuento.h4.text-success.font-weight-bold ¡Ahorra #{viajeDescuento.descuento_porcentaje}%!
-                            a.btn.btn-success.mt-3(href=`/viajes/${viajeDescuento.id}` aria-label=`Ver detalles de ${viajeDescuento.titulo}`) Ver Detalles
-                    .col-md-6.text-center
-                        img.img-fluid.rounded.shadow(
-                            src=viajeDescuento.imagen
-                            alt=viajeDescuento.imagenData.altDescription || viajeDescuento.titulo
-                            loading="lazy"
-                            style="max-height: 400px; object-fit: cover; width: 100%;"
-                        )
-                        if viajeDescuento.imagenData && viajeDescuento.imagenData.photographer !== 'Escápate Conmigo'
-                            p.small.text-muted.mt-2
-                                | Foto por
-                                a(href=viajeDescuento.imagenData.photographerUrl target="_blank" rel="noopener noreferrer")= viajeDescuento.imagenData.photographer
-                                |  en Unsplash
+                            p.precio= viajeDescuento.precio
 
     .container
         h2.text-center.my-5 Testimoniales
