@@ -39,16 +39,30 @@ block contenido
         h2#viajes.text-center.my-5 Próximos Viajes
         include ../layout/partials/viajes
 
-    .descuento
-        .container
-            .row
-                .col-md-6
-                    .contenido
-                        h3 5% de Descuento
-                        p.titulo Viaje a Canada
-                        p.fecha 20 de Julio 2020 - 28 de Julio 2020
-                        p.precio $2,500 USD
-                .col-md-6
+    if viajeDescuento
+        .descuento
+            .container
+                .row.align-items-center
+                    .col-md-6
+                        .contenido
+                            h3 #{viajeDescuento.descuento_porcentaje}% de Descuento
+                            p.titulo= viajeDescuento.titulo
+                            p.fecha #{new Date(viajeDescuento.fecha_ida).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })} - #{new Date(viajeDescuento.fecha_vuelta).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}
+                            p.precio.text-decoration-line-through.text-muted= viajeDescuento.precio
+                            p.precio-descuento.h4.text-success.font-weight-bold ¡Ahorra #{viajeDescuento.descuento_porcentaje}%!
+                            a.btn.btn-success.mt-3(href=`/viajes/${viajeDescuento.id}` aria-label=`Ver detalles de ${viajeDescuento.titulo}`) Ver Detalles
+                    .col-md-6.text-center
+                        img.img-fluid.rounded.shadow(
+                            src=viajeDescuento.imagen
+                            alt=viajeDescuento.imagenData.altDescription || viajeDescuento.titulo
+                            loading="lazy"
+                            style="max-height: 400px; object-fit: cover; width: 100%;"
+                        )
+                        if viajeDescuento.imagenData && viajeDescuento.imagenData.photographer !== 'Escápate Conmigo'
+                            p.small.text-muted.mt-2
+                                | Foto por
+                                a(href=viajeDescuento.imagenData.photographerUrl target="_blank" rel="noopener noreferrer")= viajeDescuento.imagenData.photographer
+                                |  en Unsplash
 
     .container
         h2.text-center.my-5 Testimoniales
