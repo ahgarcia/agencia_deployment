@@ -1,12 +1,11 @@
 .row.proximos-viajes
     each viaje in viajes
         .col-md-6.col-lg-4.mb-4
-            article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`, style="position: relative;")
+            article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`)
                 //- Imagen con atribución
-                .imagen-viaje(style="position: relative;")
-                    img(
+                .imagen-viaje
+                    img.img-fluid(
                         src=viaje.imagen,
-                        class="img-fluid",
                         alt=viaje.imagenData ? viaje.imagenData.altDescription : `Destino turístico: ${viaje.titulo}`,
                         loading="lazy",
                         width="400",
@@ -15,18 +14,24 @@
                         onerror="if(this.src!='/img/destinos_grecia.jpg'){this.src='/img/destinos_grecia.jpg'}"
                     )
 
+                    //- Badges de estado
+                    .trip-badges
+                        if viaje.disponibles <= 5 && viaje.disponibles > 0
+                            span.trip-badge.badge-warning-custom
+                                | ¡#{viaje.disponibles} lugares!
+
                     //- Atribución del fotógrafo (requerido por Unsplash)
                     if viaje.imagenData && viaje.imagenData.photographer !== 'Escápate Conmigo'
-                        .image-credit(style="position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 4px; font-size: 11px;")
+                        .image-credit
                             small
                                 | Foto por
-                                a(href=viaje.imagenData.photographerUrl, target="_blank", rel="noopener noreferrer", style="color: #333; text-decoration: none;")
+                                a(href=viaje.imagenData.photographerUrl, target="_blank", rel="noopener noreferrer")
                                     = viaje.imagenData.photographer
                                 |  en
-                                a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer", style="color: #333; text-decoration: none;") Unsplash
+                                a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer") Unsplash
 
                 .card-body
-                    h2.h4=viaje.titulo
+                    h2.h4= viaje.titulo
                     p
                         i.fas.fa-calendar-alt(aria-hidden="true")
                         span.sr-only Fechas:
@@ -35,7 +40,8 @@
                         i.fas.fa-dollar-sign(aria-hidden="true")
                         span.sr-only Precio:
                         |  #{viaje.precio}
-                    p= viaje.descripcion.substr(0,100) + '...'
+                    - var descripcionCorta = viaje.descripcion.length > 120 ? viaje.descripcion.substr(0, 120) + '...' : viaje.descripcion
+                    p.card-text= descripcionCorta
                     a(
                         href=`viajes/${viaje.id}`,
                         class="btn btn-success btn-block",

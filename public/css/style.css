@@ -894,3 +894,369 @@ i {
     }
 }
 
+/* ======================
+   BREADCRUMBS
+   ====================== */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: #6c757d;
+    padding: 0 0.5rem;
+}
+
+.breadcrumb-item a {
+    color: #15B9D5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #DC135F;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* ======================
+   ESTADO VACÍO
+   ====================== */
+.empty-state {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.empty-state i {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: #6c757d;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: #999;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* ======================
+   DETALLE DE VIAJE
+   ====================== */
+.imagen-viaje-detalle {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.imagen-viaje-detalle img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-credit-detalle {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-credit-detalle a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.image-credit-detalle a:hover {
+    text-decoration: underline;
+}
+
+/* Detalles del viaje */
+.detalles-viaje p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+.detalles-viaje i {
+    color: #15B9D5;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* Galería adicional */
+.galeria-adicional h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #15B9D5;
+}
+
+.row-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.col-galeria img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.col-galeria img:hover {
+    transform: scale(1.05);
+}
+
+.col-galeria small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 10px;
+    color: #666;
+}
+
+.col-galeria small a {
+    color: #666;
+    text-decoration: none;
+}
+
+.col-galeria small a:hover {
+    text-decoration: underline;
+}
+
+/* ======================
+   CTA BOX (Call to Action)
+   ====================== */
+.cta-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    position: sticky;
+    top: 20px;
+}
+
+.price-box {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.price-box h3 {
+    color: #DC135F;
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.price-box small {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.urgency-badge {
+    background: linear-gradient(135deg, #ff6b6b 0%, #dc3545 100%);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+}
+
+.urgency-badge i {
+    color: white;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.cta-box .btn-lg {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.5rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-box .btn-primary {
+    background: linear-gradient(135deg, #DC135F 0%, #b30f4d 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(220, 19, 95, 0.4);
+}
+
+.cta-box .btn-primary:hover {
+    background: linear-gradient(135deg, #b30f4d 0%, #DC135F 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 19, 95, 0.5);
+}
+
+.cta-box .btn-outline-secondary {
+    border: 2px solid #15B9D5;
+    color: #15B9D5;
+    background: transparent;
+}
+
+.cta-box .btn-outline-secondary:hover {
+    background: #15B9D5;
+    color: white;
+    border-color: #15B9D5;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1.2rem;
+}
+
+.alert-danger strong {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.alert-danger p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* ======================
+   CARDS DE VIAJES (PARTIAL)
+   ====================== */
+.imagen-viaje {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.imagen-viaje img {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .imagen-viaje img {
+    transform: scale(1.05);
+}
+
+.image-credit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.image-credit a {
+    color: #333;
+    text-decoration: none;
+}
+
+.image-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Badges de estado en cards */
+.trip-badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.trip-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.badge-warning-custom {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    color: #000;
+}
+
+.badge-info-custom {
+    background: linear-gradient(135deg, #15B9D5 0%, #0ea5c7 100%);
+    color: white;
+}
+
+.badge-danger-custom {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+/* Card ajustes */
+.proximos-viajes .card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.proximos-viajes .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.proximos-viajes .card-body h2 {
+    color: #15B9D5;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.proximos-viajes .card-body p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .imagen-viaje-detalle img {
+        height: 300px;
+    }
+
+    .row-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-box {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
