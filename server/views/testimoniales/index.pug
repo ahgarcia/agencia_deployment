@@ -76,9 +76,13 @@ block contenido
                                     minlength="10",
                                     maxlength="500",
                                     aria-required="true",
-                                    aria-describedby="mensaje-help"
+                                    aria-describedby="mensaje-help mensaje-counter"
                                 )= mensaje
-                                small#mensaje-help.form-text.text-muted Entre 10 y 500 caracteres
+                                .d-flex.justify-content-between.align-items-center
+                                    small#mensaje-help.form-text.text-muted Entre 10 y 500 caracteres
+                                    small#mensaje-counter.form-text.text-muted
+                                        span#char-count 0
+                                        | /500
                             button.btn.btn-success.btn-block.btn-lg(
                                 type="submit",
                                 aria-label="Enviar testimonial"

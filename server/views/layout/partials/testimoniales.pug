@@ -11,9 +11,15 @@ if testimoniales && testimoniales.length > 0
                             p.testimonial-message.mb-3
                                 | #{testimonial.mensaje}
                             footer.blockquote-footer.mt-auto
-                                i.fas.fa-user-circle.mr-2(aria-hidden="true")
-                                cite(title=`Testimonial de ${testimonial.nombre}`)
-                                    | #{testimonial.nombre}
+                                .testimonial-author
+                                    i.fas.fa-user-circle.mr-2(aria-hidden="true")
+                                    cite(title=`Testimonial de ${testimonial.nombre}`)
+                                        | #{testimonial.nombre}
+                                if testimonial.createdAt
+                                    .testimonial-date.mt-2
+                                        i.fas.fa-clock.mr-2(aria-hidden="true")
+                                        time(datetime=testimonial.createdAt, data-timestamp=new Date(testimonial.createdAt).getTime())
+                                            | #{new Date(testimonial.createdAt).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}
 else
     .alert.alert-info.text-center.empty-testimonials(role="status")
         i.fas.fa-info-circle.mr-2(aria-hidden="true")
