@@ -179,36 +179,36 @@ em.aventura {
     color: #111;
 }
 
-/* Botón turquesa outline con animación pulsante */
+/* Botón turquesa sólido con animación pulsante */
 .btn-outline-turquoise {
+    background: #15B9D5;
     border: 2px solid #15B9D5;
-    color: #15B9D5;
-    background: transparent;
+    color: #fff;
     font-weight: 600;
     position: relative;
     overflow: hidden;
-    animation: pulse-border 2s ease-in-out infinite;
+    animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .btn-outline-turquoise:hover,
 .btn-outline-turquoise:focus {
-    background: #15B9D5;
-    border-color: #15B9D5;
+    background: #13a8bf;
+    border-color: #13a8bf;
     color: #fff;
     animation: none;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(21, 185, 213, 0.4);
+    box-shadow: 0 8px 24px rgba(21, 185, 213, 0.5);
 }
 
-/* Animación de pulsación en el borde */
-@keyframes pulse-border {
+/* Animación de pulsación de brillo */
+@keyframes pulse-glow {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(21, 185, 213, 0.7);
-        border-color: #15B9D5;
+        box-shadow: 0 0 0 0 rgba(21, 185, 213, 0.7),
+                    0 4px 12px rgba(21, 185, 213, 0.3);
     }
     50% {
-        box-shadow: 0 0 0 6px rgba(21, 185, 213, 0);
-        border-color: #20d5f0;
+        box-shadow: 0 0 0 8px rgba(21, 185, 213, 0),
+                    0 4px 20px rgba(21, 185, 213, 0.5);
     }
 }
 
