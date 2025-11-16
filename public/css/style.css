@@ -139,7 +139,7 @@ em.aventura {
     line-height: .9;
     color: rgba(255, 255, 255, .7);
     display: block;
-    margin-top: 2.5rem;    /* Más separación del header en móvil */
+    margin-top: 4rem;      /* Máxima separación del header en móvil */
     margin-bottom: .2rem;
 }
 
