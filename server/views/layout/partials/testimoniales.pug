@@ -9,7 +9,7 @@ if testimoniales && testimoniales.length > 0
                             i.fas.fa-quote-left(aria-hidden="true")
                         blockquote.blockquote.flex-grow-1(cite=testimonial.nombre)
                             p.testimonial-message.mb-3
-                                | "#{testimonial.mensaje}"
+                                | #{testimonial.mensaje}
                             footer.blockquote-footer.mt-auto
                                 i.fas.fa-user-circle.mr-2(aria-hidden="true")
                                 cite(title=`Testimonial de ${testimonial.nombre}`)
