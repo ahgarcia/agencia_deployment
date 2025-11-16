@@ -179,6 +179,46 @@ em.aventura {
     color: #111;
 }
 
+/* Botón turquesa outline con animación pulsante */
+.btn-outline-turquoise {
+    border: 2px solid #15B9D5;
+    color: #15B9D5;
+    background: transparent;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    animation: pulse-border 2s ease-in-out infinite;
+}
+
+.btn-outline-turquoise:hover,
+.btn-outline-turquoise:focus {
+    background: #15B9D5;
+    border-color: #15B9D5;
+    color: #fff;
+    animation: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 185, 213, 0.4);
+}
+
+/* Animación de pulsación en el borde */
+@keyframes pulse-border {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(21, 185, 213, 0.7);
+        border-color: #15B9D5;
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(21, 185, 213, 0);
+        border-color: #20d5f0;
+    }
+}
+
+/* Desactivar animación para usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .btn-outline-turquoise {
+        animation: none;
+    }
+}
+
 /* Indicador scroll */
 .slider__scroll {
     position: absolute;
