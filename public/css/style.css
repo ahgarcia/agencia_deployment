@@ -139,16 +139,22 @@ em.aventura {
     line-height: .9;
     color: rgba(255, 255, 255, .7);
     display: block;
-    margin-top: 1rem;      /* Separación extra del header */
+    margin-top: 2.5rem;    /* Más separación del header en móvil */
     margin-bottom: .2rem;
 }
 
-@media (min-width:768px) {
+@media (min-width:576px) {
+    .slider em,
+    em.aventura {
+        margin-top: 2rem;   /* Espacio moderado en tablets */
+    }
+}
 
+@media (min-width:768px) {
     .slider em,
     em.aventura {
         font-size: 6rem;
-        margin-top: 1.5rem;  /* Más espacio en tablets/laptops */
+        margin-top: 1.5rem; /* Menos espacio en laptop/desktop */
     }
 }
 
@@ -213,18 +219,23 @@ em.aventura {
     }
 }
 
+/* Responsive botones hero - Móvil */
 @media (max-width:575px) {
     .slider__content {
         max-width: 92vw;
     }
 
+    /* Botones 100% ancho en móvil, homologados */
     .slider .btn {
         width: 100%;
         margin-bottom: .6rem;
+        padding: 1rem 1.25rem;  /* Padding uniforme */
+        font-size: 1rem;         /* Tamaño de fuente consistente */
     }
 
     .slider .btn+.btn {
-        margin-left: 0;
+        margin-left: 0;          /* Sin margen izquierdo en móvil */
+        margin-top: .5rem;       /* Separación vertical entre botones */
     }
 }
 
