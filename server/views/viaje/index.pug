@@ -1,26 +1,35 @@
 extends ../layout/index
 block contenido
     main.container.mt-5
+        //- Breadcrumbs
+        nav(aria-label="Breadcrumb")
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href="/") Inicio
+                li.breadcrumb-item
+                    a(href="/viajes") Viajes
+                li.breadcrumb-item.active(aria-current="page")= viaje.titulo
+
         //- Imagen principal con atribución
         .row.mb-4
             .col-12
-                .imagen-viaje-detalle(style="position: relative; margin-bottom: 2rem;")
+                .imagen-viaje-detalle
                     img.img-fluid(
                         src=viaje.imagen,
                         alt=viaje.imagenData ? viaje.imagenData.altDescription : viaje.titulo,
-                        style=viaje.imagenData && viaje.imagenData.color ? `background-color: ${viaje.imagenData.color}; width: 100%; height: 500px; object-fit: cover; border-radius: 8px;` : 'width: 100%; height: 500px; object-fit: cover; border-radius: 8px;',
+                        style=viaje.imagenData && viaje.imagenData.color ? `background-color: ${viaje.imagenData.color}` : '',
                         onerror="if(this.src!='/img/destinos_grecia.jpg'){this.src='/img/destinos_grecia.jpg'}"
                     )
 
                     //- Atribución del fotógrafo
                     if viaje.imagenData && viaje.imagenData.photographer !== 'Escápate Conmigo'
-                        .image-credit-detalle(style="position: absolute; bottom: 15px; right: 15px; background: rgba(255,255,255,0.95); padding: 8px 12px; border-radius: 6px; font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);")
+                        .image-credit-detalle
                             small
                                 | Foto por
-                                a(href=viaje.imagenData.photographerUrl, target="_blank", rel="noopener noreferrer", style="color: #333; text-decoration: none; font-weight: 500;")
+                                a(href=viaje.imagenData.photographerUrl, target="_blank", rel="noopener noreferrer")
                                     = viaje.imagenData.photographer
                                 |  en
-                                a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer", style="color: #333; text-decoration: none; font-weight: 500;") Unsplash
+                                a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer") Unsplash
 
         //- Información del viaje
         .row
@@ -43,21 +52,44 @@ block contenido
                         |  Lugares Disponibles: #{viaje.disponibles}
 
             .col-md-5
+                //- CTA Box (Call to Action)
+                .cta-box
+                    .price-box.text-center
+                        h3 #{viaje.precio}
+                        small por persona
+
+                    if viaje.disponibles > 0
+                        if viaje.disponibles <= 5
+                            .urgency-badge
+                                i.fas.fa-exclamation-triangle
+                                | ¡Solo quedan #{viaje.disponibles} lugares!
+
+                        button.btn.btn-lg.btn-primary.btn-block(type="button")
+                            i.fas.fa-calendar-check
+                            |  Reservar Ahora
+
+                        button.btn.btn-lg.btn-outline-secondary.btn-block(type="button")
+                            i.fas.fa-envelope
+                            |  Consultar Disponibilidad
+                    else
+                        .alert.alert-danger
+                            strong Agotado
+                            p Este viaje no tiene lugares disponibles
+
                 //- Galería adicional
                 if viaje.galeria && viaje.galeria.length > 0
-                    .galeria-adicional
+                    .galeria-adicional.mt-4
                         h3 Más imágenes de este destino
-                        .row-galeria(style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;")
+                        .row-galeria
                             each imagen in viaje.galeria
                                 .col-galeria
                                     img(
                                         src=imagen.urlSmall,
                                         alt=`Vista de ${viaje.titulo}`,
-                                        loading="lazy",
-                                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;"
+                                        loading="lazy"
                                     )
                                     if imagen.photographer
-                                        small.text-muted(style="display: block; margin-top: 0.5rem; font-size: 10px;")
+                                        small.text-muted
                                             | Por
-                                            a(href=imagen.photographerUrl, target="_blank", rel="noopener noreferrer", style="color: #666; text-decoration: none;")
+                                            a(href=imagen.photographerUrl, target="_blank", rel="noopener noreferrer")
                                                 = imagen.photographer

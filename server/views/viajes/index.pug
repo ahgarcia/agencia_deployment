@@ -1,6 +1,13 @@
 extends ../layout/index
 block contenido
     main.container.mt-5
+        //- Breadcrumbs
+        nav(aria-label="Breadcrumb")
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href="/") Inicio
+                li.breadcrumb-item.active(aria-current="page") Viajes
+
         h1.text-center.mb-5 #{pagina}
 
         //- Información de paginación
@@ -8,7 +15,14 @@ block contenido
             p.text-muted.text-center.mb-4
                 | Mostrando #{viajes.length} de #{totalViajes} destinos
 
-        include ../layout/partials/viajes
+        //- Estado vacío
+        if viajes.length === 0
+            .empty-state.text-center
+                i.fas.fa-plane-slash.fa-4x.mb-3
+                h3 No hay viajes disponibles
+                p.text-muted En este momento no tenemos destinos disponibles. Vuelve pronto para descubrir nuevas aventuras.
+        else
+            include ../layout/partials/viajes
 
         //- Controles de paginación
         if totalPaginas > 1
