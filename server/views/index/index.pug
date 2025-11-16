@@ -52,6 +52,20 @@ block contenido
                             p ¡Ahorra #{viajeDescuento.descuento_porcentaje}%!
                             a.btn.btn-success.btn-lg(href=`/viajes/${viajeDescuento.id}` aria-label=`Ver detalles de ${viajeDescuento.titulo}`) Ver Detalles
 
+    if otrosDescuentos && otrosDescuentos.length > 0
+        .container.my-5
+            p.text-center.text-muted.mb-4 También en oferta:
+            .row
+                each viaje in otrosDescuentos
+                    .col-md-4.mb-3
+                        .card.border-success.h-100
+                            .card-body.text-center
+                                span.badge.badge-success.mb-2.p-2(style="font-size: 1rem;") #{viaje.descuento_porcentaje}% OFF
+                                h5.card-title.font-weight-bold= viaje.titulo
+                                p.text-muted.small #{new Date(viaje.fecha_ida).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })} - #{new Date(viaje.fecha_vuelta).toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                p.card-text.h5.text-success= viaje.precio
+                                a.btn.btn-outline-success.btn-sm(href=`/viajes/${viaje.id}` aria-label=`Ver más sobre ${viaje.titulo}`) Ver más
+
     .container
         h2.text-center.my-5 Testimoniales
         include ../layout/partials/testimoniales

@@ -11,9 +11,9 @@ exports.mostrarInicio = async (req, res, next) => {
             order: [['fecha_ida', 'ASC']]
         });
 
-        // Buscar un viaje con descuento activo y vigente
+        // Buscar viajes con descuento activo y vigente (máximo 4: 1 principal + 3 secundarios)
         const ahora = new Date();
-        const viajeDescuento = await Viaje.findOne({
+        const viajesDescuento = await Viaje.findAll({
             where: {
                 descuento_activo: true,
                 descuento_porcentaje: {
@@ -43,7 +43,8 @@ exports.mostrarInicio = async (req, res, next) => {
                     }
                 ]
             },
-            order: [['descuento_porcentaje', 'DESC']] // Priorizar mayor descuento
+            order: [['descuento_porcentaje', 'DESC']], // Priorizar mayor descuento
+            limit: 4 // 1 principal + 3 secundarios
         });
 
         // Enriquecer cada viaje con imágenes de Unsplash API
@@ -88,37 +89,48 @@ exports.mostrarInicio = async (req, res, next) => {
             order: [['id', 'DESC']]
         });
 
-        // Procesar viaje con descuento si existe
+        // Procesar viajes con descuento si existen
         let viajeDescuentoConImagen = null;
-        if (viajeDescuento) {
-            const viajeJSON = viajeDescuento.toJSON();
+        let otrosDescuentos = [];
 
-            // Aplicar misma lógica de imágenes
-            if (viajeJSON.usa_api_imagen && viajeJSON.slug) {
-                const imageData = await imageService.getDestinationImage(
-                    viajeJSON.slug,
-                    viajeJSON.tipo_destino || 'tourism'
-                );
-                viajeJSON.imagenData = imageData;
-                viajeJSON.imagen = imageData.url;
-            } else if (viajeJSON.imagen) {
-                viajeJSON.imagenData = {
-                    url: viajeJSON.imagen,
-                    photographer: 'Escápate Conmigo',
-                    photographerUrl: '#',
-                    altDescription: viajeJSON.titulo
-                };
-            } else {
-                viajeJSON.imagenData = {
-                    url: '/img/destinos_grecia.jpg',
-                    photographer: 'Escápate Conmigo',
-                    photographerUrl: '#',
-                    altDescription: viajeJSON.titulo
-                };
-                viajeJSON.imagen = '/img/destinos_grecia.jpg';
-            }
+        if (viajesDescuento && viajesDescuento.length > 0) {
+            // Procesar todos los descuentos con imágenes
+            const viajesDescuentoConImagenes = await Promise.all(
+                viajesDescuento.map(async (viaje) => {
+                    const viajeJSON = viaje.toJSON();
 
-            viajeDescuentoConImagen = viajeJSON;
+                    // Aplicar misma lógica de imágenes
+                    if (viajeJSON.usa_api_imagen && viajeJSON.slug) {
+                        const imageData = await imageService.getDestinationImage(
+                            viajeJSON.slug,
+                            viajeJSON.tipo_destino || 'tourism'
+                        );
+                        viajeJSON.imagenData = imageData;
+                        viajeJSON.imagen = imageData.url;
+                    } else if (viajeJSON.imagen) {
+                        viajeJSON.imagenData = {
+                            url: viajeJSON.imagen,
+                            photographer: 'Escápate Conmigo',
+                            photographerUrl: '#',
+                            altDescription: viajeJSON.titulo
+                        };
+                    } else {
+                        viajeJSON.imagenData = {
+                            url: '/img/destinos_grecia.jpg',
+                            photographer: 'Escápate Conmigo',
+                            photographerUrl: '#',
+                            altDescription: viajeJSON.titulo
+                        };
+                        viajeJSON.imagen = '/img/destinos_grecia.jpg';
+                    }
+
+                    return viajeJSON;
+                })
+            );
+
+            // Separar principal (mayor descuento) y secundarios
+            viajeDescuentoConImagen = viajesDescuentoConImagenes[0]; // Principal
+            otrosDescuentos = viajesDescuentoConImagenes.slice(1); // Hasta 3 secundarios
         }
 
         res.render('index/index', {
@@ -128,7 +140,8 @@ exports.mostrarInicio = async (req, res, next) => {
             ruta: '/',                    // para marcar activo en el header
             viajes: viajesConImagenes,
             testimoniales,
-            viajeDescuento: viajeDescuentoConImagen  // Nuevo: viaje con descuento
+            viajeDescuento: viajeDescuentoConImagen,  // Descuento principal
+            otrosDescuentos: otrosDescuentos          // Descuentos secundarios (hasta 3)
         });
     } catch (error) {
         logger.error('Error en página de inicio:', error);
