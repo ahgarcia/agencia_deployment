@@ -654,13 +654,18 @@ i {
     transform: scale(1.1);
 }
 
+/* Sobrescribir el blockquote global para testimoniales */
+.testimonial-card blockquote {
+    font-weight: normal;
+}
+
 /* Mensaje del testimonial */
 .testimonial-message {
     font-size: 1rem;
     line-height: 1.7;
     color: #333;
     font-style: italic;
-    font-weight: 400 !important;  /* Sobrescribir el bold heredado de blockquote global */
+    font-weight: 400;
     margin-bottom: 1.5rem;
     position: relative;
 }
