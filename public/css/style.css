@@ -250,6 +250,17 @@ body:not(.home) header .navegacion {
     background: #15B9D5;
 }
 
+/* ======================
+   ESTILOS BASE HEADER
+   ====================== */
+
+/* Logo */
+header img {
+    max-width: 100%;
+    height: auto;
+    transition: max-width .3s ease;
+}
+
 /* Enlaces del menú */
 header .nav {
     flex-wrap: wrap;
@@ -257,111 +268,219 @@ header .nav {
 
 header .nav a {
     font-family: 'Staatliches', cursive;
-    font-size: 2rem;
     color: #fff;
     white-space: nowrap;
-    padding: .5rem 1rem;
     transition: all .3s ease;
+    text-decoration: none;
+    display: block;
+}
+
+header .nav a:hover {
+    color: rgba(255, 255, 255, .85);
 }
 
 .nav-link.active {
     border-bottom: 5px solid #fff;
 }
 
-/* Logo */
-header img {
-    max-width: 100%;
-    height: auto;
+/* Botón hamburguesa */
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, .5);
+    background: transparent;
+    padding: .5rem .75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
-@media (min-width:768px) {
+.navbar-toggler:hover {
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .8);
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .3);
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: background .3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    transition: transform .3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -7px;
+}
+
+.navbar-toggler-icon::after {
+    top: 7px;
+}
+
+/* Animación del menú colapsable en móvil */
+#navbarNav.collapse:not(.show) {
+    display: none;
+}
+
+#navbarNav.collapsing {
+    transition: height .35s ease;
+}
+
+/* ======================
+   BREAKPOINTS RESPONSIVE
+   ====================== */
+
+/* 📱 MÓVIL EXTRA PEQUEÑO (<400px) - iPhone SE pequeño */
+@media (max-width: 399px) {
+    header img {
+        max-width: 90px;
+    }
+
+    header .nav a {
+        font-size: 1.2rem;
+        padding: .4rem .8rem;
+    }
+
+    .navbar-toggler {
+        padding: .4rem .6rem;
+    }
+}
+
+/* 📱 MÓVIL (400px-575px) - iPhone SE, Galaxy S20 */
+@media (min-width: 400px) and (max-width: 575px) {
+    header img {
+        max-width: 110px;
+    }
+
+    header .nav a {
+        font-size: 1.3rem;
+        padding: .5rem 1rem;
+    }
+}
+
+/* Estilos comunes para TODO móvil (<576px) */
+@media (max-width: 575px) {
+    /* Menú colapsable en móvil */
+    #navbarNav.collapse {
+        background: rgba(0, 0, 0, .15);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        margin-top: 1rem;
+        padding: .5rem 0;
+    }
+
+    header .nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .25rem;
+    }
+
+    header .nav a {
+        text-align: center;
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+        border-radius: 6px;
+    }
+
+    header .nav a:hover,
+    header .nav a.active {
+        background-color: rgba(255, 255, 255, .15);
+        border-bottom: none !important;
+    }
+
+    header .nav a.active {
+        font-weight: bold;
+    }
+}
+
+/* 📱 TABLET (576px-767px) - iPad Mini */
+@media (min-width: 576px) and (max-width: 767px) {
+    header img {
+        max-width: 140px;
+    }
+
+    header .nav {
+        flex-wrap: nowrap;
+    }
+
+    header .nav a {
+        font-size: 1.5rem;
+        padding: .5rem 1rem;
+    }
+}
+
+/* 💻 LAPTOP PEQUEÑO (768px-991px) - MacBook Air, tablets grandes */
+@media (min-width: 768px) and (max-width: 991px) {
+    header img {
+        max-width: 170px;
+    }
+
+    header .nav {
+        flex-wrap: nowrap;
+    }
+
+    header .nav a {
+        font-size: 1.7rem;
+        padding: .5rem 1.2rem;
+    }
+}
+
+/* 💻 LAPTOP (992px-1199px) - Laptops estándar */
+@media (min-width: 992px) and (max-width: 1199px) {
+    header img {
+        max-width: 190px;
+    }
+
+    header .nav {
+        flex-wrap: nowrap;
+    }
+
+    header .nav a {
+        font-size: 1.9rem;
+        padding: .5rem 1.4rem;
+    }
+}
+
+/* 🖥️ DESKTOP (1200px+) - Pantallas grandes */
+@media (min-width: 1200px) {
+    header img {
+        max-width: 220px;
+    }
+
     header .nav {
         flex-wrap: nowrap;
     }
 
     header .nav a {
         font-size: 2rem;
-        padding: .5rem 1.5rem;
-    }
-
-    header img {
-        max-width: 200px;
+        padding: .5rem 1.6rem;
     }
 }
 
-@media (max-width:767px) and (min-width:576px) {
-    header .row {
-        padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
-    }
-
-    header .nav {
-        justify-content: center !important;
+/* 🖥️ DESKTOP EXTRA GRANDE (1400px+) - Pantallas muy grandes */
+@media (min-width: 1400px) {
+    header img {
+        max-width: 250px;
     }
 
     header .nav a {
-        font-size: 1.6rem;
-        padding: .5rem .8rem;
-    }
-
-    header img {
-        max-width: 150px;
-    }
-
-    header .col-6 {
-        text-align: center;
-    }
-}
-
-@media (max-width:575px) {
-    header .row {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-
-    header .nav {
-        justify-content: center !important;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header .nav a {
-        font-size: 1.4rem;
-        padding: .4rem 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: none !important;
-    }
-
-    header .nav a.active {
-        background-color: rgba(255, 255, 255, .2);
-        border-radius: 4px;
-        border-bottom: none !important;
-    }
-
-    header img {
-        max-width: 120px;
-    }
-
-    header .col-6 {
-        text-align: center;
-        margin-bottom: .5rem;
-    }
-
-    header .col-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width:399px) {
-    header .nav a {
-        font-size: 1.3rem;
-        padding: .3rem 0;
-    }
-
-    header img {
-        max-width: 100px;
+        font-size: 2.1rem;
+        padding: .5rem 2rem;
     }
 }
 
@@ -724,129 +843,3 @@ i {
     }
 }
 
-/* =========================
-   HEADER FIJO + NAV LIMPIA
-   ========================= */
-:root{
-  --header-h: 72px;
-  --brand-max-w: 210px;
-  --brand-max-w-md: 260px;
-  --nav-link-color: #ffffff;
-  --nav-link-active: #20c5cf; /* tu turquesa */
-}
-
-/* Contenedor base */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1030;            /* por encima del hero */
-  background: rgba(0,0,0,0);/* transparente sobre el slider */
-  backdrop-filter: none;
-  transition: background .25s ease, box-shadow .25s ease;
-}
-
-/* Sólido cuando hay scroll */
-.site-header.is-solid{
-  background: rgba(0,0,0,.75);
-  backdrop-filter: saturate(140%) blur(6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-}
-
-/* Marca */
-.header__logo{
-  max-width: var(--brand-max-w);
-  height: auto;
-}
-@media (min-width: 768px){
-  .header__logo{ max-width: var(--brand-max-w-md); }
-}
-
-/* NAV (desktop) */
-.primary-nav{
-  display: none;
-}
-@media (min-width: 768px){
-  .primary-nav{ display:block; }
-}
-
-.primary-nav .nav-link{
-  color: var(--nav-link-color);
-  font-family: 'Staatliches', cursive;
-  letter-spacing: .5px;
-  font-size: 1.05rem;
-  padding: .25rem .75rem;
-  position: relative;
-  transition: color .15s ease;
-}
-.primary-nav .nav-link:hover{
-  color: #fff;
-}
-
-/* subrayado activo/hover */
-.primary-nav .nav-link::after{
-  content: "";
-  position: absolute;
-  left: .5rem; right: .5rem; bottom: -6px;
-  height: 3px;
-  background: transparent;
-  border-radius: 2px;
-  transition: background .15s ease, transform .2s ease;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-.primary-nav .nav-link:hover::after{
-  background: rgba(255,255,255,.55);
-  transform: scaleX(1);
-}
-.primary-nav .nav-link.active,
-.primary-nav .nav-link[aria-current="page"]{
-  color: var(--nav-link-active);
-}
-.primary-nav .nav-link.active::after,
-.primary-nav .nav-link[aria-current="page"]::after{
-  background: var(--nav-link-active);
-  transform: scaleX(1);
-}
-
-/* BOTÓN MOBILE */
-.nav-toggle{
-  border: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1;
-  padding: .25rem .5rem;
-}
-.nav-toggle:focus{ outline: none; }
-
-/* Menú mobile desplegable */
-@media (max-width: 767.98px){
-  #primary-nav{
-    display: none;
-    position: absolute;
-    top: calc(var(--header-h) - 6px);
-    right: 0;
-    left: 0;
-    background: rgba(0,0,0,.9);
-    padding: .75rem .75rem 1rem;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
-  }
-  #primary-nav.open{ display: block; }
-
-  #primary-nav .nav{
-    flex-direction: column;
-    align-items: center;
-    gap: .25rem;
-  }
-  #primary-nav .nav-link{
-    padding: .5rem .75rem;
-    font-size: 1.1rem;
-  }
-}
-
-/* Ajustes del HERO para no quedar debajo del header cuando es sticky
-   (si tu slider ya tiene suficiente padding-top, puedes omitir esto) */
-.slider{
-  scroll-margin-top: var(--header-h);
-}
