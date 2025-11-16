@@ -660,7 +660,7 @@ i {
     line-height: 1.7;
     color: #333;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 400 !important;  /* Sobrescribir el bold heredado de blockquote global */
     margin-bottom: 1.5rem;
     position: relative;
 }
