@@ -43,6 +43,27 @@ const Viaje = db.define('viajes', {
     usa_api_imagen: {
         type: Sequelize.BOOLEAN,
         defaultValue: true
+    },
+    // ===== CAMPOS DE DESCUENTO =====
+    descuento_porcentaje: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        validate: {
+            min: 0,
+            max: 100
+        }
+    },
+    descuento_activo: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+    },
+    descuento_inicio: {
+        type: Sequelize.DATE,
+        allowNull: true
+    },
+    descuento_fin: {
+        type: Sequelize.DATE,
+        allowNull: true
     }
 }, {
     timestamps: true,
