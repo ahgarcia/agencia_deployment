@@ -6,50 +6,80 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange.svg)
 ![License](https://img.shields.io/badge/license-ISC-green.svg)
 
-Aplicación web full-stack para una agencia de viajes desarrollada con Node.js, Express, Sequelize y MySQL.
+Aplicación web full-stack para una agencia de viajes desarrollada con Node.js, Express, Sequelize y MySQL. Production-ready con seguridad robusta, alto rendimiento y arquitectura MVC.
 
-## 🌟 Características Principales
+---
 
-### Funcionalidades
-- **Catálogo de Viajes**: Visualización de destinos disponibles con información detallada
-- **Sistema de Testimoniales**: Los clientes pueden dejar sus experiencias y comentarios validadas
-- **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos y tamaños de pantalla
+## 🚀 Inicio Rápido
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/ahgarcia/agencia_deployment.git
+cd agencia_deployment
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Configurar variables de entorno (ver variables.env.example)
+cp variables.env.example variables.env
+
+# 4. Crear base de datos MySQL
+mysql -u root -p -e "CREATE DATABASE agencia_viajes CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+# 5. Iniciar en modo desarrollo
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:3000`
+
+---
+
+## 🌟 Características
+
+### Funcionalidades Principales
+- **Catálogo de Viajes**: Visualización de destinos con información detallada, precios y disponibilidad
+- **Sistema de Blog**: Plataforma de contenidos con 5 categorías, paginación, posts relacionados y contador de vistas
+- **Testimoniales**: Sistema de comentarios de clientes con validación y rate limiting
+- **Integración Unsplash**: Imágenes dinámicas de destinos con caché de 24 horas
+- **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos
 - **Arquitectura MVC**: Código organizado, mantenible y escalable
-- **Motor de Plantillas Pug**: Renderizado eficiente del lado del servidor
 
-### Seguridad y Performance
-- **🔒 Seguridad Robusta**: Helmet, CORS, Rate Limiting, validación de inputs
-- **⚡ Alto Rendimiento**: Compresión gzip, cache optimizado, lazy loading
-- **📊 Logging Profesional**: Winston con múltiples niveles y archivos
-- **♿ Accesibilidad**: WCAG 2.1 A/AA compliant
-- **🎨 SEO Optimizado**: Meta tags, Open Graph, Twitter Cards
+### Seguridad y Rendimiento
+- 🔒 **Seguridad**: Helmet, CORS, Rate Limiting, validación de inputs (express-validator)
+- ⚡ **Performance**: Compresión gzip (-68% transferencia), cache optimizado, lazy loading
+- 📊 **Logging**: Winston con múltiples niveles (error.log, combined.log)
+- ♿ **Accesibilidad**: WCAG 2.1 A/AA compliant con ARIA labels
+- 🎨 **SEO**: Meta tags, Open Graph, Twitter Cards, Schema.org markup
+- ✅ **Production-Ready**: 0 vulnerabilidades, manejo de errores centralizado
 
-## Requisitos Previos
+---
 
-Antes de comenzar, asegúrate de tener instalado:
+## 📋 Requisitos Previos
 
 - [Node.js](https://nodejs.org/) (versión 18 o superior)
 - [MySQL](https://www.mysql.com/) (versión 8.0 o superior)
 - [npm](https://www.npmjs.com/) (incluido con Node.js)
 
-## Instalación
+---
 
-1. **Clonar el repositorio**
+## ⚙️ Instalación
+
+### 1. Clonar el repositorio
 
 ```bash
 git clone https://github.com/ahgarcia/agencia_deployment.git
 cd agencia_deployment
 ```
 
-2. **Instalar dependencias**
+### 2. Instalar dependencias
 
 ```bash
 npm install
 ```
 
-3. **Configurar variables de entorno**
+### 3. Configurar variables de entorno
 
-Crea un archivo `variables.env` en la raíz del proyecto con las siguientes variables:
+Crea un archivo `variables.env` en la raíz del proyecto:
 
 ```env
 # Configuración de Base de Datos
@@ -67,15 +97,22 @@ NODE_ENV=development
 
 > **Nota**: Puedes usar `variables.env.example` como plantilla.
 
-4. **Crear la base de datos**
+### 4. Crear la base de datos
 
-Conéctate a MySQL y crea la base de datos:
+Conéctate a MySQL y ejecuta:
 
 ```sql
 CREATE DATABASE agencia_viajes CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-5. **Iniciar la aplicación**
+### 5. Poblar con datos de ejemplo (opcional)
+
+```bash
+# Crear 6 posts de blog de ejemplo
+npm run seed:blog
+```
+
+### 6. Iniciar la aplicación
 
 **Modo Desarrollo** (con auto-reload):
 ```bash
@@ -87,353 +124,356 @@ npm run dev
 npm start
 ```
 
-La aplicación estará disponible en `http://localhost:3000`
+---
+
+## 🔧 Scripts Disponibles
+
+| Comando | Descripción |
+|---------|-------------|
+| `npm start` | Inicia el servidor en modo producción |
+| `npm run dev` | Inicia el servidor en modo desarrollo con auto-reload (nodemon) |
+| `npm run seed:blog` | Poblar base de datos con 6 posts de blog de ejemplo |
+| `npm run optimize:images` | Optimizar imágenes del proyecto usando Sharp |
 
 ---
 
-## 🚀 Deployment
-
-Para desplegar esta aplicación a producción, consulta la **[Guía Completa de Deployment](./DEPLOYMENT_GUIDE.md)**.
-
-### Opciones Recomendadas:
-
-**🏆 Más Fácil - Railway** (5 minutos)
-```bash
-# Setup automático con MySQL incluido
-# 1. Conecta tu repo en https://railway.app
-# 2. Agrega MySQL desde el dashboard
-# 3. Deploy automático al hacer push
-```
-
-**💰 Gratis - Render**
-```bash
-# Plan gratuito con PostgreSQL
-# Requiere migración de MySQL a PostgreSQL
-# Ver guía detallada en DEPLOYMENT_GUIDE.md
-```
-
-**🐳 Docker - Para cualquier servidor**
-```bash
-# Usando Docker Compose (recomendado)
-docker-compose up -d
-
-# O solo Docker
-docker build -t agencia-viajes .
-docker run -p 3000:3000 agencia-viajes
-```
-
-**🖥️ VPS Manual - Control total**
-```bash
-# Script de deployment incluido
-chmod +x scripts/deploy.sh
-./scripts/deploy.sh production
-```
-
-📖 **Ver [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) para instrucciones detalladas de cada opción.**
-
----
-
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 agencia_deployment/
 ├── public/                      # Archivos estáticos
 │   ├── css/
 │   │   └── style.css           # Estilos personalizados
-│   └── img/                     # Imágenes de destinos e iconos
+│   └── img/                     # Imágenes de destinos
 ├── server/                      # Código del servidor
 │   ├── config/
 │   │   ├── database.js         # Configuración de Sequelize
+│   │   ├── logger.js           # Winston logger
 │   │   └── index.js            # Configuración por ambiente
 │   ├── controllers/            # Lógica de negocio
 │   │   ├── homeController.js
 │   │   ├── nosotrosController.js
 │   │   ├── viajesController.js
+│   │   ├── blogController.js
 │   │   └── testimonialesController.js
-│   ├── models/                 # Modelos de base de datos
+│   ├── models/                 # Modelos Sequelize
 │   │   ├── Viajes.js
+│   │   ├── BlogPost.js
 │   │   └── Testimoniales.js
+│   ├── middleware/             # Middleware personalizado
+│   │   ├── errorHandler.js     # Manejo de errores 404/500
+│   │   ├── validators.js       # Validaciones express-validator
+│   │   └── performance.js      # Tracking de performance
+│   ├── services/               # Servicios externos
+│   │   └── imageService.js     # Integración con Unsplash API
 │   ├── routes/
 │   │   └── index.js            # Definición de rutas
 │   ├── views/                  # Plantillas Pug
 │   │   ├── layout/
-│   │   │   ├── index.pug
-│   │   │   ├── includes/
-│   │   │   └── partials/
-│   │   ├── index/index.pug
-│   │   ├── nosotros/index.pug
-│   │   ├── viajes/index.pug
-│   │   ├── viaje/index.pug
-│   │   └── testimoniales/index.pug
-│   └── index.js                # Punto de entrada
-├── .gitignore
-├── package.json
-├── package-lock.json
+│   │   ├── index/
+│   │   ├── nosotros/
+│   │   ├── viajes/
+│   │   ├── blog/
+│   │   ├── testimoniales/
+│   │   └── error.pug
+│   └── index.js                # Punto de entrada del servidor
+├── scripts/                     # Scripts de utilidad
+│   ├── seed-blog.js            # Poblador de datos del blog
+│   ├── optimize-images.js      # Optimizador de imágenes
+│   ├── DATABASE_SCHEMA.md      # Documentación de modelos
+│   ├── POSTGRESQL_SETUP.md     # Guía migración PostgreSQL
+│   └── postgresql-blog-schema.sql
+├── logs/                        # Archivos de log (Winston)
+├── Dockerfile                   # Docker containerization
+├── docker-compose.yml          # Orquestación con MySQL + Nginx
 ├── variables.env.example       # Plantilla de variables de entorno
-├── PROJECT_IMPROVEMENTS_CHECKLIST.md
-└── README.md
+├── CHANGELOG.md                # Historial de cambios
+└── README.md                   # Este archivo
 ```
 
-## Scripts Disponibles
+---
 
-| Comando | Descripción |
-|---------|-------------|
-| `npm start` | Inicia el servidor en modo producción |
-| `npm run dev` | Inicia el servidor en modo desarrollo con auto-reload |
-
-## Tecnologías Utilizadas
+## 🛠 Tecnologías
 
 ### Backend
-- **Node.js** - Entorno de ejecución de JavaScript
-- **Express 5** - Framework web minimalista
-- **Sequelize 6** - ORM para Node.js
-- **MySQL2** - Cliente MySQL para Node.js
+- **Node.js 18** - Entorno de ejecución
+- **Express 5.1.0** - Framework web
+- **Sequelize 6.37.7** - ORM para Node.js
+- **MySQL2 3.15.3** - Cliente MySQL
 - **dotenv** - Gestión de variables de entorno
 
 ### Frontend
-- **Pug** - Motor de plantillas
-- **Bootstrap 4** - Framework CSS
+- **Pug 3.0.3** - Motor de plantillas
+- **Bootstrap 4** - Framework CSS responsivo
 - **Font Awesome** - Biblioteca de iconos
-- **Google Fonts** - Tipografías personalizadas
+- **Google Fonts** - Tipografías (Raleway, Open Sans)
 
-## Rutas de la Aplicación
+### Seguridad
+- **Helmet 8.1.0** - Protección de headers HTTP
+- **CORS 2.8.5** - Control de orígenes cruzados
+- **express-rate-limit 8.2.1** - Limitación de requests
+- **express-validator 7.3.0** - Validación y sanitización
+
+### Performance y Utilidades
+- **compression 1.8.1** - Compresión gzip/deflate
+- **winston 3.18.3** - Sistema de logging profesional
+- **node-cache 5.1.2** - Cache en memoria
+- **axios 1.13.2** - Cliente HTTP para APIs
+- **sharp 0.34.5** (dev) - Optimización de imágenes
+
+### Base de Datos (Soporte Dual)
+- **MySQL 8.0+** (por defecto)
+- **PostgreSQL** (soporte opcional con pg 8.16.3)
+
+### DevOps
+- **Docker** - Containerización
+- **docker-compose** - Orquestación (MySQL + Node.js + Nginx)
+- **nodemon 3.1.10** - Auto-reload en desarrollo
+
+---
+
+## 🌐 Rutas de la Aplicación
 
 | Ruta | Método | Descripción |
 |------|--------|-------------|
-| `/` | GET | Página principal |
+| `/` | GET | Página principal con viajes destacados |
 | `/nosotros` | GET | Página "Sobre Nosotros" |
-| `/viajes` | GET | Listado de todos los viajes |
+| `/viajes` | GET | Listado de todos los viajes disponibles |
 | `/viajes/:id` | GET | Detalle de un viaje específico |
-| `/testimoniales` | GET | Página de testimoniales |
-| `/testimoniales` | POST | Agregar nuevo testimonial |
+| `/blog` | GET | Listado de posts del blog (paginado) |
+| `/blog?categoria=consejos` | GET | Posts filtrados por categoría |
+| `/blog/:slug` | GET | Detalle de un post individual |
+| `/testimoniales` | GET | Página de testimoniales de clientes |
+| `/testimoniales` | POST | Agregar nuevo testimonial (validado) |
 
-## Modelos de Base de Datos
+---
 
-### Viajes
-```javascript
-{
-  id: INTEGER (PK, Auto-increment),
-  titulo: STRING,
-  precio: STRING,
-  fecha_ida: DATE,
-  fecha_vuelta: DATE,
-  imagen: STRING,
-  descripcion: STRING,
-  disponibles: STRING
-}
+## 🚀 Deployment
+
+El proyecto está optimizado para múltiples plataformas de deployment:
+
+### 🐳 Docker (Recomendado)
+
+```bash
+# Opción 1: Docker Compose (MySQL + Node.js + Nginx incluidos)
+docker-compose up -d
+
+# Opción 2: Solo Docker
+docker build -t agencia-viajes .
+docker run -p 3000:3000 --env-file variables.env agencia-viajes
 ```
 
-### Testimoniales
-```javascript
-{
-  id: INTEGER (PK, Auto-increment),
-  nombre: STRING,
-  correo: STRING,
-  mensaje: STRING
-}
+### ☁️ Plataformas Cloud
+
+**Railway** (Más fácil - 5 minutos)
+- Deploy automático al conectar repositorio
+- MySQL incluido en el plan
+- Variables de entorno desde dashboard
+
+**Render** (Plan gratuito disponible)
+- Requiere migración a PostgreSQL
+- Ver guía en `scripts/POSTGRESQL_SETUP.md`
+
+**Vercel / Netlify**
+- Compatible como aplicación Node.js
+- Requiere base de datos externa (PlanetScale, Neon, etc.)
+
+**VPS (AWS, DigitalOcean, Linode)**
+- Control total del servidor
+- Usar Docker Compose para deployment simplificado
+
+### 📝 Variables de Entorno en Producción
+
+Configura estas variables en tu plataforma de deployment:
+
+```env
+NODE_ENV=production
+BD_NOMBRE=agencia_viajes
+BD_USER=usuario_produccion
+BD_PASS=contraseña_segura
+BD_HOST=host_base_datos
+BD_PORT=3306
+PORT=3000
+HOST=0.0.0.0
 ```
 
-## Configuración de Entornos
+---
 
-El proyecto soporta dos entornos:
+## 📝 Sistema de Blog
 
-**Development:**
-- Título del sitio: "Agencia de Viajes [Desarrollo]"
-- Logs detallados habilitados
+El blog permite compartir contenido sobre viajes, destinos, consejos y experiencias.
 
-**Production:**
-- Título del sitio: "Agencia de Viajes"
-- Configuración optimizada para rendimiento
+### Características del Blog
 
-## Uso
+#### Backend
+- ✅ Modelo `BlogPost` con Sequelize
+- ✅ 5 categorías: consejos, destinos, noticias, experiencias, guías
+- ✅ Paginación (9 posts por página)
+- ✅ Contador de vistas automático
+- ✅ Posts relacionados por categoría
+- ✅ Slugs únicos para URLs amigables
+
+#### Frontend
+- ✅ Vista de listado con sidebar de categorías
+- ✅ Vista de detalle con posts relacionados
+- ✅ Filtros por categoría
+- ✅ Botones de compartir en redes sociales
+- ✅ Schema.org markup para SEO
+- ✅ Diseño responsive
+
+### Configurar el Blog
+
+**1. Las tablas se crean automáticamente** al iniciar el servidor (Sequelize sync)
+
+**2. Poblar con datos de ejemplo:**
+
+```bash
+npm run seed:blog
+```
+
+Este comando crea 6 posts de ejemplo en diferentes categorías.
+
+**3. Acceder al blog:**
+
+- Listado: `http://localhost:3000/blog`
+- Post individual: `http://localhost:3000/blog/[slug]`
+- Por categoría: `http://localhost:3000/blog?categoria=consejos`
+
+### Categorías Disponibles
+
+| Categoría | Descripción | Ejemplo |
+|-----------|-------------|---------|
+| `consejos` | Tips y recomendaciones | "10 consejos para viajar seguro" |
+| `destinos` | Guías de lugares | "París: La ciudad del amor" |
+| `experiencias` | Historias personales | "Mi experiencia en Riviera Maya" |
+| `guias` | Tutoriales completos | "Guía para mochileros" |
+| `noticias` | Novedades de la agencia | "Nuevos destinos 2025" |
+
+### Crear Posts Manualmente
+
+```javascript
+const BlogPost = require('./server/models/BlogPost');
+
+await BlogPost.create({
+    titulo: 'Mi nuevo artículo',
+    slug: 'mi-nuevo-articulo',
+    resumen: 'Breve descripción del artículo',
+    contenido: '<h2>Contenido HTML</h2><p>Texto del artículo...</p>',
+    imagen: 'https://ejemplo.com/imagen.jpg',
+    categoria: 'consejos',
+    autor: 'Tu Nombre',
+    tags: 'viajes, consejos, tips'
+});
+```
+
+---
+
+## 💡 Uso
 
 ### Ver Viajes Disponibles
 1. Navega a `http://localhost:3000/viajes`
-2. Explora los diferentes destinos disponibles
+2. Explora los diferentes destinos
 3. Haz clic en "Más Información" para ver detalles
+
+### Leer el Blog
+1. Navega a `http://localhost:3000/blog`
+2. Filtra por categorías en el sidebar
+3. Haz clic en un post para leer el contenido completo
+4. Comparte en redes sociales
 
 ### Dejar un Testimonial
 1. Navega a `http://localhost:3000/testimoniales`
-2. Completa el formulario con tu nombre, correo y mensaje
-3. Haz clic en "Agregar" para enviar tu testimonial
+2. Completa el formulario (nombre, correo, mensaje)
+3. El sistema valida y limita envíos (5 por 15 minutos)
 
-## Contribuir
+---
+
+## 🗺️ Roadmap
+
+Próximas funcionalidades planeadas:
+
+- [ ] **Autenticación de usuarios** - Login/registro con JWT
+- [ ] **Panel de administración** - CRUD de viajes y posts del blog
+- [ ] **Sistema de reservas** - Reserva online de paquetes
+- [ ] **Pasarela de pagos** - Integración con Stripe/PayPal
+- [ ] **API REST** - Endpoints para consumo externo
+- [ ] **Sistema de comentarios** - Comentarios en posts del blog
+- [ ] **Newsletter** - Suscripción a novedades
+- [ ] **Tests** - Unitarios y de integración (Jest)
+- [ ] **CI/CD** - Deployment automático con GitHub Actions
+
+---
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas!
 
 1. Fork el proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+3. Commit tus cambios (`git commit -m 'Add: Amazing Feature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## Problemas Conocidos
+### Guía de Estilo
 
-Consulta el archivo [PROJECT_IMPROVEMENTS_CHECKLIST.md](./PROJECT_IMPROVEMENTS_CHECKLIST.md) para ver la lista completa de mejoras pendientes y problemas conocidos.
+- Usa commits semánticos: `Add:`, `Fix:`, `Update:`, `Remove:`
+- Documenta funciones y componentes complejos
+- Ejecuta `npm run optimize:images` antes de agregar imágenes
+- Sigue la arquitectura MVC existente
 
-## Roadmap
+---
 
-- [ ] Implementar autenticación para administradores
-- [ ] Agregar panel de administración para gestionar viajes
-- [ ] Sistema de reservas online
-- [ ] Integración con pasarela de pagos
-- [ ] API REST para consumo externo
-- [ ] Tests unitarios y de integración
-- [ ] Configuración de CI/CD
-- [ ] Dockerización del proyecto
+## 🐛 Problemas Conocidos
 
-## Seguridad
+Para ver la lista completa de mejoras pendientes, consulta el archivo [PROJECT_IMPROVEMENTS_CHECKLIST.md](./PROJECT_IMPROVEMENTS_CHECKLIST.md).
+
+---
+
+## 🔒 Seguridad
 
 Si encuentras alguna vulnerabilidad de seguridad, por favor contacta directamente al autor en lugar de abrir un issue público.
 
-## Licencia
+---
 
-Este proyecto está bajo la Licencia ISC.
+## 📄 Licencia
 
-## Autor
+Este proyecto está bajo la **Licencia ISC**.
+
+---
+
+## 👤 Autor
 
 **Andrés Hernández García**
 
-## Agradecimientos
+---
 
-- Bootstrap por el framework CSS
-- Font Awesome por los iconos
-- La comunidad de Node.js y Express
+## 🙏 Agradecimientos
 
-## Changelog
+- [Bootstrap](https://getbootstrap.com/) - Framework CSS
+- [Font Awesome](https://fontawesome.com/) - Iconos
+- [Unsplash](https://unsplash.com/) - Imágenes de alta calidad
+- Comunidad de Node.js y Express
 
-### v1.0.0 (2025-11-08) - Versión Production-Ready
+---
 
-#### 🐛 Correcciones Críticas
-- **Bug Fix**: Corrección de error crítico en manejo de excepciones de base de datos (server/index.js:12)
-- **Seguridad**: Resolución de 43 vulnerabilidades (6 críticas, 18 altas, 14 moderadas, 5 bajas)
-- **Configuración**: Movimiento de nodemon a devDependencies
+## 📚 Documentación Adicional
 
-#### 📦 Actualizaciones de Dependencias
-- Express: 4.17.1 → **5.1.0** (major upgrade)
-- Sequelize: 6.3.3 → **6.37.7**
-- MySQL2: 2.1.0 → **3.15.3** (major upgrade)
-- Dotenv: 8.2.0 → **17.2.3** (major upgrade)
-- Pug: 3.0.0 → **3.0.3**
-- Nodemon: 2.0.4 → **3.1.10** (dev)
+- **[CHANGELOG.md](./CHANGELOG.md)** - Historial de cambios y versiones
+- **[scripts/DATABASE_SCHEMA.md](./scripts/DATABASE_SCHEMA.md)** - Esquema completo de base de datos
+- **[scripts/POSTGRESQL_SETUP.md](./scripts/POSTGRESQL_SETUP.md)** - Guía de migración a PostgreSQL
+- **[variables.env.example](./variables.env.example)** - Template de configuración
 
-#### 🆕 Nuevas Dependencias
-**Seguridad:**
-- helmet ^8.1.0 - Protección de headers HTTP
-- cors ^2.8.5 - Control de orígenes cruzados
-- express-rate-limit ^8.2.1 - Limitación de tasa de requests
-- express-validator ^7.3.0 - Validación y sanitización robusta
+---
 
-**Performance:**
-- compression ^1.8.1 - Compresión gzip/deflate
-- sharp ^0.34.5 (dev) - Optimización de imágenes
+## 📊 Estado del Proyecto
 
-**Logging:**
-- winston ^3.18.3 - Sistema de logging profesional
+![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success.svg)
+![Vulnerabilities](https://img.shields.io/badge/Vulnerabilities-0-success.svg)
+![Version](https://img.shields.io/badge/Version-1.0.2-blue.svg)
 
-#### 🔒 Seguridad Implementada
-- **Helmet**: Protección contra XSS, clickjacking, MIME sniffing
-- **CORS**: Control de orígenes permitidos configurable
-- **Rate Limiting**:
-  - General: 100 requests/minuto
-  - Testimoniales: 5 envíos/15 minutos
-- **Validación**: express-validator con sanitización contra XSS
-- **Headers Seguros**: CSP, HSTS, X-Frame-Options
-
-#### ⚡ Performance Optimizada
-- **Compresión**: Reducción de 60-80% en tamaño de respuestas
-- **Cache Inteligente**:
-  - Imágenes: 7 días (immutable)
-  - CSS/JS: 1 día
-  - HTML: 5 minutos
-- **Lazy Loading**: Carga diferida de imágenes
-- **Preconnect**: DNS prefetching a recursos externos
-- **Response Time Tracking**: Middleware de medición de performance
-
-#### 📊 Logging y Monitoreo
-- **Winston Logger**: Logs estructurados con 5 niveles
-- **Archivos de Log**:
-  - logs/error.log (solo errores)
-  - logs/combined.log (todos los logs)
-- **Request Tracking**: IP, user agent, duración
-- **Error Tracking**: Stack traces en desarrollo
-
-#### ⚠️ Manejo de Errores
-- **Middleware Centralizado**: Captura todos los errores
-- **Vista de Error**: Página personalizada 404/500
-- **Logging Automático**: Según severidad del error
-- **Stack Traces**: Solo en desarrollo
-
-#### 💻 Mejoras de Código
-**Controladores:**
-- Try-catch en todas las funciones async
-- Logging de errores y eventos
-- Validación de recursos (404 si no existe)
-- Ordenamiento optimizado de resultados
-
-**Middleware:**
-- server/middleware/errorHandler.js - Manejo de errores
-- server/middleware/validators.js - Validaciones
-- server/middleware/performance.js - Tracking de performance
-
-#### 🎨 SEO y Accesibilidad
-**SEO:**
-- Meta tags completos (description, keywords, author)
-- Open Graph para Facebook
-- Twitter Cards
-- Favicon y Apple Touch Icon
-- Preconnect a recursos externos
-
-**Accesibilidad (WCAG 2.1 A/AA):**
-- Estructura semántica (main, article, nav)
-- ARIA labels y roles completos
-- Skip navigation link
-- Alt text descriptivo en imágenes
-- Formularios completamente accesibles
-- Screen reader friendly
-
-#### 📱 UX Mejorado
-- Lazy loading nativo en imágenes
-- Validación HTML5 en formularios
-- Mensajes de error claros y descriptivos
-- Campos de ayuda en formularios
-- Botones más prominentes
-- Iconos informativos
-
-#### 📁 Nuevos Archivos
-- PROJECT_IMPROVEMENTS_CHECKLIST.md - Checklist de mejoras
-- README.md - Documentación completa
-- variables.env.example - Template de configuración
-- server/config/logger.js - Logger Winston
-- server/middleware/errorHandler.js - Manejo de errores
-- server/middleware/validators.js - Validaciones
-- server/middleware/performance.js - Performance tracking
-- server/views/error.pug - Vista de error
-- scripts/optimize-images.js - Script de optimización
-- logs/.gitkeep - Directorio de logs
-
-#### 🔧 Scripts Disponibles
-- `npm start` - Producción
-- `npm run dev` - Desarrollo con auto-reload
-- `npm run optimize:images` - Optimizar imágenes (nuevo)
-
-#### 📈 Métricas Mejoradas
-- Tamaño de transferencia: -68%
-- Tiempo de carga: -60%
-- First Contentful Paint: -52%
-- Largest Contentful Paint: -37%
-- Cumulative Layout Shift: -87%
-- SEO Score: +36%
-- Accesibilidad Score: +42%
-- Performance Score: +55%
-
-#### 🎯 Estado Final
-- ✅ 0 vulnerabilidades
-- ✅ 0 bugs críticos
-- ✅ Documentación completa
-- ✅ Seguridad implementada
-- ✅ Performance optimizada
-- ✅ SEO mejorado
-- ✅ Accesibilidad WCAG 2.1 A/AA
-- ✅ Production-ready
+**Versión actual:** 1.0.2
+**Última actualización:** 2025-11-17
+**Estado:** Production-Ready ✅
 
 ---
 

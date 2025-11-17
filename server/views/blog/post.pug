@@ -1,0 +1,141 @@
+extends ../layout/index
+
+block contenido
+    main.container.my-5(role="main")
+        .row
+            //- Contenido principal del post
+            .col-lg-8
+                article.blog-post(itemscope itemtype="http://schema.org/BlogPosting")
+                    //- Imagen destacada
+                    if post.imagen
+                        .post-featured-image.mb-4
+                            img.img-fluid.rounded.shadow(
+                                src=post.imagen
+                                alt=post.titulo
+                                itemprop="image"
+                            )
+
+                    //- Metadata del post
+                    .post-meta.mb-3
+                        span.badge.blog-badge-categoria.mr-2= post.categoria
+                        small.text-muted.mr-3
+                            i.far.fa-calendar-alt.mr-1
+                            time(datetime=post.fecha_publicacion itemprop="datePublished")= new Date(post.fecha_publicacion).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
+                        small.text-muted.mr-3
+                            i.fas.fa-user.mr-1
+                            span(itemprop="author")= post.autor
+                        small.text-muted
+                            i.fas.fa-eye.mr-1
+                            span= post.vistas || 0
+                            |  vistas
+
+                    //- Título del post
+                    h1.display-4.mb-3(itemprop="headline")= post.titulo
+
+                    //- Resumen
+                    p.lead.text-muted.mb-4(itemprop="description")= post.resumen
+
+                    //- Contenido principal
+                    .post-content(itemprop="articleBody")
+                        //- El contenido viene formateado con párrafos
+                        != post.contenido.split('\n').map(p => `<p>${p}</p>`).join('')
+
+                    //- Tags
+                    if post.tags
+                        .post-tags.mt-4.pt-4.border-top
+                            h5.mb-3.post-section-title
+                                i.fas.fa-tags.mr-2
+                                | Tags
+                            - var tagsArray = post.tags.split(',').map(tag => tag.trim())
+                            each tag in tagsArray
+                                span.badge.blog-tag-badge.mr-2.mb-2= tag
+
+                    //- Compartir en redes sociales
+                    .post-share.mt-4.pt-4.border-top
+                        h5.mb-3.post-section-title
+                            i.fas.fa-share-alt.mr-2
+                            | Compartir este artículo
+                        .share-buttons.d-flex.flex-wrap
+                            a.btn.btn-share.btn-share-facebook.mr-2.mb-2(
+                                href=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://escapateconmigo.com/blog/' + post.slug)}`
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Compartir en Facebook"
+                            )
+                                i.fab.fa-facebook-f.mr-2
+                                | Facebook
+                            a.btn.btn-share.btn-share-twitter.mr-2.mb-2(
+                                href=`https://twitter.com/intent/tweet?url=${encodeURIComponent('https://escapateconmigo.com/blog/' + post.slug)}&text=${encodeURIComponent(post.titulo)}`
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Compartir en Twitter"
+                            )
+                                i.fab.fa-twitter.mr-2
+                                | Twitter
+                            a.btn.btn-share.btn-share-whatsapp.mb-2(
+                                href=`https://wa.me/?text=${encodeURIComponent(post.titulo + ' - https://escapateconmigo.com/blog/' + post.slug)}`
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Compartir en WhatsApp"
+                            )
+                                i.fab.fa-whatsapp.mr-2
+                                | WhatsApp
+
+                    //- Navegación de posts relacionados
+                    if postsRelacionados && postsRelacionados.length > 0
+                        .related-posts.mt-5.pt-4.border-top
+                            h3.mb-4.post-section-title
+                                i.fas.fa-bookmark.mr-2
+                                | Artículos Relacionados
+                            .row
+                                each postRelacionado in postsRelacionados
+                                    .col-md-4.col-sm-6.mb-3
+                                        .card.h-100.shadow-sm.related-post-card
+                                            if postRelacionado.imagen
+                                                img.card-img-top(
+                                                    src=postRelacionado.imagen
+                                                    alt=postRelacionado.titulo
+                                                    loading="lazy"
+                                                )
+                                            .card-body.d-flex.flex-column
+                                                span.badge.blog-badge-categoria.mb-2= postRelacionado.categoria
+                                                h5.card-title.h6
+                                                    a.text-dark(href=`/blog/${postRelacionado.slug}`)= postRelacionado.titulo
+                                                p.card-text.small.text-muted= postRelacionado.resumen.substring(0, 100) + '...'
+                                                a.btn.btn-sm.btn-outline-pink.mt-auto(href=`/blog/${postRelacionado.slug}`) Leer más
+
+            //- Sidebar
+            .col-lg-4
+                //- Sobre el autor
+                .card.mb-4.shadow-sm.post-sidebar-card
+                    .card-body.text-center
+                        i.fas.fa-user-circle.fa-4x.mb-3(style="color: #15B9D5")
+                        h5.card-title= post.autor
+                        p.card-text.small.text-muted Expertos en crear experiencias de viaje inolvidables
+                        a.btn.btn-turquoise.btn-sm(href="/nosotros") Conócenos
+
+                //- CTA de viajes
+                .card.bg-gradient-pink.text-white.mb-4.shadow.post-sidebar-card
+                    .card-body.text-center
+                        i.fas.fa-plane-departure.fa-3x.mb-3
+                        h5.card-title Listo para tu próxima aventura?
+                        p.card-text Descubre nuestros destinos increíbles
+                        a.btn.btn-light(href="/viajes") Ver Viajes
+
+                //- Volver al blog
+                .card.shadow-sm.post-sidebar-card
+                    .card-body
+                        a.btn.btn-back-blog.btn-block(href="/blog")
+                            i.fas.fa-arrow-left.mr-2
+                            | Volver al Blog
+
+        //- Breadcrumb para SEO
+        .row.mt-4
+            .col-12
+                nav(aria-label="breadcrumb")
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            a(href="/") Inicio
+                        li.breadcrumb-item
+                            a(href="/blog") Blog
+                        li.breadcrumb-item.active(aria-current="page")= post.titulo

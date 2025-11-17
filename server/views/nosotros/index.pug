@@ -1,26 +1,110 @@
 extends ../layout/index
+
 block contenido
-    main.container.mt-5
-        .row
-            .col-md-5
-                img.img-fluid(src="img/nosotros.jpg", alt="Imagen de Nosotros")
-            .col-md-7
-                h1 #{pagina}
-                blockquote "Viajar es la única inversión en la que gastas dinero y te vuelves más rico. Nuestra misión es hacer que cada peso invertido se convierta en momentos que atesores por siempre."
-                p Fundada por viajeros apasionados, nuestra agencia nació del deseo de compartir la magia de explorar el mundo. <strong>No somos solo intermediarios</strong>, somos expertos que han pisado cada destino que ofrecemos, probado cada experiencia que recomendamos, y establecido relaciones personales con proveedores locales en cada rincón del planeta.
-                p Nuestra filosofía es simple: <strong>tu satisfacción es nuestro éxito</strong>. Por eso trabajamos con total transparencia, ofrecemos atención personalizada las 24 horas, y nos aseguramos de que cada viaje supere tus expectativas. Miles de viajeros satisfechos respaldan nuestro compromiso con la excelencia, y cada testimonio nos impulsa a seguir mejorando día a día.        
-        .listado-iconos
-            .container-mt-5.py-5.text-center
-                .row
-                    .col-md-4
-                        img(src="img/icono_seguridad.svg", class="img-fluid mb-4")
-                        h2.mb-4 Seguridad
-                        p Tu tranquilidad es nuestra prioridad. Trabajamos exclusivamente con proveedores certificados, hoteles de confianza y seguros de viaje completos. Asistencia 24/7 en español para que nunca te sientas solo, sin importar dónde estés en el mundo.
-                    .col-md-4
-                        img(src="img/icono_destinos.svg", class="img-fluid mb-4")
-                        h2.mb-4 Mejores Destinos
-                        p Seleccionamos cuidadosamente los lugares más espectaculares del planeta. Desde playas paradisíacas hasta ciudades históricas, cada destino es elegido por su belleza única, experiencias auténticas y valor cultural. No ofrecemos destinos, ofrecemos sueños hechos realidad.
-                    .col-md-4
-                        img(src="img/icono_precios.svg", class="img-fluid mb-4")
-                        h2.mb-4 Mejor Precio
-                        p Calidad premium sin pagar de más. Nuestras alianzas estratégicas con aerolíneas y hoteles nos permiten ofrecer tarifas competitivas sin sacrificar calidad. Transparencia total: sin costos ocultos, sin sorpresas. Financiamiento flexible disponible para que viajar sea accesible para todos.
+    //- Hero Section: Imagen y Título Principal
+    section.container.mt-5(aria-labelledby="nosotros-title")
+        .row.align-items-center
+            .col-lg-5.col-md-6.mb-4.mb-md-0
+                img.img-fluid.rounded-lg.shadow(
+                    src="img/nosotros.jpg",
+                    alt="Equipo de Escápate Conmigo planificando viajes personalizados para clientes",
+                    loading="eager"
+                )
+            .col-lg-7.col-md-6
+                h1#nosotros-title.mb-4 #{pagina}
+                blockquote.border-left.pl-4.mb-4
+                    p.font-italic "Viajar es la única inversión en la que gastas dinero y te vuelves más rico. Nuestra misión es hacer que cada peso invertido se convierta en momentos que atesores por siempre."
+                    footer.blockquote-footer.text-right Filosofía Escápate Conmigo
+
+                p.lead Fundada por viajeros apasionados, nuestra agencia nació del deseo de compartir la magia de explorar el mundo.
+
+                p <strong>No somos solo intermediarios</strong>, somos expertos que han pisado cada destino que ofrecemos, probado cada experiencia que recomendamos, y establecido relaciones personales con proveedores locales en cada rincón del planeta.
+
+                p Nuestra filosofía es simple: <strong>tu satisfacción es nuestro éxito</strong>. Por eso trabajamos con total transparencia, ofrecemos atención personalizada las 24 horas, y nos aseguramos de que cada viaje supere tus expectativas.
+
+                .mt-4.d-flex.flex-column.flex-sm-row.justify-content-center.justify-content-md-start
+                    a.btn.btn-success.btn-lg.mb-2.mb-sm-0.mr-sm-2(href="/viajes" aria-label="Explorar destinos disponibles")
+                        i.fas.fa-globe-americas.mr-2
+                        | Explorar destinos
+                    a.btn.btn-outline-turquoise.btn-lg.mb-2.mb-sm-0(href="/testimoniales" aria-label="Ver testimonios de clientes")
+                        i.fas.fa-comments.mr-2
+                        | Ver testimonios
+
+    //- Sección de Estadísticas/Logros
+    section.container.my-5(aria-labelledby="estadisticas-title")
+        h2#estadisticas-title.text-center.mb-5.sr-only Nuestros Logros
+        .row.text-center
+            .col-md-3.col-sm-6.mb-4
+                .stat-card.p-4
+                    i.fas.fa-calendar-check.fa-3x.mb-3(style="color: #15B9D5;")
+                    h3.display-4.mb-2(style="color: #DC135F; font-family: 'Staatliches', cursive;") 10+
+                    p.lead Años de Experiencia
+            .col-md-3.col-sm-6.mb-4
+                .stat-card.p-4
+                    i.fas.fa-users.fa-3x.mb-3(style="color: #15B9D5;")
+                    h3.display-4.mb-2(style="color: #DC135F; font-family: 'Staatliches', cursive;") 5,000+
+                    p.lead Clientes Satisfechos
+            .col-md-3.col-sm-6.mb-4
+                .stat-card.p-4
+                    i.fas.fa-map-marked-alt.fa-3x.mb-3(style="color: #15B9D5;")
+                    h3.display-4.mb-2(style="color: #DC135F; font-family: 'Staatliches', cursive;") 50+
+                    p.lead Destinos Ofrecidos
+            .col-md-3.col-sm-6.mb-4
+                .stat-card.p-4
+                    i.fas.fa-star.fa-3x.mb-3(style="color: #15B9D5;")
+                    h3.display-4.mb-2(style="color: #DC135F; font-family: 'Staatliches', cursive;") 4.9
+                    p.lead Calificación Promedio
+
+    //- Sección de Valores (Seguridad, Destinos, Precios)
+    section.listado-iconos(aria-labelledby="valores-title")
+        .container.mt-5.py-5.text-center
+            h2#valores-title.mb-5 ¿Por Qué Elegirnos?
+            .row
+                .col-lg-4.col-md-6.mb-5.mb-lg-0
+                    img.mb-4(
+                        src="img/icono_seguridad.svg",
+                        alt="Ícono de escudo representando seguridad en viajes",
+                        style="height: 100px;",
+                        loading="lazy"
+                    )
+                    h3.mb-4 Seguridad
+                    p Tu tranquilidad es nuestra prioridad. Trabajamos exclusivamente con proveedores certificados, hoteles de confianza y seguros de viaje completos.
+                    p.mb-0 <strong>Asistencia 24/7 en español</strong> para que nunca te sientas solo, sin importar dónde estés en el mundo.
+
+                .col-lg-4.col-md-6.mb-5.mb-lg-0
+                    img.mb-4(
+                        src="img/icono_destinos.svg",
+                        alt="Ícono de brújula representando exploración de destinos",
+                        style="height: 100px;",
+                        loading="lazy"
+                    )
+                    h3.mb-4 Mejores Destinos
+                    p Seleccionamos cuidadosamente los lugares más espectaculares del planeta. Desde playas paradisíacas hasta ciudades históricas, cada destino es elegido por su belleza única.
+                    p.mb-0 <strong>No ofrecemos destinos</strong>, ofrecemos sueños hechos realidad.
+
+                .col-lg-4.col-md-12
+                    img.mb-4(
+                        src="img/icono_precios.svg",
+                        alt="Ícono de etiqueta de precio representando mejores tarifas",
+                        style="height: 100px;",
+                        loading="lazy"
+                    )
+                    h3.mb-4 Mejor Precio
+                    p Calidad premium sin pagar de más. Nuestras alianzas estratégicas con aerolíneas y hoteles nos permiten ofrecer tarifas competitivas sin sacrificar calidad.
+                    p.mb-0 <strong>Transparencia total:</strong> sin costos ocultos, sin sorpresas. Financiamiento flexible disponible para que viajar sea accesible para todos.
+
+    //- Sección de Compromiso/CTA
+    section.container.my-5
+        .row.bg-light.rounded-lg.p-5.align-items-center
+            .col-md-8.mb-4.mb-md-0
+                h2.mb-3(style="color: #15B9D5;") Miles de Viajeros Satisfechos Respaldan Nuestro Compromiso
+                p.lead.mb-0 Cada testimonio nos impulsa a seguir mejorando día a día. Tu próxima aventura comienza aquí.
+            .col-md-4.text-center.text-md-right
+                a.btn.btn-success.btn-lg.btn-block(href="/viajes" aria-label="Comenzar a planear tu viaje")
+                    i.fas.fa-paper-plane.mr-2
+                    | Planea tu viaje
+
+    //- Sección de Testimoniales
+    section.container.my-5(aria-labelledby="testimoniales-title")
+        h2#testimoniales-title.text-center.mb-5 Lo Que Dicen Nuestros Clientes
+        include ../layout/partials/testimoniales
