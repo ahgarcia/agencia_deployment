@@ -3601,3 +3601,468 @@ i {
     }
 }
 
+/* ======================
+   SKELETON SCREENS (Loading States)
+   ====================== */
+
+/* Skeleton base styles */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 0%,
+        #e0e0e0 20%,
+        #f0f0f0 40%,
+        #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+    border-radius: 4px;
+}
+
+/* Dark mode skeleton */
+@media (prefers-color-scheme: dark) {
+    .skeleton {
+        background: linear-gradient(
+            90deg,
+            #2a2a2a 0%,
+            #3a3a3a 20%,
+            #2a2a2a 40%,
+            #2a2a2a 100%
+        );
+    }
+}
+
+/* Skeleton animación */
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Skeleton card para viajes */
+.skeleton-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 300px;
+}
+
+.skeleton-card-body {
+    padding: 1.5rem;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-text {
+    height: 16px;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.skeleton-text.short {
+    width: 60%;
+}
+
+.skeleton-button {
+    height: 38px;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+/* Skeleton para info cards */
+.skeleton-info-card {
+    height: 120px;
+    border-radius: 8px;
+}
+
+/* Skeleton para galería */
+.skeleton-gallery-item {
+    width: 100%;
+    padding-bottom: 100%; /* Aspect ratio 1:1 */
+    position: relative;
+}
+
+.skeleton-gallery-item .skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Container para skeletons */
+.skeleton-container {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.skeleton-container.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Deshabilitar animación si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .skeleton {
+        animation: none;
+        background: #f0f0f0;
+    }
+}
+
+/* ======================
+   MICRO-INTERACCIONES AVANZADAS
+   ====================== */
+
+/* Hover states mejorados para cards */
+.card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card:active {
+    transform: translateY(-4px);
+    transition-duration: 0.1s;
+}
+
+/* Hover state para imágenes */
+.imagen-viaje img,
+.imagen-viaje-detalle img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .imagen-viaje img {
+    transform: scale(1.05);
+}
+
+/* Efecto glow en botones primarios */
+.btn-primary,
+.btn-success {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::before,
+.btn-success::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before,
+.btn-success:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 185, 213, 0.4);
+}
+
+.btn-primary:active,
+.btn-success:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+}
+
+/* Animación de entrada para badges */
+.trip-badge {
+    animation: badge-entrance 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes badge-entrance {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* Efecto ripple en botones de compartir */
+.share-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.share-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.share-btn:active::after {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Smooth focus para accesibilidad */
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+    outline: 3px solid rgba(21, 185, 213, 0.5);
+    outline-offset: 3px;
+    transition: outline 0.2s ease;
+}
+
+/* Animación de carga para filtros */
+.filtros-card {
+    transition: all 0.3s ease;
+}
+
+.filtros-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.filtros-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #15B9D5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Transición suave para info-cards */
+.info-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(21, 185, 213, 0.2);
+}
+
+.info-card .info-icon i {
+    transition: all 0.3s ease;
+}
+
+.info-card:hover .info-icon i {
+    transform: scale(1.1) rotate(5deg);
+    color: #15B9D5;
+}
+
+/* Deshabilitar micro-interacciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .card:hover,
+    .btn-primary,
+    .btn-success,
+    .share-btn,
+    .info-card,
+    .trip-badge,
+    .imagen-viaje img {
+        transition: none;
+        animation: none;
+        transform: none;
+    }
+
+    .btn-primary::before,
+    .btn-success::before,
+    .share-btn::after {
+        display: none;
+    }
+}
+
+/* ======================
+   EFECTOS PARALLAX
+   ====================== */
+
+/* Parallax para imagen principal del detalle */
+.imagen-viaje-detalle {
+    overflow: hidden;
+}
+
+.parallax-image {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+/* Efecto de profundidad en galería */
+.galeria-item {
+    perspective: 1000px;
+}
+
+.galeria-item img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.galeria-item:hover img {
+    transform: translateZ(20px) scale(1.05);
+}
+
+/* Desactivar parallax si se prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .parallax-image,
+    .galeria-item img {
+        transition: none;
+        transform: none !important;
+    }
+}
+
+/* ======================
+   PAGE TRANSITIONS Y LOADING INDICATORS
+   ====================== */
+
+/* Loading indicator global */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #15B9D5,
+        #DC135F,
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: page-load 1.5s ease-in-out infinite;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.page-loader.active {
+    opacity: 1;
+}
+
+@keyframes page-load {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Spinner de carga personalizado */
+.custom-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #15B9D5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+/* Loading dots */
+.loading-dots {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.loading-dots span {
+    width: 10px;
+    height: 10px;
+    background: #15B9D5;
+    border-radius: 50%;
+    animation: dot-bounce 1.4s ease-in-out infinite both;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes dot-bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Fade page transition */
+.page-transition {
+    animation: page-fade-in 0.5s ease;
+}
+
+@keyframes page-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Deshabilitar transiciones de página si se prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .page-loader,
+    .custom-spinner,
+    .loading-dots span,
+    .page-transition {
+        animation: none;
+    }
+
+    .page-transition {
+        opacity: 1;
+        transform: none;
+    }
+}
+
