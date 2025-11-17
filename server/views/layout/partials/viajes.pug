@@ -15,11 +15,10 @@
                     )
 
                     //- Badges de estado
-                    - var disponiblesNum = parseInt(viaje.disponibles)
                     .trip-badges
-                        if disponiblesNum <= 5 && disponiblesNum > 0
+                        if viaje.disponibles <= 5 && viaje.disponibles > 0
                             span.trip-badge.badge-warning-custom
-                                | ¡#{viaje.disponibles} lugares!
+                                | ¡#{viaje.disponibles} #{viaje.disponibles === 1 ? 'lugar' : 'lugares'}!
 
                     //- Atribución del fotógrafo (requerido por Unsplash)
                     if viaje.imagenData && viaje.imagenData.photographer !== 'Escápate Conmigo'

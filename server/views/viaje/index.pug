@@ -53,17 +53,16 @@ block contenido
 
             .col-md-5
                 //- CTA Box (Call to Action)
-                - var disponiblesNum = parseInt(viaje.disponibles)
                 .cta-box
                     .price-box.text-center
                         h3 #{viaje.precio}
                         small por persona
 
-                    if disponiblesNum > 0
-                        if disponiblesNum <= 5
+                    if viaje.disponibles > 0
+                        if viaje.disponibles <= 5
                             .urgency-badge
                                 i.fas.fa-exclamation-triangle
-                                | ¡Solo quedan #{viaje.disponibles} lugares!
+                                | ¡Solo #{viaje.disponibles === 1 ? 'queda 1 lugar' : `quedan ${viaje.disponibles} lugares`}!
 
                         button.btn.btn-lg.btn-primary.btn-block(type="button")
                             i.fas.fa-calendar-check
