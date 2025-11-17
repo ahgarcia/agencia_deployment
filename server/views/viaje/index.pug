@@ -160,11 +160,21 @@ block contenido
                                 i.fas.fa-exclamation-triangle
                                 | ¡Solo #{viaje.disponibles === 1 ? 'queda 1 lugar' : `quedan ${viaje.disponibles} lugares`}!
 
-                        button.btn.btn-lg.btn-primary.btn-block(type="button")
-                            i.fas.fa-calendar-check
+                        //- Botón de WhatsApp para Reservar
+                        a.btn.btn-lg.btn-primary.btn-block(
+                            href=`https://wa.me/528116961590?text=${encodeURIComponent(`¡Hola! Quiero reservar el viaje a *${viaje.titulo}*\n\n📅 Salida: ${viaje.fecha_ida}\n📅 Regreso: ${viaje.fecha_vuelta}\n💰 Precio: ${viaje.precio}\n\n¿Cuál es el siguiente paso?`)}`,
+                            target="_blank",
+                            rel="noopener noreferrer",
+                            aria-label="Reservar viaje por WhatsApp"
+                        )
+                            i.fab.fa-whatsapp
                             |  Reservar Ahora
 
-                        button.btn.btn-lg.btn-outline-secondary.btn-block(type="button")
+                        //- Botón de Email para Consultar
+                        a.btn.btn-lg.btn-outline-secondary.btn-block(
+                            href=`mailto:info@agenciaviajes.com?subject=${encodeURIComponent(`Consulta: ${viaje.titulo}`)}&body=${encodeURIComponent(`Hola,\n\nMe gustaría consultar la disponibilidad para el viaje:\n\nDestino: ${viaje.titulo}\nSalida: ${viaje.fecha_ida}\nRegreso: ${viaje.fecha_vuelta}\nPrecio: ${viaje.precio}\n\nPor favor, envíenme más información sobre:\n- Disponibilidad de lugares\n- Itinerario detallado\n- Forma de pago\n- Requisitos necesarios\n\nGracias,`)}`,
+                            aria-label="Consultar disponibilidad por email"
+                        )
                             i.fas.fa-envelope
                             |  Consultar Disponibilidad
                     else
