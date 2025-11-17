@@ -46,7 +46,7 @@ blockquote {
 .btn-success {
     background-color: #DC135F;
     border-color: #DC135F;
-    padding: .8rem 0;
+    padding: .8rem 1.5rem;
     text-transform: uppercase;
     border-radius: .8rem;
 }
@@ -54,6 +54,32 @@ blockquote {
 .btn-success:hover {
     background-color: rgb(184, 5, 73);
     border-color: rgb(192, 7, 78);
+}
+
+/* Padding mejorado para botones grandes */
+.btn-lg {
+    padding: 0.9rem 2rem;
+}
+
+/* Responsive - Más padding en pantallas grandes */
+@media (min-width: 768px) {
+    .btn-lg {
+        padding: 1rem 2.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn-lg {
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn-lg {
+        padding: 1.1rem 3.5rem;
+        font-size: 1.15rem;
+    }
 }
 
 /* ======================
@@ -188,6 +214,7 @@ em.aventura {
     position: relative;
     overflow: hidden;
     animation: pulse-glow 2s ease-in-out infinite;
+    padding: 0.8rem 1.5rem;
 }
 
 .btn-outline-turquoise:hover,
