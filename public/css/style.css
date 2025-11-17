@@ -1802,94 +1802,275 @@ i {
 }
 
 /* ======================
-   QUÉ INCLUYE / NO INCLUYE
+   VISTA DE DETALLE DE VIAJE
+   ====================== */
+
+/* Título del viaje */
+.viaje-titulo {
+    font-size: 2.5rem;
+    color: #15B9D5;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.viaje-descripcion {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Info Cards (Salida, Regreso, Disponibles, Precio) */
+.info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.info-card .info-icon i {
+    color: #15B9D5;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon i {
+    transform: scale(1.1);
+}
+
+.info-card strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.precio-destacado {
+    color: #DC135F !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+}
+
+/* Título de sección */
+.seccion-titulo {
+    font-size: 2rem;
+    color: #15B9D5;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.seccion-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #15B9D5 0%, #DC135F 100%);
+    border-radius: 2px;
+}
+
+/* ======================
+   QUÉ INCLUYE / NO INCLUYE (REDISEÑADO)
    ====================== */
 .incluye-card,
 .no-incluye-card {
     border: none;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
 .incluye-card:hover,
 .no-incluye-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
+/* Usar paleta de marca */
 .incluye-card {
-    border-left: 4px solid #28a745;
+    border-top: 5px solid #15B9D5;
+    background: linear-gradient(to bottom, rgba(21, 185, 213, 0.02) 0%, #fff 100%);
 }
 
 .no-incluye-card {
-    border-left: 4px solid #dc3545;
+    border-top: 5px solid #DC135F;
+    background: linear-gradient(to bottom, rgba(220, 19, 95, 0.02) 0%, #fff 100%);
 }
 
-.incluye-card .card-title,
-.no-incluye-card .card-title {
-    font-size: 1.3rem;
-    font-weight: 600;
+.incluye-card .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #f0f0f0;
+    color: #15B9D5;
+    border-bottom: 2px solid rgba(21, 185, 213, 0.2);
+}
+
+.no-incluye-card .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    color: #DC135F;
+    border-bottom: 2px solid rgba(220, 19, 95, 0.2);
 }
 
 .incluye-item,
 .no-incluye-item {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    transition: all 0.2s ease;
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.incluye-item:hover,
+.incluye-item:hover {
+    background: rgba(21, 185, 213, 0.08);
+    padding-left: 1rem;
+}
+
 .no-incluye-item:hover {
-    padding-left: 0.5rem;
-    background-color: #f8f9fa;
-    border-radius: 6px;
+    background: rgba(220, 19, 95, 0.08);
+    padding-left: 1rem;
 }
 
-.incluye-item i {
+.item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.incluye-item .item-icon {
+    background: linear-gradient(135deg, #15B9D5 0%, #13a8bf 100%);
+}
+
+.no-incluye-item .item-icon {
+    background: linear-gradient(135deg, #DC135F 0%, #b30f4d 100%);
+}
+
+.item-icon i {
+    color: #fff;
     font-size: 1.1rem;
-    min-width: 25px;
 }
 
-.no-incluye-item i {
-    font-size: 1.1rem;
-    min-width: 25px;
-}
-
-.incluye-item span,
-.no-incluye-item span {
+.item-text {
+    font-size: 1rem;
     color: #333;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* ======================
+   GALERÍA EN SIDEBAR
+   ====================== */
+.galeria-sidebar {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.galeria-titulo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #15B9D5;
+    margin-bottom: 1rem;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.galeria-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(21, 185, 213, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-overlay i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .imagen-viaje-detalle img {
-        height: 300px;
-    }
-
-    .row-galeria {
-        grid-template-columns: 1fr;
+@media (max-width: 991px) {
+    .viaje-titulo {
+        font-size: 2rem;
     }
 
     .cta-box {
         position: static;
         margin-top: 2rem;
     }
+}
+
+@media (max-width: 768px) {
+    .imagen-viaje-detalle img {
+        height: 300px;
+    }
+
+    .seccion-titulo {
+        font-size: 1.6rem;
+    }
 
     .incluye-card .card-title,
     .no-incluye-card .card-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
-    .incluye-item,
-    .no-incluye-item {
+    .item-text {
         font-size: 0.95rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
