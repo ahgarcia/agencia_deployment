@@ -72,6 +72,54 @@ block contenido
                                 small.d-block.text-muted.mt-2 Precio
                                 strong.d-block.mt-1.precio-destacado= viaje.precio
 
+                //- Botones de compartir en redes sociales
+                .share-section.mt-4
+                    h5.share-title
+                        i.fas.fa-share-alt.mr-2
+                        | Compartir este viaje
+                    .share-buttons
+                        a.share-btn.share-facebook(
+                            href=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}`,
+                            target="_blank",
+                            rel="noopener noreferrer",
+                            aria-label="Compartir en Facebook"
+                        )
+                            i.fab.fa-facebook-f
+                            span Facebook
+
+                        a.share-btn.share-twitter(
+                            href=`https://twitter.com/intent/tweet?url=${encodeURIComponent(urlCompleta)}&text=${encodeURIComponent('¡Mira este increíble viaje a ' + viaje.titulo + '!')}`,
+                            target="_blank",
+                            rel="noopener noreferrer",
+                            aria-label="Compartir en Twitter"
+                        )
+                            i.fab.fa-twitter
+                            span Twitter
+
+                        a.share-btn.share-whatsapp(
+                            href=`https://api.whatsapp.com/send?text=${encodeURIComponent('¡Mira este viaje! ' + viaje.titulo + ' - ' + urlCompleta)}`,
+                            target="_blank",
+                            rel="noopener noreferrer",
+                            aria-label="Compartir en WhatsApp"
+                        )
+                            i.fab.fa-whatsapp
+                            span WhatsApp
+
+                        a.share-btn.share-email(
+                            href=`mailto:?subject=${encodeURIComponent('Viaje a ' + viaje.titulo)}&body=${encodeURIComponent('Mira este increíble viaje: ' + urlCompleta)}`,
+                            aria-label="Compartir por Email"
+                        )
+                            i.fas.fa-envelope
+                            span Email
+
+                        button.share-btn.share-copy(
+                            type="button",
+                            onclick=`navigator.clipboard.writeText('${urlCompleta}').then(() => { this.innerHTML = '<i class=\"fas fa-check\"></i><span>¡Copiado!</span>'; setTimeout(() => { this.innerHTML = '<i class=\"fas fa-link\"></i><span>Copiar enlace</span>'; }, 2000); })`,
+                            aria-label="Copiar enlace"
+                        )
+                            i.fas.fa-link
+                            span Copiar enlace
+
             //- Columna derecha: CTA Box y Galería
             .col-lg-4
                 //- CTA Box (Call to Action)
