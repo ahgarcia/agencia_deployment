@@ -31,27 +31,49 @@ block contenido
                                 |  en
                                 a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer") Unsplash
 
-        //- Información del viaje
+        //- Contenido principal
         .row
-            .col-md-7
-                h1 #{viaje.titulo}
-                p= viaje.descripcion
+            //- Columna izquierda: Información del viaje
+            .col-lg-8.mb-4
+                //- Título y descripción
+                h1.viaje-titulo #{viaje.titulo}
+                p.viaje-descripcion.lead= viaje.descripcion
 
-                .detalles-viaje.mt-4
-                    p
-                        i.fas.fa-calendar-alt
-                        |  Fecha Ida: #{viaje.fecha_ida}
-                    p
-                        i.fas.fa-calendar-alt
-                        |  Fecha Vuelta: #{viaje.fecha_vuelta}
-                    p
-                        i.fas.fa-dollar-sign
-                        |  Precio: #{viaje.precio}
-                    p
-                        i.fas.fa-users
-                        |  Lugares Disponibles: #{viaje.disponibles}
+                //- Información rápida en cards
+                .info-rapida.mt-4
+                    .row
+                        .col-6.col-md-3.mb-3
+                            .info-card.text-center
+                                .info-icon
+                                    i.fas.fa-calendar-alt.fa-2x
+                                small.d-block.text-muted.mt-2 Salida
+                                strong.d-block.mt-1= viaje.fecha_ida
 
-            .col-md-5
+                        .col-6.col-md-3.mb-3
+                            .info-card.text-center
+                                .info-icon
+                                    i.fas.fa-calendar-check.fa-2x
+                                small.d-block.text-muted.mt-2 Regreso
+                                strong.d-block.mt-1= viaje.fecha_vuelta
+
+                        .col-6.col-md-3.mb-3
+                            .info-card.text-center
+                                .info-icon
+                                    i.fas.fa-users.fa-2x
+                                small.d-block.text-muted.mt-2 Disponibles
+                                strong.d-block.mt-1(class=viaje.disponibles <= 5 ? 'text-danger' : '')
+                                    = viaje.disponibles
+                                    |  #{viaje.disponibles === 1 ? 'lugar' : 'lugares'}
+
+                        .col-6.col-md-3.mb-3
+                            .info-card.text-center
+                                .info-icon
+                                    i.fas.fa-tag.fa-2x
+                                small.d-block.text-muted.mt-2 Precio
+                                strong.d-block.mt-1.precio-destacado= viaje.precio
+
+            //- Columna derecha: CTA Box y Galería
+            .col-lg-4
                 //- CTA Box (Call to Action)
                 .cta-box
                     .price-box.text-center
@@ -76,48 +98,52 @@ block contenido
                             strong Agotado
                             p Este viaje no tiene lugares disponibles
 
+                //- Galería adicional (en sidebar)
+                if viaje.galeria && viaje.galeria.length > 0
+                    .galeria-sidebar.mt-4
+                        h4.galeria-titulo
+                            i.fas.fa-images.mr-2
+                            | Más imágenes
+                        .galeria-grid
+                            each imagen, index in viaje.galeria.slice(0, 4)
+                                .galeria-item
+                                    img(
+                                        src=imagen.urlSmall,
+                                        alt=`Vista ${index + 1} de ${viaje.titulo}`,
+                                        loading="lazy"
+                                    )
+                                    .galeria-overlay
+                                        i.fas.fa-search-plus
+
         //- Sección "Qué Incluye / No Incluye"
         .row.mt-5
+            .col-12
+                h2.seccion-titulo.text-center.mb-4
+                    i.fas.fa-info-circle.mr-2
+                    | Detalles del paquete
+
             .col-md-6.mb-4.mb-md-0
                 .card.incluye-card.h-100
                     .card-body
-                        h3.h5.card-title
-                            i.fas.fa-check-circle.text-success.mr-2
+                        h3.card-title
+                            i.fas.fa-check-circle.mr-2
                             | Qué incluye
                         ul.list-unstyled.mt-3
                             each item in incluye
-                                li.incluye-item.mb-3
-                                    i.fas(class=item.icono).text-success.mr-2
-                                    span= item.texto
+                                li.incluye-item
+                                    .item-icon
+                                        i.fas(class=item.icono)
+                                    .item-text= item.texto
 
             .col-md-6
                 .card.no-incluye-card.h-100
                     .card-body
-                        h3.h5.card-title
-                            i.fas.fa-times-circle.text-danger.mr-2
+                        h3.card-title
+                            i.fas.fa-times-circle.mr-2
                             | No incluye
                         ul.list-unstyled.mt-3
                             each item in noIncluye
-                                li.no-incluye-item.mb-3
-                                    i.fas(class=item.icono).text-danger.mr-2
-                                    span= item.texto
-
-        //- Galería adicional (solo si existe)
-        if viaje.galeria && viaje.galeria.length > 0
-            .row.mt-5
-                .col-12
-                    .galeria-adicional
-                        h3 Más imágenes de este destino
-                        .row-galeria
-                            each imagen in viaje.galeria
-                                .col-galeria
-                                    img(
-                                        src=imagen.urlSmall,
-                                        alt=`Vista de ${viaje.titulo}`,
-                                        loading="lazy"
-                                    )
-                                    if imagen.photographer
-                                        small.text-muted
-                                            | Por
-                                            a(href=imagen.photographerUrl, target="_blank", rel="noopener noreferrer")
-                                                = imagen.photographer
+                                li.no-incluye-item
+                                    .item-icon
+                                        i.fas(class=item.icono)
+                                    .item-text= item.texto
