@@ -40,9 +40,9 @@ app.use(helmet({
     contentSecurityPolicy: {
         directives: {
             defaultSrc: ["'self'"],
-            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com", "https://unpkg.com"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com"],
             fontSrc: ["'self'", "https://fonts.gstatic.com", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com"],
-            scriptSrc: ["'self'", "'unsafe-inline'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com", "https://cdn.jsdelivr.net", "https://unpkg.com"],
+            scriptSrc: ["'self'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com", "https://cdn.jsdelivr.net"],
             scriptSrcAttr: ["'unsafe-inline'"], // Permitir event handlers inline (onerror en imgs)
             imgSrc: ["'self'", "data:", "https:", "https://images.unsplash.com"],
             connectSrc: ["'self'", "https://stackpath.bootstrapcdn.com"],
