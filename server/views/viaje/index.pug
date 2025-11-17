@@ -21,6 +21,32 @@ block contenido
                         onerror="if(this.src!='/img/destinos_grecia.jpg'){this.src='/img/destinos_grecia.jpg'}"
                     )
 
+                    //- Badges de estado
+                    .trip-badges
+                        //- Badge de urgencia (últimos lugares)
+                        if viaje.disponibles <= 5 && viaje.disponibles > 0
+                            span.trip-badge.badge-warning-custom
+                                i.fas.fa-exclamation-triangle
+                                span ¡#{viaje.disponibles} #{viaje.disponibles === 1 ? 'lugar' : 'lugares'}!
+
+                        //- Badge Nuevo
+                        if viaje.badges && viaje.badges.nuevo
+                            span.trip-badge.badge-nuevo
+                                i.fas.fa-star
+                                span Nuevo
+
+                        //- Badge Descuento
+                        if viaje.badges && viaje.badges.descuento
+                            span.trip-badge.badge-descuento
+                                i.fas.fa-tag
+                                span -#{viaje.badges.descuentoPorcentaje}%
+
+                        //- Badge Destacado
+                        if viaje.badges && viaje.badges.destacado
+                            span.trip-badge.badge-destacado
+                                i.fas.fa-fire
+                                span Destacado
+
                     //- Atribución del fotógrafo
                     if viaje.imagenData && viaje.imagenData.photographer !== 'Escápate Conmigo'
                         .image-credit-detalle
