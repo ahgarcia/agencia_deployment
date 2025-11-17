@@ -1,4 +1,8 @@
 extends ../layout/index
+
+block append head
+    script(src="/js/filtros.js", defer)
+
 block contenido
     main.container.mt-5
         //- Breadcrumbs
@@ -8,7 +12,73 @@ block contenido
                     a(href="/") Inicio
                 li.breadcrumb-item.active(aria-current="page") Viajes
 
-        h1.text-center.mb-5 #{pagina}
+        h1.text-center.mb-4 #{pagina}
+
+        //- Sección de Filtros
+        .filtros-viajes.mb-5
+            .row
+                .col-12
+                    .filtros-card
+                        .filtros-header
+                            h5
+                                i.fas.fa-filter.mr-2
+                                | Filtrar viajes
+                            button#btnLimpiarFiltros.btn-limpiar-filtros(type="button")
+                                i.fas.fa-times-circle.mr-1
+                                | Limpiar filtros
+
+                        .filtros-body
+                            form#formFiltros.row.g-3
+                                //- Filtro por Tipo de Destino
+                                .col-md-4.col-lg-3
+                                    label.filtro-label(for="tipo_destino")
+                                        i.fas.fa-map-marked-alt.mr-1
+                                        | Tipo de Destino
+                                    select#tipo_destino.form-control.filtro-select(name="tipo_destino")
+                                        option(value="todos", selected=!filtrosAplicados.tipo_destino) Todos los destinos
+                                        option(value="beach", selected=filtrosAplicados.tipo_destino === 'beach') 🏖️ Playa
+                                        option(value="city", selected=filtrosAplicados.tipo_destino === 'city') 🏙️ Ciudad
+                                        option(value="archaeological", selected=filtrosAplicados.tipo_destino === 'archaeological') 🏛️ Arqueológico
+                                        option(value="colonial", selected=filtrosAplicados.tipo_destino === 'colonial') 🏰 Colonial
+                                        option(value="nature", selected=filtrosAplicados.tipo_destino === 'nature') 🌲 Naturaleza
+                                        option(value="tourism", selected=filtrosAplicados.tipo_destino === 'tourism') ✈️ Turismo
+
+                                //- Filtro por Mes de Salida
+                                .col-md-4.col-lg-3
+                                    label.filtro-label(for="mes")
+                                        i.fas.fa-calendar-alt.mr-1
+                                        | Mes de Salida
+                                    select#mes.form-control.filtro-select(name="mes")
+                                        option(value="", selected=!filtrosAplicados.mes) Todos los meses
+                                        option(value="1", selected=filtrosAplicados.mes === 1) Enero
+                                        option(value="2", selected=filtrosAplicados.mes === 2) Febrero
+                                        option(value="3", selected=filtrosAplicados.mes === 3) Marzo
+                                        option(value="4", selected=filtrosAplicados.mes === 4) Abril
+                                        option(value="5", selected=filtrosAplicados.mes === 5) Mayo
+                                        option(value="6", selected=filtrosAplicados.mes === 6) Junio
+                                        option(value="7", selected=filtrosAplicados.mes === 7) Julio
+                                        option(value="8", selected=filtrosAplicados.mes === 8) Agosto
+                                        option(value="9", selected=filtrosAplicados.mes === 9) Septiembre
+                                        option(value="10", selected=filtrosAplicados.mes === 10) Octubre
+                                        option(value="11", selected=filtrosAplicados.mes === 11) Noviembre
+                                        option(value="12", selected=filtrosAplicados.mes === 12) Diciembre
+
+                                //- Filtro por Disponibilidad
+                                .col-md-4.col-lg-3
+                                    label.filtro-label(for="disponibilidad")
+                                        i.fas.fa-check-circle.mr-1
+                                        | Disponibilidad
+                                    select#disponibilidad.form-control.filtro-select(name="disponibilidad")
+                                        option(value="", selected=!filtrosAplicados.disponibilidad) Todas
+                                        option(value="disponible", selected=filtrosAplicados.disponibilidad === 'disponible') ✅ Disponible
+                                        option(value="ultimos", selected=filtrosAplicados.disponibilidad === 'ultimos') ⚠️ Últimos lugares
+                                        option(value="agotado", selected=filtrosAplicados.disponibilidad === 'agotado') ❌ Agotado
+
+                                //- Botón Aplicar
+                                .col-md-12.col-lg-3.d-flex.align-items-end
+                                    button#btnAplicarFiltros.btn-aplicar-filtros(type="submit")
+                                        i.fas.fa-search.mr-2
+                                        | Aplicar filtros
 
         //- Información de paginación
         if totalViajes > 0

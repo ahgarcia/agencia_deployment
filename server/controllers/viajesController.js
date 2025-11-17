@@ -2,6 +2,7 @@ const Viaje = require('../models/Viajes');
 const imageService = require('../services/imageService');
 const logger = require('../config/logger');
 const { obtenerConfiguracionIncluidos } = require('../helpers/viajesConfig');
+const { Op } = require('sequelize');
 
 exports.mostrarViajes = async (req, res, next) => {
     try {
@@ -10,12 +11,50 @@ exports.mostrarViajes = async (req, res, next) => {
         const paginaActual = parseInt(req.query.page) || 1;
         const offset = (paginaActual - 1) * viajesPorPagina;
 
-        // Obtener total de viajes para calcular páginas
-        const totalViajes = await Viaje.count();
+        // Construir filtros dinámicos
+        const whereClause = {};
+        const filtrosAplicados = {};
+
+        // Filtro por tipo de destino
+        if (req.query.tipo_destino && req.query.tipo_destino !== 'todos') {
+            whereClause.tipo_destino = req.query.tipo_destino;
+            filtrosAplicados.tipo_destino = req.query.tipo_destino;
+        }
+
+        // Filtro por disponibilidad
+        if (req.query.disponibilidad) {
+            if (req.query.disponibilidad === 'disponible') {
+                whereClause.disponibles = { [Op.gt]: 0 };
+                filtrosAplicados.disponibilidad = 'disponible';
+            } else if (req.query.disponibilidad === 'agotado') {
+                whereClause.disponibles = 0;
+                filtrosAplicados.disponibilidad = 'agotado';
+            } else if (req.query.disponibilidad === 'ultimos') {
+                whereClause.disponibles = { [Op.between]: [1, 5] };
+                filtrosAplicados.disponibilidad = 'ultimos';
+            }
+        }
+
+        // Filtro por mes de salida
+        if (req.query.mes) {
+            const mes = parseInt(req.query.mes);
+            const año = new Date().getFullYear();
+            const inicioMes = new Date(año, mes - 1, 1);
+            const finMes = new Date(año, mes, 0, 23, 59, 59);
+
+            whereClause.fecha_ida = {
+                [Op.between]: [inicioMes, finMes]
+            };
+            filtrosAplicados.mes = mes;
+        }
+
+        // Obtener total de viajes con filtros para calcular páginas
+        const totalViajes = await Viaje.count({ where: whereClause });
         const totalPaginas = Math.ceil(totalViajes / viajesPorPagina);
 
-        // Obtener viajes de la página actual
+        // Obtener viajes de la página actual con filtros
         const viajes = await Viaje.findAll({
+            where: whereClause,
             order: [['fecha_ida', 'ASC']],
             limit: viajesPorPagina,
             offset: offset
@@ -58,14 +97,15 @@ exports.mostrarViajes = async (req, res, next) => {
             })
         );
 
-        logger.info(`Mostrando página ${paginaActual} de ${totalPaginas} (${viajesConImagenes.length} viajes)`);
+        logger.info(`Mostrando página ${paginaActual} de ${totalPaginas} (${viajesConImagenes.length} viajes) - Filtros: ${JSON.stringify(filtrosAplicados)}`);
 
         res.render('viajes', {
             pagina: 'Próximos Viajes',
             viajes: viajesConImagenes,
             paginaActual,
             totalPaginas,
-            totalViajes
+            totalViajes,
+            filtrosAplicados
         });
 
     } catch (error) {
