@@ -12,6 +12,7 @@ Aplicación web full-stack para una agencia de viajes desarrollada con Node.js, 
 
 ### Funcionalidades
 - **Catálogo de Viajes**: Visualización de destinos disponibles con información detallada
+- **Sistema de Blog**: Plataforma de contenidos con categorías, paginación y posts relacionados
 - **Sistema de Testimoniales**: Los clientes pueden dejar sus experiencias y comentarios validadas
 - **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos y tamaños de pantalla
 - **Arquitectura MVC**: Código organizado, mantenible y escalable
@@ -149,9 +150,11 @@ agencia_deployment/
 │   │   ├── homeController.js
 │   │   ├── nosotrosController.js
 │   │   ├── viajesController.js
+│   │   ├── blogController.js
 │   │   └── testimonialesController.js
 │   ├── models/                 # Modelos de base de datos
 │   │   ├── Viajes.js
+│   │   ├── BlogPost.js
 │   │   └── Testimoniales.js
 │   ├── routes/
 │   │   └── index.js            # Definición de rutas
@@ -164,6 +167,9 @@ agencia_deployment/
 │   │   ├── nosotros/index.pug
 │   │   ├── viajes/index.pug
 │   │   ├── viaje/index.pug
+│   │   ├── blog/
+│   │   │   ├── index.pug
+│   │   │   └── post.pug
 │   │   └── testimoniales/index.pug
 │   └── index.js                # Punto de entrada
 ├── .gitignore
@@ -180,6 +186,8 @@ agencia_deployment/
 |---------|-------------|
 | `npm start` | Inicia el servidor en modo producción |
 | `npm run dev` | Inicia el servidor en modo desarrollo con auto-reload |
+| `npm run seed:blog` | Poblar base de datos con posts de ejemplo |
+| `npm run optimize:images` | Optimizar imágenes del proyecto |
 
 ## Tecnologías Utilizadas
 
@@ -204,6 +212,9 @@ agencia_deployment/
 | `/nosotros` | GET | Página "Sobre Nosotros" |
 | `/viajes` | GET | Listado de todos los viajes |
 | `/viajes/:id` | GET | Detalle de un viaje específico |
+| `/blog` | GET | Listado de posts del blog |
+| `/blog?categoria=consejos` | GET | Posts filtrados por categoría |
+| `/blog/:slug` | GET | Detalle de un post |
 | `/testimoniales` | GET | Página de testimoniales |
 | `/testimoniales` | POST | Agregar nuevo testimonial |
 
@@ -233,6 +244,24 @@ agencia_deployment/
 }
 ```
 
+### BlogPost
+```javascript
+{
+  id: INTEGER (PK, Auto-increment),
+  titulo: STRING,
+  slug: STRING (Unique),
+  resumen: TEXT,
+  contenido: TEXT,
+  imagen: STRING,
+  autor: STRING,
+  categoria: ENUM('consejos', 'destinos', 'noticias', 'experiencias', 'guias'),
+  publicado: BOOLEAN,
+  fecha_publicacion: DATE,
+  vistas: INTEGER,
+  tags: STRING
+}
+```
+
 ## Configuración de Entornos
 
 El proyecto soporta dos entornos:
@@ -245,12 +274,101 @@ El proyecto soporta dos entornos:
 - Título del sitio: "Agencia de Viajes"
 - Configuración optimizada para rendimiento
 
+## 📝 Sistema de Blog
+
+El sistema de blog permite compartir contenido sobre viajes, destinos, consejos y experiencias.
+
+### Características del Blog
+
+#### Backend
+- ✅ Modelo `BlogPost` con Sequelize
+- ✅ Controlador con paginación y filtros
+- ✅ 5 categorías: consejos, destinos, noticias, experiencias, guías
+- ✅ Contador de vistas automático
+- ✅ Posts relacionados por categoría
+- ✅ Posts destacados (más leídos)
+
+#### Frontend
+- ✅ Vista de listado con sidebar
+- ✅ Vista de detalle con posts relacionados
+- ✅ Filtros por categoría
+- ✅ Paginación (9 posts por página)
+- ✅ Botones de compartir en redes sociales
+- ✅ Schema.org markup para SEO
+- ✅ Diseño responsive
+
+### Configurar el Blog
+
+**1. La tabla se crea automáticamente**
+
+El modelo Sequelize crea la tabla `blog_posts` al iniciar el servidor.
+
+**2. Poblar con datos de ejemplo**
+
+```bash
+npm run seed:blog
+```
+
+Este comando crea 6 posts de ejemplo:
+- Cómo construir una agencia con Node.js (noticias)
+- 10 Consejos para viajar seguro (consejos)
+- París: La ciudad del amor (destinos)
+- Experiencia en Riviera Maya (experiencias)
+- Guía para mochileros principiantes (guías)
+- Playas paradisíacas del Caribe (destinos)
+
+**3. Acceder al blog**
+
+- Listado: http://localhost:3000/blog
+- Post individual: http://localhost:3000/blog/[slug]
+- Por categoría: http://localhost:3000/blog?categoria=consejos
+
+### Crear Posts Manualmente
+
+```javascript
+const BlogPost = require('./server/models/BlogPost');
+
+await BlogPost.create({
+    titulo: 'Mi nuevo artículo',
+    slug: 'mi-nuevo-articulo',
+    resumen: 'Breve descripción del artículo',
+    contenido: 'Contenido completo del artículo...',
+    imagen: 'https://ejemplo.com/imagen.jpg',
+    categoria: 'consejos',
+    tags: 'viajes, consejos, tips'
+});
+```
+
+### Categorías Disponibles
+
+1. **consejos** - Tips y recomendaciones de viaje
+2. **destinos** - Guías de lugares específicos
+3. **experiencias** - Historias personales de viajes
+4. **guias** - Tutoriales y guías completas
+5. **noticias** - Noticias y novedades de la agencia
+
+### Roadmap del Blog
+
+- [ ] Panel de administración para crear/editar posts
+- [ ] Sistema de comentarios
+- [ ] Búsqueda de posts
+- [ ] Newsletter/suscripciones
+- [ ] Editor WYSIWYG para contenido
+- [ ] Imágenes múltiples por post (galería)
+
+---
+
 ## Uso
 
 ### Ver Viajes Disponibles
 1. Navega a `http://localhost:3000/viajes`
 2. Explora los diferentes destinos disponibles
 3. Haz clic en "Más Información" para ver detalles
+
+### Leer el Blog
+1. Navega a `http://localhost:3000/blog`
+2. Filtra por categorías o explora todos los posts
+3. Haz clic en un post para leer el contenido completo
 
 ### Dejar un Testimonial
 1. Navega a `http://localhost:3000/testimoniales`
