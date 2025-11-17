@@ -53,13 +53,14 @@ block contenido
 
             .col-md-5
                 //- CTA Box (Call to Action)
+                - var disponiblesNum = parseInt(viaje.disponibles)
                 .cta-box
                     .price-box.text-center
                         h3 #{viaje.precio}
                         small por persona
 
-                    if viaje.disponibles > 0
-                        if viaje.disponibles <= 5
+                    if disponiblesNum > 0
+                        if disponiblesNum <= 5
                             .urgency-badge
                                 i.fas.fa-exclamation-triangle
                                 | ¡Solo quedan #{viaje.disponibles} lugares!

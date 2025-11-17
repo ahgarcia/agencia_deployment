@@ -15,8 +15,9 @@
                     )
 
                     //- Badges de estado
+                    - var disponiblesNum = parseInt(viaje.disponibles)
                     .trip-badges
-                        if viaje.disponibles <= 5 && viaje.disponibles > 0
+                        if disponiblesNum <= 5 && disponiblesNum > 0
                             span.trip-badge.badge-warning-custom
                                 | ¡#{viaje.disponibles} lugares!
 
