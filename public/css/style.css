@@ -682,13 +682,18 @@ i {
     border-top: 2px solid rgba(21, 185, 213, 0.1);
 }
 
+/* Remover el "—" que Bootstrap agrega por defecto */
+.testimonial-card .blockquote-footer::before {
+    content: none;
+}
+
 .testimonial-author {
     display: flex;
     align-items: center;
 }
 
 .testimonial-card .blockquote-footer i {
-    color: #15B9D5;
+    color: #DC135F;
     font-size: 1.2rem;
     margin-right: 0.5rem;
 }
