@@ -123,10 +123,14 @@ exports.mostrarViaje = async (req, res, next) => {
         // Obtener configuración de incluidos según el tipo de destino
         const configuracionIncluidos = obtenerConfiguracionIncluidos(viajeJSON.tipo_destino);
 
+        // Construir URL completa para compartir
+        const urlCompleta = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+
         res.render('viaje', {
             viaje: viajeJSON,
             incluye: configuracionIncluidos.incluye,
-            noIncluye: configuracionIncluidos.noIncluye
+            noIncluye: configuracionIncluidos.noIncluye,
+            urlCompleta: urlCompleta
         });
 
     } catch (error) {

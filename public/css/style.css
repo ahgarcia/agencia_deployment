@@ -1521,3 +1521,159 @@ i {
     }
 }
 
+/* ======================
+   BOTONES DE COMPARTIR
+   ====================== */
+.share-section {
+    background: linear-gradient(135deg, rgba(21, 185, 213, 0.05) 0%, rgba(220, 19, 95, 0.05) 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid rgba(21, 185, 213, 0.2);
+}
+
+.share-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #15B9D5;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.share-btn i {
+    font-size: 1.1rem;
+}
+
+.share-btn span {
+    font-size: 0.95rem;
+}
+
+/* Facebook */
+.share-facebook {
+    background: #1877f2;
+    color: #fff;
+    border-color: #1877f2;
+}
+
+.share-facebook:hover {
+    background: #0d65d9;
+    border-color: #0d65d9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
+}
+
+/* Twitter */
+.share-twitter {
+    background: #1da1f2;
+    color: #fff;
+    border-color: #1da1f2;
+}
+
+.share-twitter:hover {
+    background: #0c8bd9;
+    border-color: #0c8bd9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.4);
+}
+
+/* WhatsApp */
+.share-whatsapp {
+    background: #25d366;
+    color: #fff;
+    border-color: #25d366;
+}
+
+.share-whatsapp:hover {
+    background: #1ebe57;
+    border-color: #1ebe57;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+/* Email */
+.share-email {
+    background: #DC135F;
+    color: #fff;
+    border-color: #DC135F;
+}
+
+.share-email:hover {
+    background: #b30f4d;
+    border-color: #b30f4d;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 19, 95, 0.4);
+}
+
+/* Copiar enlace */
+.share-copy {
+    background: #fff;
+    color: #15B9D5;
+    border-color: #15B9D5;
+}
+
+.share-copy:hover {
+    background: #15B9D5;
+    border-color: #15B9D5;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(21, 185, 213, 0.3);
+}
+
+/* Estado de copiado */
+.share-copy i.fa-check {
+    color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .share-btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .share-section {
+        padding: 1rem;
+    }
+
+    .share-title {
+        font-size: 1.1rem;
+    }
+
+    .share-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
