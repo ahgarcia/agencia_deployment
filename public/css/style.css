@@ -570,6 +570,111 @@ header .nav a:hover {
 }
 
 /* ======================
+   OFERTAS ESPECIALES
+   ====================== */
+
+/* Título de sección de ofertas */
+.ofertas-title {
+    color: #15B9D5;
+    font-family: 'Staatliches', cursive;
+}
+
+/* Tarjeta de oferta */
+.oferta-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oferta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header de tarjeta de oferta */
+.oferta-card-header {
+    background: linear-gradient(135deg, #DC135F 0%, #B8104D 100%);
+    border: none;
+    text-align: center;
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Título del descuento */
+.oferta-descuento {
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+/* Cuerpo de tarjeta de oferta */
+.oferta-card-body {
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+}
+
+/* Título del viaje en oferta */
+.oferta-viaje-titulo {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Fecha del viaje en oferta */
+.oferta-fecha {
+    font-size: 0.9rem;
+}
+
+.oferta-fecha i {
+    color: #15B9D5;
+}
+
+/* Precio del viaje en oferta */
+.oferta-precio {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #15B9D5;
+    font-family: 'Staatliches', cursive;
+    margin-bottom: 1rem;
+}
+
+/* Botón de oferta */
+.oferta-btn {
+    background-color: #DC135F;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.oferta-btn:hover {
+    background-color: #B8104D;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 19, 95, 0.4);
+}
+
+/* Responsive para ofertas */
+@media (max-width: 767px) {
+    .oferta-descuento {
+        font-size: 1.6rem;
+    }
+
+    .oferta-viaje-titulo {
+        font-size: 1.1rem;
+    }
+
+    .oferta-precio {
+        font-size: 1.5rem;
+    }
+}
+
+/* ======================
    SECCIÓN DESCUENTO
    ====================== */
 .descuento {
