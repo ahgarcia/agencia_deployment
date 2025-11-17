@@ -3008,12 +3008,25 @@ i {
     border-color: #15B9D5;
 }
 
+/* Asegurar que icono y texto sean visibles en estado normal */
+.share-copy i,
+.share-copy span {
+    color: #15B9D5 !important;
+    filter: none;
+}
+
 .share-copy:hover {
     background: #15B9D5;
     border-color: #15B9D5;
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(21, 185, 213, 0.3);
+}
+
+/* Asegurar que icono y texto sean blancos en hover */
+.share-copy:hover i,
+.share-copy:hover span {
+    color: #fff !important;
 }
 
 /* Estado de copiado */
