@@ -1,0 +1,525 @@
+====================================================================================================
+RESUMEN EJECUTIVO DE PULL REQUESTS #14 - #85
+====================================================================================================
+
+
+====================================================================================================
+CATEGORÍA: BASE DE DATOS (1 PRs)
+====================================================================================================
+
+PR #23: 2025-11-09
+  Branch: ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 2 | Archivos: 1
+  Cambios: +44 / -16
+  Archivos clave: server/config/database.js
+
+
+====================================================================================================
+CATEGORÍA: BLOG (12 PRs)
+====================================================================================================
+
+PR #63: 2025-11-16
+  Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+  Commits: 1 | Archivos: 11
+  Cambios: +1331 / -141
+  Archivos clave: BLOG_README.md, package.json, public/css/style.css, scripts/seed-blog.js, server/controllers/blogController.js
+
+PR #64: 2025-11-16
+  Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+  Commits: 1 | Archivos: 4
+  Cambios: +142 / -365
+  Archivos clave: BLOG_README.md, README.md, public/css/style.css, server/views/index/index.pug
+
+PR #65: 2025-11-16
+  Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+  Commits: 2 | Archivos: 5
+  Cambios: +566 / -140
+  Archivos clave: public/css/style.css, scripts/POSTGRESQL_SETUP.md, scripts/postgresql-blog-schema.sql, server/models/BlogPost.js, server/views/index/index.pug
+
+PR #66: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 16
+  Cambios: +10 / -1770
+  Archivos clave: README.md, package.json, public/css/style.css, scripts/POSTGRESQL_SETUP.md, scripts/postgresql-blog-schema.sql
+
+PR #67: 2025-11-16
+  Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+  Commits: 1 | Archivos: 3
+  Cambios: +132 / -172
+  Archivos clave: public/css/style.css, server/views/blog/index.pug, server/views/index/index.pug
+
+PR #68: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 16
+  Cambios: +152 / -1859
+  Archivos clave: README.md, package.json, public/css/style.css, scripts/POSTGRESQL_SETUP.md, scripts/postgresql-blog-schema.sql
+
+PR #69: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 16
+  Cambios: +7 / -1845
+  Archivos clave: README.md, package.json, public/css/style.css, scripts/POSTGRESQL_SETUP.md, scripts/postgresql-blog-schema.sql
+
+PR #70: 2025-11-16
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 2 | Archivos: 31
+  Cambios: +832 / -3036
+  Archivos clave: .gitignore, README.md, package.json, public/css/style.css, public/js/main.js
+
+PR #71: 2025-11-17
+  Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+  Commits: 1 | Archivos: 12
+  Cambios: +271 / -1095
+  Archivos clave: public/css/style.css, server/controllers/viajesController.js, server/helpers/viajesConfig.js, server/models/Viajes.js, server/seeds/README_MIGRACION_DISPONIBLES.md
+
+PR #72: 2025-11-17
+  Branch: ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu
+  Commits: 1 | Archivos: 13
+  Cambios: +1028 / -1316
+  Archivos clave: CHANGELOG.md, README.md, public/css/style.css, scripts/DATABASE_SCHEMA.md, server/controllers/viajesController.js
+
+PR #73: 2025-11-17
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 26
+  Cambios: +851 / -4322
+  Archivos clave: .gitignore, CHANGELOG.md, README.md, package.json, public/css/style.css
+
+PR #82: 2025-11-17
+  Branch: ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu
+  Commits: 1 | Archivos: 19
+  Cambios: +688 / -3390
+  Archivos clave: CHANGELOG.md, README.md, public/css/style.css, public/js/filtros.js, public/js/lightbox.js
+
+
+====================================================================================================
+CATEGORÍA: CONFIGURACIÓN DEL PROYECTO (3 PRs)
+====================================================================================================
+
+PR #14: 2025-11-08
+  Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 1 | Archivos: 1
+  Cambios: +635 / -0
+  Archivos clave: PROJECT_IMPROVEMENTS_CHECKLIST.md
+
+PR #21: 2025-11-09
+  Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 1 | Archivos: 5
+  Cambios: +286 / -0
+  Archivos clave: logs/.gitkeep, server/config/logger.js, server/middleware/errorHandler.js, server/middleware/performance.js, variables.env.example
+
+PR #22: 2025-11-09
+  Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 1 | Archivos: 1
+  Cambios: +2863 / -1253
+  Archivos clave: package-lock.json
+
+
+====================================================================================================
+CATEGORÍA: DOCUMENTACIÓN (2 PRs)
+====================================================================================================
+
+PR #16: 2025-11-08
+  Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 3 | Archivos: 15
+  Cambios: +2363 / -16
+  Archivos clave: .dockerignore, DEPLOYMENT_GUIDE.md, Dockerfile, FREE_HOSTING_OPTIONS.md, README.md
+
+PR #20: 2025-11-09
+  Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 1 | Archivos: 5
+  Cambios: +585 / -0
+  Archivos clave: .dockerignore, Dockerfile, README.md, docker-compose.yml, index.js
+
+
+====================================================================================================
+CATEGORÍA: FOOTER (7 PRs)
+====================================================================================================
+
+PR #19: 2025-11-09
+  Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 1 | Archivos: 12
+  Cambios: +1101 / -84
+  Archivos clave: package.json, public/css/style.css, server/controllers/homeController.js, server/controllers/viajesController.js, server/index.js
+
+PR #26: 2025-11-16
+  Branch: ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+  Commits: 1 | Archivos: 2
+  Cambios: +234 / -48
+  Archivos clave: public/css/style.css, server/views/layout/includes/footer.pug
+
+PR #27: 2025-11-16
+  Branch: ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+  Commits: 1 | Archivos: 2
+  Cambios: +10 / -2
+  Archivos clave: public/css/style.css, server/views/layout/includes/footer.pug
+
+PR #28: 2025-11-16
+  Branch: ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+  Commits: 1 | Archivos: 1
+  Cambios: +1 / -1
+  Archivos clave: server/views/layout/includes/footer.pug
+
+PR #33: 2025-11-16
+  Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+  Commits: 1 | Archivos: 4
+  Cambios: +292 / -184
+  Archivos clave: public/css/style.css, public/js/main.js, server/views/layout/includes/footer.pug, server/views/layout/includes/header.pug
+
+PR #35: 2025-11-16
+  Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+  Commits: 1 | Archivos: 6
+  Cambios: +248 / -340
+  Archivos clave: public/css/style.css, public/js/main.js, server/controllers/homeController.js, server/views/index/index.pug, server/views/layout/includes/footer.pug
+
+PR #39: 2025-11-16
+  Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+  Commits: 1 | Archivos: 5
+  Cambios: +202 / -358
+  Archivos clave: public/css/style.css, public/js/main.js, server/views/index/index.pug, server/views/layout/includes/footer.pug, server/views/layout/includes/header.pug
+
+
+====================================================================================================
+CATEGORÍA: HEADER (5 PRs)
+====================================================================================================
+
+PR #24: 2025-11-10
+  Branch: ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 3 | Archivos: 11
+  Cambios: +524 / -401
+  Archivos clave: public/css/style.css, server/controllers/homeController.js, server/controllers/nosotrosController.js, server/controllers/testimonialesController.js, server/views/error.pug
+
+PR #34: 2025-11-16
+  Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+  Commits: 1 | Archivos: 2
+  Cambios: +16 / -5
+  Archivos clave: public/css/style.css, server/views/index/index.pug
+
+PR #36: 2025-11-16
+  Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+  Commits: 1 | Archivos: 3
+  Cambios: +33 / -60
+  Archivos clave: public/css/style.css, server/controllers/homeController.js, server/views/index/index.pug
+
+PR #37: 2025-11-16
+  Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+  Commits: 1 | Archivos: 3
+  Cambios: +73 / -60
+  Archivos clave: public/css/style.css, server/controllers/homeController.js, server/views/index/index.pug
+
+PR #38: 2025-11-16
+  Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+  Commits: 1 | Archivos: 3
+  Cambios: +45 / -72
+  Archivos clave: public/css/style.css, server/controllers/homeController.js, server/views/index/index.pug
+
+
+====================================================================================================
+CATEGORÍA: OTROS (1 PRs)
+====================================================================================================
+
+PR #25: 2025-11-16
+  Branch: ahgarcia/claude/review-master-changes-01BGgWK6SefrcNzqjo5haWrs
+  Commits: 1 | Archivos: 1
+  Cambios: +14 / -1
+  Archivos clave: public/css/style.css
+
+
+====================================================================================================
+CATEGORÍA: TESTIMONIALES (18 PRs)
+====================================================================================================
+
+PR #15: 2025-11-08
+  Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 5 | Archivos: 23
+  Cambios: +4494 / -1395
+  Archivos clave: .gitignore, PULL_REQUEST_TEMPLATE.md, README.md, logs/.gitkeep, package-lock.json
+
+PR #17: 2025-11-08
+  Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 9 | Archivos: 9
+  Cambios: +96 / -17
+  Archivos clave: package.json, server/index.js, server/middleware/performance.js, server/views/index/index.pug, server/views/layout/index.pug
+
+PR #18: 2025-11-09
+  Branch: ahgarcia/claude/revert-merges-011CUw6fDRR9uXpELMUvCsMX
+  Commits: 4 | Archivos: 41
+  Cambios: +1409 / -7569
+  Archivos clave: .dockerignore, .gitignore, DEPLOYMENT_GUIDE.md, Dockerfile, FREE_HOSTING_OPTIONS.md
+
+PR #41: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 7
+  Cambios: +198 / -468
+  Archivos clave: public/css/style.css, server/controllers/testimonialesController.js, server/views/layout/partials/testimoniales.pug, server/views/layout/partials/viajes.pug, server/views/testimoniales/index.pug
+
+PR #42: 2025-11-16
+  Branch: ahgarcia/claude/improve-nosotros-view-01NzLr6eiFmqg9LGA9wnnV5H
+  Commits: 1 | Archivos: 8
+  Cambios: +158 / -640
+  Archivos clave: public/css/style.css, server/controllers/testimonialesController.js, server/views/layout/partials/testimoniales.pug, server/views/layout/partials/viajes.pug, server/views/nosotros/index.pug
+
+PR #43: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 6
+  Cambios: +46 / -548
+  Archivos clave: public/css/style.css, server/views/layout/partials/testimoniales.pug, server/views/layout/partials/viajes.pug, server/views/nosotros/index.pug, server/views/viaje/index.pug
+
+PR #44: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 5
+  Cambios: +46 / -548
+  Archivos clave: public/css/style.css, server/views/layout/partials/viajes.pug, server/views/nosotros/index.pug, server/views/viaje/index.pug, server/views/viajes/index.pug
+
+PR #46: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 5
+  Cambios: +51 / -548
+  Archivos clave: public/css/style.css, server/views/layout/partials/viajes.pug, server/views/nosotros/index.pug, server/views/viaje/index.pug, server/views/viajes/index.pug
+
+PR #48: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 8
+  Cambios: +49 / -559
+  Archivos clave: .gitignore, public/css/style.css, server/controllers/nosotrosController.js, server/views/layout/index.pug, server/views/layout/partials/viajes.pug
+
+PR #49: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 10
+  Cambios: +292 / -563
+  Archivos clave: .gitignore, public/css/style.css, public/js/main.js, server/controllers/nosotrosController.js, server/views/layout/partials/testimoniales.pug
+
+PR #50: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 8
+  Cambios: +55 / -560
+  Archivos clave: .gitignore, public/css/style.css, server/controllers/nosotrosController.js, server/index.js, server/views/layout/partials/viajes.pug
+
+PR #51: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 9
+  Cambios: +140 / -562
+  Archivos clave: .gitignore, public/css/style.css, server/controllers/nosotrosController.js, server/controllers/testimonialesController.js, server/views/layout/partials/viajes.pug
+
+PR #52: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 1 | Archivos: 8
+  Cambios: +89 / -558
+  Archivos clave: .gitignore, public/css/style.css, server/controllers/nosotrosController.js, server/views/layout/partials/viajes.pug, server/views/nosotros/index.pug
+
+PR #53: 2025-11-16
+  Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+  Commits: 2 | Archivos: 8
+  Cambios: +48 / -599
+  Archivos clave: .gitignore, public/css/style.css, server/controllers/nosotrosController.js, server/views/layout/partials/viajes.pug, server/views/nosotros/index.pug
+
+PR #54: 2025-11-16
+  Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+  Commits: 1 | Archivos: 7
+  Cambios: +40 / -345
+  Archivos clave: public/css/style.css, public/js/main.js, server/controllers/testimonialesController.js, server/index.js, server/views/layout/index.pug
+
+PR #55: 2025-11-16
+  Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+  Commits: 1 | Archivos: 8
+  Cambios: +121 / -347
+  Archivos clave: public/css/style.css, public/js/main.js, server/controllers/testimonialesController.js, server/index.js, server/views/layout/index.pug
+
+PR #56: 2025-11-16
+  Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+  Commits: 1 | Archivos: 7
+  Cambios: +12 / -346
+  Archivos clave: public/css/style.css, public/js/main.js, server/controllers/testimonialesController.js, server/index.js, server/views/layout/index.pug
+
+PR #57: 2025-11-16
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 13
+  Cambios: +93 / -776
+  Archivos clave: .gitignore, public/css/style.css, public/js/main.js, server/controllers/nosotrosController.js, server/controllers/testimonialesController.js
+
+
+====================================================================================================
+CATEGORÍA: VISTA INDEX (9 PRs)
+====================================================================================================
+
+PR #29: 2025-11-16
+  Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+  Commits: 1 | Archivos: 4
+  Cambios: +201 / -11
+  Archivos clave: server/controllers/homeController.js, server/models/Viajes.js, server/seeds/add_descuento_fields.sql, server/views/index/index.pug
+
+PR #30: 2025-11-16
+  Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+  Commits: 1 | Archivos: 1
+  Cambios: +2 / -16
+  Archivos clave: server/views/index/index.pug
+
+PR #31: 2025-11-16
+  Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+  Commits: 1 | Archivos: 1
+  Cambios: +1 / -0
+  Archivos clave: server/views/index/index.pug
+
+PR #32: 2025-11-16
+  Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+  Commits: 1 | Archivos: 1
+  Cambios: +1 / -0
+  Archivos clave: server/views/index/index.pug
+
+PR #58: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 5
+  Cambios: +120 / -38
+  Archivos clave: public/css/style.css, server/seeds/update_disponibles_demo.sql, server/views/index/index.pug, server/views/layout/partials/viajes.pug, server/views/viaje/index.pug
+
+PR #59: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 5
+  Cambios: +70 / -31
+  Archivos clave: public/css/style.css, server/seeds/update_disponibles_demo.sql, server/views/index/index.pug, server/views/layout/partials/viajes.pug, server/views/viaje/index.pug
+
+PR #60: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 5
+  Cambios: +8 / -31
+  Archivos clave: public/css/style.css, server/seeds/update_disponibles_demo.sql, server/views/index/index.pug, server/views/layout/partials/viajes.pug, server/views/viaje/index.pug
+
+PR #61: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 5
+  Cambios: +7 / -30
+  Archivos clave: public/css/style.css, server/seeds/update_disponibles_demo.sql, server/views/index/index.pug, server/views/layout/partials/viajes.pug, server/views/viaje/index.pug
+
+PR #62: 2025-11-16
+  Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+  Commits: 1 | Archivos: 5
+  Cambios: +141 / -49
+  Archivos clave: public/css/style.css, server/seeds/update_disponibles_demo.sql, server/views/index/index.pug, server/views/layout/partials/viajes.pug, server/views/viaje/index.pug
+
+
+====================================================================================================
+CATEGORÍA: VISTA NOSOTROS (1 PRs)
+====================================================================================================
+
+PR #47: 2025-11-16
+  Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+  Commits: 1 | Archivos: 3
+  Cambios: +14 / -6
+  Archivos clave: .gitignore, server/controllers/nosotrosController.js, server/views/nosotros/index.pug
+
+
+====================================================================================================
+CATEGORÍA: VISTAS DE VIAJES (12 PRs)
+====================================================================================================
+
+PR #40: 2025-11-16
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 4
+  Cambios: +439 / -21
+  Archivos clave: public/css/style.css, server/views/layout/partials/viajes.pug, server/views/viaje/index.pug, server/views/viajes/index.pug
+
+PR #74: 2025-11-17
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 2 | Archivos: 3
+  Cambios: +209 / -1
+  Archivos clave: public/css/style.css, server/controllers/viajesController.js, server/views/viaje/index.pug
+
+PR #75: 2025-11-17
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 2 | Archivos: 5
+  Cambios: +429 / -7
+  Archivos clave: public/css/style.css, public/js/filtros.js, server/controllers/viajesController.js, server/views/layout/index.pug, server/views/viajes/index.pug
+
+PR #76: 2025-11-17
+  Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 2
+  Cambios: +4 / -1
+  Archivos clave: server/views/layout/index.pug, server/views/viajes/index.pug
+
+PR #77: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 4
+  Cambios: +706 / -2
+  Archivos clave: public/css/style.css, public/js/lightbox.js, server/views/layout/index.pug, server/views/viaje/index.pug
+
+PR #78: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 3
+  Cambios: +64 / -2
+  Archivos clave: public/css/style.css, server/views/layout/index.pug, server/views/viaje/index.pug
+
+PR #79: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 7
+  Cambios: +347 / -1
+  Archivos clave: public/css/style.css, server/controllers/viajesController.js, server/models/Viajes.js, server/seeds/README_BADGES.md, server/seeds/add_destacado_column.sql
+
+PR #80: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 3
+  Cambios: +114 / -36
+  Archivos clave: public/css/style.css, server/views/layout/index.pug, server/views/layout/partials/viajes.pug
+
+PR #81: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 2
+  Cambios: +63 / -0
+  Archivos clave: server/controllers/viajesController.js, server/views/viaje/index.pug
+
+PR #83: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 9
+  Cambios: +831 / -306
+  Archivos clave: CHANGELOG.md, README.md, public/css/style.css, public/js/animations.js, scripts/DATABASE_SCHEMA.md
+
+PR #84: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 1 | Archivos: 4
+  Cambios: +17 / -289
+  Archivos clave: CHANGELOG.md, README.md, scripts/DATABASE_SCHEMA.md, server/index.js
+
+PR #85: 2025-11-17
+  Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+  Commits: 2 | Archivos: 10
+  Cambios: +36 / -1105
+  Archivos clave: CHANGELOG.md, README.md, public/css/style.css, public/js/animations.js, scripts/DATABASE_SCHEMA.md
+
+
+====================================================================================================
+ESTADÍSTICAS GLOBALES
+====================================================================================================
+
+Total de PRs: 71
+Rango: #14 - #85
+Periodo: 2025-11-08 a 2025-11-17
+
+Distribución por categoría:
+  • Base de Datos: 1 PRs
+  • Blog: 12 PRs
+  • Configuración del Proyecto: 3 PRs
+  • Documentación: 2 PRs
+  • Footer: 7 PRs
+  • Header: 5 PRs
+  • Otros: 1 PRs
+  • Testimoniales: 18 PRs
+  • Vista Index: 9 PRs
+  • Vista Nosotros: 1 PRs
+  • Vistas de Viajes: 12 PRs
+
+Top 15 archivos más modificados:
+   1. public/css/style.css (53 PRs)
+   2. server/views/viaje/index.pug (33 PRs)
+   3. server/views/layout/partials/viajes.pug (32 PRs)
+   4. server/views/index/index.pug (27 PRs)
+   5. server/views/layout/index.pug (20 PRs)
+   6. server/views/nosotros/index.pug (18 PRs)
+   7. server/views/viajes/index.pug (18 PRs)
+   8. README.md (15 PRs)
+   9. server/views/testimoniales/index.pug (15 PRs)
+  10. server/controllers/nosotrosController.js (13 PRs)
+  11. server/index.js (13 PRs)
+  12. server/views/layout/partials/testimoniales.pug (13 PRs)
+  13. .gitignore (12 PRs)
+  14. server/controllers/testimonialesController.js (12 PRs)
+  15. package.json (11 PRs)
+
+====================================================================================================

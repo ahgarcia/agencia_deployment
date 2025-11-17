@@ -1,0 +1,1155 @@
+ANÁLISIS DETALLADO DE PULL REQUESTS #14 - #85
+==============================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #14
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 51b7aa7 - ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-08
+Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (1):
+  • b2b3a11 -  (|Agregar checklist completo de mejoras del proyecto|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 635 insertions(+)
+
+Categorías:  Documentación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 66359c8 - ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-08
+Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (5):
+  • d0c5da4 -  (|Agregar template detallado de Pull Request|||Claude)
+  • 5881d87 -  (|Actualizar README con changelog completo de v1.0.0|||Claude)
+  • 3c7ba19 -  (|Implementar Fase 4: Performance y UX Completa|||Claude)
+  • 7457e94 -  (|Implementar Fase 2: Seguridad y Estabilidad Completa|||Claude)
+  • 0ca1518 -  (|Implementar mejoras críticas de seguridad y documentación|||Claude)
+
+Archivos modificados: 23
+ 23 files changed, 4494 insertions(+), 1395 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes, Documentación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #16
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 72851cb - ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-08
+Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (3):
+  • 0d98bcb -  (|Agregar punto de entrada para Render|||Claude)
+  • f1baf20 -  (|Agregar soporte para PostgreSQL y guía de deployment en Render (GRATIS)|||Claude)
+  • 5c3852a -  (|Agregar guía completa de deployment y archivos de configuración|||Claude)
+
+Archivos modificados: 15
+ 15 files changed, 2363 insertions(+), 16 deletions(-)
+
+Categorías:  Documentación, Base-de-Datos, Deployment
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #17
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: e62c316 - ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-08
+Branch: ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (9):
+  • 9c6ea6e -  (|Actualizar descripciones de París y Roma con copy extenso y persuasivo|||Claude)
+  • ae31b89 -  (|Corregir favicon y forzar rebuild de Render|||Claude)
+  • 8d2c319 -  (|Corregir Content Security Policy para Font Awesome y source maps|||Claude)
+  • 1e3f4b3 -  (|Actualizar copy profesional en páginas principales|||Claude)
+  • 216b308 -  (|Agregar SQL para testimoniales adicionales - 10 testimonios variados|||Claude)
+  • 9293b6e -  (|Agregar SQL para registros de viajes: Canada, Grecia, Londres y Rio|||Claude)
+  • 727ddcc -  (|Corregir ruta de archivos estáticos para Render|||Claude)
+  • 921c38a -  (|Bump version to force Render rebuild|||Claude)
+  • 8a03aef -  (|Corregir errores de deployment en Render|||Claude)
+
+Archivos modificados: 9
+ 9 files changed, 96 insertions(+), 17 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #18
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: d6ebe1c - ahgarcia/claude/revert-merges-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-09
+Branch: ahgarcia/claude/revert-merges-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (4):
+  • 1835cde -  (|Revert "Merge pull request #14 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX"|||Claude)
+  • e639adb -  (|Revert "Merge pull request #15 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX"|||Claude)
+  • 08e2f9a -  (|Revert "Merge pull request #16 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX"|||Claude)
+  • 6b2331d -  (|Revert "Merge pull request #17 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX"|||Claude)
+
+Archivos modificados: 41
+ 41 files changed, 1409 insertions(+), 7569 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes, Documentación, Base-de-Datos, Deployment
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #19
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 1487526 - ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-09
+Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (1):
+  • 4e213d4 -  (|Integrar sistema de imágenes dinámicas con Unsplash API y paginación|||Claude)
+
+Archivos modificados: 12
+ 12 files changed, 1101 insertions(+), 84 deletions(-)
+
+Categorías:  Footer, Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #20
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: ece452c - ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-09
+Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (1):
+  • 8776f51 -  (|Agregar README.md y archivos Docker para deployment|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 585 insertions(+)
+
+Categorías:  Documentación, Deployment
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #21
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 5ef2502 - ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-09
+Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (1):
+  • 292bd24 -  (|Agregar archivos críticos para funcionamiento de la aplicación|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 286 insertions(+)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #22
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 2a31c00 - ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-09
+Branch: ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (1):
+  • de2e90d -  (|Agregar package-lock.json para deployment en Render|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 2863 insertions(+), 1253 deletions(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #23
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 055d380 - ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-09
+Branch: ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (2):
+  • 860aab5 -  (|Merge branch 'claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX'|||Claude)
+  • d8c167c -  (|Fix conexión a base de datos en Render - Agregar soporte PostgreSQL|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 44 insertions(+), 16 deletions(-)
+
+Categorías:  Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 513b40d - ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-10
+Branch: ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX
+
+Commits incluidos (3):
+  • e9f2837 -  (|Remover server/views/index/index.pug - archivo siendo editado por usuario|||Claude)
+  • 512f82e -  (|Agregar archivos completos de views y controllers faltantes|||Claude)
+  • 9265853 -  (|Agregar mejoras de copy en página Nosotros|||Claude)
+
+Archivos modificados: 11
+ 11 files changed, 524 insertions(+), 401 deletions(-)
+
+Categorías:  Header, Testimoniales, Vista-Nosotros
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #25
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: fbfa6d6 - ahgarcia/claude/review-master-changes-01BGgWK6SefrcNzqjo5haWrs
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/review-master-changes-01BGgWK6SefrcNzqjo5haWrs
+
+Commits incluidos (1):
+  • 74af702 -  (|Agregar espaciado responsive entre header y texto 'aventura'|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #26
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: da87268 - ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+
+Commits incluidos (1):
+  • da524cb -  (|Mejorar diseño del footer con gradiente y estructura moderna|||Claude)
+
+Archivos modificados: 2
+ 2 files changed, 234 insertions(+), 48 deletions(-)
+
+Categorías:  Footer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #27
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 08cca49 - ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+
+Commits incluidos (1):
+  • 70dbc87 -  (|Ajustar espaciado del footer y actualizar número telefónico|||Claude)
+
+Archivos modificados: 2
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+Categorías:  Footer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #28
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 721e7ce - ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it
+
+Commits incluidos (1):
+  • a79974c -  (|Actualizar ubicación del footer a Monterrey|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Categorías:  Footer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #29
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 942eb92 - ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+
+Commits incluidos (1):
+  • 13d4e22 -  (|Implementar sistema dinámico de descuentos en página principal|||Claude)
+
+Archivos modificados: 4
+ 4 files changed, 201 insertions(+), 11 deletions(-)
+
+Categorías:  Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 2599744 - ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+
+Commits incluidos (1):
+  • 34b618f -  (|Simplificar sección de descuento sin imagen|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 2 insertions(+), 16 deletions(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #31
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 2b82d0f - ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+
+Commits incluidos (1):
+  • 6382693 -  (|Agregar botón 'Ver Detalles' en sección de descuento|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 1 insertion(+)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #32
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 21b5c0b - ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+
+Commits incluidos (1):
+  • 6a50282 -  (|Agregar línea de ahorro después del precio en descuento|||Claude)
+
+Archivos modificados: 1
+ 1 file changed, 1 insertion(+)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #33
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 70d7f7c - ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+
+Commits incluidos (1):
+  • e177c9d -  (|Optimizar header responsive con menú hamburguesa|||Claude)
+
+Archivos modificados: 4
+ 4 files changed, 292 insertions(+), 184 deletions(-)
+
+Categorías:  Footer, Header
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #34
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: ed70b75 - ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+
+Commits incluidos (1):
+  • 9162b6c -  (|Ajustar hero responsive: botones homologados y separación de 'aventura'|||Claude)
+
+Archivos modificados: 2
+ 2 files changed, 16 insertions(+), 5 deletions(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #35
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: f147c1d - ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+
+Commits incluidos (1):
+  • 8404c37 -  (|Implementar sistema híbrido de descuentos: principal + secundarios|||Claude)
+
+Archivos modificados: 6
+ 6 files changed, 248 insertions(+), 340 deletions(-)
+
+Categorías:  Footer, Header
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #36
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 3501c81 - ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+
+Commits incluidos (1):
+  • 34f661e -  (|Aumentar separación de 'aventura' en dispositivos móviles|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 33 insertions(+), 60 deletions(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #37
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 199a6ca - ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+
+Commits incluidos (1):
+  • 8d4f169 -  (|Mejorar botón secundario con turquesa outline y animación pulsante|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 73 insertions(+), 60 deletions(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #38
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: fa190ab - ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5
+
+Commits incluidos (1):
+  • 44e06c7 -  (|Cambiar botón secundario a turquesa sólido para mejor visibilidad|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 45 insertions(+), 72 deletions(-)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 73732d3 - ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC
+
+Commits incluidos (1):
+  • cc5d4cf -  (|Mejorar diseño y paleta de colores de mini-cards de descuentos|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 202 insertions(+), 358 deletions(-)
+
+Categorías:  Footer, Header
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #40
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: a63cede - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • 369f7e9 -  (|Implementar mejoras de prioridad alta en vistas de viajes|||Claude)
+
+Archivos modificados: 4
+ 4 files changed, 439 insertions(+), 21 deletions(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #41
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: f7678f5 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 112c3c7 -  (|Mejorar diseño y UX de la vista de testimoniales|||Claude)
+
+Archivos modificados: 7
+ 7 files changed, 198 insertions(+), 468 deletions(-)
+
+Categorías:  Testimoniales, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #42
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 231192c - ahgarcia/claude/improve-nosotros-view-01NzLr6eiFmqg9LGA9wnnV5H
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-nosotros-view-01NzLr6eiFmqg9LGA9wnnV5H
+
+Commits incluidos (1):
+  • 3a0c0b0 -  (|Rediseñar completamente vista Nosotros con mejoras de accesibilidad y UX|||Claude)
+
+Archivos modificados: 8
+ 8 files changed, 158 insertions(+), 640 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #43
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 3b893a8 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 341038e -  (|Eliminar comillas literales redundantes de testimoniales|||Claude)
+
+Archivos modificados: 6
+ 6 files changed, 46 insertions(+), 548 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #44
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 457ba1e - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • b8b6b43 -  (|Corregir peso de fuente en testimoniales para evitar herencia de bold|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 46 insertions(+), 548 deletions(-)
+
+Categorías:  Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #46
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 2423117 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 9298971 -  (|Corregir herencia de font-weight bold en blockquote de testimoniales|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 51 insertions(+), 548 deletions(-)
+
+Categorías:  Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #47
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: ca2c7bc - ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+
+Commits incluidos (1):
+  • d5ae762 -  (|Corregir responsive de botones y cargar testimoniales en vista Nosotros|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 14 insertions(+), 6 deletions(-)
+
+Categorías:  Vista-Nosotros
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #48
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: a67b377 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 3ddf4b6 -  (|Agregar variante italic peso 400 de Open Sans para testimoniales|||Claude)
+
+Archivos modificados: 8
+ 8 files changed, 49 insertions(+), 559 deletions(-)
+
+Categorías:  Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #49
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: f47cc53 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 41dd0b2 -  (|Implementar mejoras de UX de media prioridad en testimoniales|||Claude)
+
+Archivos modificados: 10
+ 10 files changed, 292 insertions(+), 563 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #50
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 358f253 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 4e85347 -  (|Corregir footer de testimoniales y CSP|||Claude)
+
+Archivos modificados: 8
+ 8 files changed, 55 insertions(+), 560 deletions(-)
+
+Categorías:  Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #51
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 110c8be - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • ff3aa20 -  (|Implementar paginación de testimoniales|||Claude)
+
+Archivos modificados: 9
+ 9 files changed, 140 insertions(+), 562 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #52
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: b0cda89 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (1):
+  • 856f5a0 -  (|Agregar Schema.org markup (JSON-LD) para SEO de testimoniales|||Claude)
+
+Archivos modificados: 8
+ 8 files changed, 89 insertions(+), 558 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #53
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 865f0e5 - ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS
+
+Commits incluidos (2):
+  • f02cd81 -  (|Revertir Schema.org markup - rollback|||Claude)
+  • 22c5f05 -  (|Corregir sintaxis de Schema.org JSON-LD en Pug|||Claude)
+
+Archivos modificados: 8
+ 8 files changed, 48 insertions(+), 599 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #54
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: e6e68c3 - ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+
+Commits incluidos (1):
+  • 464238a -  (|Mejorar padding de botones para mejor legibilidad en pantallas grandes|||Claude)
+
+Archivos modificados: 7
+ 7 files changed, 40 insertions(+), 345 deletions(-)
+
+Categorías:  Testimoniales
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: d3cac2b - ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+
+Commits incluidos (1):
+  • 6ad088d -  (|Corregir visibilidad de íconos, homologar textos y mejorar responsive para iPad|||Claude)
+
+Archivos modificados: 8
+ 8 files changed, 121 insertions(+), 347 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #56
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: dbcb9f3 - ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H
+
+Commits incluidos (1):
+  • 618ead2 -  (|Quitar text-transform uppercase de botones para homologar capitalización|||Claude)
+
+Archivos modificados: 7
+ 7 files changed, 12 insertions(+), 346 deletions(-)
+
+Categorías:  Testimoniales
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #57
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 8418b84 - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • 4cf664f -  (|Corregir problemas visuales y funcionales en vistas de viajes|||Claude)
+
+Archivos modificados: 13
+ 13 files changed, 93 insertions(+), 776 deletions(-)
+
+Categorías:  Testimoniales, Vista-Nosotros, Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #58
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: b19ea0f - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • adc57f6 -  (|Eliminar estilos inline de index.pug y mover a CSS|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 120 insertions(+), 38 deletions(-)
+
+Categorías:  Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: ff2b4fa - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • 640775e -  (|Mejorar CTAs del hero con iconos y mejores textos|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 70 insertions(+), 31 deletions(-)
+
+Categorías:  Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #60
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 42724d5 - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • d17e358 -  (|Optimizar textos del hero para mayor claridad y conversión|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 8 insertions(+), 31 deletions(-)
+
+Categorías:  Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #61
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: a6f8bb7 - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • a6862eb -  (|Simplificar hero a mensaje minimalista y directo|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 7 insertions(+), 30 deletions(-)
+
+Categorías:  Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #62
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: affdbb5 - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • 923b02a -  (|Mejorar sección Sobre Nosotros con grid moderno y mejor UX|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 141 insertions(+), 49 deletions(-)
+
+Categorías:  Viajes, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #63
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 0f66238 - ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+
+Commits incluidos (1):
+  • 5cbaae2 -  (|Implementar sistema de blog completo|||Claude)
+
+Archivos modificados: 11
+ 11 files changed, 1331 insertions(+), 141 deletions(-)
+
+Categorías:  Blog, Header, Documentación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #64
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 6413f61 - ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+
+Commits incluidos (1):
+  • 149d935 -  (|Integrar documentación del blog en README principal|||Claude)
+
+Archivos modificados: 4
+ 4 files changed, 142 insertions(+), 365 deletions(-)
+
+Categorías:  Documentación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #65
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 521e9dc - ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+
+Commits incluidos (2):
+  • d918116 -  (|Corregir modelo BlogPost para compatibilidad con PostgreSQL|||Claude)
+  • be21da9 -  (|Agregar script SQL completo para PostgreSQL|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 566 insertions(+), 140 deletions(-)
+
+Categorías:  Blog, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #66
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 242bc24 - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • ae8e2ef -  (|Ampliar texto de Sobre Nosotros con historia y credibilidad|||Claude)
+
+Archivos modificados: 16
+ 16 files changed, 10 insertions(+), 1770 deletions(-)
+
+Categorías:  Blog, Header, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #67
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 5f07bb7 - ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+
+Commits incluidos (1):
+  • 5c4b862 -  (|Mejorar diseño del blog con paleta de colores y responsive mobile|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 132 insertions(+), 172 deletions(-)
+
+Categorías:  Blog
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #68
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 640e09d - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • 92922f6 -  (|Mejorar sección de Ofertas Especiales con diseño moderno|||Claude)
+
+Archivos modificados: 16
+ 16 files changed, 152 insertions(+), 1859 deletions(-)
+
+Categorías:  Blog, Header, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #69
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 9e91417 - ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC
+
+Commits incluidos (1):
+  • 392d0d1 -  (|Eliminar enlace de Contacto del footer|||Claude)
+
+Archivos modificados: 16
+ 16 files changed, 7 insertions(+), 1845 deletions(-)
+
+Categorías:  Blog, Footer, Header, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #70
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 892fb14 - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-16
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (2):
+  • fb46b5e -  (|Implementar sección 'Qué Incluye / No Incluye' en detalle de viaje|||Claude)
+  • 55e1c65 -  (|Migrar campo disponibles de VARCHAR a INTEGER|||Claude)
+
+Archivos modificados: 31
+ 31 files changed, 832 insertions(+), 3036 deletions(-)
+
+Categorías:  Blog, Footer, Header, Testimoniales, Vista-Nosotros, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #71
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: d510754 - ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx
+
+Commits incluidos (1):
+  • d17c2f8 -  (|Mejorar diseño de página de detalle del blog con paleta de colores y responsive mobile|||Claude)
+
+Archivos modificados: 12
+ 12 files changed, 271 insertions(+), 1095 deletions(-)
+
+Categorías:  Blog, Footer, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #72
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 7af2af9 - ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu
+
+Commits incluidos (1):
+  • 917fad2 -  (|Update: Reorganizar y simplificar documentación del proyecto|||Claude)
+
+Archivos modificados: 13
+ 13 files changed, 1028 insertions(+), 1316 deletions(-)
+
+Categorías:  Blog, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #73
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 0090562 - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • ec648b6 -  (|Rediseñar vista de detalle de viaje con paleta de marca|||Claude)
+
+Archivos modificados: 26
+ 26 files changed, 851 insertions(+), 4322 deletions(-)
+
+Categorías:  Blog, Footer, Header, Testimoniales, Vista-Nosotros, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #74
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 51d2105 - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (2):
+  • 0f5791e -  (|Merge branch 'master' into claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t|||Andrés Hernández García)
+  • 2e2e94a -  (|Implementar botones de compartir en redes sociales|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 209 insertions(+), 1 deletion(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #75
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 267f844 - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (2):
+  • d441fd8 -  (|Implementar sistema de filtros dinámicos para viajes|||Claude)
+  • 1ca2d86 -  (|Agregar cache busting a CSS para forzar actualización|||Claude)
+
+Archivos modificados: 5
+ 5 files changed, 429 insertions(+), 7 deletions(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #76
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: f7b731e - ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • 874ad30 -  (|Corregir error de sintaxis Pug: agregar bloque scripts al layout|||Claude)
+
+Archivos modificados: 2
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #77
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 9d1a50b - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • 7ced8e3 -  (|Implementar galería lightbox con Vanilla JavaScript|||Claude)
+
+Archivos modificados: 4
+ 4 files changed, 706 insertions(+), 2 deletions(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #78
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: a77dd2a - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • dac5524 -  (|Ampliar galería a 6 imágenes con indicador "+X más"|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 64 insertions(+), 2 deletions(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #79
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 239aa3c - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • 9a6db1f -  (|Implementar sistema de badges adicionales para viajes|||Claude)
+
+Archivos modificados: 7
+ 7 files changed, 347 insertions(+), 1 deletion(-)
+
+Categorías:  Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #80
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 17b8a60 - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • 7eb1b3a -  (|Mejorar diseño y contraste de badges con UX/UI profesional|||Claude)
+
+Archivos modificados: 3
+ 3 files changed, 114 insertions(+), 36 deletions(-)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #81
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: e9aa2be - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • c77881b -  (|Agregar sistema de badges a la vista de detalle del viaje|||Claude)
+
+Archivos modificados: 2
+ 2 files changed, 63 insertions(+)
+
+Categorías:  Viajes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #82
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 8fd8012 - ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu
+
+Commits incluidos (1):
+  • d89537f -  (|Add: Integrar sistema de badges y descuentos en documentación|||Claude)
+
+Archivos modificados: 19
+ 19 files changed, 688 insertions(+), 3390 deletions(-)
+
+Categorías:  Blog, Viajes, Documentación, Base-de-Datos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #83
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 09f0458 - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • eedc6e1 -  (|Implementar sistema completo de animaciones avanzadas|||Claude)
+
+Archivos modificados: 9
+ 9 files changed, 831 insertions(+), 306 deletions(-)
+
+Categorías:  Viajes, Documentación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #84
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 92ffd37 - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (1):
+  • f5f9e97 -  (|Actualizar CSP para permitir biblioteca AOS (Animate On Scroll)|||Claude)
+
+Archivos modificados: 4
+ 4 files changed, 17 insertions(+), 289 deletions(-)
+
+Categorías:  Documentación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PR #85
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Merge: 738728b - ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+Autor: Andrés Hernández García <ahgarcia@gmail.com>
+Fecha: 2025-11-17
+Branch: ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t
+
+Commits incluidos (2):
+  • 61b6be4 -  (|Revert "Implementar sistema completo de animaciones avanzadas"|||Claude)
+  • 05c6d13 -  (|Revert "Actualizar CSP para permitir biblioteca AOS (Animate On Scroll)"|||Claude)
+
+Archivos modificados: 10
+ 10 files changed, 36 insertions(+), 1105 deletions(-)
+
+Categorías:  Viajes, Documentación
+

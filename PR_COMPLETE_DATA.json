@@ -1,0 +1,1877 @@
+{
+  "pull_requests": [
+    {
+      "number": 14,
+      "merge_commit": "51b7aa7",
+      "title": "Merge pull request #14 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-08",
+      "commits": [
+        {
+          "hash": "b2b3a11",
+          "message": "\n",
+          "author": "|Agregar checklist completo de mejoras del proyecto|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "PROJECT_IMPROVEMENTS_CHECKLIST.md\n"
+      ],
+      "stats": " 1 file changed, 635 insertions(+)\n"
+    },
+    {
+      "number": 15,
+      "merge_commit": "66359c8",
+      "title": "Merge pull request #15 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-08",
+      "commits": [
+        {
+          "hash": "d0c5da4",
+          "message": "\n",
+          "author": "|Agregar template detallado de Pull Request|||Claude\n"
+        },
+        {
+          "hash": "5881d87",
+          "message": "\n",
+          "author": "|Actualizar README con changelog completo de v1.0.0|||Claude\n"
+        },
+        {
+          "hash": "3c7ba19",
+          "message": "\n",
+          "author": "|Implementar Fase 4: Performance y UX Completa|||Claude\n"
+        },
+        {
+          "hash": "7457e94",
+          "message": "\n",
+          "author": "|Implementar Fase 2: Seguridad y Estabilidad Completa|||Claude\n"
+        },
+        {
+          "hash": "0ca1518",
+          "message": "\n",
+          "author": "|Implementar mejoras críticas de seguridad y documentación|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "PULL_REQUEST_TEMPLATE.md\n",
+        "README.md\n",
+        "logs/.gitkeep\n",
+        "package-lock.json\n",
+        "package.json\n",
+        "scripts/optimize-images.js\n",
+        "server/config/logger.js\n",
+        "server/controllers/homeController.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/controllers/viajesController.js\n",
+        "server/index.js\n",
+        "server/middleware/errorHandler.js\n",
+        "server/middleware/performance.js\n",
+        "server/middleware/validators.js\n",
+        "server/routes/index.js\n",
+        "server/views/error.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "variables.env.example\n"
+      ],
+      "stats": " 23 files changed, 4494 insertions(+), 1395 deletions(-)\n"
+    },
+    {
+      "number": 16,
+      "merge_commit": "72851cb",
+      "title": "Merge pull request #16 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-08",
+      "commits": [
+        {
+          "hash": "0d98bcb",
+          "message": "\n",
+          "author": "|Agregar punto de entrada para Render|||Claude\n"
+        },
+        {
+          "hash": "f1baf20",
+          "message": "\n",
+          "author": "|Agregar soporte para PostgreSQL y guía de deployment en Render (GRATIS)|||Claude\n"
+        },
+        {
+          "hash": "5c3852a",
+          "message": "\n",
+          "author": "|Agregar guía completa de deployment y archivos de configuración|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".dockerignore\n",
+        "DEPLOYMENT_GUIDE.md\n",
+        "Dockerfile\n",
+        "FREE_HOSTING_OPTIONS.md\n",
+        "README.md\n",
+        "RENDER_DEPLOYMENT.md\n",
+        "docker-compose.yml\n",
+        "index.js\n",
+        "init-postgres.sql\n",
+        "init.sql\n",
+        "nginx.conf\n",
+        "package-lock.json\n",
+        "package.json\n",
+        "scripts/deploy.sh\n",
+        "server/config/database.js\n"
+      ],
+      "stats": " 15 files changed, 2363 insertions(+), 16 deletions(-)\n"
+    },
+    {
+      "number": 17,
+      "merge_commit": "e62c316",
+      "title": "Merge pull request #17 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-08",
+      "commits": [
+        {
+          "hash": "9c6ea6e",
+          "message": "\n",
+          "author": "|Actualizar descripciones de París y Roma con copy extenso y persuasivo|||Claude\n"
+        },
+        {
+          "hash": "ae31b89",
+          "message": "\n",
+          "author": "|Corregir favicon y forzar rebuild de Render|||Claude\n"
+        },
+        {
+          "hash": "8d2c319",
+          "message": "\n",
+          "author": "|Corregir Content Security Policy para Font Awesome y source maps|||Claude\n"
+        },
+        {
+          "hash": "1e3f4b3",
+          "message": "\n",
+          "author": "|Actualizar copy profesional en páginas principales|||Claude\n"
+        },
+        {
+          "hash": "216b308",
+          "message": "\n",
+          "author": "|Agregar SQL para testimoniales adicionales - 10 testimonios variados|||Claude\n"
+        },
+        {
+          "hash": "9293b6e",
+          "message": "\n",
+          "author": "|Agregar SQL para registros de viajes: Canada, Grecia, Londres y Rio|||Claude\n"
+        },
+        {
+          "hash": "727ddcc",
+          "message": "\n",
+          "author": "|Corregir ruta de archivos estáticos para Render|||Claude\n"
+        },
+        {
+          "hash": "921c38a",
+          "message": "\n",
+          "author": "|Bump version to force Render rebuild|||Claude\n"
+        },
+        {
+          "hash": "8a03aef",
+          "message": "\n",
+          "author": "|Corregir errores de deployment en Render|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "package.json\n",
+        "server/index.js\n",
+        "server/middleware/performance.js\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "sql-testimoniales-adicionales.sql\n",
+        "sql-update-paris-roma.sql\n",
+        "sql-viajes-adicionales.sql\n"
+      ],
+      "stats": " 9 files changed, 96 insertions(+), 17 deletions(-)\n"
+    },
+    {
+      "number": 18,
+      "merge_commit": "d6ebe1c",
+      "title": "Merge pull request #18 from ahgarcia/claude/revert-merges-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-09",
+      "commits": [
+        {
+          "hash": "1835cde",
+          "message": "\n",
+          "author": "|Revert \"Merge pull request #14 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\"|||Claude\n"
+        },
+        {
+          "hash": "e639adb",
+          "message": "\n",
+          "author": "|Revert \"Merge pull request #15 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\"|||Claude\n"
+        },
+        {
+          "hash": "08e2f9a",
+          "message": "\n",
+          "author": "|Revert \"Merge pull request #16 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\"|||Claude\n"
+        },
+        {
+          "hash": "6b2331d",
+          "message": "\n",
+          "author": "|Revert \"Merge pull request #17 from ahgarcia/claude/project-analysis-checklist-011CUw6fDRR9uXpELMUvCsMX\"|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".dockerignore\n",
+        ".gitignore\n",
+        "DEPLOYMENT_GUIDE.md\n",
+        "Dockerfile\n",
+        "FREE_HOSTING_OPTIONS.md\n",
+        "PROJECT_IMPROVEMENTS_CHECKLIST.md\n",
+        "PULL_REQUEST_TEMPLATE.md\n",
+        "README.md\n",
+        "RENDER_DEPLOYMENT.md\n",
+        "docker-compose.yml\n",
+        "index.js\n",
+        "init-postgres.sql\n",
+        "init.sql\n",
+        "logs/.gitkeep\n",
+        "nginx.conf\n",
+        "package-lock.json\n",
+        "package.json\n",
+        "scripts/deploy.sh\n",
+        "scripts/optimize-images.js\n",
+        "server/config/database.js\n",
+        "server/config/logger.js\n",
+        "server/controllers/homeController.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/controllers/viajesController.js\n",
+        "server/index.js\n",
+        "server/middleware/errorHandler.js\n",
+        "server/middleware/performance.js\n",
+        "server/middleware/validators.js\n",
+        "server/routes/index.js\n",
+        "server/views/error.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "sql-testimoniales-adicionales.sql\n",
+        "sql-update-paris-roma.sql\n",
+        "sql-viajes-adicionales.sql\n",
+        "variables.env.example\n"
+      ],
+      "stats": " 41 files changed, 1409 insertions(+), 7569 deletions(-)\n"
+    },
+    {
+      "number": 19,
+      "merge_commit": "1487526",
+      "title": "Merge pull request #19 from ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-09",
+      "commits": [
+        {
+          "hash": "4e213d4",
+          "message": "\n",
+          "author": "|Integrar sistema de imágenes dinámicas con Unsplash API y paginación|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "package.json\n",
+        "public/css/style.css\n",
+        "server/controllers/homeController.js\n",
+        "server/controllers/viajesController.js\n",
+        "server/index.js\n",
+        "server/models/Viajes.js\n",
+        "server/seeds/update_existing_viajes.sql\n",
+        "server/services/imageService.js\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 12 files changed, 1101 insertions(+), 84 deletions(-)\n"
+    },
+    {
+      "number": 20,
+      "merge_commit": "ece452c",
+      "title": "Merge pull request #20 from ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-09",
+      "commits": [
+        {
+          "hash": "8776f51",
+          "message": "\n",
+          "author": "|Agregar README.md y archivos Docker para deployment|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".dockerignore\n",
+        "Dockerfile\n",
+        "README.md\n",
+        "docker-compose.yml\n",
+        "index.js\n"
+      ],
+      "stats": " 5 files changed, 585 insertions(+)\n"
+    },
+    {
+      "number": 21,
+      "merge_commit": "5ef2502",
+      "title": "Merge pull request #21 from ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-09",
+      "commits": [
+        {
+          "hash": "292bd24",
+          "message": "\n",
+          "author": "|Agregar archivos críticos para funcionamiento de la aplicación|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "logs/.gitkeep\n",
+        "server/config/logger.js\n",
+        "server/middleware/errorHandler.js\n",
+        "server/middleware/performance.js\n",
+        "variables.env.example\n"
+      ],
+      "stats": " 5 files changed, 286 insertions(+)\n"
+    },
+    {
+      "number": 22,
+      "merge_commit": "2a31c00",
+      "title": "Merge pull request #22 from ahgarcia/claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-09",
+      "commits": [
+        {
+          "hash": "de2e90d",
+          "message": "\n",
+          "author": "|Agregar package-lock.json para deployment en Render|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "package-lock.json\n"
+      ],
+      "stats": " 1 file changed, 2863 insertions(+), 1253 deletions(-)\n"
+    },
+    {
+      "number": 23,
+      "merge_commit": "055d380",
+      "title": "Merge pull request #23 from ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-09",
+      "commits": [
+        {
+          "hash": "860aab5",
+          "message": "\n",
+          "author": "|Merge branch 'claude/merge-selected-files-011CUw6fDRR9uXpELMUvCsMX'|||Claude\n"
+        },
+        {
+          "hash": "d8c167c",
+          "message": "\n",
+          "author": "|Fix conexión a base de datos en Render - Agregar soporte PostgreSQL|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/config/database.js\n"
+      ],
+      "stats": " 1 file changed, 44 insertions(+), 16 deletions(-)\n"
+    },
+    {
+      "number": 24,
+      "merge_commit": "513b40d",
+      "title": "Merge pull request #24 from ahgarcia/claude/final-database-fix-011CUw6fDRR9uXpELMUvCsMX\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-10",
+      "commits": [
+        {
+          "hash": "e9f2837",
+          "message": "\n",
+          "author": "|Remover server/views/index/index.pug - archivo siendo editado por usuario|||Claude\n"
+        },
+        {
+          "hash": "512f82e",
+          "message": "\n",
+          "author": "|Agregar archivos completos de views y controllers faltantes|||Claude\n"
+        },
+        {
+          "hash": "9265853",
+          "message": "\n",
+          "author": "|Agregar mejoras de copy en página Nosotros|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/homeController.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/views/error.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/header.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n"
+      ],
+      "stats": " 11 files changed, 524 insertions(+), 401 deletions(-)\n"
+    },
+    {
+      "number": 25,
+      "merge_commit": "fbfa6d6",
+      "title": "Merge pull request #25 from ahgarcia/claude/review-master-changes-01BGgWK6SefrcNzqjo5haWrs\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "74af702",
+          "message": "\n",
+          "author": "|Agregar espaciado responsive entre header y texto 'aventura'|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n"
+      ],
+      "stats": " 1 file changed, 14 insertions(+), 1 deletion(-)\n"
+    },
+    {
+      "number": 26,
+      "merge_commit": "da87268",
+      "title": "Merge pull request #26 from ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "da524cb",
+          "message": "\n",
+          "author": "|Mejorar diseño del footer con gradiente y estructura moderna|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/includes/footer.pug\n"
+      ],
+      "stats": " 2 files changed, 234 insertions(+), 48 deletions(-)\n"
+    },
+    {
+      "number": 27,
+      "merge_commit": "08cca49",
+      "title": "Merge pull request #27 from ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "70dbc87",
+          "message": "\n",
+          "author": "|Ajustar espaciado del footer y actualizar número telefónico|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/includes/footer.pug\n"
+      ],
+      "stats": " 2 files changed, 10 insertions(+), 2 deletions(-)\n"
+    },
+    {
+      "number": 28,
+      "merge_commit": "721e7ce",
+      "title": "Merge pull request #28 from ahgarcia/claude/improve-footer-design-01JPGEUu2wbnn4vYuHne22it\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "a79974c",
+          "message": "\n",
+          "author": "|Actualizar ubicación del footer a Monterrey|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/views/layout/includes/footer.pug\n"
+      ],
+      "stats": " 1 file changed, 1 insertion(+), 1 deletion(-)\n"
+    },
+    {
+      "number": 29,
+      "merge_commit": "942eb92",
+      "title": "Merge pull request #29 from ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "13d4e22",
+          "message": "\n",
+          "author": "|Implementar sistema dinámico de descuentos en página principal|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/controllers/homeController.js\n",
+        "server/models/Viajes.js\n",
+        "server/seeds/add_descuento_fields.sql\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 4 files changed, 201 insertions(+), 11 deletions(-)\n"
+    },
+    {
+      "number": 30,
+      "merge_commit": "2599744",
+      "title": "Merge pull request #30 from ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "34b618f",
+          "message": "\n",
+          "author": "|Simplificar sección de descuento sin imagen|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 1 file changed, 2 insertions(+), 16 deletions(-)\n"
+    },
+    {
+      "number": 31,
+      "merge_commit": "2b82d0f",
+      "title": "Merge pull request #31 from ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "6382693",
+          "message": "\n",
+          "author": "|Agregar botón 'Ver Detalles' en sección de descuento|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 1 file changed, 1 insertion(+)\n"
+    },
+    {
+      "number": 32,
+      "merge_commit": "21b5c0b",
+      "title": "Merge pull request #32 from ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "6a50282",
+          "message": "\n",
+          "author": "|Agregar línea de ahorro después del precio en descuento|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 1 file changed, 1 insertion(+)\n"
+    },
+    {
+      "number": 33,
+      "merge_commit": "70d7f7c",
+      "title": "Merge pull request #33 from ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "e177c9d",
+          "message": "\n",
+          "author": "|Optimizar header responsive con menú hamburguesa|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/includes/header.pug\n"
+      ],
+      "stats": " 4 files changed, 292 insertions(+), 184 deletions(-)\n"
+    },
+    {
+      "number": 34,
+      "merge_commit": "ed70b75",
+      "title": "Merge pull request #34 from ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "9162b6c",
+          "message": "\n",
+          "author": "|Ajustar hero responsive: botones homologados y separación de 'aventura'|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 2 files changed, 16 insertions(+), 5 deletions(-)\n"
+    },
+    {
+      "number": 35,
+      "merge_commit": "f147c1d",
+      "title": "Merge pull request #35 from ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "8404c37",
+          "message": "\n",
+          "author": "|Implementar sistema híbrido de descuentos: principal + secundarios|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/controllers/homeController.js\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/includes/header.pug\n"
+      ],
+      "stats": " 6 files changed, 248 insertions(+), 340 deletions(-)\n"
+    },
+    {
+      "number": 36,
+      "merge_commit": "3501c81",
+      "title": "Merge pull request #36 from ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "34f661e",
+          "message": "\n",
+          "author": "|Aumentar separación de 'aventura' en dispositivos móviles|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/homeController.js\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 3 files changed, 33 insertions(+), 60 deletions(-)\n"
+    },
+    {
+      "number": 37,
+      "merge_commit": "199a6ca",
+      "title": "Merge pull request #37 from ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "8d4f169",
+          "message": "\n",
+          "author": "|Mejorar botón secundario con turquesa outline y animación pulsante|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/homeController.js\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 3 files changed, 73 insertions(+), 60 deletions(-)\n"
+    },
+    {
+      "number": 38,
+      "merge_commit": "fa190ab",
+      "title": "Merge pull request #38 from ahgarcia/claude/review-header-template-0122bGWvh1HfrFLPFvZS7zt5\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "44e06c7",
+          "message": "\n",
+          "author": "|Cambiar botón secundario a turquesa sólido para mejor visibilidad|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/homeController.js\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 3 files changed, 45 insertions(+), 72 deletions(-)\n"
+    },
+    {
+      "number": 39,
+      "merge_commit": "73732d3",
+      "title": "Merge pull request #39 from ahgarcia/claude/analyze-index-pug-015jVbaukdbR6mFPmNdsiybC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "cc5d4cf",
+          "message": "\n",
+          "author": "|Mejorar diseño y paleta de colores de mini-cards de descuentos|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/includes/header.pug\n"
+      ],
+      "stats": " 5 files changed, 202 insertions(+), 358 deletions(-)\n"
+    },
+    {
+      "number": 40,
+      "merge_commit": "a63cede",
+      "title": "Merge pull request #40 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "369f7e9",
+          "message": "\n",
+          "author": "|Implementar mejoras de prioridad alta en vistas de viajes|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 4 files changed, 439 insertions(+), 21 deletions(-)\n"
+    },
+    {
+      "number": 41,
+      "merge_commit": "f7678f5",
+      "title": "Merge pull request #41 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "112c3c7",
+          "message": "\n",
+          "author": "|Mejorar diseño y UX de la vista de testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 7 files changed, 198 insertions(+), 468 deletions(-)\n"
+    },
+    {
+      "number": 42,
+      "merge_commit": "231192c",
+      "title": "Merge pull request #42 from ahgarcia/claude/improve-nosotros-view-01NzLr6eiFmqg9LGA9wnnV5H\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "3a0c0b0",
+          "message": "\n",
+          "author": "|Rediseñar completamente vista Nosotros con mejoras de accesibilidad y UX|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 8 files changed, 158 insertions(+), 640 deletions(-)\n"
+    },
+    {
+      "number": 43,
+      "merge_commit": "3b893a8",
+      "title": "Merge pull request #43 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "341038e",
+          "message": "\n",
+          "author": "|Eliminar comillas literales redundantes de testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 6 files changed, 46 insertions(+), 548 deletions(-)\n"
+    },
+    {
+      "number": 44,
+      "merge_commit": "457ba1e",
+      "title": "Merge pull request #44 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "b8b6b43",
+          "message": "\n",
+          "author": "|Corregir peso de fuente en testimoniales para evitar herencia de bold|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 5 files changed, 46 insertions(+), 548 deletions(-)\n"
+    },
+    {
+      "number": 46,
+      "merge_commit": "2423117",
+      "title": "Merge pull request #46 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "9298971",
+          "message": "\n",
+          "author": "|Corregir herencia de font-weight bold en blockquote de testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 5 files changed, 51 insertions(+), 548 deletions(-)\n"
+    },
+    {
+      "number": 47,
+      "merge_commit": "ca2c7bc",
+      "title": "Merge pull request #47 from ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "d5ae762",
+          "message": "\n",
+          "author": "|Corregir responsive de botones y cargar testimoniales en vista Nosotros|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/views/nosotros/index.pug\n"
+      ],
+      "stats": " 3 files changed, 14 insertions(+), 6 deletions(-)\n"
+    },
+    {
+      "number": 48,
+      "merge_commit": "a67b377",
+      "title": "Merge pull request #48 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "3ddf4b6",
+          "message": "\n",
+          "author": "|Agregar variante italic peso 400 de Open Sans para testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 8 files changed, 49 insertions(+), 559 deletions(-)\n"
+    },
+    {
+      "number": 49,
+      "merge_commit": "f47cc53",
+      "title": "Merge pull request #49 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "41dd0b2",
+          "message": "\n",
+          "author": "|Implementar mejoras de UX de media prioridad en testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 10 files changed, 292 insertions(+), 563 deletions(-)\n"
+    },
+    {
+      "number": 50,
+      "merge_commit": "358f253",
+      "title": "Merge pull request #50 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "4e85347",
+          "message": "\n",
+          "author": "|Corregir footer de testimoniales y CSP|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/index.js\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 8 files changed, 55 insertions(+), 560 deletions(-)\n"
+    },
+    {
+      "number": 51,
+      "merge_commit": "110c8be",
+      "title": "Merge pull request #51 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "ff3aa20",
+          "message": "\n",
+          "author": "|Implementar paginación de testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 9 files changed, 140 insertions(+), 562 deletions(-)\n"
+    },
+    {
+      "number": 52,
+      "merge_commit": "b0cda89",
+      "title": "Merge pull request #52 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "856f5a0",
+          "message": "\n",
+          "author": "|Agregar Schema.org markup (JSON-LD) para SEO de testimoniales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 8 files changed, 89 insertions(+), 558 deletions(-)\n"
+    },
+    {
+      "number": 53,
+      "merge_commit": "865f0e5",
+      "title": "Merge pull request #53 from ahgarcia/claude/improve-testimonials-view-01RWEQd6xw3Ef7RkpNwnekJS\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "f02cd81",
+          "message": "\n",
+          "author": "|Revertir Schema.org markup - rollback|||Claude\n"
+        },
+        {
+          "hash": "22c5f05",
+          "message": "\n",
+          "author": "|Corregir sintaxis de Schema.org JSON-LD en Pug|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 8 files changed, 48 insertions(+), 599 deletions(-)\n"
+    },
+    {
+      "number": 54,
+      "merge_commit": "e6e68c3",
+      "title": "Merge pull request #54 from ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "464238a",
+          "message": "\n",
+          "author": "|Mejorar padding de botones para mejor legibilidad en pantallas grandes|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/index.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/testimoniales/index.pug\n"
+      ],
+      "stats": " 7 files changed, 40 insertions(+), 345 deletions(-)\n"
+    },
+    {
+      "number": 55,
+      "merge_commit": "d3cac2b",
+      "title": "Merge pull request #55 from ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "6ad088d",
+          "message": "\n",
+          "author": "|Corregir visibilidad de íconos, homologar textos y mejorar responsive para iPad|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/index.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n"
+      ],
+      "stats": " 8 files changed, 121 insertions(+), 347 deletions(-)\n"
+    },
+    {
+      "number": 56,
+      "merge_commit": "dbcb9f3",
+      "title": "Merge pull request #56 from ahgarcia/claude/improve-nosotros-view-v2-01NzLr6eiFmqg9LGA9wnnV5H\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "618ead2",
+          "message": "\n",
+          "author": "|Quitar text-transform uppercase de botones para homologar capitalización|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/index.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/testimoniales/index.pug\n"
+      ],
+      "stats": " 7 files changed, 12 insertions(+), 346 deletions(-)\n"
+    },
+    {
+      "number": 57,
+      "merge_commit": "8418b84",
+      "title": "Merge pull request #57 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "4cf664f",
+          "message": "\n",
+          "author": "|Corregir problemas visuales y funcionales en vistas de viajes|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/index.js\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 13 files changed, 93 insertions(+), 776 deletions(-)\n"
+    },
+    {
+      "number": 58,
+      "merge_commit": "b19ea0f",
+      "title": "Merge pull request #58 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "adc57f6",
+          "message": "\n",
+          "author": "|Eliminar estilos inline de index.pug y mover a CSS|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 5 files changed, 120 insertions(+), 38 deletions(-)\n"
+    },
+    {
+      "number": 59,
+      "merge_commit": "ff2b4fa",
+      "title": "Merge pull request #59 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "640775e",
+          "message": "\n",
+          "author": "|Mejorar CTAs del hero con iconos y mejores textos|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 5 files changed, 70 insertions(+), 31 deletions(-)\n"
+    },
+    {
+      "number": 60,
+      "merge_commit": "42724d5",
+      "title": "Merge pull request #60 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "d17e358",
+          "message": "\n",
+          "author": "|Optimizar textos del hero para mayor claridad y conversión|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 5 files changed, 8 insertions(+), 31 deletions(-)\n"
+    },
+    {
+      "number": 61,
+      "merge_commit": "a6f8bb7",
+      "title": "Merge pull request #61 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "a6862eb",
+          "message": "\n",
+          "author": "|Simplificar hero a mensaje minimalista y directo|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 5 files changed, 7 insertions(+), 30 deletions(-)\n"
+    },
+    {
+      "number": 62,
+      "merge_commit": "affdbb5",
+      "title": "Merge pull request #62 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "923b02a",
+          "message": "\n",
+          "author": "|Mejorar sección Sobre Nosotros con grid moderno y mejor UX|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 5 files changed, 141 insertions(+), 49 deletions(-)\n"
+    },
+    {
+      "number": 63,
+      "merge_commit": "0f66238",
+      "title": "Merge pull request #63 from ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "5cbaae2",
+          "message": "\n",
+          "author": "|Implementar sistema de blog completo|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "BLOG_README.md\n",
+        "package.json\n",
+        "public/css/style.css\n",
+        "scripts/seed-blog.js\n",
+        "server/controllers/blogController.js\n",
+        "server/models/BlogPost.js\n",
+        "server/routes/index.js\n",
+        "server/views/blog/index.pug\n",
+        "server/views/blog/post.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/header.pug\n"
+      ],
+      "stats": " 11 files changed, 1331 insertions(+), 141 deletions(-)\n"
+    },
+    {
+      "number": 64,
+      "merge_commit": "6413f61",
+      "title": "Merge pull request #64 from ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "149d935",
+          "message": "\n",
+          "author": "|Integrar documentación del blog en README principal|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "BLOG_README.md\n",
+        "README.md\n",
+        "public/css/style.css\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 4 files changed, 142 insertions(+), 365 deletions(-)\n"
+    },
+    {
+      "number": 65,
+      "merge_commit": "521e9dc",
+      "title": "Merge pull request #65 from ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "d918116",
+          "message": "\n",
+          "author": "|Corregir modelo BlogPost para compatibilidad con PostgreSQL|||Claude\n"
+        },
+        {
+          "hash": "be21da9",
+          "message": "\n",
+          "author": "|Agregar script SQL completo para PostgreSQL|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "scripts/POSTGRESQL_SETUP.md\n",
+        "scripts/postgresql-blog-schema.sql\n",
+        "server/models/BlogPost.js\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 5 files changed, 566 insertions(+), 140 deletions(-)\n"
+    },
+    {
+      "number": 66,
+      "merge_commit": "242bc24",
+      "title": "Merge pull request #66 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "ae8e2ef",
+          "message": "\n",
+          "author": "|Ampliar texto de Sobre Nosotros con historia y credibilidad|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "README.md\n",
+        "package.json\n",
+        "public/css/style.css\n",
+        "scripts/POSTGRESQL_SETUP.md\n",
+        "scripts/postgresql-blog-schema.sql\n",
+        "scripts/seed-blog.js\n",
+        "server/controllers/blogController.js\n",
+        "server/models/BlogPost.js\n",
+        "server/routes/index.js\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/blog/index.pug\n",
+        "server/views/blog/post.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/header.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 16 files changed, 10 insertions(+), 1770 deletions(-)\n"
+    },
+    {
+      "number": 67,
+      "merge_commit": "5f07bb7",
+      "title": "Merge pull request #67 from ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "5c4b862",
+          "message": "\n",
+          "author": "|Mejorar diseño del blog con paleta de colores y responsive mobile|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/blog/index.pug\n",
+        "server/views/index/index.pug\n"
+      ],
+      "stats": " 3 files changed, 132 insertions(+), 172 deletions(-)\n"
+    },
+    {
+      "number": 68,
+      "merge_commit": "640e09d",
+      "title": "Merge pull request #68 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "92922f6",
+          "message": "\n",
+          "author": "|Mejorar sección de Ofertas Especiales con diseño moderno|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "README.md\n",
+        "package.json\n",
+        "public/css/style.css\n",
+        "scripts/POSTGRESQL_SETUP.md\n",
+        "scripts/postgresql-blog-schema.sql\n",
+        "scripts/seed-blog.js\n",
+        "server/controllers/blogController.js\n",
+        "server/models/BlogPost.js\n",
+        "server/routes/index.js\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/blog/index.pug\n",
+        "server/views/blog/post.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/header.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 16 files changed, 152 insertions(+), 1859 deletions(-)\n"
+    },
+    {
+      "number": 69,
+      "merge_commit": "9e91417",
+      "title": "Merge pull request #69 from ahgarcia/claude/improve-index-view-015jY66DWzUVMiVqhFSAcgWC\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "392d0d1",
+          "message": "\n",
+          "author": "|Eliminar enlace de Contacto del footer|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "README.md\n",
+        "package.json\n",
+        "public/css/style.css\n",
+        "scripts/POSTGRESQL_SETUP.md\n",
+        "scripts/postgresql-blog-schema.sql\n",
+        "scripts/seed-blog.js\n",
+        "server/controllers/blogController.js\n",
+        "server/models/BlogPost.js\n",
+        "server/routes/index.js\n",
+        "server/seeds/update_disponibles_demo.sql\n",
+        "server/views/blog/index.pug\n",
+        "server/views/blog/post.pug\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/includes/header.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 16 files changed, 7 insertions(+), 1845 deletions(-)\n"
+    },
+    {
+      "number": 70,
+      "merge_commit": "892fb14",
+      "title": "Merge pull request #70 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-16",
+      "commits": [
+        {
+          "hash": "fb46b5e",
+          "message": "\n",
+          "author": "|Implementar sección 'Qué Incluye / No Incluye' en detalle de viaje|||Claude\n"
+        },
+        {
+          "hash": "55e1c65",
+          "message": "\n",
+          "author": "|Migrar campo disponibles de VARCHAR a INTEGER|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "README.md\n",
+        "package.json\n",
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "scripts/POSTGRESQL_SETUP.md\n",
+        "scripts/postgresql-blog-schema.sql\n",
+        "scripts/seed-blog.js\n",
+        "server/controllers/blogController.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/controllers/viajesController.js\n",
+        "server/helpers/viajesConfig.js\n",
+        "server/index.js\n",
+        "server/models/BlogPost.js\n",
+        "server/models/Viajes.js\n",
+        "server/routes/index.js\n",
+        "server/seeds/README_MIGRACION_DISPONIBLES.md\n",
+        "server/seeds/migrate_disponibles_PASO_A_PASO.sql\n",
+        "server/seeds/migrate_disponibles_to_integer.sql\n",
+        "server/views/blog/index.pug\n",
+        "server/views/blog/post.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/includes/header.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 31 files changed, 832 insertions(+), 3036 deletions(-)\n"
+    },
+    {
+      "number": 71,
+      "merge_commit": "d510754",
+      "title": "Merge pull request #71 from ahgarcia/claude/analyze-master-blog-proposal-01KnKHxzr9t7ae3nfrdhsEJx\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "d17c2f8",
+          "message": "\n",
+          "author": "|Mejorar diseño de página de detalle del blog con paleta de colores y responsive mobile|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/viajesController.js\n",
+        "server/helpers/viajesConfig.js\n",
+        "server/models/Viajes.js\n",
+        "server/seeds/README_MIGRACION_DISPONIBLES.md\n",
+        "server/seeds/migrate_disponibles_PASO_A_PASO.sql\n",
+        "server/seeds/migrate_disponibles_to_integer.sql\n",
+        "server/views/blog/post.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 12 files changed, 271 insertions(+), 1095 deletions(-)\n"
+    },
+    {
+      "number": 72,
+      "merge_commit": "7af2af9",
+      "title": "Merge pull request #72 from ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "917fad2",
+          "message": "\n",
+          "author": "|Update: Reorganizar y simplificar documentación del proyecto|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "CHANGELOG.md\n",
+        "README.md\n",
+        "public/css/style.css\n",
+        "scripts/DATABASE_SCHEMA.md\n",
+        "server/controllers/viajesController.js\n",
+        "server/helpers/viajesConfig.js\n",
+        "server/models/Viajes.js\n",
+        "server/seeds/README_MIGRACION_DISPONIBLES.md\n",
+        "server/seeds/migrate_disponibles_PASO_A_PASO.sql\n",
+        "server/seeds/migrate_disponibles_to_integer.sql\n",
+        "server/views/blog/post.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 13 files changed, 1028 insertions(+), 1316 deletions(-)\n"
+    },
+    {
+      "number": 73,
+      "merge_commit": "0090562",
+      "title": "Merge pull request #73 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "ec648b6",
+          "message": "\n",
+          "author": "|Rediseñar vista de detalle de viaje con paleta de marca|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        ".gitignore\n",
+        "CHANGELOG.md\n",
+        "README.md\n",
+        "package.json\n",
+        "public/css/style.css\n",
+        "public/js/main.js\n",
+        "scripts/DATABASE_SCHEMA.md\n",
+        "scripts/POSTGRESQL_SETUP.md\n",
+        "scripts/postgresql-blog-schema.sql\n",
+        "scripts/seed-blog.js\n",
+        "server/controllers/blogController.js\n",
+        "server/controllers/nosotrosController.js\n",
+        "server/controllers/testimonialesController.js\n",
+        "server/index.js\n",
+        "server/models/BlogPost.js\n",
+        "server/routes/index.js\n",
+        "server/views/blog/index.pug\n",
+        "server/views/blog/post.pug\n",
+        "server/views/index/index.pug\n",
+        "server/views/layout/includes/footer.pug\n",
+        "server/views/layout/includes/header.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/testimoniales.pug\n",
+        "server/views/nosotros/index.pug\n",
+        "server/views/testimoniales/index.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 26 files changed, 851 insertions(+), 4322 deletions(-)\n"
+    },
+    {
+      "number": 74,
+      "merge_commit": "51d2105",
+      "title": "Merge pull request #74 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "0f5791e",
+          "message": "\n",
+          "author": "|Merge branch 'master' into claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t|||Andrés Hernández García\n"
+        },
+        {
+          "hash": "2e2e94a",
+          "message": "\n",
+          "author": "|Implementar botones de compartir en redes sociales|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/viajesController.js\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 3 files changed, 209 insertions(+), 1 deletion(-)\n"
+    },
+    {
+      "number": 75,
+      "merge_commit": "267f844",
+      "title": "Merge pull request #75 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "d441fd8",
+          "message": "\n",
+          "author": "|Implementar sistema de filtros dinámicos para viajes|||Claude\n"
+        },
+        {
+          "hash": "1ca2d86",
+          "message": "\n",
+          "author": "|Agregar cache busting a CSS para forzar actualización|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/filtros.js\n",
+        "server/controllers/viajesController.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 5 files changed, 429 insertions(+), 7 deletions(-)\n"
+    },
+    {
+      "number": 76,
+      "merge_commit": "f7b731e",
+      "title": "Merge pull request #76 from ahgarcia/claude/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "874ad30",
+          "message": "\n",
+          "author": "|Corregir error de sintaxis Pug: agregar bloque scripts al layout|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/views/layout/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 2 files changed, 4 insertions(+), 1 deletion(-)\n"
+    },
+    {
+      "number": 77,
+      "merge_commit": "9d1a50b",
+      "title": "Merge pull request #77 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "7ced8e3",
+          "message": "\n",
+          "author": "|Implementar galería lightbox con Vanilla JavaScript|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "public/js/lightbox.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 4 files changed, 706 insertions(+), 2 deletions(-)\n"
+    },
+    {
+      "number": 78,
+      "merge_commit": "a77dd2a",
+      "title": "Merge pull request #78 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "dac5524",
+          "message": "\n",
+          "author": "|Ampliar galería a 6 imágenes con indicador \"+X más\"|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/index.pug\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 3 files changed, 64 insertions(+), 2 deletions(-)\n"
+    },
+    {
+      "number": 79,
+      "merge_commit": "239aa3c",
+      "title": "Merge pull request #79 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "9a6db1f",
+          "message": "\n",
+          "author": "|Implementar sistema de badges adicionales para viajes|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/controllers/viajesController.js\n",
+        "server/models/Viajes.js\n",
+        "server/seeds/README_BADGES.md\n",
+        "server/seeds/add_destacado_column.sql\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n"
+      ],
+      "stats": " 7 files changed, 347 insertions(+), 1 deletion(-)\n"
+    },
+    {
+      "number": 80,
+      "merge_commit": "17b8a60",
+      "title": "Merge pull request #80 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "7eb1b3a",
+          "message": "\n",
+          "author": "|Mejorar diseño y contraste de badges con UX/UI profesional|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "public/css/style.css\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n"
+      ],
+      "stats": " 3 files changed, 114 insertions(+), 36 deletions(-)\n"
+    },
+    {
+      "number": 81,
+      "merge_commit": "e9aa2be",
+      "title": "Merge pull request #81 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "c77881b",
+          "message": "\n",
+          "author": "|Agregar sistema de badges a la vista de detalle del viaje|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "server/controllers/viajesController.js\n",
+        "server/views/viaje/index.pug\n"
+      ],
+      "stats": " 2 files changed, 63 insertions(+)\n"
+    },
+    {
+      "number": 82,
+      "merge_commit": "8fd8012",
+      "title": "Merge pull request #82 from ahgarcia/claude/update-readme-project-01B651LA1Su2MTrG8wNMhsuu\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "d89537f",
+          "message": "\n",
+          "author": "|Add: Integrar sistema de badges y descuentos en documentación|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "CHANGELOG.md\n",
+        "README.md\n",
+        "public/css/style.css\n",
+        "public/js/filtros.js\n",
+        "public/js/lightbox.js\n",
+        "scripts/DATABASE_SCHEMA.md\n",
+        "server/controllers/viajesController.js\n",
+        "server/helpers/viajesConfig.js\n",
+        "server/models/Viajes.js\n",
+        "server/seeds/README_BADGES.md\n",
+        "server/seeds/README_MIGRACION_DISPONIBLES.md\n",
+        "server/seeds/add_destacado_column.sql\n",
+        "server/seeds/migrate_disponibles_PASO_A_PASO.sql\n",
+        "server/seeds/migrate_disponibles_to_integer.sql\n",
+        "server/views/blog/post.pug\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 19 files changed, 688 insertions(+), 3390 deletions(-)\n"
+    },
+    {
+      "number": 83,
+      "merge_commit": "09f0458",
+      "title": "Merge pull request #83 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "eedc6e1",
+          "message": "\n",
+          "author": "|Implementar sistema completo de animaciones avanzadas|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "CHANGELOG.md\n",
+        "README.md\n",
+        "public/css/style.css\n",
+        "public/js/animations.js\n",
+        "scripts/DATABASE_SCHEMA.md\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 9 files changed, 831 insertions(+), 306 deletions(-)\n"
+    },
+    {
+      "number": 84,
+      "merge_commit": "92ffd37",
+      "title": "Merge pull request #84 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "f5f9e97",
+          "message": "\n",
+          "author": "|Actualizar CSP para permitir biblioteca AOS (Animate On Scroll)|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "CHANGELOG.md\n",
+        "README.md\n",
+        "scripts/DATABASE_SCHEMA.md\n",
+        "server/index.js\n"
+      ],
+      "stats": " 4 files changed, 17 insertions(+), 289 deletions(-)\n"
+    },
+    {
+      "number": 85,
+      "merge_commit": "738728b",
+      "title": "Merge pull request #85 from ahgarcia/analyze-travel-views-01No7YtRT5PQT9yGZWszsw7t\n",
+      "author": "Andrés Hernández García\n",
+      "date": "2025-11-17",
+      "commits": [
+        {
+          "hash": "61b6be4",
+          "message": "\n",
+          "author": "|Revert \"Implementar sistema completo de animaciones avanzadas\"|||Claude\n"
+        },
+        {
+          "hash": "05c6d13",
+          "message": "\n",
+          "author": "|Revert \"Actualizar CSP para permitir biblioteca AOS (Animate On Scroll)\"|||Claude\n"
+        }
+      ],
+      "files_changed": [
+        "CHANGELOG.md\n",
+        "README.md\n",
+        "public/css/style.css\n",
+        "public/js/animations.js\n",
+        "scripts/DATABASE_SCHEMA.md\n",
+        "server/index.js\n",
+        "server/views/layout/index.pug\n",
+        "server/views/layout/partials/viajes.pug\n",
+        "server/views/viaje/index.pug\n",
+        "server/views/viajes/index.pug\n"
+      ],
+      "stats": " 10 files changed, 36 insertions(+), 1105 deletions(-)\n"
+    }
+  ]
+}
