@@ -197,6 +197,43 @@ exports.mostrarViaje = async (req, res, next) => {
             viajeJSON.galeria = [];
         }
 
+        // Calcular badges adicionales
+        viajeJSON.badges = {
+            nuevo: false,
+            descuento: false,
+            destacado: false,
+            descuentoPorcentaje: 0
+        };
+
+        // Badge "Nuevo" - viajes creados en los últimos 7 días
+        const fechaCreacion = new Date(viajeJSON.createdAt);
+        const ahora = new Date();
+        const diasDesdeCreacion = Math.floor((ahora - fechaCreacion) / (1000 * 60 * 60 * 24));
+        if (diasDesdeCreacion <= 7) {
+            viajeJSON.badges.nuevo = true;
+        }
+
+        // Badge "Descuento" - descuento activo y vigente
+        if (viajeJSON.descuento_activo && viajeJSON.descuento_porcentaje > 0) {
+            const fechaActual = new Date();
+            const inicioDescuento = viajeJSON.descuento_inicio ? new Date(viajeJSON.descuento_inicio) : null;
+            const finDescuento = viajeJSON.descuento_fin ? new Date(viajeJSON.descuento_fin) : null;
+
+            // Verificar si el descuento está vigente
+            const descuentoVigente = (!inicioDescuento || fechaActual >= inicioDescuento) &&
+                                    (!finDescuento || fechaActual <= finDescuento);
+
+            if (descuentoVigente) {
+                viajeJSON.badges.descuento = true;
+                viajeJSON.badges.descuentoPorcentaje = viajeJSON.descuento_porcentaje;
+            }
+        }
+
+        // Badge "Destacado"
+        if (viajeJSON.destacado) {
+            viajeJSON.badges.destacado = true;
+        }
+
         // Obtener configuración de incluidos según el tipo de destino
         const configuracionIncluidos = obtenerConfiguracionIncluidos(viajeJSON.tipo_destino);
 
