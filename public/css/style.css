@@ -47,7 +47,6 @@ blockquote {
     background-color: #DC135F;
     border-color: #DC135F;
     padding: .8rem 1.5rem;
-    text-transform: uppercase;
     border-radius: .8rem;
     color: #fff;
 }
@@ -1293,7 +1292,6 @@ i {
     margin-bottom: 0.8rem;
     border-radius: 8px;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
