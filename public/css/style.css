@@ -680,6 +680,9 @@ i {
     margin-top: auto;
     padding-top: 1rem;
     border-top: 2px solid rgba(21, 185, 213, 0.1);
+}
+
+.testimonial-author {
     display: flex;
     align-items: center;
 }
@@ -692,6 +695,21 @@ i {
 
 .testimonial-card .blockquote-footer cite {
     font-style: normal;
+}
+
+/* Fecha del testimonial */
+.testimonial-date {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.testimonial-date i {
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
 /* Estado vacío */
