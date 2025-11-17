@@ -27,8 +27,13 @@ const Viaje = db.define('viajes', {
         allowNull: false
     },
     disponibles: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 10,
+        validate: {
+            min: 0,
+            isInt: true
+        }
     },
     // ===== NUEVOS CAMPOS =====
     slug: {
