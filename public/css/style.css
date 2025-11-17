@@ -675,6 +675,64 @@ header .nav a:hover {
 }
 
 /* ======================
+   HERO CTAs MEJORADOS
+   ====================== */
+
+/* Soporte para gap-3 (fallback para navegadores antiguos) */
+.gap-3 {
+    gap: 1rem;
+}
+
+/* Fallback para navegadores que no soportan gap en flexbox */
+@supports not (gap: 1rem) {
+    .gap-3 > * {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .gap-3 > *:last-child {
+        margin-right: 0;
+    }
+}
+
+/* CTAs con iconos - animaciones de hover */
+.hero-cta-primary i,
+.hero-cta-secondary i {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Animación del icono brújula al hacer hover */
+.hero-cta-primary:hover i {
+    transform: rotate(15deg);
+}
+
+/* Animación del icono ruta al hacer hover */
+.hero-cta-secondary:hover i {
+    transform: translateX(3px);
+}
+
+/* Asegurar que los iconos de los CTAs sean blancos */
+.hero-cta-primary i,
+.hero-cta-secondary i {
+    color: #fff;
+}
+
+/* Responsive - Asegurar que en móvil los botones se vean bien */
+@media (max-width: 575px) {
+    .gap-3 {
+        gap: 0.75rem;
+    }
+
+    @supports not (gap: 1rem) {
+        .gap-3 > * {
+            margin-right: 0;
+            margin-bottom: 0.75rem;
+        }
+    }
+}
+
+/* ======================
    SECCIÓN DESCUENTO
    ====================== */
 .descuento {

@@ -6,9 +6,13 @@ block slider
             em.aventura aventura
             h1.hero__title Escápate con nosotros
             p.lead.hero__subtitle Experiencias auténticas, planificación profesional y atención 24/7.
-            .d-flex.flex-wrap.mt-3
-                a.btn.btn-success.btn-lg(href="#viajes" aria-label="Ver próximos viajes") Ver próximos viajes
-                a.btn.btn-outline-turquoise.btn-lg(href="/nosotros" aria-label="Planea tu viaje") Planea tu Viaje
+            .d-flex.flex-wrap.gap-3.mt-3
+                a.btn.btn-success.btn-lg.hero-cta-primary(href="#viajes" aria-label="Explorar destinos disponibles")
+                    i.fas.fa-compass.mr-2(aria-hidden="true")
+                    span Explorar Destinos
+                a.btn.btn-outline-turquoise.btn-lg.hero-cta-secondary(href="/nosotros" aria-label="Iniciar planificación de viaje")
+                    i.fas.fa-route.mr-2(aria-hidden="true")
+                    span Planifica tu Escape
             a.slider__scroll(href="#sobre-nosotros" aria-label="Sigue bajando")
                 i.fas.fa-chevron-down(aria-hidden="true")
 
