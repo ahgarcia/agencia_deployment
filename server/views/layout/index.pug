@@ -41,6 +41,9 @@ html(lang="es")
         //- Title
         title #{titulo} | #{pagina}
 
+        //- Additional scripts (optional block for child templates)
+        block scripts
+
     body(class=clase)
         //- Skip to main content for accessibility
         a.sr-only.sr-only-focusable(href="#main-content") Saltar al contenido principal
