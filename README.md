@@ -38,6 +38,8 @@ La aplicación estará disponible en `http://localhost:3000`
 
 ### Funcionalidades Principales
 - **Catálogo de Viajes**: Visualización de destinos con información detallada, precios y disponibilidad
+- **Sistema de Badges**: 3 tipos de badges para destacar viajes (🆕 Nuevo, 💰 Descuento, ⭐ Destacado)
+- **Descuentos Temporales**: Sistema configurable de descuentos con fechas de inicio/fin
 - **Sistema de Blog**: Plataforma de contenidos con 5 categorías, paginación, posts relacionados y contador de vistas
 - **Testimoniales**: Sistema de comentarios de clientes con validación y rate limiting
 - **Integración Unsplash**: Imágenes dinámicas de destinos con caché de 24 horas
@@ -372,8 +374,28 @@ await BlogPost.create({
 
 ### Ver Viajes Disponibles
 1. Navega a `http://localhost:3000/viajes`
-2. Explora los diferentes destinos
+2. Explora los diferentes destinos con badges informativos
 3. Haz clic en "Más Información" para ver detalles
+
+### Gestionar Descuentos en Viajes
+```sql
+-- Activar descuento del 25% válido por 30 días
+UPDATE viajes
+SET descuento_activo = TRUE,
+    descuento_porcentaje = 25,
+    descuento_inicio = NOW(),
+    descuento_fin = DATE_ADD(NOW(), INTERVAL 30 DAY)
+WHERE id = 2;
+```
+
+### Marcar Viajes como Destacados
+```sql
+-- Marcar viajes como destacados
+UPDATE viajes SET destacado = TRUE WHERE id IN (1, 3, 5);
+
+-- Quitar destacado
+UPDATE viajes SET destacado = FALSE WHERE id = 1;
+```
 
 ### Leer el Blog
 1. Navega a `http://localhost:3000/blog`
@@ -385,6 +407,49 @@ await BlogPost.create({
 1. Navega a `http://localhost:3000/testimoniales`
 2. Completa el formulario (nombre, correo, mensaje)
 3. El sistema valida y limita envíos (5 por 15 minutos)
+
+---
+
+## 📈 Estrategias de Marketing con Badges
+
+### Caso 1: Lanzamiento de Nuevo Destino
+```sql
+-- El viaje recién creado muestra automáticamente el badge "Nuevo"
+-- Agregar descuento de lanzamiento del 15%
+UPDATE viajes
+SET descuento_activo = TRUE,
+    descuento_porcentaje = 15,
+    descuento_inicio = NOW(),
+    descuento_fin = DATE_ADD(NOW(), INTERVAL 7 DAY)
+WHERE id = 100;
+-- Resultado: Badge "Nuevo" + Badge "Descuento 15%"
+```
+
+### Caso 2: Black Friday
+```sql
+-- Aplicar 30% de descuento a todos los viajes de playa
+UPDATE viajes
+SET descuento_activo = TRUE,
+    descuento_porcentaje = 30,
+    descuento_inicio = '2025-11-29',
+    descuento_fin = '2025-12-02'
+WHERE tipo_destino = 'beach';
+```
+
+### Caso 3: Viajes Premium
+```sql
+-- Marcar los 5 viajes más caros como destacados
+UPDATE viajes SET destacado = TRUE
+WHERE id IN (
+  SELECT id FROM (
+    SELECT id FROM viajes
+    ORDER BY CAST(REPLACE(REPLACE(precio, '$', ''), ',', '') AS UNSIGNED) DESC
+    LIMIT 5
+  ) AS top_viajes
+);
+```
+
+Ver más estrategias en [DATABASE_SCHEMA.md](./scripts/DATABASE_SCHEMA.md#estrategias-de-marketing-con-badges)
 
 ---
 

@@ -10,20 +10,39 @@ La aplicación utiliza **Sequelize ORM** con **MySQL 8.0** (también compatible 
 
 ### 1. Viajes
 
-Tabla principal para almacenar los paquetes turísticos disponibles.
+Tabla principal para almacenar los paquetes turísticos disponibles con soporte para imágenes dinámicas, descuentos y badges.
 
-#### Estructura
+#### Estructura Completa
 
 ```javascript
 {
+  // Campos Base
   id: INTEGER (PK, Auto-increment),
   titulo: STRING(255),
   precio: STRING(50),
   fecha_ida: DATE,
   fecha_vuelta: DATE,
-  imagen: STRING(255),
+  imagen: STRING(255, nullable),
   descripcion: TEXT,
-  disponibles: STRING(50)
+  disponibles: STRING(50),
+
+  // Integración con Unsplash API
+  slug: STRING(255, UNIQUE),
+  tipo_destino: ENUM('beach', 'city', 'archaeological', 'colonial', 'nature', 'tourism'),
+  usa_api_imagen: BOOLEAN (default: true),
+
+  // Sistema de Descuentos
+  descuento_porcentaje: INTEGER (0-100, nullable),
+  descuento_activo: BOOLEAN (default: false),
+  descuento_inicio: DATE (nullable),
+  descuento_fin: DATE (nullable),
+
+  // Badge Destacado
+  destacado: BOOLEAN (default: false),
+
+  // Timestamps
+  createdAt: TIMESTAMP,
+  updatedAt: TIMESTAMP
 }
 ```
 
@@ -32,6 +51,7 @@ Tabla principal para almacenar los paquetes turísticos disponibles.
 ```javascript
 // server/models/Viajes.js
 const Viaje = sequelize.define('viajes', {
+  // Campos Base
   titulo: {
     type: DataTypes.STRING,
     allowNull: false
@@ -49,26 +69,185 @@ const Viaje = sequelize.define('viajes', {
     allowNull: false
   },
   imagen: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    allowNull: true  // Ahora puede ser null si usa API
   },
   descripcion: {
-    type: DataTypes.TEXT
+    type: DataTypes.STRING,
+    allowNull: false
   },
   disponibles: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+
+  // Integración con Unsplash API
+  slug: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true
+  },
+  tipo_destino: {
+    type: DataTypes.ENUM('beach', 'city', 'archaeological', 'colonial', 'nature', 'tourism'),
+    defaultValue: 'tourism'
+  },
+  usa_api_imagen: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true
+  },
+
+  // Sistema de Descuentos
+  descuento_porcentaje: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    validate: {
+      min: 0,
+      max: 100
+    }
+  },
+  descuento_activo: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  descuento_inicio: {
+    type: DataTypes.DATE,
+    allowNull: true
+  },
+  descuento_fin: {
+    type: DataTypes.DATE,
+    allowNull: true
+  },
+
+  // Badge Destacado
+  destacado: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
   }
 }, {
-  timestamps: false
+  timestamps: true,  // Activa createdAt y updatedAt
+  tableName: 'viajes'
 });
+```
+
+#### Sistema de Badges
+
+El modelo Viajes soporta 3 tipos de badges automáticos:
+
+| Badge | Tipo | Condición | Campo Base |
+|-------|------|-----------|------------|
+| **🆕 Nuevo** | Automático | `createdAt` < 7 días | `createdAt` |
+| **💰 Descuento** | Semi-automático | `descuento_activo = TRUE` y fechas vigentes | `descuento_*` |
+| **⭐ Destacado** | Manual | `destacado = TRUE` | `destacado` |
+
+#### Tipos de Destino
+
+| Valor | Descripción | Ejemplo |
+|-------|-------------|---------|
+| `beach` | Playas y destinos costeros | Cancún, Riviera Maya |
+| `city` | Ciudades grandes | París, Tokyo, Nueva York |
+| `archaeological` | Zonas arqueológicas | Chichén Itzá, Machu Picchu |
+| `colonial` | Ciudades coloniales | Guanajuato, Oaxaca |
+| `nature` | Naturaleza y aventura | Patagonia, Selva Amazónica |
+| `tourism` | Turismo general (default) | Tours mixtos |
+
+#### Migraciones Disponibles
+
+**1. Agregar campos de descuento:**
+```bash
+mysql -u usuario -p nombre_bd < server/seeds/add_descuento_fields.sql
+```
+
+**2. Agregar campo destacado:**
+```sql
+ALTER TABLE viajes ADD COLUMN destacado BOOLEAN DEFAULT FALSE;
+```
+
+**3. Actualizar viajes existentes:**
+```bash
+mysql -u usuario -p nombre_bd < server/seeds/update_existing_viajes.sql
 ```
 
 #### Ejemplo de Datos
 
 ```sql
-INSERT INTO viajes (titulo, precio, fecha_ida, fecha_vuelta, imagen, descripcion, disponibles) VALUES
-('Riviera Maya', '$1,200', '2025-06-15', '2025-06-22', 'riviera_maya.jpg', 'Disfruta de playas paradisíacas', '15'),
-('París', '$2,500', '2025-07-01', '2025-07-10', 'paris.jpg', 'La ciudad del amor', '8'),
-('Tokyo', '$3,000', '2025-08-05', '2025-08-15', 'tokyo.jpg', 'Tradición y modernidad', '10');
+-- Insertar viaje con imagen de Unsplash
+INSERT INTO viajes (
+  titulo, precio, fecha_ida, fecha_vuelta, descripcion, disponibles,
+  slug, tipo_destino, usa_api_imagen
+) VALUES (
+  'Riviera Maya', '$1,200', '2025-06-15', '2025-06-22',
+  'Disfruta de playas paradisíacas', '15',
+  'riviera-maya', 'beach', true
+);
+
+-- Insertar viaje con descuento y destacado
+INSERT INTO viajes (
+  titulo, precio, fecha_ida, fecha_vuelta, descripcion, disponibles,
+  slug, tipo_destino, usa_api_imagen,
+  descuento_porcentaje, descuento_activo, descuento_inicio, descuento_fin,
+  destacado
+) VALUES (
+  'París: Paquete Romántico', '$2,500', '2025-07-01', '2025-07-10',
+  'La ciudad del amor con 25% de descuento', '8',
+  'paris-romantico', 'city', true,
+  25, true, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY),
+  true
+);
+```
+
+#### Estrategias de Marketing con Badges
+
+**Caso 1: Lanzamiento de Nuevo Destino**
+```sql
+-- El viaje recién creado muestra automáticamente el badge "Nuevo"
+-- Opcional: Agregar descuento de lanzamiento
+UPDATE viajes
+SET descuento_activo = TRUE,
+    descuento_porcentaje = 15,
+    descuento_inicio = NOW(),
+    descuento_fin = DATE_ADD(NOW(), INTERVAL 7 DAY)
+WHERE id = 100;
+-- Resultado: Badge "Nuevo" + Badge "Descuento"
+```
+
+**Caso 2: Black Friday**
+```sql
+-- Aplicar 30% de descuento a viajes seleccionados
+UPDATE viajes
+SET descuento_activo = TRUE,
+    descuento_porcentaje = 30,
+    descuento_inicio = '2025-11-29',
+    descuento_fin = '2025-12-02'
+WHERE tipo_destino IN ('beach', 'city');
+```
+
+**Caso 3: Viajes Premium Destacados**
+```sql
+-- Marcar los 5 viajes más caros como destacados
+UPDATE viajes SET destacado = TRUE
+WHERE id IN (
+  SELECT id FROM (
+    SELECT id FROM viajes ORDER BY CAST(REPLACE(REPLACE(precio, '$', ''), ',', '') AS UNSIGNED) DESC LIMIT 5
+  ) AS top_viajes
+);
+```
+
+**Caso 4: Promoción Temporal con Triple Badge**
+```sql
+-- Nuevo viaje destacado con descuento (muestra los 3 badges)
+INSERT INTO viajes (
+  titulo, slug, tipo_destino, precio, fecha_ida, fecha_vuelta,
+  descripcion, disponibles, usa_api_imagen,
+  destacado, descuento_activo, descuento_porcentaje,
+  descuento_inicio, descuento_fin
+) VALUES (
+  'Islas Maldivas VIP', 'maldivas-vip', 'beach',
+  '$5,500', '2025-12-20', '2025-12-28',
+  'Experiencia de lujo todo incluido', '4', true,
+  true, true, 20,
+  NOW(), DATE_ADD(NOW(), INTERVAL 15 DAY)
+);
+-- Resultado: Badge "Nuevo" + "Descuento 20%" + "Destacado"
 ```
 
 ---
