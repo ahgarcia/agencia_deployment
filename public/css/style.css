@@ -1912,6 +1912,19 @@ i {
     height: auto;
     max-height: 500px;
     object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Badge de categoría consistente */
+.blog-badge-categoria {
+    background-color: #15B9D5;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
 }
 
 .post-meta {
@@ -1921,11 +1934,6 @@ i {
     gap: 1rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid #f8f9fa;
-}
-
-.post-meta .badge {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
 }
 
 .post-meta small {
@@ -1942,90 +1950,171 @@ i {
     margin-bottom: 1.5rem;
 }
 
+/* Títulos de sección en turquesa */
+.post-section-title {
+    color: #15B9D5;
+    font-family: 'Staatliches', cursive;
+}
+
+.post-section-title i {
+    color: #15B9D5;
+}
+
 /* Tags section */
-.post-tags .badge-secondary {
+.blog-tag-badge {
     background-color: #15B9D5;
     color: white;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
+    font-weight: 600;
+    border-radius: 20px;
     transition: all 0.3s ease;
-}
-
-.post-tags .badge-secondary:hover {
-    background-color: #DC135F;
     cursor: pointer;
 }
 
-/* Social sharing */
-.post-share .btn {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.5rem;
+.blog-tag-badge:hover {
+    background-color: #DC135F;
+    transform: translateY(-2px);
 }
 
-.post-share .btn-primary {
-    background-color: #3b5998;
-    border-color: #3b5998;
+/* Social sharing buttons */
+.share-buttons {
+    gap: 0.5rem;
 }
 
-.post-share .btn-primary:hover {
-    background-color: #2d4373;
-    border-color: #2d4373;
-}
-
-.post-share .btn-info {
-    background-color: #1da1f2;
-    border-color: #1da1f2;
-}
-
-.post-share .btn-info:hover {
-    background-color: #1a8cd8;
-    border-color: #1a8cd8;
-}
-
-.post-share .btn-success {
-    background-color: #25d366;
-    border-color: #25d366;
-}
-
-.post-share .btn-success:hover {
-    background-color: #1fb855;
-    border-color: #1fb855;
-}
-
-/* Related posts */
-.related-posts .card {
+.btn-share {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
     border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-share-facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.btn-share-facebook:hover {
+    background-color: #2d4373;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 89, 152, 0.4);
+}
+
+.btn-share-twitter {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.btn-share-twitter:hover {
+    background-color: #1a8cd8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.4);
+}
+
+.btn-share-whatsapp {
+    background-color: #25d366;
+    color: white;
+}
+
+.btn-share-whatsapp:hover {
+    background-color: #1fb855;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+/* Related posts cards */
+.related-post-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
-.related-posts .card:hover {
+.related-post-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px rgba(21, 185, 213, 0.2);
 }
 
-.related-posts .card-img-top {
+.related-post-card .card-img-top {
     height: 150px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.related-posts .badge {
-    font-size: 0.75rem;
+.related-post-card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
-/* Blog sidebar in post detail */
-.blog-post ~ .col-lg-4 .card {
-    border: none;
+.related-post-card .card-title a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.related-post-card .card-title a:hover {
+    color: #DC135F;
+}
+
+/* Botón outline rosa */
+.btn-outline-pink {
+    border: 2px solid #DC135F;
+    color: #DC135F;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-pink:hover {
+    background-color: #DC135F;
+    border-color: #DC135F;
+    color: white;
+}
+
+/* Sidebar del post */
+.post-sidebar-card {
     border-radius: 12px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
-.bg-gradient-success {
-    background: linear-gradient(135deg, #DC135F 0%, #15B9D5 100%);
+/* Botón turquesa */
+.btn-turquoise {
+    background-color: #15B9D5;
+    border-color: #15B9D5;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-turquoise:hover {
+    background-color: #0ea5c7;
+    border-color: #0ea5c7;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Gradiente rosa para CTA */
+.bg-gradient-pink {
+    background: linear-gradient(135deg, #DC135F 0%, #b30f4d 100%);
+}
+
+/* Botón volver al blog */
+.btn-back-blog {
+    background-color: #15B9D5;
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-back-blog:hover {
+    background-color: #0ea5c7;
+    color: white;
+    transform: translateX(-3px);
 }
 
 /* Responsive blog */
@@ -2036,6 +2125,11 @@ i {
 
     .post-content {
         font-size: 1rem;
+    }
+
+    /* Sidebar después del contenido en tablets */
+    .col-lg-4 {
+        margin-top: 2rem;
     }
 }
 
@@ -2048,14 +2142,71 @@ i {
         max-height: 300px;
     }
 
-    .post-share .btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-        margin-bottom: 0.5rem;
-    }
-
     .blog-post {
         padding: 1rem;
+    }
+
+    /* Títulos más pequeños en móvil */
+    .blog-post h1 {
+        font-size: 2rem;
+    }
+
+    .post-section-title {
+        font-size: 1.3rem;
+    }
+
+    /* Botones de compartir más pequeños */
+    .btn-share {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .share-buttons .btn {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    /* Posts relacionados en columna única */
+    .related-posts .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .related-post-card .card-img-top {
+        height: 200px;
+    }
+}
+
+@media (max-width: 575px) {
+    /* Padding más compacto en móviles pequeños */
+    .blog-post {
+        padding: 0.75rem;
+    }
+
+    .post-meta {
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .blog-badge-categoria {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .blog-tag-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Botones del sidebar */
+    .btn-turquoise,
+    .btn-back-blog {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
     }
 }
 
