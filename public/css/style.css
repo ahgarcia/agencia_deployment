@@ -733,6 +733,98 @@ header .nav a:hover {
 }
 
 /* ======================
+   BENEFICIOS - SOBRE NOSOTROS
+   ====================== */
+
+/* Grid de beneficios */
+.beneficios-grid {
+    margin-top: 1.5rem;
+}
+
+/* Soporte para g-3 (gap en Bootstrap) */
+.g-3 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+}
+
+.g-3 > * {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+}
+
+/* Tarjeta de beneficio */
+.beneficio-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+.beneficio-card:hover {
+    background: linear-gradient(135deg, #15B9D5 0%, #13a8bf 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(21, 185, 213, 0.3);
+    border-color: #15B9D5;
+}
+
+.beneficio-card:hover .beneficio-icon i,
+.beneficio-card:hover .beneficio-text {
+    color: white;
+}
+
+/* Ícono del beneficio */
+.beneficio-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.beneficio-icon i {
+    font-size: 2.5rem;
+    color: #15B9D5;
+    transition: all 0.3s ease;
+}
+
+/* Texto del beneficio */
+.beneficio-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+    line-height: 1.3;
+}
+
+/* Responsive para beneficios */
+@media (max-width: 767px) {
+    .beneficio-icon {
+        min-height: 50px;
+    }
+
+    .beneficio-icon i {
+        font-size: 2rem;
+    }
+
+    .beneficio-text {
+        font-size: 0.85rem;
+    }
+
+    .beneficio-card {
+        padding: 0.75rem !important;
+    }
+}
+
+/* En tablets, mantener 2 columnas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .beneficios-grid .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* ======================
    SECCIÓN DESCUENTO
    ====================== */
 .descuento {
