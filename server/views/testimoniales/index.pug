@@ -1,4 +1,45 @@
 extends ../layout/index
+
+//- Schema.org markup para SEO
+block append head
+    if testimoniales && testimoniales.length > 0
+        script(type="application/ld+json").
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Agencia de Viajes Escápate Conmigo",
+                "description": "Agencia de viajes especializada en experiencias únicas y memorables",
+                "url": "#{process.env.SITE_URL || 'https://tuagencia.com'}",
+                "telephone": "+52 (81) 1696-1590",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Monterrey",
+                    "addressRegion": "Nuevo León",
+                    "addressCountry": "MX"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5",
+                    "reviewCount": "#{totalTestimoniales || testimoniales.length}"
+                },
+                "review": [
+                    #{testimoniales.slice(0, 10).map(t => `{
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "${t.nombre.replace(/"/g, '\\"')}"
+                        },
+                        "datePublished": "${t.createdAt ? new Date(t.createdAt).toISOString() : new Date().toISOString()}",
+                        "reviewBody": "${t.mensaje.replace(/"/g, '\\"').replace(/\n/g, ' ')}",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        }
+                    }`).join(',')}
+                ]
+            }
+
 block contenido
     .container.mt-5
         h1.text-center.mb-5 #{pagina}
