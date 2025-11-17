@@ -154,7 +154,16 @@ block contenido
                             | Más imágenes
                         .galeria-grid
                             each imagen, index in viaje.galeria.slice(0, 4)
-                                .galeria-item
+                                .galeria-item(
+                                    data-lightbox-index=index,
+                                    data-lightbox-url=imagen.url,
+                                    data-lightbox-photographer=imagen.photographer,
+                                    data-lightbox-photographer-url=imagen.photographerUrl,
+                                    data-lightbox-alt=imagen.altDescription,
+                                    role="button",
+                                    tabindex="0",
+                                    aria-label=`Ver imagen ${index + 1} en tamaño completo`
+                                )
                                     img(
                                         src=imagen.urlSmall,
                                         alt=`Vista ${index + 1} de ${viaje.titulo}`,
@@ -195,3 +204,52 @@ block contenido
                                     .item-icon
                                         i.fas(class=item.icono)
                                     .item-text= item.texto
+
+    //- Modal Lightbox (solo si hay galería)
+    if viaje.galeria && viaje.galeria.length > 0
+        #lightboxModal.lightbox-modal(role="dialog", aria-modal="true", aria-label="Galería de imágenes")
+            .lightbox-overlay
+            .lightbox-container
+                //- Botón cerrar
+                button.lightbox-close(type="button", aria-label="Cerrar galería")
+                    i.fas.fa-times
+
+                //- Navegación
+                button.lightbox-nav.lightbox-prev(type="button", aria-label="Imagen anterior")
+                    i.fas.fa-chevron-left
+                button.lightbox-nav.lightbox-next(type="button", aria-label="Imagen siguiente")
+                    i.fas.fa-chevron-right
+
+                //- Contenedor de imagen
+                .lightbox-image-wrapper
+                    img#lightboxImage.lightbox-image(src="", alt="")
+                    .lightbox-loader
+                        .spinner
+
+                //- Información de la imagen
+                .lightbox-info
+                    .lightbox-counter
+                        span#lightboxCurrent 1
+                        |  /#{' '}
+                        span#lightboxTotal= viaje.galeria.length
+                    .lightbox-photographer
+                        i.fas.fa-camera.mr-2
+                        | Foto por:#{' '}
+                        a#lightboxPhotographerLink(href="#", target="_blank", rel="noopener noreferrer")
+                            span#lightboxPhotographer
+                        |  en#{' '}
+                        a(href="https://unsplash.com", target="_blank", rel="noopener noreferrer") Unsplash
+
+                //- Thumbnails
+                .lightbox-thumbnails#lightboxThumbnails
+                    each imagen, index in viaje.galeria
+                        img.lightbox-thumb(
+                            src=imagen.urlSmall,
+                            alt=`Miniatura ${index + 1}`,
+                            data-thumb-index=index,
+                            class=index === 0 ? 'active' : ''
+                        )
+
+block scripts
+    if viaje.galeria && viaje.galeria.length > 0
+        script(src="/js/lightbox.js", defer)
