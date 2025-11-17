@@ -49,11 +49,19 @@ blockquote {
     padding: .8rem 1.5rem;
     text-transform: uppercase;
     border-radius: .8rem;
+    color: #fff;
 }
 
 .btn-success:hover {
     background-color: rgb(184, 5, 73);
     border-color: rgb(192, 7, 78);
+    color: #fff;
+}
+
+/* Asegurar que los íconos dentro de los botones sean blancos */
+.btn-success i,
+.btn-outline-turquoise i {
+    color: #fff !important;
 }
 
 /* Padding mejorado para botones grandes */
@@ -1421,6 +1429,104 @@ i {
     .cta-box {
         position: static;
         margin-top: 2rem;
+    }
+}
+
+/* ======================
+   RESPONSIVE - IPAD & TABLETS (Portrait)
+   ====================== */
+/* iPad (810x1080) y tablets similares en orientación portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    /* Hero section - Mejorar distribución */
+    .nosotros-title {
+        font-size: 2.8rem;
+    }
+
+    /* Estadísticas - 2 columnas en lugar de 4 */
+    section[aria-labelledby="estadisticas-title"] .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Valores - Mantener 2 columnas */
+    section[aria-labelledby="valores-title"] .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Botones CTA - Mejor espaciado */
+    .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 1.05rem;
+    }
+
+    /* Testimoniales - 2 columnas */
+    .testimoniales .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Espaciado general */
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    /* Hero image */
+    .col-lg-5.col-md-6 img {
+        max-width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Blockquote más compacto */
+    blockquote {
+        font-size: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    /* Estadísticas - Números más pequeños */
+    .stat-card h3 {
+        font-size: 3rem !important;
+    }
+
+    .stat-card i {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* iPad Pro y tablets grandes (1024x1366) en orientación portrait */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) {
+    /* Mantener 3 columnas para estadísticas */
+    section[aria-labelledby="estadisticas-title"] .col-md-3 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    /* Valores en 3 columnas */
+    section[aria-labelledby="valores-title"] .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    /* Testimoniales en 3 columnas */
+    .testimoniales .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+/* Tablets en orientación landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Aprovechar mejor el espacio horizontal */
+    .btn-lg {
+        padding: 0.9rem 2.5rem;
+    }
+
+    /* Estadísticas en 4 columnas */
+    section[aria-labelledby="estadisticas-title"] .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }
 
