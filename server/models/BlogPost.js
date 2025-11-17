@@ -51,7 +51,10 @@ const BlogPost = db.define('blog_posts', {
     }
 }, {
     timestamps: true,
-    tableName: 'blog_posts'
+    tableName: 'blog_posts',
+    underscored: true,  // Usa snake_case para nombres de columnas (created_at, updated_at)
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
 });
 
 module.exports = BlogPost;
