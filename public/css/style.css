@@ -675,6 +675,111 @@ header .nav a:hover {
     }
 }
 
+/* Imagen de oferta */
+.oferta-imagen {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background: #f0f0f0;
+}
+
+.oferta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.oferta-card:hover .oferta-imagen img {
+    transform: scale(1.08);
+}
+
+/* Badge de descuento sobre imagen */
+.oferta-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.oferta-badge .badge {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.2rem;
+    font-family: 'Staatliches', cursive;
+    background: linear-gradient(135deg, #DC135F 0%, #B8104D 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(220, 19, 95, 0.5);
+    letter-spacing: 1px;
+}
+
+/* Contenedor de precios */
+.oferta-precios {
+    background: linear-gradient(135deg, rgba(21, 185, 213, 0.08) 0%, rgba(220, 19, 95, 0.08) 100%);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Texto de ahorro */
+.ahorro-text {
+    font-size: 0.95rem;
+}
+
+.ahorro-text i {
+    font-size: 0.9rem;
+    color: #28a745;
+}
+
+/* Texto de urgencia */
+.urgencia-text {
+    font-size: 0.9rem;
+    animation: pulse-urgencia 2s infinite;
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+    padding: 0.6rem;
+    border-radius: 6px;
+}
+
+@keyframes pulse-urgencia {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+.urgencia-text i {
+    color: #dc3545;
+    font-size: 1rem;
+}
+
+/* Botón de oferta con icono */
+.oferta-btn i {
+    transition: transform 0.3s ease;
+}
+
+.oferta-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Responsive para imágenes de ofertas */
+@media (max-width: 575px) {
+    .oferta-imagen {
+        height: 180px;
+    }
+
+    .oferta-badge .badge {
+        font-size: 1rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    .urgencia-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsive para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .oferta-imagen {
+        height: 200px;
+    }
+}
+
 /* ======================
    HERO CTAs MEJORADOS
    ====================== */
