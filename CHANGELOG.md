@@ -9,11 +9,39 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ## [1.0.2] - 2025-11-17
 
+### Agregado
+- **Sistema de Badges en Viajes**: 3 tipos de badges automáticos
+  - 🆕 Badge "Nuevo": Automático para viajes con menos de 7 días
+  - 💰 Badge "Descuento": Semi-automático con campos de descuento configurables
+  - ⭐ Badge "Destacado": Manual para resaltar viajes premium
+- **Campos de Descuento**: Sistema completo de descuentos temporales
+  - `descuento_porcentaje` (0-100)
+  - `descuento_activo` (boolean)
+  - `descuento_inicio` y `descuento_fin` (timestamps)
+- **Integración con Unsplash API**: Imágenes dinámicas de destinos
+  - Campo `slug` para identificar destinos
+  - Campo `tipo_destino` (ENUM: beach, city, archaeological, colonial, nature, tourism)
+  - Campo `usa_api_imagen` (boolean)
+- **Campo Destacado**: Marca viajes premium manualmente
+- **Timestamps**: `createdAt` y `updatedAt` en tabla viajes
+- **Migraciones SQL**:
+  - `server/seeds/add_descuento_fields.sql` - Agregar campos de descuento
+  - `server/seeds/update_existing_viajes.sql` - Actualizar viajes existentes
+- **Estrategias de Marketing**: Documentación completa de casos de uso para badges
+
 ### Actualizado
-- Documentación reorganizada y simplificada
-- README.md reducido y mejor estructurado
+- **Modelo Viajes**: Expandido de 7 a 15 campos
+- **Documentación reorganizada y simplificada**
+- **README.md**: Reducido y mejor estructurado
+- **DATABASE_SCHEMA.md**: Documentación completa del sistema de badges
 - Movido historial de cambios a CHANGELOG.md
 - Creada documentación de esquemas de base de datos en scripts/
+
+### Mejorado
+- **Marketing Digital**: Sistema de badges para aumentar conversiones
+- **Flexibilidad de Precios**: Descuentos temporales configurables
+- **Experiencia Visual**: Imágenes profesionales de Unsplash
+- **SEO**: URLs amigables con slugs únicos
 
 ---
 
