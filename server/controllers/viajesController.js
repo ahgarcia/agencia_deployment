@@ -1,6 +1,7 @@
 const Viaje = require('../models/Viajes');
 const imageService = require('../services/imageService');
 const logger = require('../config/logger');
+const { obtenerConfiguracionIncluidos } = require('../helpers/viajesConfig');
 
 exports.mostrarViajes = async (req, res, next) => {
     try {
@@ -119,8 +120,13 @@ exports.mostrarViaje = async (req, res, next) => {
             viajeJSON.galeria = [];
         }
 
+        // Obtener configuración de incluidos según el tipo de destino
+        const configuracionIncluidos = obtenerConfiguracionIncluidos(viajeJSON.tipo_destino);
+
         res.render('viaje', {
-            viaje: viajeJSON
+            viaje: viajeJSON,
+            incluye: configuracionIncluidos.incluye,
+            noIncluye: configuracionIncluidos.noIncluye
         });
 
     } catch (error) {

@@ -1248,6 +1248,72 @@ i {
     line-height: 1.6;
 }
 
+/* ======================
+   QUÉ INCLUYE / NO INCLUYE
+   ====================== */
+.incluye-card,
+.no-incluye-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.incluye-card:hover,
+.no-incluye-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+.incluye-card {
+    border-left: 4px solid #28a745;
+}
+
+.no-incluye-card {
+    border-left: 4px solid #dc3545;
+}
+
+.incluye-card .card-title,
+.no-incluye-card .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.incluye-item,
+.no-incluye-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+}
+
+.incluye-item:hover,
+.no-incluye-item:hover {
+    padding-left: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.incluye-item i {
+    font-size: 1.1rem;
+    min-width: 25px;
+}
+
+.no-incluye-item i {
+    font-size: 1.1rem;
+    min-width: 25px;
+}
+
+.incluye-item span,
+.no-incluye-item span {
+    color: #333;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .imagen-viaje-detalle img {
@@ -1261,6 +1327,16 @@ i {
     .cta-box {
         position: static;
         margin-top: 2rem;
+    }
+
+    .incluye-card .card-title,
+    .no-incluye-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .incluye-item,
+    .no-incluye-item {
+        font-size: 0.95rem;
     }
 }
 
