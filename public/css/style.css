@@ -783,6 +783,7 @@ header .nav a:hover {
 
 /* Botón de oferta con icono */
 .oferta-btn i {
+    color: #fff !important;
     transition: transform 0.3s ease;
 }
 
