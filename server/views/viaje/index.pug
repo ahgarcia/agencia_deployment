@@ -153,7 +153,7 @@ block contenido
                             i.fas.fa-images.mr-2
                             | Más imágenes
                         .galeria-grid
-                            each imagen, index in viaje.galeria.slice(0, 4)
+                            each imagen, index in viaje.galeria.slice(0, 6)
                                 .galeria-item(
                                     data-lightbox-index=index,
                                     data-lightbox-url=imagen.url,
@@ -171,6 +171,14 @@ block contenido
                                     )
                                     .galeria-overlay
                                         i.fas.fa-search-plus
+
+                                    //- Indicador "+X más" en la última imagen si hay más fotos
+                                    if index === 5 && viaje.galeria.length > 6
+                                        .galeria-more-indicator
+                                            .more-text
+                                                i.fas.fa-images.mb-2
+                                                strong +#{viaje.galeria.length - 6}
+                                                small Ver todas
 
         //- Sección "Qué Incluye / No Incluye"
         .row.mt-5
