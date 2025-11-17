@@ -12,6 +12,74 @@ block contenido
                         button.close(type="button", data-dismiss="alert", aria-label="Cerrar")
                             span(aria-hidden="true") &times;
                 include ../layout/partials/testimoniales
+
+                //- Paginación
+                if totalPages > 1
+                    nav.mt-4(aria-label="Navegación de testimoniales")
+                        ul.pagination.justify-content-center
+                            //- Botón anterior
+                            li.page-item(class=!hasPrevPage ? 'disabled' : '')
+                                if hasPrevPage
+                                    a.page-link(href=`/testimoniales?page=${currentPage - 1}`, aria-label="Página anterior")
+                                        i.fas.fa-chevron-left(aria-hidden="true")
+                                        span.sr-only Anterior
+                                else
+                                    span.page-link
+                                        i.fas.fa-chevron-left(aria-hidden="true")
+                                        span.sr-only Anterior
+
+                            //- Páginas numeradas con puntos suspensivos
+                            - const maxVisiblePages = 5;
+                            - const halfVisible = Math.floor(maxVisiblePages / 2);
+                            - let startPage = Math.max(1, currentPage - halfVisible);
+                            - let endPage = Math.min(totalPages, currentPage + halfVisible);
+
+                            //- Ajustar si estamos cerca del inicio o final
+                            - if (currentPage <= halfVisible) {
+                            -     endPage = Math.min(totalPages, maxVisiblePages);
+                            - }
+                            - if (currentPage > totalPages - halfVisible) {
+                            -     startPage = Math.max(1, totalPages - maxVisiblePages + 1);
+                            - }
+
+                            //- Primera página si no está visible
+                            if startPage > 1
+                                li.page-item
+                                    a.page-link(href="/testimoniales?page=1") 1
+                                if startPage > 2
+                                    li.page-item.disabled
+                                        span.page-link ...
+
+                            //- Páginas visibles
+                            - for (let i = startPage; i <= endPage; i++)
+                                li.page-item(class=currentPage === i ? 'active' : '')
+                                    a.page-link(href=`/testimoniales?page=${i}`)= i
+                                    if currentPage === i
+                                        span.sr-only (página actual)
+
+                            //- Última página si no está visible
+                            if endPage < totalPages
+                                if endPage < totalPages - 1
+                                    li.page-item.disabled
+                                        span.page-link ...
+                                li.page-item
+                                    a.page-link(href=`/testimoniales?page=${totalPages}`)= totalPages
+
+                            //- Botón siguiente
+                            li.page-item(class=!hasNextPage ? 'disabled' : '')
+                                if hasNextPage
+                                    a.page-link(href=`/testimoniales?page=${currentPage + 1}`, aria-label="Página siguiente")
+                                        i.fas.fa-chevron-right(aria-hidden="true")
+                                        span.sr-only Siguiente
+                                else
+                                    span.page-link
+                                        i.fas.fa-chevron-right(aria-hidden="true")
+                                        span.sr-only Siguiente
+
+                        //- Información de página actual
+                        p.text-center.text-muted.mt-3
+                            small Mostrando #{(currentPage - 1) * 12 + 1} - #{Math.min(currentPage * 12, totalTestimoniales)} de #{totalTestimoniales} testimoniales
+
             .col-md-12.mt-5
                 h2#form-heading.text-center Agrega un Testimonial
                 if(errores)
