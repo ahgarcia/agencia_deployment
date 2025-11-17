@@ -2039,6 +2039,60 @@ i {
     opacity: 1;
 }
 
+/* Indicador "+X más" */
+.galeria-more-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(21, 185, 213, 0.95) 0%, rgba(220, 19, 95, 0.95) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.more-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.more-text i {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.more-text strong {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.more-text small {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.95;
+}
+
+/* Hover en item con indicador */
+.galeria-item:has(.galeria-more-indicator):hover .galeria-overlay {
+    opacity: 0.3;
+}
+
+.galeria-item:has(.galeria-more-indicator):hover .galeria-more-indicator {
+    background: linear-gradient(135deg, rgba(21, 185, 213, 1) 0%, rgba(220, 19, 95, 1) 100%);
+}
+
 /* Responsive */
 @media (max-width: 991px) {
     .viaje-titulo {
