@@ -69,6 +69,11 @@ const Viaje = db.define('viajes', {
     descuento_fin: {
         type: Sequelize.DATE,
         allowNull: true
+    },
+    // ===== CAMPO DE DESTACADO =====
+    destacado: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
     }
 }, {
     timestamps: true,
