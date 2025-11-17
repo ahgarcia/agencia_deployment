@@ -16,9 +16,28 @@
 
                     //- Badges de estado
                     .trip-badges
+                        //- Badge de urgencia (últimos lugares)
                         if viaje.disponibles <= 5 && viaje.disponibles > 0
                             span.trip-badge.badge-warning-custom
                                 | ¡#{viaje.disponibles} #{viaje.disponibles === 1 ? 'lugar' : 'lugares'}!
+
+                        //- Badge Nuevo
+                        if viaje.badges && viaje.badges.nuevo
+                            span.trip-badge.badge-nuevo
+                                i.fas.fa-star.mr-1
+                                | Nuevo
+
+                        //- Badge Descuento
+                        if viaje.badges && viaje.badges.descuento
+                            span.trip-badge.badge-descuento
+                                i.fas.fa-tag.mr-1
+                                | -#{viaje.badges.descuentoPorcentaje}%
+
+                        //- Badge Destacado
+                        if viaje.badges && viaje.badges.destacado
+                            span.trip-badge.badge-destacado
+                                i.fas.fa-fire.mr-1
+                                | Destacado
 
                     //- Atribución del fotógrafo (requerido por Unsplash)
                     if viaje.imagenData && viaje.imagenData.photographer !== 'Escápate Conmigo'

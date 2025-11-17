@@ -1775,6 +1775,53 @@ i {
     color: white;
 }
 
+/* Badges adicionales */
+.badge-nuevo {
+    background: linear-gradient(135deg, #15B9D5 0%, #13a8bf 100%);
+    color: white;
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+.badge-descuento {
+    background: linear-gradient(135deg, #DC135F 0%, #b30f4d 100%);
+    color: white;
+    font-weight: 700;
+}
+
+.badge-destacado {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #000;
+    font-weight: 700;
+}
+
+/* Animación sutil para el badge "Nuevo" */
+@keyframes pulse-badge {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(21, 185, 213, 0.4);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(21, 185, 213, 0.7),
+                    0 0 15px rgba(21, 185, 213, 0.3);
+    }
+}
+
+/* Efectos hover en badges */
+.trip-badge:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* Desactivar animación para usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .badge-nuevo {
+        animation: none;
+    }
+
+    .trip-badge:hover {
+        transform: none;
+    }
+}
+
 /* Card ajustes */
 .proximos-viajes .card {
     border: none;
