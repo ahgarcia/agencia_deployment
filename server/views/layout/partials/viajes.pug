@@ -1,6 +1,6 @@
 .row.proximos-viajes
-    each viaje, index in viajes
-        .col-md-6.col-lg-4.mb-4(data-aos="fade-up", data-aos-delay=`${(index % 3) * 100 + 300}`)
+    each viaje in viajes
+        .col-md-6.col-lg-4.mb-4
             article.card(role="article", aria-label=`Viaje a ${viaje.titulo}`)
                 //- Imagen con atribución
                 .imagen-viaje

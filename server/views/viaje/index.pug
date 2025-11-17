@@ -12,7 +12,7 @@ block contenido
 
         //- Imagen principal con atribución
         .row.mb-4
-            .col-12(data-aos="zoom-in", data-aos-duration="1000")
+            .col-12
                 .imagen-viaje-detalle
                     img.img-fluid(
                         src=viaje.imagen,
@@ -62,11 +62,11 @@ block contenido
             //- Columna izquierda: Información del viaje
             .col-lg-8.mb-4
                 //- Título y descripción
-                h1.viaje-titulo(data-aos="fade-right") #{viaje.titulo}
-                p.viaje-descripcion.lead(data-aos="fade-right", data-aos-delay="100")= viaje.descripcion
+                h1.viaje-titulo #{viaje.titulo}
+                p.viaje-descripcion.lead= viaje.descripcion
 
                 //- Información rápida en cards
-                .info-rapida.mt-4(data-aos="fade-up", data-aos-delay="200")
+                .info-rapida.mt-4
                     .row
                         .col-6.col-md-3.mb-3
                             .info-card.text-center
@@ -99,7 +99,7 @@ block contenido
                                 strong.d-block.mt-1.precio-destacado= viaje.precio
 
                 //- Botones de compartir en redes sociales
-                .share-section.mt-4(data-aos="fade-up", data-aos-delay="300")
+                .share-section.mt-4
                     h5.share-title
                         i.fas.fa-share-alt.mr-2
                         | Compartir este viaje
@@ -149,7 +149,7 @@ block contenido
             //- Columna derecha: CTA Box y Galería
             .col-lg-4
                 //- CTA Box (Call to Action)
-                .cta-box(data-aos="fade-left", data-aos-delay="100")
+                .cta-box
                     .price-box.text-center
                         h3 #{viaje.precio}
                         small por persona
@@ -174,7 +174,7 @@ block contenido
 
                 //- Galería adicional (en sidebar)
                 if viaje.galeria && viaje.galeria.length > 0
-                    .galeria-sidebar.mt-4(data-aos="fade-left", data-aos-delay="200")
+                    .galeria-sidebar.mt-4
                         h4.galeria-titulo
                             i.fas.fa-images.mr-2
                             | Más imágenes
@@ -209,11 +209,11 @@ block contenido
         //- Sección "Qué Incluye / No Incluye"
         .row.mt-5
             .col-12
-                h2.seccion-titulo.text-center.mb-4(data-aos="fade-up")
+                h2.seccion-titulo.text-center.mb-4
                     i.fas.fa-info-circle.mr-2
                     | Detalles del paquete
 
-            .col-md-6.mb-4.mb-md-0(data-aos="fade-right", data-aos-delay="100")
+            .col-md-6.mb-4.mb-md-0
                 .card.incluye-card.h-100
                     .card-body
                         h3.card-title
@@ -226,7 +226,7 @@ block contenido
                                         i.fas(class=item.icono)
                                     .item-text= item.texto
 
-            .col-md-6(data-aos="fade-left", data-aos-delay="200")
+            .col-md-6
                 .card.no-incluye-card.h-100
                     .card-body
                         h3.card-title

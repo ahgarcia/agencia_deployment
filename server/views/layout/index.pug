@@ -36,8 +36,7 @@ html(lang="es")
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
         link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap', rel='stylesheet')
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css', integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q", crossorigin="anonymous")
-        link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
-        link(rel="stylesheet", href="/css/style.css?v=1.5.0")
+        link(rel="stylesheet", href="/css/style.css?v=1.4.1")
 
         //- Title
         title #{titulo} | #{pagina}
@@ -56,21 +55,3 @@ html(lang="es")
             block contenido
 
         include includes/footer
-
-        //- AOS (Animate On Scroll) Library
-        script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
-        script.
-            // Inicializar AOS
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                offset: 100,
-                disable: function() {
-                    // Respetar preferencias de accesibilidad
-                    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                }
-            });
-
-        //- Animaciones avanzadas personalizadas
-        script(src="/js/animations.js", defer)

@@ -12,10 +12,10 @@ block contenido
                     a(href="/") Inicio
                 li.breadcrumb-item.active(aria-current="page") Viajes
 
-        h1.text-center.mb-4(data-aos="fade-down") #{pagina}
+        h1.text-center.mb-4 #{pagina}
 
         //- Sección de Filtros
-        .filtros-viajes.mb-5(data-aos="fade-up", data-aos-delay="100")
+        .filtros-viajes.mb-5
             .row
                 .col-12
                     .filtros-card
@@ -82,12 +82,12 @@ block contenido
 
         //- Información de paginación
         if totalViajes > 0
-            p.text-muted.text-center.mb-4(data-aos="fade-up", data-aos-delay="200")
+            p.text-muted.text-center.mb-4
                 | Mostrando #{viajes.length} de #{totalViajes} destinos
 
         //- Estado vacío
         if viajes.length === 0
-            .empty-state.text-center(data-aos="zoom-in")
+            .empty-state.text-center
                 i.fas.fa-plane-slash.fa-4x.mb-3
                 h3 No hay viajes disponibles
                 p.text-muted En este momento no tenemos destinos disponibles. Vuelve pronto para descubrir nuevas aventuras.
@@ -96,7 +96,7 @@ block contenido
 
         //- Controles de paginación
         if totalPaginas > 1
-            nav.mt-5(aria-label="Navegación de páginas", data-aos="fade-up", data-aos-delay="400")
+            nav.mt-5(aria-label="Navegación de páginas")
                 ul.pagination.justify-content-center
                     //- Botón Anterior
                     li.page-item(class=paginaActual === 1 ? 'disabled' : '')
