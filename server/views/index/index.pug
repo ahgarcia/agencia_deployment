@@ -81,21 +81,46 @@ block contenido
                             a.btn.btn-success.btn-lg(href=`/viajes/${viajeDescuento.id}` aria-label=`Ver detalles de ${viajeDescuento.titulo}`) Ver Detalles
 
     if otrosDescuentos && otrosDescuentos.length > 0
-        .container.my-5
-            h3.ofertas-title.text-center.mb-4 Más Ofertas Especiales
-            .row.justify-content-center
-                each viaje in otrosDescuentos
-                    .col-md-4.col-sm-6.mb-4
-                        .card.oferta-card.shadow-sm.h-100
-                            .card-header.oferta-card-header.py-3
-                                h4.oferta-descuento #{viaje.descuento_porcentaje}% DESCUENTO
-                            .card-body.oferta-card-body
-                                h5.oferta-viaje-titulo= viaje.titulo
-                                p.oferta-fecha.text-muted.mb-2
-                                    i.far.fa-calendar-alt.mr-1
-                                    | #{new Date(viaje.fecha_ida).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })} - #{new Date(viaje.fecha_vuelta).toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}
-                                p.oferta-precio= viaje.precio
-                                a.btn.oferta-btn.btn-block.py-2(href=`/viajes/${viaje.id}` aria-label=`Aprovechar oferta de ${viaje.titulo}`) Aprovechar Oferta
+        section#ofertas-especiales(role="region" aria-labelledby="ofertas-title")
+            .container.my-5
+                h2#ofertas-title.ofertas-title.text-center.mb-3 Más Ofertas Especiales
+                p.text-center.text-muted.lead.mb-5 Aprovecha estos descuentos exclusivos por tiempo limitado
+
+                .row.justify-content-center
+                    each viaje in otrosDescuentos
+                        .col-12.col-sm-6.col-lg-4.mb-4
+                            .card.oferta-card.shadow-sm.h-100
+                                .oferta-imagen
+                                    img.card-img-top(
+                                        src=viaje.imagen
+                                        alt=`Destino: ${viaje.titulo}`
+                                        loading="lazy"
+                                        decoding="async"
+                                    )
+                                    .oferta-badge
+                                        span.badge.badge-danger #{viaje.descuento_porcentaje}% OFF
+
+                                .card-body.oferta-card-body.d-flex.flex-column
+                                    h5.oferta-viaje-titulo.mb-3= viaje.titulo
+
+                                    p.oferta-fecha.text-muted.mb-3
+                                        i.far.fa-calendar-alt.mr-2(aria-hidden="true")
+                                        | #{new Date(viaje.fecha_ida).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })} - #{new Date(viaje.fecha_vuelta).toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}
+
+                                    .oferta-precios.mb-3.mt-auto
+                                        p.oferta-precio.text-center.mb-2= viaje.precio
+                                        p.ahorro-text.text-success.text-center.mb-0.small
+                                            i.fas.fa-tag.mr-1(aria-hidden="true")
+                                            strong ¡Ahorra #{viaje.descuento_porcentaje}%!
+
+                                    if viaje.disponibles && viaje.disponibles <= 5
+                                        p.urgencia-text.text-danger.mb-3.text-center
+                                            i.fas.fa-fire.mr-1(aria-hidden="true")
+                                            strong ¡Solo #{viaje.disponibles} lugares!
+
+                                    a.btn.oferta-btn.btn-block.py-3(href=`/viajes/${viaje.id}` aria-label=`Reservar ${viaje.titulo} con ${viaje.descuento_porcentaje}% descuento`)
+                                        i.fas.fa-ticket-alt.mr-2(aria-hidden="true")
+                                        span Reservar Ahora
 
     .container
         h2.text-center.my-5 Testimoniales
