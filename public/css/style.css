@@ -1708,10 +1708,27 @@ i {
     background: transparent;
 }
 
+.cta-box .btn-outline-secondary i {
+    color: #15B9D5 !important;
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+}
+
 .cta-box .btn-outline-secondary:hover {
     background: #15B9D5;
     color: white;
     border-color: #15B9D5;
+}
+
+.cta-box .btn-outline-secondary:hover i {
+    color: #fff !important;
+}
+
+/* Asegurar visibilidad del icono de WhatsApp en botón primario */
+.cta-box .btn-primary i.fa-whatsapp {
+    color: #fff !important;
+    margin-right: 0.5rem;
+    font-size: 1.2em;
 }
 
 .alert-danger {
